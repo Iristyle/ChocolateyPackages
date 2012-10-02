@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>SABnzbd</id>
+    <title>SABnzbd+</title>
+    <version>0.7.3</version>
+    <authors>The SABnzbd+ Team</authors>
+    <owners>Ethan Brown</owners>
+    <summary>SABnzbd+ open source binary newsreader</summary>
+    <description>SABnzbd+ is an Open Source Binary Newsreader written in Python.
+It's totally free, incredibly easy to use, and works practically everywhere.
+SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.
+
+This installer properly sets up a system service to keep SABnzbd always running in the background and also properly sets up firewall exclusions.
+
+Note that if this is a first time install it will be necessary to configure SABnzbd to allow other computers on your network to access the application.
+    </description>
+    <projectUrl>http://sabnzbd.org/</projectUrl>
+    <tags>usenet binary newsreader newgroups</tags>
+    <licenseUrl>https://github.com/sabnzbd/sabnzbd/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SABnzbd/SABnzbd.png</iconUrl>
+    <releaseNotes>0.7.3Final by The SABnzbd-Team
+  -------------------------------------------------------------------------------
+  - Rename Special "random_server_ip" to "randomize_server_ip" so that we
+    can force the default to "Off". "On" kills speed on some servers.
+  - Ignore pseudo NZB files that start with a period in the name
+  - SFV failure now listed in History instead of issuing warnings
+  - Translation updates
+  - "502" errors about payments/credits will now block a server
+  -------------------------------------------------------------------------------
+   0.7.3Beta2 by The SABnzbd-Team
+  -------------------------------------------------------------------------------
+  - Try to keep OSX Mountain Lion awake as long as downloading/postprocessing runs
+  - Prevent queue deadlock in case of fatally damaged par2 files
+  - Add RSS filter-enable checkboxes to Plush, Smpl and Classic skins
+  - Fix problem with saving modified paramters of an already enabled server
+  - Extend "check new release" option with test releases
+  -------------------------------------------------------------------------------
+   0.7.3Beta1 by The SABnzbd-Team
+  -------------------------------------------------------------------------------
+  - Correct several errors in Sort function
+  - Improve organization of Config->Servers
+  - Support for nzbxxx.com
+  - Make detection of samples less aggressive
+  - Some minor corrections
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
