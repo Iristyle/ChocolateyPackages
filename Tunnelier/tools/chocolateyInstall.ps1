@@ -7,7 +7,9 @@ try {
     ? { Test-Path $_ } | Select -First 1
   $installDir = Join-Path $installDir 'Bitvise SSH Client'
 
-  $params = '-acceptEULA', '-force', "-installDir=`"$installDir`""
+  # https://fogbugz.bitvise.com/default.asp?Tunnelier.2.11840.3
+  $params = '-acceptEULA', '-force', "-installDir=`"$installDir`"",
+    '-noDesktopIcon'
   Install-ChocolateyPackage 'BvSshClient-Inst' 'exe' $params $url
 
   Write-ChocolateySuccess $package
