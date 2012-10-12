@@ -3,10 +3,12 @@
   <metadata>
     <id>SQL2008.ClrTypes</id>
     <title>Microsoft SQL Server System CLR Types</title>
-    <version>10.00.1600.22</version>
+    <version>10.00.1600.23</version>
     <authors>Microsoft</authors>
     <owners>Ethan Brown</owners>
-    <summary>The SQL Server System CLR Types package contains the components implementing the new geometry, geography, and hierarchyid types in SQL Server 2008. This component can be installed separately from the server to allow client applications to use these types outside of the server.</summary>
+    <summary>Note: This is really 10.00.1600.22, but had to be version bumped to fix an issue in the package installer.
+
+    The SQL Server System CLR Types package contains the components implementing the new geometry, geography, and hierarchyid types in SQL Server 2008. This component can be installed separately from the server to allow client applications to use these types outside of the server.</summary>
     <description>The SQL Server System CLR Types package contains the components implementing the new geometry, geography, and hierarchyid types in SQL Server 2008. This component can be installed separately from the server to allow client applications to use these types outside of the server.</description>
     <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=16177</projectUrl>
     <tags>SQL SQL2008 .NET CLR</tags>
