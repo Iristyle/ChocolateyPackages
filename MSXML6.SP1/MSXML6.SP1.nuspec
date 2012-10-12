@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>MSXML6.SP1</id>
+    <title>Microsoft Core XML Services 6.0 Service Pack 1</title>
+    <version>6.10.1129.0</version>
+    <authors>Microsoft</authors>
+    <owners>Ethan Brown</owners>
+    <summary>MSXML 6.0 Service Pack 1 (MSXML6.1) has improved reliability, security, conformance with the XML 1.0 and XML Schema 1.0 W3C Recommendations, and compatibility with System.Xml 2.0.</summary>
+    <description>MSXML 6.0 SP1 is intended as an upgrade path for existing MSXML 6.0, MSXML 3 and MSXML 4.
+
+MSXML 6.0 SP1 will update the version of MSXML6.dll to 6.10.1129.0
+
+MSXML 6.0 SP1 could also be installed without any previous versions of MSXML 6.0 on the computer.
+
+MSXML 6.0 SP1 will be installed side by side with MSXML 3 and MSXML 4
+
+MSXML 6.0 SP1 is also installed by
+1. SQL Server 2005 SP2 as a Feature Pack Update
+2. Windows Vista
+
+This download is intended for machines that do not have Vista OS or have not chosen to update MSXML 6.0 as part of SQL Server 2005 SP2.
+    </description>
+    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=6276</projectUrl>
+    <tags>XML MSXML services</tags>
+    <licenseUrl>http://archive.msdn.microsoft.com/MSXML/Project/License.aspx</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--
+    <iconUrl></iconUrl>
+    <releaseNotes></releaseNotes>
+    -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
