@@ -4,9 +4,9 @@ try {
   $params = @{
     packageName = $package;
     fileType = 'msi';
-    silentArgs = '/quiet',
-    url = 'http://go.microsoft.com/fwlink/?LinkId=123708&clcid=0x409'
-    url64bit = 'http://go.microsoft.com/fwlink/?LinkId=123709&clcid=0x409'
+    silentArgs = '/quiet';
+    url = 'http://go.microsoft.com/fwlink/?LinkId=123708&clcid=0x409';
+    url64bit = 'http://go.microsoft.com/fwlink/?LinkId=123709&clcid=0x409';
   }
 
   Install-ChocolateyPackage @params
