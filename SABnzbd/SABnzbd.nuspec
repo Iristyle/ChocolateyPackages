@@ -3,7 +3,7 @@
   <metadata>
     <id>SABnzbd</id>
     <title>SABnzbd+</title>
-    <version>0.7.3</version>
+    <version>0.7.4</version>
     <authors>The SABnzbd+ Team</authors>
     <owners>Ethan Brown</owners>
     <summary>SABnzbd+ open source binary newsreader</summary>
@@ -20,31 +20,38 @@ Note that if this is a first time install it will be necessary to configure SABn
     <licenseUrl>https://github.com/sabnzbd/sabnzbd/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SABnzbd/SABnzbd.png</iconUrl>
-    <releaseNotes>0.7.3Final by The SABnzbd-Team
-  -------------------------------------------------------------------------------
-  - Rename Special "random_server_ip" to "randomize_server_ip" so that we
-    can force the default to "Off". "On" kills speed on some servers.
-  - Ignore pseudo NZB files that start with a period in the name
-  - SFV failure now listed in History instead of issuing warnings
-  - Translation updates
-  - "502" errors about payments/credits will now block a server
-  -------------------------------------------------------------------------------
-   0.7.3Beta2 by The SABnzbd-Team
-  -------------------------------------------------------------------------------
-  - Try to keep OSX Mountain Lion awake as long as downloading/postprocessing runs
-  - Prevent queue deadlock in case of fatally damaged par2 files
-  - Add RSS filter-enable checkboxes to Plush, Smpl and Classic skins
-  - Fix problem with saving modified paramters of an already enabled server
-  - Extend "check new release" option with test releases
-  -------------------------------------------------------------------------------
-   0.7.3Beta1 by The SABnzbd-Team
-  -------------------------------------------------------------------------------
-  - Correct several errors in Sort function
-  - Improve organization of Config->Servers
-  - Support for nzbxxx.com
-  - Make detection of samples less aggressive
-  - Some minor corrections
-    </releaseNotes>
+    <releaseNotes>Highlights in 0.7.4
+
+    OSX Mountain Lion: Notification Center support
+    OSX Mountain Lion: improved "keep awake" support
+    Scheduler: action can now run on multiple weekdays
+    Fix: pre-check failed to consider extra par2 files
+
+    Features
+    ==========================================================================
+    Support for HTTPS chain files (needed when you buy your own certificate)
+    Special option: rss_odd_titles, see Wiki
+    Special option: 'overwrite_files', see Wiki
+    Show memory usage on Linux systems
+    Scheduler: add "remove failed jobs" action
+
+    Bug fixes
+    ==========================================================================
+    After successful pre-check, preserve a job's position in the queue
+    Restore SABnzbd icon for Growl
+    Make Windows version less eager to use par2-classic
+    Prevent jobs from showing up in queue and history simultaneously
+    Fix failure to fetch more par2-files for posts with badly formatted subject lines
+    Fix for third-party tools requesting too much history
+    New RSS feed should no longer be considered new after first, but empty readout.
+    Make "auth" call backward-compatible with 0.6.x releases.
+    Config->Notifications: email and growl server addresses should not be marked as "url" type.
+    OSX: fix top menu queue info so that it shows total queue size
+    Fixed unjustified warning that can occur with OSX Growl 2.0
+    Pre-queue script no longer got the show/season/episode information.
+    Prevent crash on startup when a fully downloaded job is still in download queue.
+    Fix incorrect end-of-month quota reset
+    Fix UI refresh issue when using Safari on iOS6 (Safari bug)</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
