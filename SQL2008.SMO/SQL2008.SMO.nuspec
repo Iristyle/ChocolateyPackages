@@ -3,16 +3,16 @@
   <metadata>
     <id>SQL2008.SMO</id>
     <title>Microsoft SQL Server 2008 Management Objects</title>
-    <version>10.00.1600.23</version>
+    <version>10.00.2531.00</version>
     <authors>Microsoft</authors>
     <owners>Ethan Brown</owners>
-    <summary>Note: This is really 10.00.1600.22, but had to be version bumped to fix an isuse in the package installer.
+    <summary>Microsoft SQL Server 2008 Feature Pack, April 2009
 
-    The SQL Server Management Objects (SMO) is a .NET Framework object model that enables software developers to create client-side applications to manage and administer SQL Server objects and services.</summary>
+      The SQL Server Management Objects (SMO) is a .NET Framework object model that enables software developers to create client-side applications to manage and administer SQL Server objects and services.</summary>
     <description>The SQL Server Management Objects (SMO) is a .NET Framework object model that enables software developers to create client-side applications to manage and administer SQL Server objects and services. This object model will work with SQL Server 2000, SQL Server 2005 and SQL Server 2008.
 Note: Microsoft SQL Server 2008 Management Objects Collection requires Microsoft Core XML Services (MSXML) 6.0 , Microsoft SQL Server Native Client, and Microsoft SQL Server System CLR Types. These are available on this page.
     </description>
-    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=16177</projectUrl>
+    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=3522</projectUrl>
     <tags>SQL SQL2008 SMO .NET XML CLR</tags>
     <!-- Eula is in installer
     <licenseUrl></licenseUrl>

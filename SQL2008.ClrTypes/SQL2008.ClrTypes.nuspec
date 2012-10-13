@@ -2,15 +2,15 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
     <id>SQL2008.ClrTypes</id>
-    <title>Microsoft SQL Server System CLR Types</title>
-    <version>10.00.1600.23</version>
+    <title>Microsoft SQL Server 2008 System CLR Types</title>
+    <version>10.00.2531.00</version>
     <authors>Microsoft</authors>
     <owners>Ethan Brown</owners>
-    <summary>Note: This is really 10.00.1600.22, but had to be version bumped to fix an issue in the package installer.
+    <summary>Microsoft SQL Server 2008 Feature Pack, April 2009
 
-    The SQL Server System CLR Types package contains the components implementing the new geometry, geography, and hierarchyid types in SQL Server 2008. This component can be installed separately from the server to allow client applications to use these types outside of the server.</summary>
+      The SQL Server System CLR Types package contains the components implementing the new geometry, geography, and hierarchyid types in SQL Server 2008. This component can be installed separately from the server to allow client applications to use these types outside of the server.</summary>
     <description>The SQL Server System CLR Types package contains the components implementing the new geometry, geography, and hierarchyid types in SQL Server 2008. This component can be installed separately from the server to allow client applications to use these types outside of the server.</description>
-    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=16177</projectUrl>
+    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=3522</projectUrl>
     <tags>SQL SQL2008 .NET CLR</tags>
     <!-- Eula is in installer
     <licenseUrl></licenseUrl>
