@@ -3,10 +3,12 @@
   <metadata>
     <id>SQL2008.SMO</id>
     <title>Microsoft SQL Server 2008 Management Objects</title>
-    <version>10.00.2531.00</version>
+    <version>10.00.2531.01</version>
     <authors>Microsoft</authors>
     <owners>Ethan Brown</owners>
-    <summary>Microsoft SQL Server 2008 Feature Pack, April 2009
+    <summary>Microsoft SQL Server 2008 Feature Pack, April 2009 - 10.00.2531.00
+
+      Note that this is 10.00.2531.00, but had to be updated to 10.00.2531.01 to ensure that the dependent Powershell package would install correctly.
 
       The SQL Server Management Objects (SMO) is a .NET Framework object model that enables software developers to create client-side applications to manage and administer SQL Server objects and services.</summary>
     <description>The SQL Server Management Objects (SMO) is a .NET Framework object model that enables software developers to create client-side applications to manage and administer SQL Server objects and services. This object model will work with SQL Server 2000, SQL Server 2005 and SQL Server 2008.

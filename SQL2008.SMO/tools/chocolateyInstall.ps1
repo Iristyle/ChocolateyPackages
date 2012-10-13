@@ -11,6 +11,16 @@ try {
 
   Install-ChocolateyPackage @params
 
+  # install both x86 and x64 editions of SMO since x64 supports both
+  # to install both variants of powershell, both variants of SMO must be present
+  $IsSytem32Bit = (($Env:PROCESSOR_ARCHITECTURE -eq 'x86') -and `
+    ($Env:PROCESSOR_ARCHITEW6432 -eq $null))
+  if (!$IsSytem32Bit)
+  {
+    $params.url64bit = $params.url
+    Install-ChocolateyPackage @params
+  }
+
   Write-ChocolateySuccess $package
 } catch {
   Write-ChocolateyFailure $package "$($_.Exception.Message)"
