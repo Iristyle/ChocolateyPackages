@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>SQL2008.Powershell</id>
+    <title>Microsoft Windows PowerShell Extensions for SQL Server</title>
+    <version>10.00.2531.00</version>
+    <authors>Microsoft</authors>
+    <owners>Ethan Brown</owners>
+    <summary>Microsoft SQL Server 2008 Feature Pack, April 2009
+
+      The Microsoft Windows PowerShell Extensions for SQL Server includes a provider and a set of cmdlets that enable administrators and developers to build PowerShell scripts for managing instances of SQL Server.</summary>
+    <description>Microsoft SQL Server 2008 Feature Pack, April 2009
+
+    The Microsoft Windows PowerShell Extensions for SQL Server includes a provider and a set of cmdlets that enable administrators and developers to build PowerShell scripts for managing instances of SQL Server. The SQL Server PowerShell Provider delivers a simple mechanism for navigating SQL Server instances that is similar to file system paths. PowerShell scripts can then use the SQL Server Management Objects to administer the instances. The SQL Server cmdlets support operations such as executing Transact-SQL scripts or evaluating SQL Server policies.
+
+    Note: Windows PowerShell Extensions for SQL Server requires SQL Server 2008 Management Objects, and PowerShell, which will both be installed if necessary.</description>
+    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=3522</projectUrl>
+    <tags>SQL SQL2008 .NET CLR Powershell SMO</tags>
+    <!-- Eula is in installer
+    <licenseUrl></licenseUrl>
+    -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SQL2008.SMO/SQL2008.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+        <dependency id="SQL2008.SMO" />
+        <!-- can't run choc without powershell!
+        <dependency id="powershell" />
+        -->
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

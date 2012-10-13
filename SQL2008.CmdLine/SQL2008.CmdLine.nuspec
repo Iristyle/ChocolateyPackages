@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>SQL2008.CmdLine</id>
+    <title>Microsoft SQL Server 2008 Command Line Utilities</title>
+    <version>10.00.2531.00</version>
+    <authors>Microsoft</authors>
+    <owners>Ethan Brown</owners>
+    <summary>Microsoft SQL Server 2008 Feature Pack, April 2009
+
+    The SQLCMD utility allows users to connect to, send Transact-SQL batches from, and output rowset information from SQL Server 7.0, SQL Server 2000, SQL Server 2005, and SQL Server 2008 instances. The bcp utility bulk copies data between an instance of Microsoft SQL Server 2008 and a data file in a user-specified format. The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.</summary>
+    <description>Microsoft SQL Server 2008 Feature Pack, April 2009
+
+    The SQLCMD utility allows users to connect to, send Transact-SQL batches from, and output rowset information from SQL Server 7.0, SQL Server 2000, SQL Server 2005, and SQL Server 2008 instances. The bcp utility bulk copies data between an instance of Microsoft SQL Server 2008 and a data file in a user-specified format. The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
+
+    Also installs SQL Native Client.
+    </description>
+    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=3522</projectUrl>
+    <tags>SQL SQL2008 cmdline bcp SQLCMD</tags>
+    <!-- Eula is in installer
+    <licenseUrl></licenseUrl>
+    -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SQL2008.SMO/SQL2008.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+        <dependency id="SQL2008.NativeClient" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
