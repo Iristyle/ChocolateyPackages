@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>Python.Cheetah</id>
+    <title>Python-Powered Open Source Template Engine</title>
+    <version>2.4.4</version>
+    <authors>Tavis Rudd, R. Tyler Croy, Open Source contributors</authors>
+    <owners>Ethan Brown</owners>
+    <summary>Cheetah is an open source template engine and code generation tool, written in Python. It can be used standalone or combined with other tools and frameworks. Web development is its principle use, but Cheetah is very flexible and is also being used to generate C++ game code, Java, sql, form emails and even Python code.</summary>
+    <description>
+      Cheetah:
+
+    - is supported by every major Python web framework.
+    - is fully documented and is supported by an active user community.
+    - can output/generate any text-based format.
+    - compiles templates into optimized, yet readable, Python code.
+    - blends the power and flexibility of Python with a simple template language that non-programmers can understand.
+    - gives template authors full access to any Python data structure, module, function, object, or method in their templates. Meanwhile, it provides a way for administrators to selectively restrict access to Python when needed.
+    - makes code reuse easy by providing an object-oriented interface to templates that is accessible from Python code or other Cheetah templates. One template can subclass another and selectively reimplement sections of it. Cheetah templates can be subclasses of any Python class and vice-versa.
+    - provides a simple, yet powerful, caching mechanism that can dramatically improve the performance of a dynamic website.
+    - encourages clean separation of content, graphic design, and program code. This leads to highly modular, flexible, and reusable site architectures, shorter development time, and HTML and program code that is easier to understand and maintain. It is particularly well suited for team efforts.
+    - can be used to generate static html via its command-line tool.
+
+    Note that this package will install _namemapper.pyd for the appropriate
+    Python version as well.
+    </description>
+    <projectUrl>http://www.cheetahtemplate.org/</projectUrl>
+    <tags>Python template cheetah code generation</tags>
+    <licenseUrl>https://github.com/cheetahtemplate/cheetah/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/Python.Cheetah/Python.Cheetah.jpg</iconUrl>
+    <releaseNotes>2.4.4 (December 10, 2010)
+    - Misc fixes for Python 2.7
+
+      2.4.2 (February 8th, 2010)
+    - Fix issue where subclasses of Template failed to pick up attributes in the
+      searchlist
+    - Remove old/outdated bundled memcached python client
+    - Allow for #encoding directives to exist after a comment (i.e. not the first
+      line in a module)
+    - Remove support for WebWare servlets (which caused significant performance
+      slowdowns on Mac OS X)
+    - Old/stale code pruned in preparation for Python 3 support
+
+  2.4.1 (December 19th, 2009)
+    - --quiet flag added to `cheetah` to silence printing to stdout (abbeyj)
+    - Refactoring to minimize the amount of forked code for Python3 (rtyler)
+    - Template.compile() will no longer create class names with numerous leading
+      underscores (rtyler; reported by Kirill Uhanov)
+    - DirectiveAnalyzer (cheetah-analyze script) added to report directive usage in templates (rtyler)
+    - Older LaTeX docs converted to rst for Sphinx (rtyler)
+    - Prevent #raw blocks from evaluating $-placeholders and escaped strings (karmix0)
+    - New tests added to verify PSP behavior and other untested internals (rtyler)
+
+  2.4.0 (October 15th, 2009)
+    - Fix a major performance regression in Template.__init__()
+    - More graceful handling of unicode when calling .respond() to render a template
+    - Minor code updates
+
+  2.3.0 (October 15th, 2009) (loosely equivalent to 2.4.0)
+    - Fix a major performance regression in Template.__init__()
+    - More graceful handling of unicode when calling .respond() to render a template
+    - Minor code updates</releaseNotes>
+    <dependencies>
+        <dependency id="python" version="[2.7,3.0)" />
+        <dependency id="pip" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
