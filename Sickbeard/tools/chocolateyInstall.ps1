@@ -8,9 +8,9 @@ try {
     [IO.Path]::GetDirectoryName((Get-Content function:$thisName).File)
   }
 
-  # load INI parser
   . (Join-Path (Get-CurrentDirectory) 'Get-IniContent.ps1')
   . (Join-Path (Get-CurrentDirectory) 'Out-IniFile.ps1')
+  . (Join-Path (Get-CurrentDirectory) 'WaitForSuccess.ps1')
 
   #simulate the unix command for finding things in path
   #http://stackoverflow.com/questions/63805/equivalent-of-nix-which-command-in-powershell
@@ -20,21 +20,9 @@ try {
       Select -ExpandProperty Definition
   }
 
-  function WaitService([string]$name, [int]$seconds)
-  {
-    Write-Host "Waiting up to $($seconds)s for $name to start..."
-    $result = 0..($seconds * 2) |
-      % {
-        $service = Get-Service $name -ErrorAction SilentlyContinue
-        if ($service -and ($service.Status -eq 'Running'))
-          { return $true }
-        elseif ($service)
-          { Start-Sleep -Milliseconds 500 }
-        return $false
-      } |
-      Select -Last 1
-
-    return $result
+  $sickBeardRunning = {
+    $service = Get-Service 'SickBeard' -ErrorAction SilentlyContinue
+    return ($service -and ($service.Status -eq 'Running'))
   }
 
   # Use PYTHONHOME if it exists, or fallback to 'Where' to search PATH
@@ -51,6 +39,17 @@ try {
 
   $pythonRoot = Split-Path $localPython
 
+  # as we're running a service as SYSTEM, Machine needs python in PATH
+  # TODO: Bug in Install-ChocolateyPath won't add to MACHINE if already in USER
+  $setMachinePathScript = @"
+  `$vars = [Environment]::GetEnvironmentVariable('PATH', 'Machine') -split ';';
+  if (!(`$vars -contains '$pythonRoot')) { `$vars += '$pythonRoot' };
+  [Environment]::SetEnvironmentVariable('PATH', (`$vars -join ';'), 'Machine');
+  [Environment]::SetEnvironmentVariable('PYTHONHOME', '$pythonRoot', 'Machine');
+"@
+
+  Start-ChocolateyProcessAsAdmin $setMachinePathScript
+
   $sitePackages = (Join-Path (Join-Path $pythonRoot 'Lib') 'site-packages')
   if (!(Test-Path $sitePackages))
   {
@@ -62,14 +61,20 @@ try {
   Push-Location $sitePackages
   $git = Which git
   $sickBeardPath = (Join-Path $sitePackages 'Sick-Beard')
+  $sickBeardEmpty = $true
   if (Test-Path $sickBeardPath)
+  {
+    $files = Get-ChildItem $sickBeardPath -Recurse -ErrorAction SilentlyContinue
+    $sickBeardEmpty = ($files.Count -eq 0)
+  }
+  if (!$sickBeardEmpty)
   {
     Write-ChocolateySuccess 'SickBeard already installed!'
     return
   }
   else
   {
-    Write-ChocolateySuccess 'Cloning SickBeard source from GitHub'
+    Write-Host 'Cloning SickBeard source from GitHub'
     &git clone https://github.com/midgetspy/Sick-Beard
   }
 
@@ -79,7 +84,7 @@ try {
   if (Test-Path $sabIniPath)
   {
     Write-Host "Reading SABnzbd+ config file at $sabIniPath"
-    $sabConfig = Get-IniContent $sabIniPath
+    $sabConfig = Get-IniContent -Path $sabIniPath
 
     # 3 options - missing script_dir, script_dir set to "", or configured script_dir
     if (!$sabConfig.misc.script_dir -or `
@@ -88,12 +93,12 @@ try {
       $scriptDir = (Join-Path $sabDataPath 'scripts')
       Write-Host "Configured SABnzbd+ script_dir to $scriptDir"
       $sabConfig.misc.script_dir = $scriptDir
-      $sabConfig | Out-IniFile -FilePath $sabIniPath -Force
+      $sabConfig | Out-IniFile -FilePath $sabIniPath -Force -Encoding UTF8
     }
 
     if (!(Test-Path $sabConfig.misc.script_dir))
     {
-      [Void]New-Item -Path $sabConfig.misc.script_dir -Type Directory
+      New-Item -Path $sabConfig.misc.script_dir -Type Directory | Out-Null
     }
 
     # copy and configure autoprocessing scripts in SABNzbd+ scripts directory
@@ -123,7 +128,7 @@ try {
     }
 
     Write-Host 'Configured tv category in SABnzbd+'
-    $sabConfig | Out-IniFile -FilePath $sabIniPath -Force
+    $sabConfig | Out-IniFile -FilePath $sabIniPath -Force -Encoding UTF8
   }
 
   # regardless of sabnzbd+ install status, .PY should be executable
@@ -147,7 +152,7 @@ try {
     Write-Host "Found resource kit - registering SickBeard as a service"
     Push-Location $resourceKit
     $srvAny = Join-Path $resourceKit 'srvany.exe'
-    .\instsrv SickBeard $srvany
+    .\instsrv SickBeard $srvany | Out-Null
 
     # Set-Service cmdlet doesn't have depend OR delayed start :(
     Write-Host "Configuring service delayed auto with Tcpip dependency"
@@ -171,12 +176,34 @@ try {
     Start-Service SickBeard
 
     # config files are created on first start-up
-    if (WaitService 'SickBeard', 20)
-    {
-      $configPath = (Join-Path $sickBeardPath 'config.ini')
-      $sickBeardConfig = Get-IniContent $configPath
+    $configPath = (Join-Path $sickBeardPath 'config.ini')
 
-      Write-Host "Configuring Windows Firewall for the SickBeard port"
+    # to start hacking config.ini the service needs to be up, config.ini needs
+    # to exist, and SickBeard must respond to requests (config.ini is complete)
+    $waitOnConfig = {
+      if (!(&$sickBeardRunning)) { return $false }
+      if (!(Test-Path $configPath)) { return $false }
+
+      # fails with a 200 (unknown API key) so we know it's accepting requests!
+      $pingUrl = 'http://localhost:8081/api/?cmd=sb.ping'
+      try
+      {
+        (New-Object Net.WebClient).DownloadString($pingUrl)
+        return $true
+      }
+      catch {}
+
+      return $false
+    }
+
+    if (WaitForSuccess $waitOnConfig 20 'SickBeard to start and create config')
+    {
+      Write-Host 'SickBeard started and configuration files created'
+      $sickBeardConfig = Get-IniContent -Path $configPath
+
+      $sickBeardApiKey = $sickBeardConfig.General.api_key
+
+      Write-Host 'Configuring Windows Firewall for the SickBeard port'
       # configure windows firewall
       netsh advfirewall firewall delete rule name="SickBeard"
       # program="$pythonW"
@@ -191,7 +218,9 @@ try {
       $sickBeardConfig.General.move_associated_files = 1
       $sickBeardConfig.General.api_key = [Guid]::NewGuid().ToString('n')
       $sickBeardConfig.General.metadata_xbmc = '1|1|1|1|1|1'
-      $sickBeardConfig.General.naming_pattern = '%SN - %Sx%0E - %EN'
+      $sickBeardConfig.General.keep_processed_dir = 0
+
+      $sickBeardConfig.General.naming_pattern = 'Season %S\%SN - %Sx%0E - %EN'
       #range like x03-05
       $sickBeardConfig.General.naming_multi_ep = 8
 
@@ -210,30 +239,33 @@ try {
       $sickBeardConfig.SABnzbd.sab_category = 'tv'
       $sickBeardConfig.SABnzbd.sab_host = "http://localhost:$($sabConfig.misc.port)/"
 
-      $sickBeardConfig | Out-IniFile -File $configPath -Force -Encoding ASCII
+      $sickBeardConfig |
+        Out-IniFile -File $configPath -Force -Encoding UTF8 |
+        Out-Null
 
-      Stop-Service SickBeard
-      Start-Service SickBeard
+      Restart-Service SickBeard
     }
 
     $autoConfig = Join-Path $sabConfig.misc.script_dir 'autoProcessTV.cfg'
     if (!(Test-Path $autoConfig))
     {
-      $processConfig = @{
-        'SickBeard' = @{
-          host = $sickBeardConfig.General.web_host;
-          port = $sickBeardConfig.General.web_port;
-          username = $sickBeardConfig.General.web_username;
-          password = $sickBeardConfig.General.web_password;
-          web_root = $sickBeardConfig.General.web_root;
-          ssl = 0;
-        }
-      }
-      $processConfig | Out-IniFile -FilePath $autoConfig
+      # order shouldn't matter, but don't trust Python ;0
+      $sbAuto = New-Object Collections.Specialized.OrderedDictionary
+      $sbAuto.host = $sickBeardConfig.General.web_host -replace '0\.0\.0\.0',
+        'localhost';
+      $sbAuto.port = $sickBeardConfig.General.web_port;
+      $sbAuto.username = $sickBeardConfig.General.web_username;
+      $sbAuto.password = $sickBeardConfig.General.web_password;
+      $sbAuto.web_root = $sickBeardConfig.General.web_root;
+      $sbAuto.ssl = 0;
+
+      @{ 'SickBeard' = $sbAuto } |
+        Out-IniFile -FilePath $autoConfig -Encoding ASCII -Force
+
       Write-Host @"
 SickBeard SABNzbd+ post-processing scripts configured
   If SickBeard is reconfigured with a username or password or another
-  host then those same changes must be made to $sickBeardConfig
+  host then those same changes must be made to $configPath
 "@
     }
 
@@ -243,11 +275,14 @@ SickBeard SABNzbd+ post-processing scripts configured
     (New-Object Net.WebClient).DownloadString($url)
 
     #wait up to 5 seconds for service to fire up
-    if (WaitService 'SickBeard' 5)
+    if (WaitForSuccess $sickBeardRunning 5 'SickBeard to start')
     {
       #launch local default browser for additional config
-      [Diagnostics.Process]::Start("http://localhost:$($sickBeardConfig.General.web_port)")
+      $configUrl = "http://localhost:$($sickBeardConfig.General.web_port)"
+      [Diagnostics.Process]::Start($configUrl) | Out-Null
     }
+
+    Write-Host "For use in other apps, SickBeard API key: $sickBeardApiKey"
 
     Pop-Location
   }
