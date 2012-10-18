@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>MesloLG.DZ</id>
+    <title>Meslo LG Monospaced Programming Font with dotted zeros</title>
+    <version>1.00</version>
+    <authors>Andre Berg</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Customized version of Apple's Menlo font. Great monospaced font for development work. Should also work with the Windows Console.</summary>
+    <description>Meslo LG is a customized version of Apple’s Menlo-Regular font
+(which is a customized Bitstream Vera Sans Mono).
+
+    In Snow Leopard, Menlo-Regular is now the preferred and default font for Apple’s 
+    developer tools and also the Terminal (unless you changed the font settings for 
+    these apps yourself before upgrading to SL – your changes will stay in place).
+
+    I really like Menlo but I do have my nitpicky gripes with it:
+
+    * The default vertical (line) spacing is just way to cramped for me, and also
+    * I am not particularily fond of the horizontal baseline alignment of the asterisk.
+    </description>
+    <projectUrl>https://github.com/andreberg/Meslo-Font</projectUrl>
+    <tags>monospace truetype programming font</tags>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <iconUrl></iconUrl> -->
+    <releaseNotes>v0.1
+
+    Initial release.
+
+    v1.0
+
+    Meslo has changed it’s name to Meslo LG which now includes three variants: 
+    small, medium and large.
+
+    LG stands for Line Gap, so there’s one variant for smaller vertical line spacing, 
+    more towards Apple’s Menlo, a normal line gap (which equals Meslo v0.1) and 
+    a large gap, which is more than twice the space of Apple’s Menlo.
+
+    In addition to Regular, there’s Italic, Bold and Bold Italic font styles 
+    included for each LG variant.
+
+    Tweaked the ascender/descender/line gap relationship a bit for better layout 
+    at marginal smaller font sizes and prominent font styles (such as Bold and 
+    Bold Italic). Things line underlines should be better to perceive now for 
+    the font styles.
+
+    The asterisk (*) was tweaked for all font styles. 
+    This includes making it line up with all alignment zones for similar height 
+    symbol characters and fixing Menlo’s absence of a slanting angle for the italic 
+    and bold italic font styles while maintaining the readability at all sizes.
+
+    v1.0
+
+    Added a dotted zero version of Meslo LG which is called Meslo LG DZ.</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
