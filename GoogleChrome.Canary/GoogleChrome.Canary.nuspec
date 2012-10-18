@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>GoogleChrome.Canary</id>
+    <title>Google Chrome Canary Web Browser</title>
+    <version>24.0.1300.0</version>
+    <authors>Google</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Google Chrome Canary has the newest of the new Chrome features.</summary>
+    <description>Not for the faint of heart
+    Canary is designed for developers and early adopters, and can sometimes break down completely.
+    Nightly updates
+    Canary changes almost every day.
+    Side-by-side install
+    Run Canary and Chrome Stable at the same time.
+
+    Note that Chrome auto-updates itself after an initial install.
+    </description>
+    <projectUrl>https://tools.google.com/dlpage/chromesxs</projectUrl>
+    <tags>google chrome web browser html5</tags>
+    <licenseUrl>https://www.google.com/chrome/intl/en/eula_text.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/GoogleChrome.Canary/GoogleChrome.Canary.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
