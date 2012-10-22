@@ -3,7 +3,7 @@
   <metadata>
     <id>SABnzbd</id>
     <title>SABnzbd+</title>
-    <version>0.7.4</version>
+    <version>0.7.4.1</version>
     <authors>The SABnzbd+ Team</authors>
     <owners>Ethan Brown</owners>
     <summary>SABnzbd+ open source binary newsreader</summary>
@@ -20,7 +20,11 @@ Note that if this is a first time install it will be necessary to configure SABn
     <licenseUrl>https://github.com/sabnzbd/sabnzbd/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SABnzbd/SABnzbd.png</iconUrl>
-    <releaseNotes>Highlights in 0.7.4
+    <releaseNotes>
+    0.7.4.1 - Chocolatey Installer fixes
+    Can now uninstall
+
+    Highlights in 0.7.4
 
     OSX Mountain Lion: Notification Center support
     OSX Mountain Lion: improved "keep awake" support
