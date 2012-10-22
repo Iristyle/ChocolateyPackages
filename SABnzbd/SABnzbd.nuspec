@@ -58,6 +58,7 @@ Note that if this is a first time install it will be necessary to configure SABn
     Fix UI refresh issue when using Safari on iOS6 (Safari bug)</releaseNotes>
   </metadata>
   <files>
+    <file src="..\core\WaitForSuccess.ps1" target="tools" />
     <file src="tools\**" target="tools" />
   </files>
 </package>

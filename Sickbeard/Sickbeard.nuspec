@@ -38,6 +38,9 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="..\core\Out-IniFile.ps1" target="tools" />
+    <file src="..\core\Get-IniContent.ps1" target="tools" />
+    <file src="..\core\WaitForSuccess.ps1" target="tools" />
     <file src="tools\**" target="tools" />
   </files>
 </package>
