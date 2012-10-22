@@ -3,13 +3,13 @@
   <metadata>
     <id>SickBeard.Source</id>
     <title>Sick Beard Usenet PVR</title>
-    <version>10.00.1600.22-Alpha</version>
+    <version>2012.10.22</version>
     <authors>midgetspy</authors>
     <owners>Ethan Brown</owners>
     <summary>The ultimate PVR application that searches for and manages your TV shows.</summary>
     <description>Sick Beard is a PVR for newsgroup users (with limited torrent support). It watches for new episodes of your favorite shows and when they are posted it downloads them, sorts and renames them, and optionally generates metadata for them. It currently supports NZBs.org, NZBMatrix, NZBs'R'Us, Newzbin, Womble's Index, NZB.su, TVTorrents and EZRSS and retrieves show information from theTVDB.com and TVRage.com.
 
-    This package
+    This package performs a number of normally quite painful / tedious tasks
     - Installs SABnzbd+ (compiled version)
     - Installs Python
     - Installs Cheetah with Windows optimizations
@@ -38,6 +38,9 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="..\core\Out-IniFile.ps1" target="tools" />
+    <file src="..\core\Get-IniContent.ps1" target="tools" />
+    <file src="..\core\WaitForSuccess.ps1" target="tools" />
     <file src="tools\**" target="tools" />
   </files>
 </package>
