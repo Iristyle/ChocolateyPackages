@@ -128,7 +128,7 @@ function Out-IniFile
     Write-Verbose "[INFO]: Out-IniFile writing file [$FilePath]"
     if ((New-Object IO.FileInfo($FilePath)).Extension -ne '.ini')
     {
-      Write-Warning 'Out-IniFile [$FilePath] does not end in .ini extension'
+      Write-Warning "Out-IniFile [$FilePath] does not end in .ini extension"
     }
 
     if ((Test-Path $FilePath) -and (!$Force))

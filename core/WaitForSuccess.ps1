@@ -12,7 +12,7 @@ function WaitForSuccess([ScriptBlock] $script, [int]$seconds = 10,
         $skip = $true
         return $true
       }
-      elseif ($service)
+      else
       {
         Start-Sleep -Milliseconds 500
       }

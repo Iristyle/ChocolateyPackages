@@ -87,7 +87,7 @@ try
     if (!$upgrade)
     {
       #launch local default browser to configure
-      [Diagnostics.Process]::Start('http://localhost:8080')
+      [Diagnostics.Process]::Start('http://localhost:8080') | Out-Null
     }
   }
   else
