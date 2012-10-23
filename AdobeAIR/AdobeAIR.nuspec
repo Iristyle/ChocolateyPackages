@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>AdobeAIR</id>
+    <title>Adobe AIR Runtime</title>
+    <version>3.4.0.2710</version>
+    <authors>Adobe</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Adobe AIR runtime is necessary for AIR based applications.</summary>
+    <description>Adobe AIR is a cross-platform runtime that enables you to use your existing Flash/ActionScript or HTML/JavaScript development skills and tools to build and deploy applications, games, and videos outside the browser and on mobile devices.
+
+    Note that AIR auto-updates itself after an initial install.
+    </description>
+    <projectUrl>http://get.adobe.com/air/</projectUrl>
+    <tags>web browser AIR</tags>
+    <licenseUrl>http://www.adobe.com/products/eulas</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/AdobeAIR/AdobeAIR.jpg</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
