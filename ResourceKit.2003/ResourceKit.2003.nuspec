@@ -3,7 +3,7 @@
   <metadata>
     <id>rktools.2003</id>
     <title>Windows Server 2003 Resource Kit Tools</title>
-    <version>5.2.101212</version>
+    <version>5.2.121102</version>
     <authors>Microsoft</authors>
     <owners>Ethan Brown</owners>
     <summary>The Microsoft® Windows® Server 2003 Resource Kit Tools are a set of tools to help administrators streamline management tasks such as troubleshooting operating system issues, managing Active Directory®, configuring networking and security features, and automating application deployment.</summary>
@@ -109,10 +109,10 @@
   Splinfo.exe: Print Spooler Information
   Srvany.exe: Applications as Services Utility
   Srvcheck.exe: Server Share Check
-  
+
   And 25 more tools!</description>
     <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=17657</projectUrl>
-    <tags>monospace opentype programming font</tags>
+    <tags>windows resourcekit utility service registry RPC spooler</tags>
     <!-- EULA is in the install -->
     <!-- <licenseUrl></licenseUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
