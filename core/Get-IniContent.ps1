@@ -59,7 +59,8 @@ function Get-IniContent
   param(
     [Parameter(ValueFromPipeline=$True, Mandatory=$True)]
     [ValidateNotNullOrEmpty()]
-    [ValidateScript({ (Test-Path $_) -and ($_.Extension -eq '.ini') })]
+    [ValidateScript({ (Test-Path $_) -and `
+      ('.ini', '.conf' -contains $_.Extension) })]
     [IO.FileInfo]
     $Path
   )

@@ -168,7 +168,7 @@ function Out-IniFile
           else
           {
             Write-Verbose "[INFO]: Writing key $($_.Key)"
-            Add-Content -Path $outFile -Value "$($_.Key)=$($_.Value)" -Encoding $Encoding
+            Add-Content -Path $outFile -Value "$($_.Key) = $($_.Value)" -Encoding $Encoding
           }
         }
     }
