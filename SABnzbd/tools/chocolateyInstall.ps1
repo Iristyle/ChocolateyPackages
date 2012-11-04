@@ -35,8 +35,8 @@ try
   }
 
   #uses NSIS installer
-  Install-ChocolateyPackage 'SABnzbd-0.7.4-win32-setup' 'exe' '/S' `
-    'http://sourceforge.net/projects/sabnzbdplus/files/sabnzbdplus/0.7.4/SABnzbd-0.7.4-win32-setup.exe/download'
+  Install-ChocolateyPackage 'SABnzbd-0.7.5-win32-setup.exe' 'exe' '/S' `
+    'http://sourceforge.net/projects/sabnzbdplus/files/sabnzbdplus/0.7.5/SABnzbd-0.7.5-win32-setup.exe/download'
 
   #need to turn on / install services
   @("${Env:\ProgramFiles(x86)}", '^%ProgramFiles(x86)^%'),
