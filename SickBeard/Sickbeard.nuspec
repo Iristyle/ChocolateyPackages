@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
-    <id>SickBeard.Source</id>
+    <id>SickBeard</id>
     <title>Sick Beard Usenet PVR</title>
-    <version>2012.10.22</version>
+    <version>2012.11.04</version>
     <authors>midgetspy</authors>
     <owners>Ethan Brown</owners>
     <summary>The ultimate PVR application that searches for and manages your TV shows.</summary>
