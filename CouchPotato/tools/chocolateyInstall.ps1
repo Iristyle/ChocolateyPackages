@@ -235,16 +235,18 @@ try {
       $couchPotatoConfig.updater.git_command = "`"$($git -replace '\\', '\\')`""
       $couchPotatoConfig.updater.automatic = 'True'
 
-      $movieDownloads = Join-Path (Join-Path $sabDataPath 'Downloads') `
-        $sabConfig.categories.movies.dir
-
       $couchPotatoConfig.manage.cleanup = 'True'
       # TODO: once we can sniff out the XBMC directory, we can auto-config this
       # $couchPotatoConfig.manage.enabled = 'False'
       # $couchPotatoConfig.manage.library = ''
 
+      $movieDownloads = Join-Path (Join-Path $sabDataPath 'Downloads\complete') `
+        $sabConfig.categories.movies.dir
+      $from = $movieDownloads -replace '\\', '\\'
+      if ($from -match '\s+') { $from = "`"$from`"" }
+
       # Write-Host "Using SABNzbd+ movies download directory, but the to must be configured"
-      $couchPotatoConfig.renamer.from = "`"$($movieDownloads -replace '\\', '\\')`""
+      $couchPotatoConfig.renamer.from = $from
       $couchPotatoConfig.renamer.enabled = 'True'
       $couchPotatoConfig.renamer.cleanup = 'True'
       $couchPotatoConfig.renamer.folder_name = '<namethe> [<year>]'
@@ -300,19 +302,19 @@ try {
     if (!(Test-Path $autoConfig))
     {
       # order shouldn't matter, but don't trust Python ;0
-      $sbAuto = New-Object Collections.Specialized.OrderedDictionary
-      $sbAuto.host = $couchPotatoConfig.core.host -replace '0\.0\.0\.0',
-        'localhost';
-      $sbAuto.port = $couchPotatoConfig.core.port;
-      $sbAuto.username = $couchPotatoConfig.core.username;
-      $sbAuto.password = $couchPotatoConfig.core.password;
-      $sbAuto.ssl = 0;
-      $sbAuto.web_root = $couchPotatoConfig.core.url_base;
-      $sbAuto.apikey = $couchPotatoConfig.core.api_key
-      $sbAuto.delay = 60 # must be minimum of 60 seconds
-      $sbAuto.method = 'renamer' #or 'manage'
+      $couchPotatoAuto = New-Object Collections.Specialized.OrderedDictionary
+      $couchPotatoAuto.host = $couchPotatoConfig.core.host -replace '0\.0\.0\.0',
+        'localhost'
+      $couchPotatoAuto.port = $couchPotatoConfig.core.port
+      $couchPotatoAuto.username = $couchPotatoConfig.core.username
+      $couchPotatoAuto.password = $couchPotatoConfig.core.password
+      $couchPotatoAuto.ssl = 0
+      $couchPotatoAuto.web_root = $couchPotatoConfig.core.url_base
+      $couchPotatoAuto.apikey = $couchPotatoConfig.core.api_key
+      $couchPotatoAuto.delay = 60 # must be minimum of 60 seconds
+      $couchPotatoAuto.method = 'renamer' #or 'manage'
 
-      @{ 'CouchPotato' = $sbAuto } |
+      @{ 'CouchPotato' = $couchPotatoAuto } |
         Out-IniFile -FilePath $autoConfig -Encoding ASCII -Force
 
       Write-Host @"
