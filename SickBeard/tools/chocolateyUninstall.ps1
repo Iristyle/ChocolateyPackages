@@ -87,13 +87,7 @@ try {
     # found a legit scripts dir, so delete SickBeard files
     if ($scriptsDir -and ($scriptsDir -ne "`"`"") -and (Test-Path $scriptsDir))
     {
-      Write-Host "Found SABnzbd+ script_dir $scriptsDir"
-      $sickbeardScripts = 'autoProcessTV.cfg', 'autoProcessTV.cfg.sample',
-        'autoProcessTV.py', 'hellaToSickBeard.py', 'sabToSickBeard.py'
-
-      Write-Host "Removing SickBeard scripts $sickbeardScripts"
-      Get-ChildItem -Path $scriptsDir -Include $sickbeardScripts -Recurse |
-        Remove-Item -Force
+      Write-Warning "SABnzbd+ post-processing scripts at $scriptsDir must be deleted manually"
     }
 
     $tv = $sabconfig.categories.tv
