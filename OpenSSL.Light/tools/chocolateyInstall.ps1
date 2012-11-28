@@ -17,6 +17,19 @@ try {
 
   Install-ChocolateyPackage @params
 
+  if (!$Env:OPENSSL_CONF)
+  {
+    $configPath = Join-Path $Env:ProgramFiles 'OpenSSL\bin\openssl.cfg'
+
+    if (Test-Path $configPath)
+    {
+      [Environment]::SetEnvironmentVariable(
+        'OPENSSL_CONF', $configPath, 'User')
+
+      Write-Host "Configured OPENSSL_CONF variable as $configPath"
+    }
+  }
+
   Write-ChocolateySuccess $package
 } catch {
   Write-ChocolateyFailure $package "$($_.Exception.Message)"
