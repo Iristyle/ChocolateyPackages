@@ -6,17 +6,12 @@
     <version>10.50.1600.1</version>
     <authors>Microsoft</authors>
     <owners>Ethan Brown, zippy1981</owners>
-    <summary>Microsoft SQL Server 2008 Feature Pack, April 2009
+    <summary>Microsoft SQL Server 2008 R2 Feature Pack, October 2011
 
-    The SQLCMD utility allows users to connect to, send Transact-SQL batches from, and output rowset information from SQL Server 7.0, SQL Server 2000, SQL Server 2005, and SQL Server 2008 instances. The bcp utility bulk copies data between an instance of Microsoft SQL Server 2008 and a data file in a user-specified format. The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.</summary>
-    <description>Microsoft SQL Server 2008 Feature Pack, April 2009
-
-    The SQLCMD utility allows users to connect to, send Transact-SQL batches from, and output rowset information from SQL Server 7.0, SQL Server 2000, SQL Server 2005, and SQL Server 2008 instances. The bcp utility bulk copies data between an instance of Microsoft SQL Server 2008 and a data file in a user-specified format. The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
-
-    Also installs SQL Native Client.
-    </description>
+    The SQLCMD utility allows users to connect to, send Transact-SQL batches from, and output rowset information from SQL Server 7.0, SQL Server 2000, SQL Server 2005, and SQL Server 2008 and 2008 R2 instances. The bcp utility bulk copies data between an instance of Microsoft SQL Server 2008 R2 and a data file in a user-specified format. The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.</description>
+    <desccription>The SQLCMD utility allows users to connect to, send Transact-SQL batches from, and output rowset information from SQL Server 7.0, SQL Server 2000, SQL Server 2005, and SQL Server 2008 and 2008 R2 instances. The bcp utility bulk copies data between an instance of Microsoft SQL Server 2008 R2 and a data file in a user-specified format. The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.</desccription>
     <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=16978</projectUrl>
-    <tags>SQL SQL2008 cmdline bcp SQLCMD</tags>
+    <tags>SQL SQL2008R2 cmdline bcp SQLCMD</tags>
     <!-- Eula is in installer
     <licenseUrl></licenseUrl>
     -->
@@ -25,6 +20,7 @@
     <releaseNotes></releaseNotes>
     <dependencies>
         <dependency id="SQL2008R2.NativeClient" />
+        <!-- TODO: Add Windows Installer 4.5 -->
     </dependencies>
   </metadata>
   <files>

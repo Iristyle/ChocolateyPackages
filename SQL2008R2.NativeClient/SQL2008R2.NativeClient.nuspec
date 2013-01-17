@@ -3,14 +3,14 @@
   <metadata>
     <id>SQL2008R2.NativeClient</id>
     <title>Microsoft SQL Server 2008 R2 Native Client</title>
-    <version>10.50.1600.1</version>
+    <version>10.50.1600.2</version>
     <authors>Microsoft</authors>
     <owners>zippy1981</owners>
-    <summary>Microsoft SQL Server 2008 Feature Pack, October 2011
+    <summary>Microsoft SQL Server 2008 R2 Feature Pack, October 2011
 
       Microsoft SQL Server 2008 R2 Native Client (SQL Server Native Client) is a single dynamic-link library (DLL) containing both the SQL OLE DB provider and SQL ODBC driver. It contains run-time support for applications using native-code APIs (ODBC, OLE DB and ADO) to connect to Microsoft SQL Server 2000, 2005, or 2008. SQL Server Native Client should be used to create new applications or enhance existing applications that need to take advantage of new SQL Server 2008 R2 features. This redistributable installer for SQL Server Native Client installs the client components needed during run time to take advantage of new SQL Server 2008 R2 features, and optionally installs the header files needed to develop an application that uses the SQL Server Native Client API.</summary>
     <description>Microsoft SQL Server 2008 R2 Native Client (SQL Server Native Client) is a single dynamic-link library (DLL) containing both the SQL OLE DB provider and SQL ODBC driver. It contains run-time support for applications using native-code APIs (ODBC, OLE DB and ADO) to connect to Microsoft SQL Server 2000, 2005, or 2008. SQL Server Native Client should be used to create new applications or enhance existing applications that need to take advantage of new SQL Server 2008 R2 features. This redistributable installer for SQL Server Native Client installs the client components needed during run time to take advantage of new SQL Server 2008 R2 features, and optionally installs the header files needed to develop an application that uses the SQL Server Native Client API.</description>
-    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=3522</projectUrl>
+    <projectUrl>http://www.microsoft.com/en-us/download/details.aspx?id=16978</projectUrl>
     <tags>SQL SQL2008R2 Native Client ODBC OLEDB</tags>
     <!-- Eula is in installer
     <licenseUrl></licenseUrl>
