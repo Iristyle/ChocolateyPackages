@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>EthanBrown.SublimeText2.WebPackages</id>
+    <title>Sublime Text 2 - Web Development Packages</title>
+    <version>0.0.1</version>
+    <authors>Various</authors>
+    <owners>Ethan Brown</owners>
+    <summary>A number of packages helpful for auto-completion, snippets and syntax recognition of common web frameowrks and tools to increase editor productivity.</summary>
+    <description>Includes a number of very useful packages for Sublime Text 2.
+
+    Included
+    ===========================================================================
+
+    - AngularJS (CoffeeScript)
+    https://github.com/EastPoint/Sublime-AngularJS-Coffee-Completions
+
+    - AutoFileName
+    https://github.com/BoundInCode/AutoFileName
+
+    - Chai Completions
+    https://github.com/pensive612/sublime-chai-full-completions
+
+    - CoffeeComplete Plus (Autocompletion)
+    https://github.com/justinmahar/SublimeCSAutocompletePlus
+
+    - DocBlockr
+    https://github.com/spadgos/sublime-jsdocs
+
+    - Emmet
+    https://github.com/sergeche/emmet-sublime
+
+    - Grunt
+    https://github.com/tvooo/sublime-grunt
+
+    - Hayaku - tools for writing CSS faster
+    https://github.com/hayaku/hayaku
+
+    - HTML5
+    https://github.com/mrmartineau/HTML5
+
+    - jQuery
+    https://github.com/SublimeText/jQuery
+
+    - LESS
+    https://github.com/danro/LESS-sublime
+
+    - LiveReload
+    https://github.com/dz0ny/LiveReload-sublimetext2
+
+    - Pretty JSON
+    https://github.com/dzhibas/SublimePrettyJson
+
+    - sublime-better-coffeescript
+    https://github.com/aponxi/sublime-better-coffeescript
+
+    - SublimeLinter
+    https://github.com/SublimeLinter/SublimeLinter
+    Using customized version that includes CoffeeLint support from
+    https://github.com/Iristyle/SublimeLinter
+
+    - Tag
+    https://github.com/SublimeText/Tag
+
+    - Twitter Bootstrap Snippet
+    https://github.com/devtellect/sublime-twitter-bootstrap-snippets/
+
+    Disables
+    ===========================================================================
+    - CoffeeCompile
+    - CoffeeScript
+    - Live CSS
+    - LESS-build
+    - Sublime-HTMLPrettify
+    - ZenCoding
+
+    Customized Key Bindings
+    ===========================================================================
+    https://github.com/Iristyle/SublimeKeyMap.Web
+
+    Additional Package Preferences
+    ===========================================================================
+    SublimeLinter - Path config
+    SublimeGrunt - Path config
+
+    Additional User Preferences
+    ===========================================================================
+    Rules for
+     - Autocompletion triggers, like . and $ in CoffeeScript
+     - Autocompletion commit on TAB
+     - ensuring 2 tab indent
+     - customized word_separators
+    </description>
+    <projectUrl>http://github.com/Iristyle/ChocolateyPackages/</projectUrl>
+    <tags>SublimeText package editor</tags>
+    <!-- Eula is in installer
+    <licenseUrl></licenseUrl>
+    -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://raw.github.com/Iristyle/ChocolateyPackages/master/SublimeText2.app/Sublime_Text.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+        <dependency id="PowerShell" version="3.0"/>
+        <dependency id="SublimeText2.app" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="..\core\JsonHelpers.ps1" target="tools" />
+    <file src="..\core\SublimeHelpers.ps1" target="tools" />
+  </files>
+</package>

@@ -1,0 +1,33 @@
+{
+  "auto_complete_commit_on_tab": true,
+  "auto_complete_triggers":
+  [
+    {
+      "characters": "<",
+      "selector": "text.html"
+    },
+    {
+      "characters": "/",
+      "selector": "string.quoted.double.html,string.quoted.single.html, source.css"
+    },
+    {
+      "characters": "$",
+      "selector": "source.coffee, source.js, source.js.embedded.html"
+    },
+    {
+      "characters": ".@",
+      "selector": "source.coffee"
+    }
+  ],
+  "ignored_packages":
+  [
+    "CoffeeCompile",
+    "CoffeeScript",
+    "Live CSS",
+    "LESS-build",
+    "Sublime-HTMLPrettify",
+    "ZenCoding"
+  ],
+  "tab_size": 2,
+  "word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
+}
