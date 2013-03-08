@@ -1,0 +1,58 @@
+{
+  "auto_complete_commit_on_tab": true,
+  "caret_style": "phase",
+  "color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
+  "draw_white_space": "all",
+  "ensure_newline_at_eof_on_save": true,
+  "font_face": "Source Code Pro",
+  "font_size": 14,
+  "highlight_line": true,
+  "ignored_packages":
+  [
+    "Vintage",
+    "HTML Export",
+    "TrailingSpaces"
+  ],
+  "indent_guide_options":
+  [
+    "draw_active",
+    "draw_normal"
+  ],
+  "rulers":
+  [
+    50,
+    72,
+    80,
+    120
+  ],
+  "tab_size": 2,
+  "todo":
+  {
+    "case_sensitive": true,
+    "file_exclude_patterns":
+    [
+      "*.css",
+      "*.po",
+      "*.mo"
+    ],
+    "folder_exclude_patterns":
+    [
+      "generated",
+      "static",
+      "vendor",
+      "tmp"
+    ],
+    "patterns":
+    {
+      "BUG": "BUG[\\s]*?:+(?P<bug>.*)$",
+      "FIXME": "FIX ?ME[\\s]*?:+(?P<fixme>\\S.*)$",
+      "HACK": "HACK[\\s]*?:+(?P<hack>.*)$",
+      "NOTE": "NOTE[\\s]*?:+(?P<note>.*)$",
+      "TODO": "TODO[\\s]*?:+(?P<todo>.*)$"
+    },
+    "result_title": "TODO Results"
+  },
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "wide_caret": true
+}
