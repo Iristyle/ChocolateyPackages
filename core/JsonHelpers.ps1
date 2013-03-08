@@ -127,7 +127,15 @@ function Merge-JsonSimpleMap
     $currentHash = $Destination.$Name
     $SimpleMap.PSObject.Properties |
       % {
-        $currentHash.($_.Name) = $_.Value
+        if (!$currentHash.($_.Name))
+        {
+          $currentHash |
+            Add-Member -Name ($_.Name) -Value $_.Value -MemberType NoteProperty
+        }
+        else
+        {
+          $currentHash.($_.Name) = $_.Value
+        }
       }
   }
 }

@@ -1,0 +1,14 @@
+{
+  "close_windows_when_empty": true,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Caret History",
+    "GotoRecent",
+    "MultiTaskBuild",
+    "Open Related",
+    "QuickFileMove",
+    "SublimeREPL"
+  ],
+  "theme": "Soda Dark.sublime-theme"
+}
