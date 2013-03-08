@@ -26,7 +26,7 @@ function ConvertTo-DoubleEscapedQuotes
     [String]
     $Text,
 
-    [Parameter(ValueFromPipeline=$true, Mandatory = $false)]
+    [Parameter(Mandatory = $false)]
     [String]
     $Name = ''
   )
