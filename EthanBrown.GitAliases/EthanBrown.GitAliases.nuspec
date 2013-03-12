@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>EthanBrown.GitAliases</id>
+    <title>Git - Aliases</title>
+    <version>0.0.1</version>
+    <authors>Various</authors>
+    <owners>Ethan Brown</owners>
+    <summary>Git aliases</summary>
+    <description>My standard Git aliases
+
+      aliases = config --get-regexp alias
+      amend = commit --amend
+      bl = blame -w -M -C
+      changed = status -sb
+      f = !git ls-files | grep -i
+      hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --abbrev-commit --date=relative
+      last = log -p --max-count=1 --word-diff
+      pick = add -p
+      stage = add
+      standup = log --since yesterday --oneline --author Iristyle
+      stats = diff --stat
+      sync = ! git fetch upstream -v &amp;&amp; git fetch origin -v &amp;&amp; git checkout master &amp;&amp; git merge upstream/master
+      undo = reset head~
+      unstage = reset HEAD
+      wdiff = diff --word-diff
+      who = shortlog -s -e --
+  </description>
+    <projectUrl>http://github.com/Iristyle/ChocolateyPackages/</projectUrl>
+    <tags>Git</tags>
+    <!-- Eula is in installer
+    <licenseUrl></licenseUrl>
+    -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/ferventcoder/chocolateyautomaticpackages/raw/master/git/git.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+      <dependency id="git.install" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
