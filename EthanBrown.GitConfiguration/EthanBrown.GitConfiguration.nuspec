@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>EthanBrown.GitConfiguration</id>
+    <title>Git - Development Configuration</title>
+    <version>0.0.1</version>
+    <authors>Various</authors>
+    <owners>Ethan Brown</owners>
+    <summary>Git configuration for Windows.</summary>
+    <description>Very simple set of standard Git config on Windows
+
+    core.autocrlf       true
+    core.safecrlf       false
+    rebase.autosquash   true
+    help.format         html
+    push.default        simple
+    core.editor         Notepad++
+
+    diff.tool           DiffMerge
+    diff.guitool        DiffMerge
+    merge.tool          DiffMerge
+  </description>
+    <projectUrl>http://github.com/Iristyle/ChocolateyPackages/</projectUrl>
+    <tags>Git</tags>
+    <!-- Eula is in installer
+    <licenseUrl></licenseUrl>
+    -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/ferventcoder/chocolateyautomaticpackages/raw/master/git/git.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+      <dependency id="git.install" />
+      <dependency id="notepadplusplus" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
