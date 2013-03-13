@@ -120,24 +120,23 @@ function Merge-JsonSimpleMap
   if (!$Destination.$Name)
   {
     $Destination |
-      Add-Member -Name $Name -Value $SimpleMap -MemberType NoteProperty
+      Add-Member -Name $Name -Value ([PSCustomObject]@{}) -MemberType NoteProperty
   }
-  else
-  {
-    $currentHash = $Destination.$Name
-    $SimpleMap.PSObject.Properties |
-      % {
-        if (!$currentHash.($_.Name))
-        {
-          $currentHash |
-            Add-Member -Name ($_.Name) -Value $_.Value -MemberType NoteProperty
-        }
-        else
-        {
-          $currentHash.($_.Name) = $_.Value
-        }
+
+  $currentHash = $Destination.$Name
+  $SimpleMap.PSObject.Properties |
+    % {
+      $key = $_.Name
+      if (!$currentHash.$key)
+      {
+        $currentHash |
+          Add-Member -Name $key -Value $_.Value -MemberType NoteProperty
       }
-  }
+      else
+      {
+        $currentHash.$key = $_.Value
+      }
+    }
 }
 
 function Create-CustomObjectKey
