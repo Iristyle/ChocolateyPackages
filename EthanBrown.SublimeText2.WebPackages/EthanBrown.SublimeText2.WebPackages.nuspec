@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.SublimeText2.WebPackages</id>
     <title>Sublime Text 2 - Web Development Packages</title>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <authors>Various</authors>
     <owners>Ethan Brown</owners>
     <summary>A number of packages helpful for auto-completion, snippets and syntax recognition of common web frameowrks and tools to increase editor productivity.</summary>
