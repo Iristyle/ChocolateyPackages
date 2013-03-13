@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.GitConfiguration</id>
     <title>Git - Development Configuration</title>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <authors>Various</authors>
     <owners>Ethan Brown</owners>
     <summary>Git configuration for Windows.</summary>
@@ -31,6 +31,7 @@
     <dependencies>
       <dependency id="git.install" />
       <dependency id="notepadplusplus" />
+      <dependency id="diffmerge" />
     </dependencies>
   </metadata>
   <files>
