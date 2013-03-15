@@ -15,14 +15,28 @@ function Which([string]$cmd)
 }
 
 try {
-  . (Join-Path (Get-CurrentDirectory) 'JsonHelpers.ps1')
-  . (Join-Path (Get-CurrentDirectory) 'SublimeHelpers.ps1')
+  $current = Get-CurrentDirectory
+
+  . (Join-Path $current 'JsonHelpers.ps1')
+  . (Join-Path $current 'SublimeHelpers.ps1')
 
   $sublimeUserDataPath = Get-SublimeUserPath
+
+  #straight file copies
+  'CoffeeScript.sublime-settings' |
+    % {
+      $params = @{
+        Path = Join-Path $current $_;
+        Destination = Join-Path $sublimeUserDataPath $_;
+        Force = $true
+      }
+      Copy-Item @params
+    }
+
   $linterFileName = 'SublimeLinter.sublime-settings'
   $gruntFileName = 'SublimeGrunt.sublime-settings'
-  $linter = Join-Path (Get-CurrentDirectory) $linterFileName
-  $grunt = Join-Path (Get-CurrentDirectory) $gruntFileName
+  $linter = Join-Path $current $linterFileName
+  $grunt = Join-Path $current $gruntFileName
 
   $node = (Which node)
   $nodeRoot = Split-Path $node
@@ -35,10 +49,10 @@ try {
   ([IO.File]::ReadAllText($grunt)) -replace '{{node_path}}', $escapedNodeRoot |
     Out-File -FilePath (Join-Path $sublimeUserDataPath $gruntFileName) -Force -Encoding ASCII
 
-  $packageControl = (Join-Path (Get-CurrentDirectory) 'Package Control.sublime-settings')
+  $packageControl = (Join-Path $current 'Package Control.sublime-settings')
   Merge-PackageControlSettings -FilePath $packageControl
 
-  $preferences = (Join-Path (Get-CurrentDirectory) 'Preferences.sublime-settings')
+  $preferences = (Join-Path $current 'Preferences.sublime-settings')
   Merge-Preferences -FilePath $preferences
 
   if (Get-Process -Name sublime_text -ErrorAction SilentlyContinue)
