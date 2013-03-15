@@ -16,8 +16,7 @@ try {
 
   #straight file copies
   'BracketHighlighter.sublime-settings',
-  'MarkdownPreview.sublime-settings',
-  'RelatedFiles.sublime-settings' |
+  'MarkdownPreview.sublime-settings' |
     % {
       $params = @{
         Path = Join-Path $current $_;
