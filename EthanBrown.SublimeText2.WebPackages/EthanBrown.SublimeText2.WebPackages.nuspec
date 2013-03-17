@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.SublimeText2.WebPackages</id>
     <title>Sublime Text 2 - Web Development Packages</title>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <authors>Various</authors>
     <owners>Ethan Brown</owners>
     <summary>A number of packages helpful for auto-completion, snippets and syntax recognition of common web frameowrks and tools to increase editor productivity.</summary>
@@ -38,6 +38,9 @@
 
     - HTML5
     https://github.com/mrmartineau/HTML5
+
+    - Http Requester
+    https://github.com/braindamageinc/SublimeHttpRequester
 
     - jQuery
     https://github.com/SublimeText/jQuery
