@@ -9,11 +9,15 @@ try {
   git config --global alias.aliases 'config --get-regexp alias'
   git config --global alias.amend 'commit --amend'
   git config --global alias.bl 'blame -w -M -C'
+  git config --global alias.bra 'git branch -ra'
   git config --global alias.changed 'status -sb'
   git config --global alias.f '!git ls-files | grep -i'
+  git config --global alias.filelog 'log -u'
   git config --global alias.hist "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --abbrev-commit --date=relative"
   git config --global alias.last 'log -p --max-count=1 --word-diff'
+  git config --global alias.lasttag 'describe --tags --abbrev=0'
   git config --global alias.pick 'add -p'
+  git config --global alias.remotes 'remote -v show'
   git config --global alias.stage 'add'
   $userName = git config --global --get user.name
   if ($userName)
