@@ -15,7 +15,15 @@ try {
   git config --global alias.last 'log -p --max-count=1 --word-diff'
   git config --global alias.pick 'add -p'
   git config --global alias.stage 'add'
-  git config --global alias.standup 'log --since yesterday --oneline --author Iristyle'
+  $userName = git config --global --get user.name
+  if ($userName)
+  {
+    git config --global alias.standup "log --since yesterday --oneline --author $userName"
+  }
+  else
+  {
+    Write-Warning "Set git global username with git config --global user.name 'foo' to use standup"
+  }
   git config --global alias.stats 'diff --stat'
   git config --global alias.sync '! git fetch upstream -v && git fetch origin -v && git checkout master && git merge upstream/master'
   git config --global alias.undo 'reset head~'

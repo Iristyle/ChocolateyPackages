@@ -18,7 +18,7 @@
       last = log -p --max-count=1 --word-diff
       pick = add -p
       stage = add
-      standup = log --since yesterday --oneline --author Iristyle
+      standup = log --since yesterday --oneline --author {ME}
       stats = diff --stat
       sync = ! git fetch upstream -v &amp;&amp; git fetch origin -v &amp;&amp; git checkout master &amp;&amp; git merge upstream/master
       undo = reset head~
