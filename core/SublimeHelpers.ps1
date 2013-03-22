@@ -12,7 +12,9 @@ function Get-SublimePackagesPath
 
 function Get-SublimeUserPath
 {
-  Join-Path (Get-SublimePackagesPath) 'User'
+  $path = Join-Path (Get-SublimePackagesPath) 'User'
+  if (!(Test-Path $path)) { New-Item $path -Type Directory }
+  return $path
 }
 
 function Merge-PackageControlSettings
@@ -26,6 +28,10 @@ function Merge-PackageControlSettings
 
   $root = Get-SublimeUserPath
   $existingPath = Join-Path $root 'Package Control.sublime-settings'
+  if (!(Test-Path $existingPath))
+  {
+    '{}' | Out-File -FilePath $existingPath -Encoding ASCII
+  }
   $existingText = [IO.File]::ReadAllText($existingPath) -replace '(?m)^\s*//.*$', ''
   if ([string]::IsNullOrEmpty($existingText)) { $existingText = '{}' }
 
@@ -60,6 +66,11 @@ function Merge-Preferences
 
   $root = Get-SublimeUserPath
   $existingPath = Join-Path $root 'Preferences.sublime-settings'
+  if (!(Test-Path $existingPath))
+  {
+    '{}' | Out-File -FilePath $existingPath -Encoding ASCII
+  }
+
   $existingText = [IO.File]::ReadAllText($existingPath) -replace '(?m)^\s*//.*$', ''
   if ([string]::IsNullOrEmpty($existingText)) { $existingText = '{}' }
 
