@@ -16,6 +16,7 @@ try {
 
   #straight file copies
   'BracketHighlighter.sublime-settings',
+  'EasyMotion.sublime-settings',
   'MarkdownPreview.sublime-settings' |
     % {
       $params = @{
