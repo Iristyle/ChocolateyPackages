@@ -53,6 +53,11 @@
     CoffeeScript IDE is preferred, but requires login
     https://chrome.google.com/webstore/detail/coffeescript-ide/hikjpmfebkagiijbdinakadphhjffaik
 
+    - JS Runtime Inspector
+    https://chrome.google.com/webstore/detail/js-runtime-inspector/iilpjebedgohcmlffhnkhbjhabkdhfmn/related
+
+    - PrettyPrint
+    https://chrome.google.com/webstore/detail/prettyprint/nipdlgebaanapcphbcidpmmmkcecpkhg/reviews
 
     Previously Included
     ===========================================================================
@@ -70,6 +75,12 @@
 
     - Grunt DevTools
     https://chrome.google.com/webstore/detail/grunt-devtools/fbiodiodggnlakggeeckkjccjhhjndnb
+
+    - CSS Shack
+    https://chrome.google.com/webstore/detail/css-shack/geiccgjkigajaicecnhdokggninehdlp/details
+
+    - JetBrains IDE support
+    https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji
     </description>
     <projectUrl>http://github.com/Iristyle/ChocolateyPackages/</projectUrl>
     <tags>Google Chrome Canary Extension Development Web</tags>

@@ -19,6 +19,8 @@ try {
     "ognampngfcbddbfemdapefohjiobgbdl" = "Speed Tracer";
     "ladbkfdlnaibelfidknofapbbdlhadfp" = "CoffeeConsole";
     "ninejjcohidippngpapiilnmkgllmakh" = "YSlow";
+    "iilpjebedgohcmlffhnkhbjhabkdhfmn" = "JS Runtime Inspector";
+    "nipdlgebaanapcphbcidpmmmkcecpkhg" = "PrettyPrint";
     # has messed up install requirements
     # "hikjpmfebkagiijbdinakadphhjffaik" = "CoffeeScript IDE";
     # "fdmmgilgnpjigdojojpjoooidkmcomcm" = "PostMan";
@@ -27,6 +29,8 @@ try {
     # deprecated for now
     # "fbiodiodggnlakggeeckkjccjhhjndnb" = "Grunt DevTools";
     # "lfjbhpnjiajjgnjganiaggebdhhpnbih" = "Tincr"
+    # "geiccgjkigajaicecnhdokggninehdlp" = "CSS Shack";
+    # "hmhgeddbohgjknpmjagkdomcpobmllji" = "JetBrains IDE Support";
   }
 
   Install-ChromeExtensions $toInstall -Canary
