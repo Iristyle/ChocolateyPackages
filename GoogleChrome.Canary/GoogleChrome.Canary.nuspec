@@ -3,7 +3,7 @@
   <metadata>
     <id>GoogleChrome.Canary</id>
     <title>Google Chrome Canary Web Browser</title>
-    <version>24.0.1300.0</version>
+    <version>28.0.1461.0</version>
     <authors>Google</authors>
     <owners>Ethan J Brown</owners>
     <summary>Google Chrome Canary has the newest of the new Chrome features.</summary>
