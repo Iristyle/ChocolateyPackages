@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.ChromeDevExtensions</id>
     <title>Chrome - Web Development Extensions</title>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <authors>Various</authors>
     <owners>Ethan Brown</owners>
     <summary>Chrome extensions for web development.</summary>
