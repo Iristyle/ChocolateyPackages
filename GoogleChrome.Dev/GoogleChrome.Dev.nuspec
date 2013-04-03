@@ -19,6 +19,7 @@
     <releaseNotes></releaseNotes>
   </metadata>
   <files>
+    <file src="..\core\ChromeHelpers.ps1" target="tools" />
     <file src="tools\**" target="tools" />
   </files>
 </package>
