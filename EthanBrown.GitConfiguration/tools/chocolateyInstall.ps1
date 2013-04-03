@@ -2,7 +2,7 @@ $package = 'EthanBrown.GitConfiguration'
 
 try {
   # Set up git diff/merge tool
-  git config --global mergetool.DiffMerge.cmd '\"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe\" --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" --title1=\"Mine\" --title2=\"Merging to: $MERGED\" --title3=\"Theirs\"'
+  git config --global mergetool.DiffMerge.cmd '\"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe\" --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" --title1=\"Theirs\" --title2=\"Merging to: $MERGED\" --title3=\"Mine\"'
   git config --global mergetool.DiffMerge.trustExitCode true
   git config --global difftool.DiffMerge.cmd '\"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe\"  \"$LOCAL\" \"$REMOTE\" --title1=\"Previous Version ($LOCAL)\" --title2=\"Current Version ($REMOTE)\"'
 
