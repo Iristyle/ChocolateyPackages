@@ -1,0 +1,153 @@
+/* General */
+* html a:hover { background: transparent; }
+body { color: /* %body_fg% */; }
+pre { border: 0; margin: 0; padding: 0; }
+td { padding: 0; }
+table { border: 0; margin: 0; padding: 0; border-collapse: collapse; empty-cells: show; }
+.code_text { font: /* %font_size% */pt /* %font_face% */, "Courier", Monospace; }
+.code_page { background-color: /* %page_bg% */; }
+.simple_code_page { background-color: white; color: black }
+.code_gutter { display: /* %display_mode% */; background-color: /* %gutter_bg% */; padding-right: 10px; }
+td.code_line div { width: 100%; }
+span { display: inline-block; border: 0; margin: 0; }
+span.bold { font-weight: bold; }
+span.italic { font-style: italic; }
+span.normal { font-style: normal; }
+span.underline { text-decoration:underline; }
+
+/* Wrapping */
+div.wrap {
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP printers */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word;      /* IE */
+}
+div.wrap span { display: inline; }
+
+/* Toolbar */
+div#toolbarhide {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+div#toolbar {
+    visibility: hidden;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    -webkit-transform: translateZ(0);    /* webkit flicker fix */
+    -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+    -webkit-transition: all .25s ease-in;
+    -moz-transition: all .25s ease-in;
+    -ms-transition: all .25s ease-in;
+    -o-transition: all .25s ease-in;
+    transition: all .25s ease-in;
+    background-color:black;
+    color: white;
+}
+div#toolbarhide:hover div#toolbar {
+    visibility: visible;
+    opacity: .8;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+
+div#toolbar img {
+    display:  /* %toolbar_orientation% */ ;
+    vertical-align: middle;
+    border: 0;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    padding: 5px;
+}
+
+/* tooltips */
+#tooltip {
+    border-radius: 5px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP printers */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word;      /* IE */
+    position:absolute; display:block;
+    color: black;
+    padding: 0.8em 1em;
+    background: #FFFFE0; border: solid black;
+    font-family: Calibri, Tahoma, Geneva, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+a.annotation {
+    color: /* %body_fg% */;
+    outline: none;
+    text-decoration: underline;
+}
+
+span.annotation{ display: inline; }
+
+.tooltip_hotspot { cursor:pointer; }
+
+/* Annotation Table */
+div#comment_list {
+    visibility: hidden;
+    display: none;
+    margin: auto auto;
+    text-align: center;
+    position: fixed;
+    z-index: 99;
+    left:0px;
+    top: 0px;
+}
+div#comment_wrapper {
+    max-height: 200px;
+    overflow: auto;
+    border: solid black;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+table#comment_table {
+    border: thin solid; border-collapse: collapse;
+    color: #000000; background-color: #FFFFE0; margin: auto auto;
+}
+div.table_footer { text-align:right; font-size: 8pt; font-weight: bold;}
+a.table_close { color: black; float: right; }
+a.table_close:link { text-decoration: none; }
+a.table_close:active { text-decoration: none; }
+a.table_close:visited { text-decoration: none; }
+a.table_close:hover { text-decoration: none; }
+table#comment_table th, table#comment_table td { border: thin solid; padding: 5px; }
+td.annotation_link { width: 60px; text-align: right; padding-right: 20px; }
+.annotation_comment { width: 500px; }
+div.annotation_comment {
+    float: left;
+    text-align: left;
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP printers */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word;      /* IE */
+}

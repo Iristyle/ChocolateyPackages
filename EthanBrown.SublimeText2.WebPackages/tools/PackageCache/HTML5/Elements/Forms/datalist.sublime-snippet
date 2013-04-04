@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<datalist>
+	${1:<option${2: value="$3"}>$4</option>}$5
+</datalist>$0]]></content>
+	<tabTrigger>datalist</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;datalist&gt;</description>
+	<scope>text.html</scope>
+</snippet>

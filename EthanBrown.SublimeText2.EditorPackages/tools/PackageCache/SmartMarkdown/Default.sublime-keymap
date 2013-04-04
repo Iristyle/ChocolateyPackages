@@ -1,0 +1,72 @@
+[
+	{ "keys": ["tab"], "command": "smart_folding", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "markup.heading.markdown" }
+		]
+	},
+	{ "keys": ["shift+tab"], "command": "global_folding", "context":
+	  	[
+			{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" }
+		]
+	},
+	{ "keys": ["enter"], "command": "smart_list", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" },
+			{ "key": "preceding_text", "operator": "regex_contains", "operand": "^\\s*([-+\\**]|\\d+\\.+)\\s+" }
+		]
+	},
+	{ "keys": ["enter"], "command": "smart_list", "context":
+		[
+		    { "key": "selector", "operator": "equal", "operand": "text.html.markdown" },
+			{ "key": "selector", "operator": "equal", "operand": "markup.list" }
+		]
+	},
+	{ "keys": ["tab"], "command": "smart_table",
+	  "args": {"forward": true}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" },
+			{ "key": "preceding_text", "operator": "regex_contains", "operand": "^\\s*(\\||\\+[-=])",
+			  "match_all": true}
+		]
+	},
+	{ "keys": ["tab"], "command": "smart_table",
+	  "args": {"forward": true}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" },
+			{ "key": "preceding_text", "operator": "regex_contains", "operand": "^\\s*" },
+			{ "key": "following_text", "operator": "regex_contains", "operand": "\\s*(\\||\\+[-=])",
+			  "match_all": true}
+		]
+	},
+	{ "keys": ["shift+tab"], "command": "smart_table",
+	  "args": {"forward": false}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" },
+			{ "key": "preceding_text", "operator": "regex_contains", "operand": "^\\s*(\\||\\+[-=])",
+			  "match_all": true}
+		]
+	},
+	{ "keys": ["shift+tab"], "command": "smart_table",
+	  "args": {"forward": false}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" },
+			{ "key": "preceding_text", "operator": "regex_contains", "operand": "^\\s*" },
+			{ "key": "following_text", "operator": "regex_contains", "operand": "\\s*(\\||\\+[-=])",
+			  "match_all": true}
+		]
+	},
+	{
+		"keys": ["super+shift+."], "command": "change_heading_level",
+		"args": {"up": true}, "context":
+			[
+				{"key": "selector", "operator": "equal", "operand": "text.html.markdown"}
+			]
+	},
+	{
+		"keys": ["super+shift+,"], "command": "change_heading_level",
+		"args": {"up": false}, "context":
+			[
+				{"key": "selector", "operator": "equal", "operand": "text.html.markdown"}
+			]
+	}
+]

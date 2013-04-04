@@ -1,0 +1,26 @@
+[
+    { "caption": "-" },
+    {
+        "caption": "Export",
+        "children":
+        [
+            { "command": "export_html_panel", "caption": "HTML" },
+            {"command": "export_bbcode_panel", "caption": "BBCode"}
+        ]
+    },
+    {
+        "caption": "Annotations",
+        "children":
+        [
+            { "command": "enable_annotation_mode", "caption": "Enable Annotation Mode" },
+            { "command": "disable_annotation_mode", "caption": "Disable Annotation Mode" },
+            { "caption": "-" },
+            { "command": "add_annotation", "caption": "Add Annotation" },
+            { "command": "edit_annotation", "caption": "Edit Annotation" },
+            { "command": "delete_annotations", "caption": "Delete Annotation(s)" },
+            { "command": "clear_annotations", "caption": "Delete All Annotations" },
+            { "command": "show_annotation_comment", "caption": "Show Annotation Comment" }
+        ]
+    },
+    { "caption": "-"}
+]

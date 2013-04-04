@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<tbody>${1:
+	<tr>$2</tr>
+}</tbody>$0]]></content>
+	<tabTrigger>tbody</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;tbody&gt;</description>
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<textarea name="$1">$2</textarea>$0]]></content>
+	<tabTrigger>textarea</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;textarea&gt;</description>
+	<scope>text.html</scope>
+</snippet>

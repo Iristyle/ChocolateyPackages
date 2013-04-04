@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<iframe src="$1"${2: sandbox${3:="${4:allow-same-origin allow-forms allow-scripts}"}}$${5: seamless}></iframe>$0]]></content>
+	<tabTrigger>iframe</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;iframe&gt;</description>
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+after ->
+	$1
+]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>after</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.coffee</scope>
+    <!-- Optional: Description to show in the menu -->
+    <description>After</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<fieldset>
+	${1:<legend>${2:title or explanatory caption}</legend>}$3
+</fieldset>$0]]></content>
+	<tabTrigger>fieldset</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;fieldset&gt;</description>
+	<scope>text.html</scope>
+</snippet>

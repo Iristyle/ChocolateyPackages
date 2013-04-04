@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[<table>${1:
+	<caption>${2:table title and/or explanatory text}</caption>}
+	${3:<thead>
+		<tr>
+			${4:<th>${5:header}</th>}
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			${6:<td>${7:data}</td>}
+		</tr>
+	</tbody>}
+</table>$0]]></content>
+	<tabTrigger>table</tabTrigger>
+	<scope>source.php,text.html</scope>
+	<description>&lt;table&gt;</description>
+	<scope>text.html</scope>
+</snippet>

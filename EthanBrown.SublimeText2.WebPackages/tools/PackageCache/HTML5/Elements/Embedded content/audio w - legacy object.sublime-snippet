@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[<audio${1:${2: autobuffer}${3: autoloop}${4: loop}${5: controls}}>
+	<source src="${6:/media/audio.oga}"${TM_POLYGLOT}>
+	<source src="${7:/media/audio.wav}"${TM_POLYGLOT}>
+	<object type="audio/x-wav" data="${7:/media/audio.wav}" width="${8:290}" height="${9:45}">
+		<param name="src" value="$7"${TM_POLYGLOT}>
+		<param name="autoplay" value="${10:false}"${TM_POLYGLOT}>
+		<param name="autoStart" value="${11:0}"${TM_POLYGLOT}>
+		${12:<p><a href="$7">${13:Download this audio file.}</a></p>}
+	</object>
+</audio>$0]]></content>
+	<tabTrigger>audio</tabTrigger>
+	<scope>source.php,text.html</scope>
+	<description>&lt;audio&gt; with legacy object</description>
+	<scope>text.html</scope>
+</snippet>

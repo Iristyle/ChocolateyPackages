@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<blockquote${1: cite="${2:http://example.com/facts}"}>
+	<p>$3</p>
+</blockquote>$0]]></content>
+	<tabTrigger>blockquote</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;blockquote&gt;</description>
+	<scope>text.html</scope>
+</snippet>

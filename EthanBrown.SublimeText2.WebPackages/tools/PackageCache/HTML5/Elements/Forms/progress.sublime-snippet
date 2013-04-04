@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<progress${1: value="$2"}${3: max="$4"}>$5</progress>$0]]></content>
+	<tabTrigger>progress</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;progress&gt;</description>
+	<scope>text.html</scope>
+</snippet>

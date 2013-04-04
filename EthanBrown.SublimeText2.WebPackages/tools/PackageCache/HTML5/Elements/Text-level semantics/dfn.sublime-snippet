@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<dfn>$1</dfn>%0]]></content>
+	<tabTrigger>dfn</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;dfn&gt;</description>
+	<scope>text.html</scope>
+</snippet>

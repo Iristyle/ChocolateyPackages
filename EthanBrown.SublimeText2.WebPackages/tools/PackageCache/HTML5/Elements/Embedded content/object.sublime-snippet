@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+<object type="$1" data="$2" width="${3:290}" height="${4:45}">
+	<param name="src" value="$5">
+	<param name="autoplay" value="${6:false}">
+	<param name="autoStart" value="${7:0}">
+</object>$0]]></content>
+	<tabTrigger>object</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;object&gt;</description>
+	<scope>text.html</scope>
+</snippet>

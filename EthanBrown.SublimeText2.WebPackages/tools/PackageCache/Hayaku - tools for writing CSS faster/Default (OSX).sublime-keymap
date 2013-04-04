@@ -1,0 +1,92 @@
+[
+    // Main Hayaku context
+    {
+        "keys": ["tab"],
+        "command": "hayaku",
+        "context": [{"key": "hayaku_css_context"}]
+    }
+
+    // tab or enter at the end of a line should jump to a correct line
+    , {
+        "keys": ["tab"],
+        "command": "hayaku_add_line",
+        "context": [
+            {"key": "hayaku_add_line"},
+            {"key": "hayaku_at_css"},
+            {"key": "hayaku_single_caret"}
+        ]
+    }
+    , {
+        "keys": ["enter"],
+        "command": "hayaku_add_line",
+        "context": [
+            {"key": "hayaku_add_line"},
+            {"key": "hayaku_at_css"},
+            {"key": "hayaku_single_caret"}
+        ]
+    }
+
+    // Temporary fix for the semicolon inserting (bad bad whitespace after)
+    , { "keys": [":"], "command": "insert_snippet", "args": {"contents": ":$0"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "hayaku_at_css" },
+            { "key": "hayaku_single_caret" },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\}|$)", "match_all": true }
+        ]
+    }
+
+    // Temporary inline comment for CSS (would be replaced by a more useful command)
+    , {
+        "keys": ["/","/"],
+        "command": "insert_snippet",
+        "args": {"contents": "/* ${1} */$0"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "source.css -comment.block.css -punctuation.section.function.css -string.quoted", "match_all": true },
+            { "key": "setting.hayaku_CSS_disable_inline_comment", "operator": "not_equal", "operand": true }
+        ]
+    }
+
+    // Command for inserting CSS code block
+    , {
+        "keys":    ["super+enter"],
+        "command":  "hayaku_add_code_block",
+        "context": [
+            {"key": "hayaku_add_code_block"},
+            {"key": "hayaku_at_css"},
+            {"key": "hayaku_single_caret"}
+        ]
+    }
+
+    // Command for inserting right indent for code block by enter in braces
+    , {
+        "keys":    ["enter"],
+        "command":  "hayaku_expand_code_block",
+        "context": [
+            {"key": "hayaku_at_css"},
+            {"key": "hayaku_single_caret"},
+            {"key": "preceding_text", "operator": "regex_match", "operand": ".*\\{$" },
+            {"key": "following_text", "operator": "regex_match", "operand": "^\\}" }
+        ]
+    },
+
+    // Commands to jump out of multiple selections in CSS
+    {
+        "keys": ["up"],
+        "command": "clear_fields",
+        "context": [
+            {"key": "has_next_field", "operator": "equal", "operand": true},
+            {"key": "hayaku_at_css"},
+            {"key": "hayaku_going_up"}
+        ]
+    },
+    {
+        "keys": ["down"],
+        "command": "clear_fields",
+        "context": [
+            {"key": "has_next_field", "operator": "equal", "operand": true},
+            {"key": "hayaku_at_css"},
+            {"key": "hayaku_going_down"}
+        ]
+    }
+]

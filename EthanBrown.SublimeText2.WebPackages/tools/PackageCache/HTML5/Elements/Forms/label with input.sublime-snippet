@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<label><input type="${1:text/submit/hidden/button/etc}" name="$2" value="$3"${TM_XHTML}></label>$0]]></content>
+	<tabTrigger>label</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;label&gt; with &lt;input&gt;</description>
+	<scope>text.html</scope>
+</snippet>

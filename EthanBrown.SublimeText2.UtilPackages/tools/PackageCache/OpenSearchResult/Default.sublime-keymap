@@ -1,0 +1,7 @@
+[
+    {
+        "keys": ["g", "o"],
+        "command": "open_search_result",
+        "context": [{"key": "setting.command_mode"}]
+    }
+]

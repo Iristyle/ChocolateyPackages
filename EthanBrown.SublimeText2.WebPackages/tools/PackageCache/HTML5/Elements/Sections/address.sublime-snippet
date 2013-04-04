@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<address>
+	$1
+</address>$0]]></content>
+	<tabTrigger>address</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;address&gt;</description>
+	<scope>text.html</scope>
+</snippet>

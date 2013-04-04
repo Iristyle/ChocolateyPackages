@@ -1,0 +1,26 @@
+[
+    {
+        "caption": "Search Anywhere: From Selection",
+        "command": "search_anywhere_from_selection"
+    },
+    {
+        "caption": "Search Anywhere: From Input",
+        "command": "search_anywhere_from_input"
+    },
+    {
+        "caption": "Search Anywhere: Set Default Search Engine",
+        "command": "search_anywhere_select_default_search_engine"
+    },
+    {
+        "caption": "Search Anywhere: Set Search Engine For File Type",
+        "command": "search_anywhere_select_search_engine_for_type"
+    },
+    {
+        "caption": "Search Anywhere: From Selection (ask Search Engine)",
+        "command": "search_anywhere_from_selection_ask"
+    },
+    {
+        "caption": "Search Anywhere: From Input (ask Search Engine)",
+        "command": "search_anywhere_from_input_ask"
+    }
+]

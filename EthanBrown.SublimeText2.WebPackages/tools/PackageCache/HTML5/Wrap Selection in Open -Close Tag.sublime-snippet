@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<${1:p}>$SELECTION</${1/\s.*//}>]]></content>
+	<tabTrigger>^W</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>Wrap Selection in Open/Close Tag</description>
+</snippet>

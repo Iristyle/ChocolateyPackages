@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+<video${1:${2: autobuffer}${3: autoloop}${4: loop}${5: controls}}>
+	<source src="${6:/media/video.oga}"${TM_POLYGLOT}>
+	<source src="${7:/media/video.m4v}"${TM_POLYGLOT}>
+	<object type="video/ogg" data="$6" width="${8:320}" height="${9:240}">
+	<param name="src" value="$6"${TM_POLYGLOT}>
+	<param name="autoplay" value="${10:false}"${TM_POLYGLOT}>
+	<param name="autoStart" value="${11:0}"${TM_POLYGLOT}>
+	${12:<p><a href="$6">${13:Download this video file.}</a></p>}
+	</object>
+</video>$0]]></content>
+	<tabTrigger>video</tabTrigger>
+	<scope>source.php,text.html</scope>
+	<description>&lt;video&gt; with legacy object</description>
+	<scope>text.html</scope>
+</snippet>

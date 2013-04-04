@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<link rel="icon" href="${2:/favicon.png}">$0]]></content>
+	<tabTrigger>link</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>link - icon</description>
+	<scope>text.html</scope>
+</snippet>

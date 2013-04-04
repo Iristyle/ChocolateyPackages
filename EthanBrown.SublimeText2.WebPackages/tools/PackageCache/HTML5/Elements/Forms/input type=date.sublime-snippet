@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<input type="${1:date}" name="$2" value="$3" placeholder="$4">$0]]></content>
+	<tabTrigger>input</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>input - date</description>
+	<scope>text.html</scope>
+</snippet>

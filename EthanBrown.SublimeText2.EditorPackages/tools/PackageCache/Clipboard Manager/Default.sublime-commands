@@ -1,0 +1,42 @@
+[
+    {
+        "caption": "Clipboard Manager: Cut",
+        "command": "clipboard_manager_cut"
+    },
+    {
+        "caption": "Clipboard Manager: Copy",
+        "command": "clipboard_manager_copy"
+    },
+    {
+        "caption": "Clipboard Manager: Paste",
+        "command": "clipboard_manager_paste"
+    },
+    {
+        "caption": "Clipboard Manager: Next & Paste",
+        "command": "clipboard_manager_next_and_paste"
+    },
+    {
+        "caption": "Clipboard Manager: Previous & Paste",
+        "command": "clipboard_manager_previous_and_paste"
+    },
+    {
+        "caption": "Clipboard Manager: Next",
+        "command": "clipboard_manager_next"
+    },
+    {
+        "caption": "Clipboard Manager: Previous",
+        "command": "clipboard_manager_previous"
+    },
+    {
+        "caption": "Clipboard Manager: Choose & Paste",
+        "command": "clipboard_manager_choose_and_paste"
+    },
+    {
+        "caption": "Clipboard Manager: Show History",
+        "command": "clipboard_manager_show"
+    },
+    {
+        "caption": "Clipboard Manager: Show Registers",
+        "command": "clipboard_manager_show_registers"
+    }
+]

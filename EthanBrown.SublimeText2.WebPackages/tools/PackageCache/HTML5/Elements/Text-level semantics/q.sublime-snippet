@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<q{1: cite="$2"}>$3</q>$0]]></content>
+	<tabTrigger>q</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;q&gt;</description>
+	<scope>text.html</scope>
+</snippet>

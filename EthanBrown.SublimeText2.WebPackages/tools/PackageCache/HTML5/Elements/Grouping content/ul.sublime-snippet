@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<ul$1>
+	<li>$2</li>$3
+</ul>$0]]></content>
+	<tabTrigger>ul</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;ul&gt;</description>
+	<scope>text.html</scope>
+</snippet>

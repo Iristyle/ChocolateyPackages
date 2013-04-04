@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<th${1:${2: colspan="$3"}${4: rowspan="$5"}${6: headers="$7"}${8: scope="$9"}}>$10</th>$0]]></content>
+	<tabTrigger>th</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;th&gt;</description>
+	<scope>text.html</scope>
+</snippet>

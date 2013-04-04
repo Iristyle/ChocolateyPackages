@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<area href="$1"${2:${3: alt="$4"${5: target="$6"}${7: rel="$8"}${9: media="$10"}${11: type="$12"}}}>$0]]></content>
+	<tabTrigger>area</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;area&gt;</description>
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<pre>
+	$1
+</pre>$0]]></content>
+	<tabTrigger>pre</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;pre&gt;</description>
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<dt>$1</dt>$0]]></content>
+	<tabTrigger>dt</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;dt&gt;</description>
+	<scope>text.html</scope>
+</snippet>

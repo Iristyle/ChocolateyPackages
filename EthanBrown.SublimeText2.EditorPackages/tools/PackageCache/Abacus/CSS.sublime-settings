@@ -1,0 +1,10 @@
+{
+    "com.khiltd.abacus.separators": 
+    [    
+        { 
+            "token":                ":",
+            "gravity":              "left",
+            "preserve_indentation": false
+        }
+    ]
+}

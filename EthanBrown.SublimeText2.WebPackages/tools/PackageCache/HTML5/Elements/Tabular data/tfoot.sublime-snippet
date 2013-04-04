@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<tfoot>${1:
+	<tr>$2</tr>
+}</tfoot>$0]]></content>
+	<tabTrigger>tfoot</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;tfoot&gt;</description>
+	<scope>text.html</scope>
+</snippet>

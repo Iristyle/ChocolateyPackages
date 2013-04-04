@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<command type="${1:command chekbox radio}" label="${2:Use Command}" title="${3:Use Command does stuff}" icon="${4:/icons/command.png}">$0]]></content>
+	<tabTrigger>command</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;command&gt;</description>
+	<scope>text.html</scope>
+</snippet>

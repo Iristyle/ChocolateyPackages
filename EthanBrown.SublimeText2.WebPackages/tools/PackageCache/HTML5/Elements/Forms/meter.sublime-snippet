@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<meter${1: value="$2"}${3: min="$4"}${5: low="$6"}${7: high="$8"}${9: max="$10"}${11: optimum="$12"}>$13</meter>$0]]></content>
+	<tabTrigger>meter</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;meter&gt;</description>
+	<scope>text.html</scope>
+</snippet>
