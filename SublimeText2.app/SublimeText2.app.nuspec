@@ -3,11 +3,16 @@
   <metadata>
     <id>SublimeText2.app</id>
     <title>Sublime Text 2</title>
-    <version>2.0.1.2217</version>
+    <version>2.0.1.22171</version>
     <authors>Jon Skinner</authors>
     <owners>Ethan J Brown</owners>
     <summary>Sublime Text 2 is a sophisticated text editor for code, html and prose. You'll love the slick user interface and extraordinary features.  Includes Package Control.</summary>
-    <description>Sublime Text 2 is a sophisticated text editor for code, html and prose. You'll love the slick user interface and extraordinary features. Sublime Text may be downloaded and evaluated for free, however a license must be purchased for continued use.
+    <description>Includes Sublime Text 2 AND
+
+      * Package Control
+      * subl alias for Powershell
+
+    Sublime Text may be downloaded and evaluated for free, however a license must be purchased for continued use.
     This brings the Sublime Text full installation version to your system, which has a built-in auto-update mechanism.  Furthermore, Sublime Package Control is included.</description>
     <releaseNotes>Version 2.0.1
     Release Date: 14 July 2012
@@ -115,5 +120,10 @@
     <licenseUrl>http://www.sublimetext.com/eula</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SublimeText2.app/Sublime_Text.png</iconUrl>
+    <dependencies>
+      <dependency id="sublimetext2" />
+      <dependency id="SublimeText2.PowershellAlias" />
+      <dependency id="SublimeText2.PackageControl" />
+    </dependencies>
   </metadata>
 </package>
