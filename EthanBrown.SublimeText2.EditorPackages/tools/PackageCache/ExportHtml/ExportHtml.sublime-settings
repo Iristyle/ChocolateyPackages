@@ -1,0 +1,180 @@
+{
+    // By default, the current color scheme is used
+    // You can define a string path to an alternate default
+    // Color scheme here, it must be relative to the
+    // Example:
+    //     "alternate_scheme": "Packages/ExportHtml/themes/Print-Color.tmTheme"
+    "alternate_scheme": false,
+
+    // By default, ExportHtml uses your current font_face and font_size.
+    // You can change this setting to always use this value.  By default,
+    // the setting is a literal false, but you can change it to an actual
+    // font_face to enable this setting.
+    "alternate_font_face": false,
+
+    // By default, ExportHtml uses your current font_face and font_size.
+    // You can change this setting to always use this value.  By default,
+    // the setting is a literal false, but you can change it to an actual
+    // font_size to enable this setting.
+    "alternate_font_size": false,
+
+    //Path to linux Python 2.6 lib
+    "linux_python2.6_lib": "/usr/lib/python2.6/lib-dynload",
+
+    // Minimum allowable size for a selection to be accepted for only the selection to be exproted
+    // Multi-select will also ignore selections whose size is less than this.
+    "valid_selection_size": 4,
+
+    // Scope to use for color for annotations in a Sublime Text view
+    "annotation_highlight_scope": "comment",
+
+    // Style to use for for annotations in a Sublime Text view
+    // (outline|solid)
+    "annotation_highlight_style": "outline",
+
+    // Orientation that the toolbar will be rendered with.
+    // (horizontal|vertical)
+    "toolbar_orientation": "horizontal",
+
+    // Define configurations for the drop down export menu
+    "html_panel": [
+        // Browser print color (selections and multi-selections allowed)
+        {
+            "Browser Print - Color": {
+                "numbers": true,
+                "wrap": 900,
+                "browser_print": true,
+                "multi_select": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme",
+                "style_gutter": false
+            }
+        },
+
+        // Browser print black and white (selections and multi-selections allowed)
+        {
+            "Browser Print - Grayscale": {
+                "numbers": true,
+                "wrap": 900,
+                "browser_print": true,
+                "multi_select": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Grayscale.tmTheme",
+                "style_gutter": false
+            }
+        },
+
+        // Browser print color; highlight selections(selections and multi-selections allowed)
+        // Background colors are disabled in browser printing by default, so they will not
+        // print until background color printing is enabled
+        {
+            "Browser Print - Color (Selection Highlights)": {
+                "numbers": true,
+                "wrap": 900,
+                "browser_print": true,
+                "highlight_selections": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme",
+                "style_gutter": false
+            }
+        },
+
+        // Browser print black and white; highlight selections(selections and multi-selections allowed)
+        // Background colors are disabled in browser printing by default, so they will not
+        // print until background color printing is enabled
+        {
+            "Browser Print - Grayscale (Selection Highlights)": {
+                "numbers": true,
+                "wrap": 900,
+                "browser_print": true,
+                "highlight_selections": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Grayscale.tmTheme",
+                "style_gutter": false
+            }
+        },
+        // Browser view color (selections and multi-selections allowed)
+        {
+            "Browser View - Color": {
+                "numbers": true,
+                "multi_select": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme"
+            }
+        },
+
+        // Browser view black and white (selections and multi-selections allowed)
+        {
+            "Browser View - Grayscale": {
+                "numbers": true,
+                "multi_select": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Grayscale.tmTheme"
+            }
+        },
+
+        // Browser view color; highlight selections(selections and multi-selections allowed)
+        {
+            "Browser View - Color (Selection Highlights)": {
+                "numbers": true,
+                "highlight_selections": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme"
+            }
+        },
+
+        // Browser view black and white; highlight selections(selections and multi-selections allowed)
+        {
+            "Browser View - Grayscale (Selection Highlights)": {
+                "numbers": true,
+                "highlight_selections": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Grayscale.tmTheme"
+            }
+        },
+
+        // Sublime view grayscale HTML source; (selections and multi-selections allowed)
+        {
+            "Sublime View - Color": {
+                "view_open": true,
+                "numbers": true,
+                "wrap": 900,
+                "multi_select": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Color.tmTheme"
+            }
+        },
+
+        // Sublime view grayscale HTML source; (selections and multi-selections allowed)
+        {
+            "Sublime View - Grayscale": {
+                "view_open": true,
+                "numbers": true,
+                "wrap": 900,
+                "multi_select": true,
+                "color_scheme": "Packages/ExportHtml/ColorSchemes/Print-Grayscale.tmTheme"
+            }
+        }
+    ],
+
+    "bbcode_panel": [
+        {
+            "To Clipboard - Format as BBCode": {
+                "numbers": false,
+                "multi_select": true
+            }
+        },
+
+        {
+            "To Clipboard - Format as BBCode (show gutter)": {
+                "numbers": true,
+                "multi_select": true
+            }
+        },
+        {
+            "Sublime View - Show BBCode in View": {
+                "numbers": false,
+                "multi_select": true,
+                "view_open": true
+            }
+        },
+        {
+            "Sublime View - Show BBCode in View (show gutter)": {
+                "numbers": false,
+                "multi_select": true,
+                "view_open": true
+            }
+        }
+    ]
+}

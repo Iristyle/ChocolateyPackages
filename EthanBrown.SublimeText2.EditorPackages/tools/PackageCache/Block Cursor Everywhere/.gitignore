@@ -1,0 +1,5 @@
+*.pyc
+*.cache
+*.sublime-project
+.DS_store
+.c9revisions

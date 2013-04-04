@@ -1,0 +1,56 @@
+{
+    "com.khiltd.abacus.debug": true,    
+    "com.khiltd.abacus.separators": 
+    [    
+        { 
+            "token":                ":",
+            "gravity":              "left",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "=",
+            "gravity":              "right",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "+=",
+            "gravity":              "right",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "-=",
+            "gravity":              "right",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "*=",
+            "gravity":              "right",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "/=",
+            "gravity":              "right",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "?=",
+            "gravity":              "right",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "||=",
+            "gravity":              "right",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "%=",
+            "gravity":              "right",
+            "preserve_indentation": true
+        },
+        { 
+            "token":                "==",
+            "gravity":              "right",
+            "preserve_indentation": true
+        }
+    ]
+}

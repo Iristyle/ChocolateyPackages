@@ -1,0 +1,35 @@
+[
+    // Export to HTML
+    {
+        "caption": "Export to HTML: Show Export Menu",
+        "command": "export_html_panel"
+    },
+    {
+        "caption": "Export to BBCode: Show Export Menu",
+        "command": "export_bbcode_panel"
+    },
+    {
+        "caption": "Export to HTML: Toggle Annotation Mode",
+        "command": "toggle_annotation_html_mode"
+    },
+    {
+        "caption": "Export to HTML: Add Annotation",
+        "command": "add_annotation"
+    },
+    {
+        "caption": "Export to HTML: Edit Annotation",
+        "command": "edit_annotation"
+    },
+    {
+        "caption": "Export to HTML: Delete Annotation(s)",
+        "command": "delete_annotations"
+    },
+    {
+        "caption": "Export to HTML: Delete All Annotations",
+        "command": "clear_annotations"
+    },
+    {
+        "caption": "Export to HTML: Show Annotation Comment",
+        "command": "show_annotation_comment"
+    }
+]
