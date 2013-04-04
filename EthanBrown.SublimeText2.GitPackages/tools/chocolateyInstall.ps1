@@ -27,6 +27,8 @@ try {
       Copy-Item @params
     }
 
+  $packageCache = Join-Path (Get-CurrentDirectory) 'PackageCache'
+  Install-SublimePackagesFromCache -Directory $packageCache
   Install-SublimePackageControl
   $packageControl = Join-Path $current 'Package Control.sublime-settings'
   Merge-PackageControlSettings -FilePath $packageControl

@@ -24,6 +24,30 @@ function Get-SublimeUserPath
   return $path
 }
 
+function Install-SublimePackagesFromCache
+{
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]
+    $Directory
+  )
+
+  $packagesPath = Get-SublimePackagesPath
+  Get-ChildItem $Directory |
+    ? { $_.PsIsContainer } |
+    % { @{Path = $_.FullName; Destination = Join-Path $packagesPath $_.Name }} |
+    ? {
+      $exists = Test-Path $_.Destination
+      if ($exists) { Write-Host "[ ] Skipping existing $($_.Destination)" }
+      return !$exists
+    } |
+    % {
+      Write-Host "[+] Copying cached package $($_.Destination)"
+      Copy-Item @_ -Recurse
+    }
+}
+
 function Install-SublimePackageControl
 {
   # install package control
