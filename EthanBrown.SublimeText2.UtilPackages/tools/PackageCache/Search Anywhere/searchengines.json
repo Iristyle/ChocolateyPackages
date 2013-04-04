@@ -1,0 +1,55 @@
+{
+    "schema_version": "1.2",
+    "searchengines": [
+        {
+            "name": "Google",
+            "baseurl": "www.google.com",
+            "searchurl": "http://www.google.com/search?q={0}"
+        },
+        {
+        	"name": "Stack Overflow",
+        	"baseurl": "www.stackoverflow.com",
+        	"searchurl": "http://stackoverflow.com/search?tab=relevance&q={0}"
+        },
+        {
+            "name": "PHP",
+            "baseurl": "www.php.net",
+            "searchurl": "http://ca3.php.net/manual-lookup.php?pattern={0}&scope=quickref"
+        },
+        {
+            "name": "Bing",
+            "baseurl": "www.bing.com",
+            "searchurl": "http://www.bing.com/search?q={0}"
+        },
+        {
+            "name": "Yahoo",
+            "baseurl": "www.yahoo.com",
+            "searchurl": "http://search.yahoo.com/search?p={0}"
+        },
+        {
+            "name": "sitepoint",
+            "baseurl": "reference.sitepoint.com",
+            "searchurl": "http://reference.sitepoint.com/html/{0}"
+        },
+        {
+            "name": "When can I use...",
+            "baseurl": "caniuse.com",
+            "searchurl": "http://caniuse.com/#search={0}"
+        },
+        {
+            "name": "Mozilla Developer Network",
+            "baseurl": "developer.mozilla.org",
+            "searchurl": "https://developer.mozilla.org/en-US/search?q={0}"
+        },
+        {
+            "name": "Ruby on Rails",
+            "baseurl": "api.rubyonrails.org",
+            "searchurl": "http://api.rubyonrails.org/?q={0}"
+        },
+        {
+            "name": "Ruby Doc",
+            "baseurl": "www.ruby-doc.org",
+            "searchurl": "http://www.ruby-doc.org/search.html?cx=011815814100681837392%3Awnccv6st5qk&q={0}&sa=Search&cof=FORID%3A9"
+        }
+    ]
+}

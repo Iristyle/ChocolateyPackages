@@ -1,0 +1,22 @@
+[
+    {
+        "caption": "Move Tab: To the left",
+        "command": "move_tab",
+        "args": { "position": "-1" }
+    },
+    {
+        "caption": "Move Tab: To the right",
+        "command": "move_tab",
+        "args": { "position": "+1" }
+    },
+    {
+        "caption": "Move Tab: To first position",
+        "command": "move_tab",
+        "args": { "position": "0" }
+    },
+    {
+        "caption": "Move Tab: To last position",
+        "command": "move_tab",
+        "args": { "position": "999" }
+    }
+]

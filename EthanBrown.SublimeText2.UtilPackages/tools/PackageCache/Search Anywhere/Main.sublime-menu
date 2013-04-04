@@ -1,0 +1,55 @@
+[
+    {
+        "caption": "Tools",
+        "mnemonic": "t",
+        "id": "tools",
+        "children":
+        [
+            {
+                "caption": "Search Anywhere",
+                "mnemonic": "w",
+                "id": "searchanywhere",
+                "children":
+                [
+                    {
+                        "command": "search_anywhere_from_selection",
+                        "caption": "Search From Selection"
+                    },
+                    {
+                        "command": "search_anywhere_from_input",
+                        "caption": "Search From Input"
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "caption": "Select Search Engine Then",
+                        "children":
+                        [
+                            {
+                                "command": "search_anywhere_from_selection_ask",
+                                "caption": "Search From Selection"
+                            },
+                            {
+                                "command": "search_anywhere_from_input_ask",
+                                "caption": "Search From Input"
+                            }
+
+                        ]
+                    },
+                    {
+                        "caption": "-"
+                    },
+                    {
+                        "command": "search_anywhere_select_default_search_engine",
+                        "caption": "Set Default Search Engine"
+                    },
+                    {
+                        "command": "search_anywhere_select_search_engine_for_type",
+                        "caption": "Set Search Engine For File Type"
+                    }
+                ]
+            }
+        ]
+    }
+]
