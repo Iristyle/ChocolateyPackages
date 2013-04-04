@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<header${1:${2: id="${3:header}"} ${4:class="$5"}}>
+	$6
+</header><!-- /$3 -->$0]]></content>
+	<tabTrigger>header</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;header&gt;</description>
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if gte IE 7]>$1<![endif]-->]]></content>
+	<tabTrigger>!</tabTrigger>
+	<description>IE Conditional Comment: IE7&gt;</description>
+	<scope>source.php,text.html</scope>
+</snippet>

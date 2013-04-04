@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[<menu type="${1:context toolbar}">
+	${2:<li>$3</li>}
+</menu>$0]]></content>
+	<tabTrigger>menu</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;menu&gt;</description>
+	<scope>text.html</scope>
+</snippet>

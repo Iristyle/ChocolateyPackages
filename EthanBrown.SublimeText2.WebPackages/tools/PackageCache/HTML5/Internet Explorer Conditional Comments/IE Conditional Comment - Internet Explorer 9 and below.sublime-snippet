@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if lt IE 9]>$1<![endif]-->]]></content>
+	<tabTrigger>!</tabTrigger>
+	<description>IE Conditional Comment: &lt;IE9</description>
+	<scope>source.php,text.html</scope>
+</snippet>

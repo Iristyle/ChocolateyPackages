@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<meta name="${1:name}" content="${2:content}"${TM_POLYGLOT}>$0]]></content>
+	<tabTrigger>meta</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;meta name="" content=""&gt;</description>
+	<scope>text.html</scope>
+</snippet>

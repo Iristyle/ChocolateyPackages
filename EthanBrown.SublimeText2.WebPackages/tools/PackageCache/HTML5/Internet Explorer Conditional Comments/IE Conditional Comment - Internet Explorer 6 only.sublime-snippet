@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if IE 6]>$1<![endif]-->]]></content>
+	<tabTrigger>!</tabTrigger>
+	<description>IE Conditional Comment: IE6</description>
+	<scope>source.php,text.html</scope>
+</snippet>

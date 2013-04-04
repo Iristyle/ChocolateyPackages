@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<kbd>$1</kbd>%0]]></content>
+	<tabTrigger>kbd</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;kbd&gt;</description>
+	<scope>text.html</scope>
+</snippet>

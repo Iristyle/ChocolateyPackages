@@ -1,0 +1,160 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "CoffeeComplete Plus",
+                        "children":
+                        [
+                            {   // README
+                                "command": "open_file",
+                                "args": {"file": "${packages}/CoffeeComplete Plus (Autocompletion)/README.md"},
+                                "caption": "README"
+                            },
+                            { "caption": "-" },
+                            {   // Settings - Default
+                                "command": "open_file",
+                                "args": {"file": "${packages}/CoffeeComplete Plus (Autocompletion)/CoffeeComplete Plus.sublime-settings"},
+                                "caption": "Settings – Default"
+                            },
+                            {   // Settings – User
+                                "command": "open_file",
+                                "args": {"file": "${packages}/User/CoffeeComplete Plus.sublime-settings"},
+                                "caption": "Settings – User"
+                            },
+                            { "caption": "-" },
+                            {   // Key Bindings – Default (OSX)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/CoffeeComplete Plus (Autocompletion)/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {   // Key Bindings – Default (Linux)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/CoffeeComplete Plus (Autocompletion)/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {   // Key Bindings – Default (Windows)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/CoffeeComplete Plus (Autocompletion)/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {   // Key Bindings – User (OSX)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {   // Key Bindings – User (Linux)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {   // Key Bindings – User (Windows)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            { "caption": "-" },
+                            {   // Mouse Bindings – Default (OSX)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/CoffeeComplete Plus (Autocompletion)/Default (OSX).sublime-mousemap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Mouse Bindings – Default"
+                            },
+                            {   // Mouse Bindings – Default (Linux)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/CoffeeComplete Plus (Autocompletion)/Default (Linux).sublime-mousemap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Mouse Bindings – Default"
+                            },
+                            {   // Mouse Bindings – Default (Windows)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/CoffeeComplete Plus (Autocompletion)/Default (Windows).sublime-mousemap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Mouse Bindings – Default"
+                            },
+                            {   // Mouse Bindings – User (OSX)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (OSX).sublime-mousemap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Mouse Bindings – User"
+                            },
+                            {   // Mouse Bindings – User (Linux)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Linux).sublime-mousemap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Mouse Bindings – User"
+                            },
+                            {   // Mouse Bindings – User (Windows)
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-mousemap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Mouse Bindings – User"
+                            },
+                            { "caption": "-" },
+                            {   // Custom Types – Default
+                                "command": "open_file",
+                                "args": {"file": "${packages}/CoffeeComplete Plus (Autocompletion)/CoffeeComplete Plus Custom Types.sublime-settings"},
+                                "caption": "Custom Types – Default"
+                            },
+                            {   // Custom Types – User
+                                "command": "open_file",
+                                "args": {"file": "${packages}/User/CoffeeComplete Plus Custom Types.sublime-settings"},
+                                "caption": "Custom Types – User"
+                            },
+                            { "caption": "-" },
+                            {   // Built-In Types – Default
+                                "command": "open_file",
+                                "args": {"file": "${packages}/CoffeeComplete Plus (Autocompletion)/CoffeeComplete Plus Built-In Types.sublime-settings"},
+                                "caption": "Built-In Types – Default"
+                            },
+                            {   // Built-In Types – User
+                                "command": "open_file",
+                                "args": {"file": "${packages}/User/CoffeeComplete Plus Built-In Types.sublime-settings"},
+                                "caption": "Built-In Types – User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

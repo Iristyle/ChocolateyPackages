@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<figcaption>$1</figure>$0]]></content>
+	<tabTrigger>figcaption</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;figcaption&gt;</description>
+	<scope>text.html</scope>
+</snippet>

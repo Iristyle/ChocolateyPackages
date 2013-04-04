@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if IE 5.0]>$1<![endif]-->]]></content>
+	<tabTrigger>!</tabTrigger>
+	<description>IE Conditional Comment: IE5 only</description>
+	<scope>source.php,text.html</scope>
+</snippet>

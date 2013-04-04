@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+after(function () {
+	$1
+});$0
+]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>after</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.js</scope>
+    <!-- Optional: Description to show in the menu -->
+    <description>After</description>
+</snippet>

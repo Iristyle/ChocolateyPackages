@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<script src="https://ajax.googleapis.com/ajax/libs/webfont/${1:1.0.22}/webfont.js"></script>$0]]></content>
+	<tabTrigger>ajax</tabTrigger>
+	<description>Google AJAX Libraries: WebFont Loader</description>
+	<scope>source.php,text.html</scope>
+</snippet>

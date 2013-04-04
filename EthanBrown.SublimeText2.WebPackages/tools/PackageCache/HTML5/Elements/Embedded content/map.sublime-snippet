@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<map name="$1">
+	$1
+</map>$0]]></content>
+	<tabTrigger>map</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;map&gt;</description>
+	<scope>text.html</scope>
+</snippet>

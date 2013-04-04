@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if !IE]>$1<![endif]-->]]></content>
+	<tabTrigger>!</tabTrigger>
+	<description>IE Conditional Comment: Not IE</description>
+	<scope>source.php,text.html</scope>
+</snippet>

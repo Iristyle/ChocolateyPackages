@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<script src="https://ajax.googleapis.com/ajax/libs/yui/${1:3.3.0}/build/yui/yui-min.js"></script>$0]]></content>
+	<tabTrigger>ajax</tabTrigger>
+	<description>Google AJAX Libraries: YUI!</description>
+	<scope>source.php,text.html</scope>
+</snippet>

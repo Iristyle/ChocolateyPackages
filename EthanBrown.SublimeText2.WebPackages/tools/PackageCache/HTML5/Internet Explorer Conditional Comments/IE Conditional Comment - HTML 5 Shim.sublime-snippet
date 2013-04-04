@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if lte IE 8]><script>(function(){var e="abbr,article,aside,audio,canvas,datalist,details,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=e.length;while(i--){document.createElement(e[i]);}}());</script><![endif]-->]]></content>
+	<tabTrigger>!</tabTrigger>
+	<description>IE Conditional Comment: HTML5 Shim</description>
+	<scope>source.php,text.html</scope>
+</snippet>

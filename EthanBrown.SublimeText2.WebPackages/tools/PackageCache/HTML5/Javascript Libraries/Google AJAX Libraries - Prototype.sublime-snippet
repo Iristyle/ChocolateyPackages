@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<script src="http://ajax.googleapis.com/ajax/libs/prototype/${1:1.7.0.0}/prototype.js"></script>$0]]></content>
+	<tabTrigger>ajax</tabTrigger>
+	<description>Google AJAX Libraries: Prototype</description>
+	<scope>source.php,text.html</scope>
+</snippet>

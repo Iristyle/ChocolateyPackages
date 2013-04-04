@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<input type="${1:reset}" name="$2" value="$3">$0]]></content>
+	<tabTrigger>input</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>input - reset</description>
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<td${1:${2: colspan="$3"}${4: rowspan="$5"}${6: headers="$7"}}>$8</td>$0]]></content>
+	<tabTrigger>td</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;td&gt;</description>
+	<scope>text.html</scope>
+</snippet>

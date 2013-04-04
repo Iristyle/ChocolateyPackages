@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[<form action="${1:${TM_FILENAME/(.*?)\..*/$1_submit/}}" method="${2:get}" accept-charset="utf-8">
+	$1
+	${2:<p><input type="submit" value="submit"${TM_POLYGLOT}></p>}
+</form>$0]]></content>
+	<tabTrigger>form</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;form&gt;</description>
+	<scope>text.html</scope>
+</snippet>

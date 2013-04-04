@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+beforeEach(function () {
+	$1
+});$0
+]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>beforeeach</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.js</scope>
+    <!-- Optional: Description to show in the menu -->
+    <description>Before Each</description>
+</snippet>

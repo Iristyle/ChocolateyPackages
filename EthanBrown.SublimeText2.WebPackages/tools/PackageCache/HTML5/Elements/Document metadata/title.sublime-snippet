@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<title>$1</title>$0]]></content>
+	<tabTrigger>title</tabTrigger>
+  <scope>source.php,text.html</scope>
+	<description>&lt;title&gt;</description>
+	<scope>text.html</scope>
+</snippet>
