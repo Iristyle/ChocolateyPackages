@@ -49,6 +49,7 @@ try {
   ([IO.File]::ReadAllText($grunt)) -replace '{{node_path}}', $escapedNodeRoot |
     Out-File -FilePath (Join-Path $sublimeUserDataPath $gruntFileName) -Force -Encoding ASCII
 
+  Install-SublimePackageControl
   $packageControl = (Join-Path $current 'Package Control.sublime-settings')
   Merge-PackageControlSettings -FilePath $packageControl
 

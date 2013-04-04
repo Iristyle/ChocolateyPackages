@@ -30,6 +30,7 @@ try {
   ([IO.File]::ReadAllText($sublimeFiles)) -replace '{{term_command}}', $escapedPs |
     Out-File -FilePath (Join-Path $sublimeUserDataPath $sublimeFilesFileName) -Force -Encoding ASCII
 
+  Install-SublimePackageControl
   $packageControl = (Join-Path (Get-CurrentDirectory) 'Package Control.sublime-settings')
   Merge-PackageControlSettings -FilePath $packageControl
 

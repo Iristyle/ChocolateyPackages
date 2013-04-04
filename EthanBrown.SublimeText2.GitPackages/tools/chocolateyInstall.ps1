@@ -27,6 +27,7 @@ try {
       Copy-Item @params
     }
 
+  Install-SublimePackageControl
   $packageControl = Join-Path $current 'Package Control.sublime-settings'
   Merge-PackageControlSettings -FilePath $packageControl
 
