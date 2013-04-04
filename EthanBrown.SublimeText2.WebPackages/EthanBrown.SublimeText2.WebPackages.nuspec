@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.SublimeText2.WebPackages</id>
     <title>Sublime Text 2 - Web Development Packages</title>
-    <version>0.0.5</version>
+    <version>0.1.0</version>
     <authors>Various</authors>
     <owners>Ethan Brown</owners>
     <summary>A number of packages helpful for auto-completion, snippets and syntax recognition of common web frameowrks and tools to increase editor productivity.</summary>
@@ -101,10 +101,11 @@
     -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://raw.github.com/Iristyle/ChocolateyPackages/master/SublimeText2.app/Sublime_Text.png</iconUrl>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>* Use a local package cache to prevent first-time package restore / load errors</releaseNotes>
     <dependencies>
         <dependency id="PowerShell" version="3.0"/>
         <dependency id="SublimeText2.app" />
+        <dependency id="nodejs.install" />
     </dependencies>
   </metadata>
   <files>
