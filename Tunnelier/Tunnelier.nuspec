@@ -3,7 +3,7 @@
   <metadata>
     <id>Tunnelier</id>
     <title>Bitvise Tunnelier SSH client</title>
-    <version>4.50.101012</version>
+    <version>4.60.0</version>
     <authors>BitVise Limited</authors>
     <owners>Ethan Brown</owners>
     <summary>Bitvise Tunnelier - Free SSH file transfer, terminal and tunneling!</summary>
@@ -21,34 +21,27 @@
     - Bitvise SSH Server remote administration features;
     - single-click Remote Desktop forwarding.
     </description>
-    <projectUrl>https://github.com/adobe/Source-Code-Pro</projectUrl>
+    <projectUrl>http://www.bitvise.com/ssh-client-download</projectUrl>
     <tags>SSH SFTP SSPI VT100 RSA DSA</tags>
     <licenseUrl>http://www.bitvise.com/ssh-client-license</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>http://www.bitvise.com/files/q-logo.png</iconUrl>
-    <releaseNotes>Changes in Bitvise SSH Client 4.50:    [ 18 July 2012 ]
+    <releaseNotes>Changes in Bitvise SSH Client 4.60:    [ 4 February 2013 ]
 
-    Bitvise Tunnelier is now Bitvise SSH Client. The main graphical client, previously Tunnelier.exe, can now be launched as BvSsh.exe.
-    The SSH client and its components now use Unicode internally.
-    Command line: The graphical SSH Client (BvSsh) now supports the -hide=trayIcon parameter to hide the notification area icon.
-    Command line: If the -host and/or -port parameter is provided, the default profile will be loaded instead of the most recently used profile.
-    Command line: -keypairPassphrase had no effect in sftpc, stermc and sexec if -keypairFile specified a keypair in Bitvise format. Fixed.
-    Command line: A BvSshCtrl command line utility is now included with Bitvise SSH Client, and can be used to send login, logout, and exit commands to a graphical BvSsh client process. Run BvSshCtrl for usage instructions.
-    User interface: The Host value on the Login tab of the graphical client will now have its whitespace trimmed. Previously, whitespace in the Host value caused DNS lookup to fail.
-    User keypair manager: Can now import OpenSSH private keys encrypted with AES-128-CBC. (Previously, only OpenSSH keys encrypted with 3DES were supported.)
-    Command line clients: sftpc, sexec, and stermc will no longer exit when they are being run as a service, and an interactive user on the same machine logs off.
-    Authentication: Keyboard-interactive authentication now makes it easier to try common keyboard-interactive submethods ("bsdauth" and "pam").
-    Banner: Empty banner messages are no longer displayed. (VMWare ESXi 5.0 sends such a banner message.)
-    Banner: Banner messages are now displayed using a monospace font, so that ASCII art will render as intended.
-    SSH: Some Dropbear servers do not support SSH_MSG_GLOBAL_REQUEST, and would send SSH_MSG_UNIMPLEMENTED in response to Bitvise SSH Client's keep-alive requests. The Client will now recognize the UNIMPLEMENTED response as resetting the keep-alive timeout, no longer causing the session to break.
-    SSH: Some broken terminal servers start sending channel data as soon as a 'session' channel is open, without waiting for a subsystem request. Subsequently, the server sends a response to the subsystem request after the channel is already closed. Bitvise SSH Client is now resilient against such implementations, and will ignore the belated channel response.
-    Terminal: The non-bvterm terminal implementation (e.g. xterm/vt100) now supports sending the Backspace key as ASCII code 127, correcting Backspace behavior on some servers. This feature can be enabled in the Terminal tab of the main SSH Client. When using the command line client, stermc, this behavior can be enabled using the parameter -altBksp=y.
-    SFTP: The SFTP client now supports larger pipelines, to enable faster transfers on high-bandwidth connections with some latency. The default pipeline size is now 512 kB, and can be increased to up to 4096 kB on the SFTP tab of the main SSH Client. The command line client, sftpc, also supports the -pipelineSize=... parameter.
-    SFTP: The size of the initial chunk used to determine whether a file is binary or textual has been increased from 1000 bytes to 32 kB.
-    SFTP: Resume is now disabled for file transfers by default. Due to limitations of most SFTP implementations, Resume cannot be implemented with 100% reliability, and may fail to update content that changed in the middle of the file between the initial transfer operation and the resume. Resume is now disabled by default to reduce the incidence of this issue, and to emphasize the notion that Resume should be enabled when needed, but not necessarily always.
-    SFTP: Setting the file time on a recently uploaded file, whose handle has remained open, fails after uploading to some servers. If this happens, Bitvise SSH Client will now attempt to set the file time again after closing the uploaded file.
-    bvterm: Fixed an issue which could have caused the bvterm client to fail with the error "parameter is incorrect" after a call to SetConsoleWindowInfo().
-    Tunneling: Implemented a workaround for the Dropbear server, which translates the client's request to listen on 127.0.0.1 into "localhost" in server-to-client forwarding.</releaseNotes>
+The xterm/vt100 terminal client has been re-implemented to improve performance and add new features.
+Default colors displayed by the xterm/vt100 terminal client can now be configured on the Terminal tab.
+Command-line clients (sftpc, stermc, sexec) now support a parameter to enable delegation when using Kerberos user authentication with standard SSH host authentication and key exchange. Previously, the command line clients supported delegation only when using Kerberos-based key exchange.
+The Host Key Manager can now store multiple host key fingerprints per SSH host. When a new host key is verified by the user, it is now added to other known keys for that host, instead of replacing them.
+To improve compatibility with some FTP clients, FTP-to-SFTP bridge will now send more conventional reply codes to USER and PASS commands, mimicking the behavior of FTP servers that require authentication.
+When launched from the Bitvise SSH Client graphical client, the terminal client now supports executing a custom command (as an exec request) instead of requesting a plain shell.
+When using single-click Remote Desktop forwarding, temporary RDP profiles are now removed from the "most recently opened" list for the Remote Desktop Connection shortcut.
+WoW64 filesystem redirection is now disabled when creating temporary RDP profiles for single-click Remote Desktop forwarding.
+Improved keyboard accessibility for launch bar icons in the graphical client.
+Changes in Bitvise SSH Client 4.51:    [ 20 October 2012 ]
+
+Command line clients: Improved text colors; added a color scheme for dark blue background, and a color scheme for PowerShell's default colors and palette.
+Remote Desktop: Fixed an issue which could cause the SSH client to not detect the Remote Desktop client version on 64-bit platforms.
+Tunneling: Implemented a workaround for the Dropbear server, which translates the client's request to listen on 127.0.0.1 into "localhost" in server-to-client forwarding.</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

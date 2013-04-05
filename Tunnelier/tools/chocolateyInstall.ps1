@@ -1,6 +1,7 @@
 try {
   $package = 'Bitvise Tunnelier'
 
+  # new versions are always present here
   $url = 'http://dl.bitvise.com/BvSshClient-Inst.exe'
 
   $installDir = ${Env:ProgramFiles(x86)}, $Env:ProgramFiles |
