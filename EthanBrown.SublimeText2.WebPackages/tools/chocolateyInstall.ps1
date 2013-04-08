@@ -38,7 +38,19 @@ try {
   $linter = Join-Path $current $linterFileName
   $grunt = Join-Path $current $gruntFileName
 
-  $node = (Which node)
+  $nodeDefault = Join-Path $Env:ProgramFiles 'nodejs\node.exe'
+  $binRoot = Join-Path $Env:SystemDrive $Env:Chocolatey_Bin_Root
+  $node = (Which node),
+    $nodeDefault,
+    (Join-Path $binRoot 'nodejs\node.exe') |
+    ? { Test-Path $_ } |
+    Select -First 1
+  if (!$node)
+  {
+    Write-Warning "Could not find NodeJS - using default $nodeDefault"
+    $node = $nodeDefault
+  }
+
   $nodeRoot = Split-Path $node
 
   $escapedNode = $node -replace '\\', '\\'
