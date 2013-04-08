@@ -23,7 +23,18 @@ try {
   $sublimeFiles = Join-Path (Get-CurrentDirectory) $sublimeFilesFileName
 
   # TODO: this doesn't actually work in the Sublime plugin right now, but might in the future
-  $ps = (Which powershell)
+  $systemPath = [Environment]::GetFolderPath('System')
+  $psDefault = Join-Path $systemPath 'WindowsPowerShell\v1.0\powershell.exe'
+  $ps = (Which powershell),
+    $psDefault |
+    ? { Test-Path $_ } |
+    Select -First 1
+  if (!$ps)
+  {
+    Write-Warning "Could not find Powershell - using default $psDefault"
+    $ps = $psDefault
+  }
+
   $psRoot = Split-Path $ps
 
   $escapedPs = $ps -replace '\\', '\\'
