@@ -1,0 +1,3412 @@
+{
+  "coffee_autocomplete_plus_custom_types":
+  [
+    {
+      "name": "angular",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [
+        {"name": "version", "return": "String"}
+      ],
+      "static_methods": [
+        // http://code.angularjs.org/1.1.4/docs/api/angular.bind
+        {"name": "bind", "return": "Function", "args": [
+          {"name": "self", "insertion": "context"},
+          {"name": "fn", "insertion": "() -> boundFn"}
+        ]},
+        {"name": "bind", "return": "Function", "args": [
+          {"name": "self", "insertion": "context"},
+          {"name": "fn", "insertion": "() -> boundFn"},
+          {"name": "args…"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.bootstrap
+        // http://code.angularjs.org/1.1.4/docs/api/AUTO.$injector
+        {"name": "bootstrap", "return": "$injector", "args": [
+          {"name": "el"}
+        ]},
+        {"name": "bootstrap", "return": "$injector", "args": [
+          {"name": "el"},
+          {"name": "modules", "insertion": "['String'|() -> moduleFn]"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.copy
+        // TODO: returns a copy of the original 'src' type or updated dest
+        // TODO: could be Number|'String'|anything really
+        {"name": "copy", "return": "Object", "args": [
+          {"name": "src"}
+        ]},
+        {"name": "copy", "return": "Object", "args": [
+          {"name": "src"},
+          {"name": "dest", "insertion": "Object|Array"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.element
+        // TODO: could also be a $ instead of jqLite
+        {"name": "element", "return": "jqLite", "args": [
+          {"name": "html", "insertion": "'htmlString'"}
+        ]},
+        {"name": "element", "return": "jqLite", "args": [
+          {"name": "el", "insertion": "DOMElement|jqLite"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.equals
+        {"name": "equals", "return": "Boolean", "args": [
+          {"name": "object1"},
+          {"name": "object2"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.extend
+        // TODO: returns the original src object
+        {"name": "extend", "return": "Object", "args": [
+          {"name": "dst"},
+          {"name": "src"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.forEach
+        // TODO: returns reference to original Object|Array
+        {"name": "forEach", "return": "Object", "args": [
+          {"name": "obj", "insertion": "Object|Array"},
+          {"name": "iter", "insertion": "(value, key) -> iteratorFn"}
+        ]},
+        {"name": "forEach", "return": "Object", "args": [
+          {"name": "obj", "insertion": "Object|Array"},
+          {"name": "iter", "insertion": "(value, key) -> iteratorFn"},
+          {"name": "ctx", "insertion": "context"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.fromJson
+        {"name": "fromJson", "return": "Object", "args": [
+          {"name": "'jsonString'"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.identity
+        // TODO: returns first argument
+        {"name": "identity", "return": "Object", "args": []},
+        {"name": "identity", "return": "Object", "args": [{"name": "args…"}]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.injector
+        {"name": "injector", "return": "$injector", "args": [
+          {"name": "modules", "insertion": "['String'|() -> moduleFn]"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isArray
+        {"name": "isArray", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isDate
+        {"name": "isDate", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isDefined
+        {"name": "isDefined", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isElement
+        {"name": "isElement", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isFunction
+        {"name": "isFunction", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isNumber
+        {"name": "isNumber", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isObject
+        {"name": "isObject", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isString
+        {"name": "isString", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.isUndefined
+        {"name": "isUndefined", "return": "Boolean", "args": [
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.lowercase
+        {"name": "lowercase","return": "String", "args": [
+          {"name": "string", "insertion": "'String'"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.mock.createMockWindow
+        {"name": "mock.createMockWindow", "return": "", "args": []},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.mock.dump
+        // TODO: typing angular.mock.  automatically inserts this instead
+        // of narrowing the list to the mock.* items
+        {"name": "mock.dump", "return": "String", "args": [
+          {"name": "object"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.mock.inject
+        {"name": "mock.inject", "return": "", "args": [
+          {"name": "fns"}
+        ]},
+        // http://code.angularjs.org/1.0.4/docs/api/angular.mock.module
+        {"name": "mock.module", "return": "ngModule", "args": [
+          {"name": "fns", "insertion": "'String'|() -> moduleFn"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.mock.TzDate
+        {"name": "mock.TzDate", "return": "ngTzDate", "args": [
+          {"name": "offset"},
+          {"name": "timestamp", "insertion": "Number|'String'"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.module
+        {"name": "module", "return": "ngModule", "args": [
+          {"name": "name"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.Module#config
+        {"name": "module", "return": "ngModule", "args": [
+          {"name": "name"},
+          {"name": "cfg", "insertion": "() -> configFn"}
+        ]},
+        {"name": "module", "return": "ngModule", "args": [
+          {"name": "name"},
+          {"name": "reqs", "insertion": "['module1', 'module2']"},
+          {"name": "cfg", "insertion": "() -> configFn"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.noConflict
+        {"name": "noconflict", "return": "Object", "args": []},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.noop
+        {"name": "noop", "return": "", "args": []},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.toJson
+        {"name": "toJson", "return": "String", "args": [
+          {"name": "obj", "insertion": "Object|Array|Date|'String'|Number"}
+        ]},
+        {"name": "toJson", "return": "String", "args": [
+          {"name": "obj", "insertion": "Object|Array|Date|'String'|Number"},
+          {"name": "pretty", "insertion": "true|false"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.uppercase
+        {"name": "uppercase", "return": "String", "args": [
+          {"name": "string", "insertion": "'String'"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/angular.version
+        {"name": "version", "return": "ngVersion", "args": []}
+      ],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: not a real type
+    // http://code.angularjs.org/1.1.4/docs/api/angular.version
+    {
+      "name": "ngVersion",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "full", "return": "String"},
+        {"name": "major", "return": "String"},
+        {"name": "minor", "return": "String"},
+        {"name": "dot", "return": "String"},
+        {"name": "codeName", "return": "String"}
+      ],
+      "instance_methods": []
+    },
+    // HACK: not a real type, make believe, for completions
+    // never use new ngTzDate(), always through angular.mock.TzDate
+    // http://code.angularjs.org/1.1.4/docs/api/angular.mock.TzDate
+    {
+      "name": "ngTzDate",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "getTimezoneOffset", "return": "Number"},
+        {"name": "getFullYear", "return": "Number"},
+        {"name": "getMonth", "return": "Number"},
+        {"name": "getDate", "return": "Number"},
+        {"name": "getHours", "return": "Number"},
+        {"name": "getMinutes", "return": "Number"}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/angular.Module
+    // HACK: never use new ngModule(), always through angular.module
+    // not sure if angular has an internal name for this type
+    {
+      "name": "ngModule",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "name", "return": "String"},
+        //TODO: Array of String
+        {"name": "requires", "return": "Array"}
+      ],
+      "instance_methods": [
+        // TODO: what is returned here?
+        // http://code.angularjs.org/1.1.4/docs/api/ng.$animationProvider#register
+        {"name": "animation", "return": "", "args": [
+          {"name": "name", "insertion": "'name'"},
+          // TODO: expand a snippet for the animationFactory? must return:
+          //  setup: function(Element):*
+          //  start: function(Element, doneFunction, *)
+          {"name": "fn", "insertion": "() -> animationFactoryFn"}
+        ]},
+        {"name": "config", "return": "", "args": [
+          {"name": "fn", "insertion": "() -> configFn"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#constant
+        {"name": "constant", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "value"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/ng.$controllerProvider#register
+        {"name": "controller", "return": "$controller", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> constructorFn|Array"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/ng.$compileProvider#directive
+        // http://docs.angularjs.org/guide/directive
+        // # Registers a new directive with the compiler
+        // #
+        // ${1:moduleVariable}.directive '${2:directiveName}', (injectables) ->
+        //   directiveDefinitionObject =
+        //     priority: ${3:Number}
+        //     terminal: ${4:true|false}
+        //     scope: ${5:true|false|\{\} (object hash)}${6:
+        //     controller: () ->
+        //       ${7:#controller cn func, may access \$scope, \$element, \$attrs, \$transclude}}
+        //     ${8:require: '${9:controllerName|?controllerName|^controllerName}'}
+        //     restrict: '${11:E|A|C|M}'${12:
+        //     template: '${13:HTML}'}${14:
+        //     templateUrl: '${15:directive.html}'}
+        //     replace: ${16:true|false}
+        //     transclude: ${17:true|false|'element'}${18:
+        //     #only use to transform template DOM
+        //     compile: (tElement, tAttrs, transclude) ->
+        //       compiler =
+        //         pre: (scope, iElement, iAttrs, controller) ->
+        //           #not safe for DOM transformation
+        //           ${19:#}
+        //         post: (scope, iElement, iAttrs, controller) ->
+        //           #safe for DOM transformation
+        //           ${20:#}
+        //       return compiler
+        //     }${21:
+        //     #called IFF compile not defined
+        //     link: (scope, iElement, iAttrs) ->
+        //       #register DOM listeners or update DOM
+        //       ${22:#}
+        //     }
+        //   return directiveDefinitionObject
+        //
+        //   Alternative
+        //
+        //   <![CDATA[.directive '${1:name}', ($2) ->
+        // ${3:# Runs during compile}
+        // return (scope, elm, attrs) ->
+        //   ${4:# Runs during render}]]>
+        {"name": "directive", "return": "$compileProvider", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> directiveFactoryFn"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#factory
+        {"name": "factory", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> providerFactoryFn"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/ng.$filterProvider#register
+        {"name": "filter", "return": "ngFilterUserDefined", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> filterFactoryFn"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#provider
+        {"name": "provider", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "Object with $get|() -> constructorFn"}
+        ]},
+        {"name": "run", "return": "", "args": [
+          {"name": "fn", "insertion": "() -> initializationFn"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#service
+        {"name": "service", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> constructorFn"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#value
+        {"name": "value", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "value"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$compile.directive.Attributes
+    {
+      "name": "ngAttributes",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "$attr", "return": "Object"}
+      ],
+      "instance_methods": [
+        {"name": "$set", "args": [
+          {"name": "name"},
+          {"name": "value"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$on
+    {
+      "name": "ngEvent",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "targetScope", "return": "ngScope"},
+        {"name": "currentScope", "return": "ngScope"},
+        {"name": "name", "return": "String"},
+        {"name": "defaultPrevented", "return": "Boolean"}
+      ],
+      "instance_methods": [
+        {"name": "stopPropagation", "return": "", "args": []},
+        {"name": "preventDefault", "return": "", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.directive:form.FormController
+    {
+      "name": "ngFormController",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        // TODO: this is a hash of key names as strings, arrays / controls
+        {"name": "$error", "return": "Object"},
+        {"name": "$pristine", "return": "Boolean"},
+        {"name": "$dirty", "return": "Boolean"},
+        {"name": "$valid", "return": "Boolean"},
+        {"name": "$invalid", "return": "Boolean"}
+      ],
+      "instance_methods": [
+        {"name": "$setPristine", "return": "", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope
+    {
+      "name": "ngScope",
+      "enabled": true,
+      // TODO: not sure where the Scope() function belongs??
+      // https://github.com/angular/angular.js/blob/v1.0.x/src/ng/rootScope.js#L131
+      // {"args": []},
+      // {"args": [{"name": "providersMap"}]},
+      // {"args": [{"name": "providersMap", "name": "instanceCache"}]}
+      "constructors": [ ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "$id"}
+      ],
+      "instance_methods": [
+        {"name": "$apply", "return": "Object", "args": []},
+        {"name": "$apply", "return": "Object", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> expressionFn"}
+        ]},
+        {"name": "$broadcast", "return": "ngEvent", "args": [
+          {"name": "name"}
+        ]},
+        {"name": "$broadcast", "return": "ngEvent", "args": [
+          {"name": "name"}, {"name": "args…"}
+        ]},
+        {"name": "$destroy", "return": "", "args": []},
+        {"name": "$digest", "return": "", "args": []},
+        {"name": "$emit", "return": "ngEvent", "args": [
+          {"name": "name"}
+        ]},
+        {"name": "$emit", "return": "ngEvent", "args": [
+          {"name": "name"}, {"name": "args…"}
+        ]},
+        {"name": "$eval", "return": "Object", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> expressionFn"}
+        ]},
+        {"name": "$evalAsync", "return": "", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> expressionFn"}
+        ]},
+        {"name": "$new", "return": "ngScope", "args": [
+          {"name": "isolate", "insertion": "true|false"}
+        ]},
+        {"name": "$on", "return": "Function", "args": [
+          // http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngInclude
+          // http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngView
+          // http://code.angularjs.org/1.1.4/docs/api/ng.$route
+          // http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$destroy
+          {"name": "name", "insertion": "'$destroy'|'$locationChangeStart'|'$locationChangeSuccess'|'$includeContentLoaded'|'$viewContentLoaded'|'$routeChangeError'|'$routeChangeStart'|'$routeChangeSuccess'|'$routeUpdate'"},
+          // TODO: would like to specify event is an Event type here, maybe with inline Codo docs?
+          {"name": "listener", "insertion": "(event, args) -> listenerFn"}
+        ]},
+        {"name": "$watch", "return": "Function", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> watchFn"}
+        ]},
+        {"name": "$watch", "return": "Function", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> watchFn"},
+          {"name": "listener", "insertion": "'String'|(newValue, oldValue, scope) -> listenFn"}
+        ]},
+        {"name": "$watch", "return": "Function", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> watchFn"},
+          {"name": "listener", "insertion": "'String'|(newValue, oldValue, scope) -> listenFn"},
+          {"name": "eq", "insertion": "true:forEquality|false:forRef"}
+        ]},
+        {"name": "$watchCollection", "return": "Function", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> watchFn"},
+          {"name": "listener", "insertion": "(newCollection, oldCollection, scope) -> listenFn"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/angular.element
+    {
+      "name": "jqLite",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        // angular specific
+        // TODO: $controller/NgModelController is not always the return type
+        {"name": "controller", "return": "$controller", "args": [
+          {"name": "name", "insertion": "'name'"}
+        ]},
+        {"name": "injector", "return": "$injector", "args": []},
+        {"name": "scope", "return": "ngScope", "args": []},
+        {"name": "inheritedData", "return": "jqLite", "args": []},
+
+        // standard jQuery
+        {"name": "addClass", "return": "jqLite", "args": [
+          {"name": "className", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "addClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, currentClass) ->"}
+        ]},
+        {"name": "after", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "after", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index) ->"}
+        ]},
+        {"name": "append", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "append", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, html) ->"}
+        ]},
+        {"name": "attr", "return": "String", "args": [
+          {"name": "name", "insertion": "'attributeName'"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName'"},
+          {"name": "value"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "attributes", "insertion": "attributeMapObject"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName'"},
+          {"name": "fn", "insertion": "(index, attr) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType(s) delimited with spaces - namespaces not supported'"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType(s) delimited with spaces - namespaces not supported'"},
+          {"name": "data", "insertion": "eventDataObject"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "preventBubble", "insertion": "true|false:preventDefaultAction"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "data", "insertion": "eventDataObject"},
+          {"name": "preventBubble", "insertion": "true|false:preventDefaultAction"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "events", "insertion": "eventMapObject" }
+        ]},
+        {"name": "children", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "children", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "clone", "return": "jqLite", "args": []},
+        {"name": "clone", "return": "jqLite", "args": [
+          {"name": "data+Events", "insertion": "withDataAndEvents:true|false"}
+        ]},
+        {"name": "clone", "return": "jqLite", "args": [
+          {"name": "data+Events", "insertion": "withDataAndEvents:true|false"},
+          {"name": "deep", "insertion": "deepWithDataAndEvents:true|false"}
+        ]},
+        {"name": "contents", "return": "jqLite", "args": []},
+        {"name": "css", "return": "String", "args": [
+          {"name": "propName", "insertion": "'propertyName'"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propNames", "insertion": "['propName1','propName2']"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propName", "insertion": "'propertyName'"},
+          {"name": "value", "insertion": "'String'|Number"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propName", "insertion": "'propertyName'"},
+          {"name": "fn", "insertion": "(index, value) ->"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "props", "insertion": "propertyMapObject"}
+        ]},
+        {"name": "data", "return": "jqLite", "args": [
+          {"name": "key", "insertion": "'key'"},
+          {"name": "value"}
+        ]},
+        {"name": "data", "return": "jqLite", "args": [
+          {"name": "obj", "insertion": "keyValueObject"}
+        ]},
+        {"name": "data", "return": "Object", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]},
+        {"name": "data", "return": "Object", "args": []},
+        {"name": "eq", "return": "jqLite", "args": [
+          {"name": "index"}
+        ]},
+        {"name": "eq", "return": "jqLite", "args": [
+          {"name": "-index"}
+        ]},
+        {"name": "find", "return": "jqLite", "args": [
+          {"name": "criteria", "insertion": "'tag name selector only'|DOMElement|jqLite"}
+        ]},
+        {"name": "hasClass", "return": "Boolean", "args": [
+          {"name": "className", "insertion": "'className'"}
+        ]},
+        {"name": "html", "return": "String", "args": []},
+        {"name": "html", "return": "jqLite", "args": [
+          {"name": "string", "insertion": "'htmlString'"}
+        ]},
+        {"name": "html", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, oldhtml) ->"}
+        ]},
+        {"name": "next", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "next", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "parent", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "parent", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "prepend", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "prepend", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, html) ->"}
+        ]},
+        {"name": "prop", "return": "String", "args": [
+          {"name": "name", "insertion": "'propertyName'"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'propertyName'"},
+          {"name": "value", "insertion": "'String'|Number|Boolean"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "properties", "insertion": "propertyMapObject"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'propertyName'"},
+          {"name": "fn", "insertion": "(index, oldPropertyValue) ->"}
+        ]},
+        {"name": "ready", "return": "jqLite", "args": [
+          {"name": "handler", "insertion": "() ->"}
+        ]},
+        {"name": "remove", "return": "jqLite", "args": []},
+        {"name": "remove", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "removeAttr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName(s) delimited with spaces'"}
+        ]},
+        {"name": "removeClass", "return": "jqLite", "args": []},
+        {"name": "removeClass", "return": "jqLite", "args": [
+          {"name": "className", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "removeClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class) ->"}
+        ]},
+        {"name": "removeData", "return": "jqLite", "args": []},
+        {"name": "removeData", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'name'"}
+        ]},
+        {"name": "removeData", "return": "jqLite", "args": [
+          //TODO: Array of String
+          {"name": "list", "insertion": "'name(s) delimited with spaces'|Array"}
+        ]},
+        {"name": "replaceWith", "return": "jqLite", "args": [
+          {"name": "newContent", "insertion": "'htmlString'|DOMElement|jqLite"}
+        ]},
+        {"name": "replaceWith", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "() ->"}
+        ]},
+        {"name": "text", "return": "String", "args": []},
+        {"name": "text", "return": "jqLite", "args": [
+          {"name": "text", "insertion": "'text'"}
+        ]},
+        {"name": "text", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, text) ->"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": []},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'className(s) delimited with spaces'"},
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class, switch) ->"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class, switch) ->"},
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "triggerHandler", "return": "Object", "args": [
+          {"name": "type", "insertion": "'eventType'"}
+        ]},
+        {"name": "triggerHandler", "return": "Object", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "params", "insertion": "Array[extraParameters]"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": []},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"},
+          {"name": "false"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "event" }
+        ]},
+        //TODO: can return String|Number|Array
+        {"name": "val", "return": "Object", "args": []},
+        {"name": "val", "return": "jqLite", "args": [
+          {"name": "value", "insertion": "'value'|Array"}
+        ]},
+        {"name": "val", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, value) ->"}
+        ]},
+        {"name": "wrap", "return": "jqLite", "args": [
+          {"name": "wrappingElement", "insertion": "'selector'|'htmlString'|DOMElement|jqLite"}
+        ]},
+        {"name": "wrap", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index) ->"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$anchorScroll
+    {
+      "name": "$anchorScroll",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$anchorScroll
+    {
+      "name": "$anchorScrollProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "disableAutoScrolling", "return": "", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$animation
+    {
+      "name": "$animation",
+      "enabled": true,
+      // TODO: don't use with 'new'
+      "constructors": [
+        {"args": [{"name": "name", "insertion": "'name'"}]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        // TODO: setup: function(Element)
+        // TODO: start: function(Element, doneFunction, *)
+        {"name": "setup", "return": "Function"},
+        {"name": "start", "return": "Function"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$animationProvider
+    {
+      "name": "$animationProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "register", "return": "$animation", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "factory", "insertion": "() -> { setup: (element) -> (setupFn), start: (element, doneFn, args…) -> (startFn) }"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$animator
+    {
+      "name": "$animator",
+      "enabled": true,
+      // TODO: don't use with 'new'
+      "constructors": [
+        {"args": [
+          {"name": "scope"},
+          {"name": "attr", "insertion": "{attributesHash}"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "enter", "return": "", "args": [
+          {"name": "el", "insertion": "jqLite element"},
+          {"name": "parent", "insertion": "jqLite parent"},
+          {"name": "after", "insertion": "jqLite after"}
+        ]},
+        {"name": "hide", "return": "", "args": [
+          {"name": "el", "insertion": "jqLite element"}
+        ]},
+        {"name": "leave", "return": "", "args": [
+          {"name": "el", "insertion": "jqLite element"},
+          {"name": "parent", "insertion": "jqLite parent"}
+        ]},
+        {"name": "move", "return": "", "args": [
+          {"name": "el", "insertion": "jqLite element"},
+          {"name": "parent", "insertion": "jqLite parent"},
+          {"name": "after", "insertion": "jqLite after"}
+        ]},
+        {"name": "show", "return": "", "args": [
+          {"name": "el", "insertion": "jqLite element"}
+        ]}
+      ]
+    },
+    // private undocumented service, best to not use its API
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$browser
+    {
+      "name": "$browser",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$cacheFactory
+    {
+      "name": "$cacheFactory",
+      "enabled": true,
+      "constructors": [
+        {"args": [{"name": "cacheId", "insertion": "'cacheId'"}]},
+        {"args": [
+          {"name": "cacheId", "insertion": "'cacheId'"},
+          {"name": "options", "insertion": "{capacity: Number}"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "info", "return": "ngCacheInfo", "args": []},
+        {"name": "put", "return": "Object", "args": [
+          {"name": "key", "insertion": "'key'"},
+          {"name": "value"}
+        ]},
+        {"name": "get", "return": "Object", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]},
+        {"name": "remove", "return": "", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]},
+        {"name": "removeAll", "return": "", "args": []},
+        {"name": "destroy", "return": "", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$cacheFactory
+    // HACK: this is an imaginary type
+    {
+      "name": "ngCacheInfo",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "id", "return": "String", "args": []},
+        {"name": "size", "return": "Number"},
+        {"name": "options", "return": "Object"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$compile
+    {
+      "name": "$compile",
+      "enabled": true,
+      "constructors": [
+        // TODO: don't want these to apply to 'new'
+        {"return": "ngLinkFunction", "args": [
+          {"name": "el", "insertion": "'htmlString'|DOMElement|jqLite"}
+        ]},
+        {"return": "ngLinkFunction", "args": [
+          {"name": "el", "insertion": "'htmlString'|DOMElement|jqLite"},
+          {"name": "fn", "insertion": "(scope) -> transcludeFn"}
+        ]},
+        {"return": "ngLinkFunction", "args": [
+          {"name": "el", "insertion": "'htmlString'|DOMElement|jqLite"},
+          {"name": "fn", "insertion": "(scope) -> transcludeFn"},
+          {"name": "maxPriority", "insertion": "Number"}]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't actually exist
+    // TODO: won't work until we have "return" types
+    {
+      "name": "ngLinkFunction",
+      "enabled": true,
+      "constructors": [
+        // TODO: shouldn't be available with 'new'
+        {"return": "jqLite", "args": [
+          {"name": "scope" }
+        ]},
+        {"return": "jqLite", "args": [
+          {"name": "scope" },
+          {"name": "fn", "insertion": "(clonedElement, scope) -> cloneAttachFn"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$compileProvider
+    {
+      "name": "$compileProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        // http://code.angularjs.org/1.1.4/docs/api/ng.$compileProvider#directive
+        // http://docs.angularjs.org/guide/directive
+        {"name": "directive", "return": "$compileProvider", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> directiveFactoryFn"}
+        ]},
+        {"name": "urlSanitizationWhitelist", "return": "RegExp", "args": []},
+        {"name": "urlSanitizationWhitelist", "return": "$compileProvider", "args": [
+          {"name": "regex", "insertion": "/RegExp/"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$controller
+    // http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController
+    {
+      //also refered to in docs as NgModelController
+      "name": "$controller",
+      "enabled": true,
+      // TODO: this is really a specialized instance, but we have to duplicate for now
+      // https://github.com/justinmahar/SublimeCSAutocompletePlus/issues/24
+      "inherits": "ngFormController",
+      "constructors": [
+        {"args": [
+          {"name": "ctor", "insertion": "'name'|'expression'|() -> constructorFn"}
+        ]},
+        {"args": [
+          {"name": "ctor", "insertion": "'name'|'expression'|() -> constructorFn"},
+          {"name": "locals"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "$viewValue", "return": "String"},
+        //TODO: not always Object, could be String|Number|Date, etc
+        {"name": "$modelValue", "return": "Object"},
+        //TODO: it's an Array of Function
+        {"name": "$parsers", "return": "Array"},
+        //TODO: it's an Array of Function
+        {"name": "$formatters", "return": "Array"},
+        // TODO: this is a hash of key names as strings, arrays / controls
+        {"name": "$error", "return": "Object"},
+        {"name": "$pristine", "return": "Boolean"},
+        {"name": "$dirty", "return": "Boolean"},
+        {"name": "$valid", "return": "Boolean"},
+        {"name": "$invalid", "return": "Boolean"}
+      ],
+      "instance_methods": [
+        {"name": "$render", "return": "", "args": []},
+        {"name": "$setPristine", "return": "", "args": []},
+        {"name": "$setValidity", "return": "", "args": [
+          {"name": "key", "insertion": "'validationErrorKey'"},
+          {"name": "isValid", "insertion": "true|false"}
+        ]},
+        {"name": "$setViewValue", "return": "", "args": [
+          {"name": "value", "insertion": "'String'"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$controllerProvider
+    {
+      "name": "$controllerProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "register", "return": "$controller", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "ctor", "insertion": "Array|() -> constructorFn"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ngCookies.$cookies
+    {
+      "name": "$cookies",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ngCookies.$cookieStore
+    {
+      "name": "$cookieStore",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "get", "return": "Object", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]},
+        {"name": "put", "return": "", "args": [
+          {"name": "key", "insertion": "'key'"},
+          {"name": "value"}
+        ]},
+        {"name": "remove", "return": "", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$document
+    // http://code.angularjs.org/1.1.4/docs/api/angular.element
+    {
+      "name": "$document",
+      "enabled": true,
+      // TODO: this is really a jqLite instance, but we have to duplicate for now
+      // https://github.com/justinmahar/SublimeCSAutocompletePlus/issues/24
+      "inherits": "jqLite",
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        // angular specific
+        // TODO: $controller/NgModelController is not always the return type
+        {"name": "controller", "return": "$controller", "args": [
+          {"name": "name", "insertion": "'name'"}
+        ]},
+        {"name": "injector", "return": "$injector", "args": []},
+        {"name": "scope", "return": "ngScope", "args": []},
+        {"name": "inheritedData", "return": "jqLite", "args": []},
+
+        // standard jQuery
+        {"name": "addClass", "return": "jqLite", "args": [
+          {"name": "className", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "addClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, currentClass) ->"}
+        ]},
+        {"name": "after", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "after", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index) ->"}
+        ]},
+        {"name": "append", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "append", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, html) ->"}
+        ]},
+        {"name": "attr", "return": "String", "args": [
+          {"name": "name", "insertion": "'attributeName'"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName'"},
+          {"name": "value"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "attributes", "insertion": "attributeMapObject"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName'"},
+          {"name": "fn", "insertion": "(index, attr) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType(s) delimited with spaces - namespaces not supported'"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType(s) delimited with spaces - namespaces not supported'"},
+          {"name": "data", "insertion": "eventDataObject"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "preventBubble", "insertion": "true|false:preventDefaultAction"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "data", "insertion": "eventDataObject"},
+          {"name": "preventBubble", "insertion": "true|false:preventDefaultAction"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "events", "insertion": "eventMapObject" }
+        ]},
+        {"name": "children", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "children", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "clone", "return": "jqLite", "args": []},
+        {"name": "clone", "return": "jqLite", "args": [
+          {"name": "data+Events", "insertion": "withDataAndEvents:true|false"}
+        ]},
+        {"name": "clone", "return": "jqLite", "args": [
+          {"name": "data+Events", "insertion": "withDataAndEvents:true|false"},
+          {"name": "deep", "insertion": "deepWithDataAndEvents:true|false"}
+        ]},
+        {"name": "contents", "return": "jqLite", "args": []},
+        {"name": "css", "return": "String", "args": [
+          {"name": "propName", "insertion": "'propertyName'"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propNames", "insertion": "['propName1','propName2']"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propName", "insertion": "'propertyName'"},
+          {"name": "value", "insertion": "'String'|Number"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propName", "insertion": "'propertyName'"},
+          {"name": "fn", "insertion": "(index, value) ->"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "props", "insertion": "propertyMapObject"}
+        ]},
+        {"name": "data", "return": "jqLite", "args": [
+          {"name": "key", "insertion": "'key'"},
+          {"name": "value"}
+        ]},
+        {"name": "data", "return": "jqLite", "args": [
+          {"name": "obj", "insertion": "keyValueObject"}
+        ]},
+        {"name": "data", "return": "Object", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]},
+        {"name": "data", "return": "Object", "args": []},
+        {"name": "eq", "return": "jqLite", "args": [
+          {"name": "index"}
+        ]},
+        {"name": "eq", "return": "jqLite", "args": [
+          {"name": "-index"}
+        ]},
+        {"name": "find", "return": "jqLite", "args": [
+          {"name": "criteria", "insertion": "'tag name selector only'|DOMElement|jqLite"}
+        ]},
+        {"name": "hasClass", "return": "Boolean", "args": [
+          {"name": "className", "insertion": "'className'"}
+        ]},
+        {"name": "html", "return": "String", "args": []},
+        {"name": "html", "return": "jqLite", "args": [
+          {"name": "string", "insertion": "'htmlString'"}
+        ]},
+        {"name": "html", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, oldhtml) ->"}
+        ]},
+        {"name": "next", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "next", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "parent", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "parent", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "prepend", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "prepend", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, html) ->"}
+        ]},
+        {"name": "prop", "return": "String", "args": [
+          {"name": "name", "insertion": "'propertyName'"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'propertyName'"},
+          {"name": "value", "insertion": "'String'|Number|Boolean"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "properties", "insertion": "propertyMapObject"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'propertyName'"},
+          {"name": "fn", "insertion": "(index, oldPropertyValue) ->"}
+        ]},
+        {"name": "ready", "return": "jqLite", "args": [
+          {"name": "handler", "insertion": "() ->"}
+        ]},
+        {"name": "remove", "return": "jqLite", "args": []},
+        {"name": "remove", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "removeAttr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName(s) delimited with spaces'"}
+        ]},
+        {"name": "removeClass", "return": "jqLite", "args": []},
+        {"name": "removeClass", "return": "jqLite", "args": [
+          {"name": "className", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "removeClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class) ->"}
+        ]},
+        {"name": "removeData", "return": "jqLite", "args": []},
+        {"name": "removeData", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'name'"}
+        ]},
+        {"name": "removeData", "return": "jqLite", "args": [
+          //TODO: Array of String
+          {"name": "list", "insertion": "'name(s) delimited with spaces'|Array"}
+        ]},
+        {"name": "replaceWith", "return": "jqLite", "args": [
+          {"name": "newContent", "insertion": "'htmlString'|DOMElement|jqLite"}
+        ]},
+        {"name": "replaceWith", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "() ->"}
+        ]},
+        {"name": "text", "return": "String", "args": []},
+        {"name": "text", "return": "jqLite", "args": [
+          {"name": "text", "insertion": "'text'"}
+        ]},
+        {"name": "text", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, text) ->"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": []},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'className(s) delimited with spaces'"},
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class, switch) ->"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class, switch) ->"},
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "triggerHandler", "return": "Object", "args": [
+          {"name": "type", "insertion": "'eventType'"}
+        ]},
+        {"name": "triggerHandler", "return": "Object", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "params", "insertion": "Array[extraParameters]"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": []},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"},
+          {"name": "false"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "event" }
+        ]},
+        //TODO: can return String|Number|Array
+        {"name": "val", "return": "Object", "args": []},
+        {"name": "val", "return": "jqLite", "args": [
+          {"name": "value", "insertion": "'value'|Array"}
+        ]},
+        {"name": "val", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, value) ->"}
+        ]},
+        {"name": "wrap", "return": "jqLite", "args": [
+          {"name": "wrappingElement", "insertion": "'selector'|'htmlString'|DOMElement|jqLite"}
+        ]},
+        {"name": "wrap", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index) ->"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$exceptionHandler
+    {
+      "name": "$exceptionHandler",
+      "enabled": true,
+      "constructors": [
+        {"args": [
+          {"name": "exception", "insertion": "Error"}
+        ]},
+        {"args": [
+          {"name": "exception", "insertion": "Error"},
+          {"name": "cause", "insertion": "'cause'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        // TODO: support 'insertion' for property / method names
+        // TODO: not sure if Array is the type we need to return here?
+        {"name": "[ngMock] errors", "insertion": "errors", "return": "Array"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ngMock.$exceptionHandlerProvider
+    {
+      "name": "$exceptionHandlerProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "[ngMock] mode", "insertion": "mode", "return": "", "args": [
+          {"name": "name", "insertion": "'rethrow'|'log'"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$filter
+    {
+      "name": "$filter",
+      "enabled": true,
+      "constructors": [
+        // TODO: this is one spot where it would be nice to specify a ctor return type
+        // TODO: currently no autocomplete support here
+        {"return": "ngFilterCurrency", "args": [
+          {"name": "currency", "insertion": "'currency'"}
+        ]},
+        {"return": "ngFilterDate", "args": [
+          {"name": "date", "insertion": "'date'"}
+        ]},
+        {"return": "ngFilterFilter", "args": [
+          {"name": "filter", "insertion": "'filter'"}
+        ]},
+        {"return": "ngFilterJson", "args": [
+          {"name": "json", "insertion": "'json'"}
+        ]},
+        {"return": "ngFilterLimitTo", "args": [
+          {"name": "limitTo", "insertion": "'limitTo'"}
+        ]},
+        {"return": "ngFilterLinky", "args": [
+          {"name": "linky", "insertion": "'linky'"}
+        ]},
+        {"return": "ngFilterLowercase", "args": [
+          {"name": "lowercase", "insertion": "'lowercase'"}
+        ]},
+        {"return": "ngFilterNumber", "args": [
+          {"name": "number", "insertion": "'number'"}
+        ]},
+        {"return": "ngFilterOrderBy", "args": [
+          {"name": "orderBy", "insertion": "'orderBy'"}
+        ]},
+        {"return": "ngFilterUppercase", "args": [
+          {"name": "uppercase", "insertion": "'uppercase'"}
+        ]},
+        {"return": "ngFilterUserDefined", "args": [
+          {"name": "userDefined", "insertion": "'name'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist, generic type returned by filter reg
+    // TODO: can't use until ctor is supported and ctor can return types
+    {
+      "name": "ngFilterUserDefined",
+      "enabled": true,
+      "constructors": [
+        {"return": "Object", "args": [
+          {"name": "input"}
+        ]},
+        {"return": "Object", "args": [
+          {"name": "input"},
+          {"name": "args…"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:currency
+    {
+      "name": "ngFilterCurrency",
+      "enabled": true,
+      "constructors": [
+        {"return": "String", "args": [
+          {"name": "input", "insertion": "Number"}
+        ]},
+        {"return": "String", "args": [
+          {"name": "input", "insertion": "Number"},
+          {"name": "symbol", "insertion": "'symbolString'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:date
+    {
+      "name": "ngFilterDate",
+      "enabled": true,
+      "constructors": [
+        {"return": "String", "args": [
+          {"name": "input", "insertion": "Date|Number|'string'"}
+        ]},
+        {"return": "String", "args": [
+          {"name": "input", "insertion": "Date|Number|'string'"},
+          {"name": "format", "insertion": "'medium'|'short'|'fullDate'|'longDate'|'mediumDate'|'shortDate'|'mediumTime'|'shortTime'|'formatString'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:filter
+    {
+      "name": "ngFilterFilter",
+      "enabled": true,
+      "constructors": [
+        {"return": "Array", "args": [
+          {"name": "array", "insertion": "Array"},
+          {"name": "expr", "insertion": "'String'|Object|() ->"},
+          {"name": "comparator", "insertion": "true|undefined|(expected, actual) -> "}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:json
+    {
+      "name": "ngFilterJson",
+      "enabled": true,
+      "constructors": [
+        {"return": "String", "args": [
+          {"name": "input", "insertion": "inputObject"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:limitTo
+    {
+      "name": "ngFilterLimitTo",
+      "enabled": true,
+      "constructors": [
+        {"return": "Array", "args": [
+          {"name": "input", "insertion": "Array"},
+          {"name": "limit", "insertion": "'String'|Number"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ngSanitize.filter:linky
+    {
+      "name": "ngFilterLinky",
+      "enabled": true,
+      "constructors": [
+        {"return": "String", "args": [
+          {"name": "text", "insertion": "'String'"}
+        ]},
+        {"return": "String", "args": [
+          {"name": "text", "insertion": "'String'"},
+          {"name": "target", "insertion": "'blank'|'self'|'parent'|'top'|'named frame'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:lowercase
+    {
+      "name": "ngFilterLowercase",
+      "enabled": true,
+      "constructors": [
+        {"return": "String", "args": [
+          {"name": "input", "insertion": "'String'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:number
+    {
+      "name": "ngFilterNumber",
+      "enabled": true,
+      "constructors": [
+        {"return": "String", "args": [
+          {"name": "number", "insertion": "Number|'String'"}
+        ]},
+        {"return": "String", "args": [
+          {"name": "number", "insertion": "Number|'String'"},
+          {"name": "fractionSize", "insertion": "Number|'String'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:orderBy
+    {
+      "name": "ngFilterOrderBy",
+      "enabled": true,
+      "constructors": [
+        {"return": "Array", "args": [
+          {"name": "array", "insertion": "Array"},
+          {"name": "expr", "insertion": "() ->|'String'|Array[() ->]|Array['String']"}
+        ]},
+        {"return": "Array", "args": [
+          {"name": "array", "insertion": "Array"},
+          {"name": "expr", "insertion": "() ->|'String'|Array[() ->]|Array['String']"},
+          {"name": "reverse", "insertion": "true|false"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // TODO: can't use until ctor is supported and ctor can return types
+    // http://code.angularjs.org/1.1.4/docs/api/ng.filter:uppercase
+    {
+      "name": "ngFilterUppercase",
+      "enabled": true,
+      "constructors": [
+        {"return": "String", "args": [
+          {"name": "input", "insertion": "'String'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$filterProvider
+    {
+      "name": "$filterProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "register", "return": "ngFilterUserDefined", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> filterFactoryFn"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$http
+    {
+      "name": "$http",
+      "enabled": true,
+      // TODO: update the snippet in snippet package yo...
+      //  <content><![CDATA[config =
+      //   method: '${1:GET|HEAD|POST|PUT|DELETE|JSONP|PATCH}'
+      //   url: '${2:absolute-or-relative-url}'${3:
+      //   params: ${4:map-of-strings}}${5:
+      //   data: ${6:string|Object}}${7:
+      //   headers: ${8:map-of-strings}}${9:
+      //   transformRequest: (data, headersGetter) ->
+      //     #return serialized version}${10:
+      //   transformResponse: (data, headersGetter) ->
+      //     #return serialized version}${11:
+      //   cache: ${12:true|false|Cache}}${13:
+      //   timeout: ${14:msTimeout}}${15:
+      //   withCredentials: ${16:true|false}}
+      // \$http config
+      "constructors": [
+        // TODO: shouldn't be available with 'new'
+        {"return": "ngHttpPromise", "args": [
+          {"name": "config…", "insertion": "{ method: 'GET|HEAD|POST|PUT|DELETE|JSONP', url: 'String', params: {}, data: 'String'|{}, headers: {}, xsrfHeaderName: 'Name', xsrfCookieName: 'Name', transformRequest: (data, headersGetter) -> (), transformResponse: (data, headersGetter) -> (), cache: true|false|Cache, timeout: Number, withCredentials: true|false, responseType: 'String' }"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        // TODO: want to use this:
+        {"name": "defaults", "return": "ngHttpDefault"},
+        // HACK: stuck using this for now
+        {"name": "defaults.cache"},
+        {"name": "defaults.headers"},
+        {"name": "defaults.headers.common"},
+        {"name": "defaults.headers.post"},
+        {"name": "defaults.headers.put"},
+        {"name": "defaults.transformRequest"},
+        {"name": "defaults.transformResponse"},
+        {"name": "defaults.withCredentials"},
+        {"name": "pendingRequests"}
+      ],
+      "instance_methods":
+      [
+        {"name": "delete", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"}
+        ]},
+        {"name": "delete", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"},
+          {"name": "config", "insertion": "{ config }"}
+        ]},
+        {"name": "get", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"}
+        ]},
+        {"name": "get", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"},
+          {"name": "config", "insertion": "{ config }"}
+        ]},
+        {"name": "head", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"}
+        ]},
+        {"name": "head", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"},
+          {"name": "config", "insertion": "{ config }"}
+        ]},
+        {"name": "jsonp", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"}
+        ]},
+        {"name": "jsonp", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"},
+          {"name": "config", "insertion": "{ config }"}
+        ]},
+       {"name": "post", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"},
+          {"name": "data"}
+        ]},
+        {"name": "post", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"},
+          {"name": "data"},
+          {"name": "config", "insertion": "{ config }"}
+        ]},
+        {"name": "put", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"},
+          {"name": "data"}
+        ]},
+        {"name": "put", "return": "ngHttpPromise", "args": [
+          {"name": "url", "insertion": "'url'"},
+          {"name": "data"},
+          {"name": "config", "insertion": "{ config }"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$http
+    {
+
+      "name": "ngHttpPromise",
+      "enabled": true,
+      //TODO: would like to specify inheritance from ngPromise, with extras
+      "inherits": "ngPromise",
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods":
+      [
+        {"name": "then", "return": "ngHttpPromise", "args": [
+          {"name": "success", "insertion": "() -> successCallbackFn"},
+          {"name": "error", "insertion": "() -> errorCallbackFn"}
+        ]},
+        {"name": "success", "return": "ngHttpPromise", "args": [
+          {"name": "handler", "insertion": "(data, status, headers, config) -> handlerFn"}
+        ]},
+        {"name": "error", "return": "ngHttpPromise", "args": [
+          {"name": "handler", "insertion": "(data, status, headers, config) -> handlerFn"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$http
+    {
+      "name": "ngHttpResponse",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "data", "return": "Object"},
+        {"name": "status", "return": "Number"},
+        {"name": "headers", "return": "Number"},
+        {"name": "config", "return": "ngHttpConfig"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$http
+    {
+      "name": "ngHttpConfig",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "method", "return": "String"},
+        {"name": "url", "return": "String"},
+        // TODO: could be map of strings or map of objects
+        {"name": "params", "return": "Object"},
+        // TODO: could also be a string
+        {"name": "data", "return": "Object"},
+        {"name": "headers", "return": "Object"},
+        {"name": "xsrfHeaderName", "return": "String"},
+        {"name": "xsrfCookieName", "return": "String"},
+        // TODO: next 2 could be (data, headersGetter) -> or Array of them
+        {"name": "transformRequest", "return": "Function"},
+        {"name": "transformResponse", "return": "Function"},
+        // TODO: could be a $cacheFactory instance
+        {"name": "cache", "return": "Boolean"},
+        {"name": "timeout", "return": "Number"},
+        {"name": "withCredentials", "return": "Boolean"},
+        {"name": "responseType", "return": "String"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$httpBackend
+    // http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend
+    // http://code.angularjs.org/1.1.4/docs/api/ngMockE2E.$httpBackend
+    {
+      "name": "$httpBackend",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "expect", "return": "ngHttpBackendResponse", "args": [
+          {"name": "verb", "insertion": "'GET|POST|HEAD|JSONP|PUT|DELETE|PATCH'"},
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "expect", "return": "ngHttpBackendResponse", "args": [
+          {"name": "verb", "insertion": "'GET|POST|HEAD|JSONP|PUT|DELETE|PATCH'"},
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"}
+        ]},
+        {"name": "expect", "return": "ngHttpBackendResponse", "args": [
+          {"name": "verb", "insertion": "'GET|POST|HEAD|JSONP|PUT|DELETE|PATCH'"},
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "expectDELETE", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "expectDELETE", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "expectGET", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "expectGET", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "expectHEAD", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "expectHEAD", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "expectJSONP", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "expectPATCH", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "expectPATCH", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"}
+        ]},
+        {"name": "expectPATCH", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "expectPOST", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "expectPOST", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"}
+        ]},
+        {"name": "expectPOST", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "expectPUT", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "expectPUT", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"}
+        ]},
+        {"name": "expectPUT", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "flush", "return": "", "args": []},
+        {"name": "flush", "return": "", "args": [{"name": "count"}]},
+        {"name": "resetExpectations", "return": "", "args": []},
+        {"name": "verifyNoOutstandingExpectation", "return": "", "args": []},
+        {"name": "verifyNoOutstandingRequest", "return": "", "args": []},
+        {"name": "when", "args": [
+          {"name": "verb", "insertion": "'GET|POST|HEAD|JSONP|PUT|DELETE|PATCH'"},
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "when", "return": "ngHttpBackendResponse", "args": [
+          {"name": "verb", "insertion": "'GET|POST|HEAD|JSONP|PUT|DELETE|PATCH'"},
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"}
+        ]},
+        {"name": "when", "return": "ngHttpBackendResponse", "args": [
+          {"name": "verb", "insertion": "'GET|POST|HEAD|JSONP|PUT|DELETE|PATCH'"},
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "whenDELETE", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "whenDELETE", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "whenGET", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "whenGET", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "whenHEAD", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "whenHEAD", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "whenJSONP", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "whenPATCH", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "whenPATCH", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"}
+        ]},
+        {"name": "whenPATCH", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "whenPOST", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "whenPOST", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"}
+        ]},
+        {"name": "whenPOST", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]},
+        {"name": "whenPUT", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"}
+        ]},
+        {"name": "whenPUT", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"}
+        ]},
+        {"name": "whenPUT", "return": "ngHttpBackendResponse", "args": [
+          {"name": "url", "insertion": "'url'|/RegExp/"},
+          {"name": "data", "insertion": "'bodyString'|/RegExp/"},
+          {"name": "headers", "insertion": "Object|(headers) -> matchFn"}
+        ]}
+      ]
+    },
+    // HACK: this type doesn't really exist
+    {
+      "name": "ngHttpBackendResponse",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "respond", "return": "", "args": [
+          {"name": "data", "insertion": "'dataString'"}
+        ]},
+        {"name": "respond", "return": "", "args": [
+          {"name": "code", "insertion": "statusCode"},
+          {"name": "data", "insertion": "'dataString'"}
+        ]},
+        {"name": "respond", "return": "", "args": [
+          {"name": "data", "insertion": "'dataString'"},
+          {"name": "headers"}
+        ]},
+        {"name": "respond", "return": "", "args": [
+          {"name": "code", "insertion": "statusCode"},
+          {"name": "data", "insertion": "'dataString'"},
+          {"name": "headers"}
+        ]},
+        {"name": "respond", "return": "", "args": [
+          {"name": "fn", "insertion": "(method, url, data, headers) -> responseFn"}
+        ]},
+        // TODO: support 'insertion' for property / method names
+        {"name": "[E2E] passThrough", "insertion": "passThrough", "return": "", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$http
+    {
+      "name": "$httpProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        // TODO: want to use this, but forced to use a hack temporarily
+        // TODO: prefer to expose a single property that returns a ngHttpDefault
+        {"name": "defaults", "return": "ngHttpDefault"},
+        // HACK: do this junk for now
+        {"name": "defaults.cache"},
+        {"name": "defaults.headers"},
+        {"name": "defaults.headers.common"},
+        {"name": "defaults.headers.get"},
+        {"name": "defaults.headers.head"},
+        {"name": "defaults.headers.post"},
+        {"name": "defaults.headers.put"},
+        {"name": "defaults.headers.delete"},
+        {"name": "defaults.headers.jsonp"},
+        {"name": "defaults.transformRequest"},
+        {"name": "defaults.transformResponse"},
+        {"name": "defaults.withCredentials"},
+        {"name": "interceptors", "return": "Array"}
+      ],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$http
+    {
+      "name": "ngHttpDefault",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        //TODO: need "return" on properties
+        {"name": "cache", "return": "Boolean"},
+        {"name": "headers", "return": "ngHttpHeader"},
+        {"name": "transformRequest", "return": "Array"},
+        {"name": "transformResponse", "return": "Array"},
+        {"name": "withCredentials", "return": "Boolean"}
+      ],
+      "instance_methods": []
+    },
+    // HACK: this type doesn't really exist
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$http
+    {
+      "name": "ngHttpHeader",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "common", "return": "Object"},
+        {"name": "get", "return": "Object"},
+        {"name": "head", "return": "Object"},
+        {"name": "post", "return": "Object"},
+        {"name": "put", "return": "Object"},
+        {"name": "delete", "return": "Object"},
+        {"name": "jsonp", "return": "Object"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/AUTO.$injector
+    {
+      "name": "$injector",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods":
+      [
+        // TODO: Array of String
+        {"name": "annotate", "return": "Array", "args": [
+          {"name": "fn", "insertion": "() ->|['String'|() ->]"}
+        ]},
+        // TODO: this could be any service
+        {"name": "get", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"}
+        ]},
+        // TODO: this could be any service
+        {"name": "instantiate", "return": "Object", "args": [
+          {"name": "type", "insertion": "() -> annotatedConstructorFn"}
+        ]},
+        {"name": "instantiate", "return": "Object", "args": [
+          {"name": "type", "insertion": "() -> annotatedConstructorFn"},
+          {"name": "locals"}
+        ]},
+        {"name": "invoke", "return": "Object", "args": [
+          {"name": "fn", "insertion": "() -> someFn"}
+        ]},
+        {"name": "invoke", "return": "Object", "args": [
+          {"name": "fn", "insertion": "() -> someFn"},
+          {"name": "self"}
+        ]},
+        {"name": "invoke", "return": "Object", "args": [
+          {"name": "fn", "insertion": "() -> someFn"},
+          {"name": "self"},
+          {"name": "locals"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$interpolate
+    {
+      "name": "$interpolate",
+      "enabled": true,
+      //TODO: prevent 'new'
+      "constructors": [
+        {"args": [
+          {"name": "text"}
+        ]},
+        {"args": [
+          {"name": "text"},
+          {"name": "mustHaveExpression", "insertion": "true|false"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "endSymbol", "return": "String", "args": []},
+        {"name": "startSymbol", "return": "String", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$interpolateProvider
+    {
+      "name": "$interpolateProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods":
+      [
+        {"name": "endSymbol", "return": "String", "args": []},
+        {"name": "endSymbol", "return": "$interpolateProvider", "args": [
+          {"name": "value", "insertion": "'symbol'"}
+        ]},
+        {"name": "startSymbol", "return": "String", "args": []},
+        {"name": "startSymbol", "return": "$interpolateProvider", "args": [
+          {"name": "value", "insertion": "'symbol'"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$locale
+    {
+      "name": "$locale",
+      "enabled": true,
+      "constructors": [{"args": []}],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "id", "return": "String"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$location
+    // http://docs.angularjs.org/guide/dev_guide.services.$location
+    {
+      "name": "$location",
+      "enabled": true,
+      "constructors": [{"args": []}],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "absUrl", "return": "String", "args": []},
+        {"name": "hash", "return": "String", "args": []},
+        {"name": "hash", "return": "String", "args": [
+          {"name": "fragment", "insertion": "'hashFragment'"}
+        ]},
+        {"name": "host", "return": "String", "args": []},
+        {"name": "path", "return": "String", "args": []},
+        {"name": "path", "return": "String", "args": [
+          {"name": "path", "insertion": "'newPath'"}
+        ]},
+        {"name": "port", "return": "Number", "args": []},
+        {"name": "protocol", "return": "String", "args": []},
+        {"name": "replace", "return": "", "args": []},
+        {"name": "search", "return": "String", "args": []},
+        {"name": "search", "return": "String", "args": [
+          {"name": "search", "insertion": "'params'|{paramsHash}"}
+        ]},
+        {"name": "search", "return": "String", "args": [
+          {"name": "search", "insertion": "'params'|{paramsHash}"},
+          {"name": "param", "insertion": "'paramValue'"}
+        ]},
+        {"name": "url", "return": "String", "args": []},
+        {"name": "url", "return": "String", "args": [
+          {"name": "url", "insertion": "'urlWithoutBasePrefix'"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$locationProvider
+    {
+      "name": "$locationProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods":
+      [
+        {"name": "hashPrefix", "return": "String", "args": []},
+        {"name": "hashPrefix", "return": "$locationProvider", "args": [
+          {"name": "prefix", "insertion": "'prefix'"}
+        ]},
+        {"name": "html5Mode", "return": "Boolean", "args": []},
+        {"name": "html5Mode", "return": "$locationProvider", "args": [
+          {"name": "mode", "insertion": "true|false"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$log
+    {
+      "name": "$log",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        // http://code.angularjs.org/1.1.4/docs/api/ngMock.$log
+        // TODO: support 'insertion' for property / method names
+        {"name": "[ngMock] logs", "insertion": "logs", "return": "Array"}
+      ],
+      "instance_methods": [
+        {"name": "error", "return": "", "args": [
+          {"name": "message", "insertion": "'message'"}
+        ]},
+        {"name": "info", "return": "", "args": [
+          {"name": "message", "insertion": "'message'"}
+        ]},
+        {"name": "log", "return": "", "args": [
+          {"name": "message", "insertion": "'message'"}
+        ]},
+        {"name": "warn", "return": "", "args": [
+          {"name": "message", "insertion": "'message'"}
+        ]},
+        {"name": "debug", "return": "", "args": [
+          {"name": "message", "insertion": "'message'"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/ngMock.$log
+        // TODO: support 'insertion' for property / method names
+        {"name": "[ngMock] assertEmpty", "insertion": "assertEmpty", "return": "", "args": []},
+        {"name": "[ngMock] reset", "insertion": "reset", "return": "", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$logProvider
+    {
+      "name": "$logProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "debugEnabled", "return": "Boolean", "args": []},
+        // TODO: verify this -- 'flag' doesn't really make sense
+        // https://github.com/nlaplante/angular.js/commit/a488ab1c5b290c7825bd929ae5a5be47d41b8256
+        {"name": "debugEnabled", "return": "$logProvider", "args": [
+          {"name": "flag", "insertion": "true|false"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$parse
+    {
+      "name": "$parse",
+      "enabled": true,
+      "constructors": [
+        {"return": "ngParseFunction", "args": [
+          {"name": "expr", "insertion": "'expression'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // HACK: another imaginary type
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$parse
+    {
+      "name": "ngParseFunction",
+      "enabled": true,
+      "constructors": [
+        //TODO: not for use with 'new'
+        {"return": "String", "args": [
+          {"name": "context", "insertion": "scope"},
+          {"name": "locals", "insertion": "ObjectHash"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "literal", "return": "Boolean"},
+        {"name": "constant", "return": "Boolean"},
+        // TODO: if expr assignable this is (context, value) ->
+        {"name": "assign", "return": "Function"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide
+    {
+      "name": "$provide",
+      "enabled": true,
+      "constructors": [
+        {"args": [{"name": "expr"}]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        // TODO: all of these methods return the newly registered instance
+        {"name": "constant", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "value"}
+        ]},
+        {"name": "decorator", "return": "Object", "args": [
+          {"name": "message", "insertion": "'message'"},
+          {"name": "fn", "insertion": "($delegate) -> decoratorFn"}
+        ]},
+        {"name": "factory", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> $getFn"}
+        ]},
+        {"name": "provider", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "provider", "insertion": "Object with $get|() -> constructorFn"}
+        ]},
+        {"name": "service", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "fn", "insertion": "() -> constructorFn"}
+        ]},
+        {"name": "value", "return": "Object", "args": [
+          {"name": "name", "insertion": "'name'"},
+          {"name": "value"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$q
+    {
+      "name": "$q",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "all", "return": "ngPromise", "args": [
+          {"name": "promises", "insertion": "[promise]|{promiseHash}"}
+        ]},
+        {"name": "defer", "return": "ngDeferred", "args": []},
+        {"name": "reject", "return": "ngPromise", "args": [
+          {"name": "reason", "insertion": "constant|'reason'|Exception|Object"}
+        ]},
+        {"name": "when", "return": "ngPromise", "args": [
+          {"name": "value", "insertion": "value|promise"}
+        ]}
+      ]
+    },
+    {
+      "name": "ngDeferred",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "promise", "return": "ngPromise"}
+      ],
+      "instance_methods": [
+        // TODO: typically the return values of these aren't used
+        {"name": "resolve", "return": "", "args": [
+          {"name": "value"}
+        ]},
+        {"name": "reject", "return": "ngPromise", "args": [
+          {"name": "reason", "insertion": "'reason'"}
+        ]}
+      ]
+    },
+    {
+      "name": "ngPromise",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "then", "return": "ngPromise", "args": [
+          {"name": "success", "insertion": "() -> successCallbackFn"},
+          {"name": "error", "insertion": "() -> errorCallbackFn"}]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ngResource.$resource
+    {
+      "name": "$resource",
+      "enabled": true,
+      // TODO: this is really a specialized instance, but we have to duplicate for now
+      // TODO: not sure that $http is what we want though.. hmmm
+      // https://github.com/justinmahar/SublimeCSAutocompletePlus/issues/24
+      "inherits": "$http",
+      "constructors": [
+      //
+      //<![CDATA[\$resource '${1:/action/:param}'${2:,
+      //   \{ ${3:a: defaulta, b: defaultb} \}}${4:,
+      //   \{
+      //     ${5:ActionName}:
+      //       method: '${6:GET|POST|PUT|DELETE|JSONP|PATCH}'
+      //       ${7:params: \{ ${8:a: preBound, b: preBound} \}}
+      //       ${9:isArray: ${10:true|false}}
+      //     ${11:,
+      //     ${12:ActionName2}:
+      //       method: '${13:GET|POST|PUT|DELETE|JSONP|PATCH}'
+      //       ${14:params: \{ ${15:a: preBound, b: preBound} \}}
+      //       ${16:isArray: ${17:true|false}} }
+      //   \}
+      // }]]>
+        {"args": [{"name": "url"}]},
+        {"args": [
+          {"name": "url"},
+          {"name": "paramDefaults", "insertion": "{paramDefaultsHash}"}
+        ]},
+        {"args": [
+          {"name": "url"},
+          {"name": "paramDefaults", "insertion": "{paramDefaultsHash}"},
+          {"name": "actions", "insertion": "{ action: 'name', method: 'GET|HEAD|POST|PUT|DELETE|JSONP', params: {}, url: 'String', isArray: true|false, transformRequest: (data, headersGetter) -> (), transformResponse: (data, headersGetter) -> (), cache: true|false|Cache, timeout: Number, withCredentials: true|false, responseType: 'String' }"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "$resolved", "return": "Boolean"}
+      ],
+      // TODO: handle $-prefixed actions
+      // var user = User.get({userId:123}, function() {
+      // user.abc = true;
+      // user.$save();
+      // });
+      // non-GET instance actions: instance.$action([parameters], [success], [error])
+      "instance_methods": [
+        {"name": "delete", "args": [
+          {"name": "data", "insertion": "postData"}
+        ]},
+        {"name": "delete", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"}
+        ]},
+        {"name": "delete", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"},
+          {"name": "success", "insertion": "() -> successFn"}
+        ]},
+        {"name": "delete", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"},
+          {"name": "success", "insertion": "() -> successFn"},
+          {"name": "error", "insertion": "() -> errorFn"}
+        ]},
+        {"name": "get", "args": [
+          {"name": "params", "insertion": "{paramsHash}"}
+        ]},
+        {"name": "get", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "success", "insertion": "() -> successFn"}
+        ]},
+        {"name": "get", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "success", "insertion": "() -> successFn"},
+          {"name": "error", "insertion": "() -> errorFn"}
+        ]},
+        {"name": "query", "args": [
+          {"name": "params", "insertion": "{paramsHash}"}
+        ]},
+        {"name": "query", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "success", "insertion": "() -> successFn"}
+        ]},
+        {"name": "query", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "success", "insertion": "() -> successFn"},
+          {"name": "error", "insertion": "() -> errorFn"}
+        ]},
+        {"name": "remove", "args": [
+          {"name": "data", "insertion": "postData"}
+        ]},
+        {"name": "remove", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"}
+        ]},
+        {"name": "remove", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"},
+          {"name": "success", "insertion": "() -> successFn"}
+        ]},
+        {"name": "remove", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"},
+          {"name": "success", "insertion": "() -> successFn"},
+          {"name": "error", "insertion": "() -> errorFn"}
+        ]},
+        {"name": "save", "args": [
+          {"name": "data", "insertion": "postData"}
+        ]},
+        {"name": "save", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"}
+        ]},
+        {"name": "save", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"},
+          {"name": "success", "insertion": "() -> successFn"}
+        ]},
+        {"name": "save", "args": [
+          {"name": "params", "insertion": "{paramsHash}"},
+          {"name": "data", "insertion": "postData"},
+          {"name": "success", "insertion": "() -> successFn"},
+          {"name": "error", "insertion": "() -> errorFn"}
+        ]},
+        {"name": "$then", "return": "ngPromise", "args": [
+          {"name": "success", "insertion": "() -> successCallbackFn"},
+          {"name": "error", "insertion": "() -> errorCallbackFn"}]}
+        // TODO: $promise and $response are next per
+        // https://github.com/angular/angular.js/pull/2060
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$rootElement
+    {
+      "name": "$rootElement",
+      "enabled": true,
+      // TODO: this is really a jqLite instance, but we have to duplicate for now
+      // https://github.com/justinmahar/SublimeCSAutocompletePlus/issues/24
+      "inherits": "jqLite",
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        // angular specific
+        // TODO: $controller/NgModelController is not always the return type
+        {"name": "controller", "return": "$controller", "args": [
+          {"name": "name", "insertion": "'name'"}
+        ]},
+        {"name": "injector", "return": "$injector", "args": []},
+        {"name": "scope", "return": "ngScope", "args": []},
+        {"name": "inheritedData", "return": "jqLite", "args": []},
+
+        // standard jQuery
+        {"name": "addClass", "return": "jqLite", "args": [
+          {"name": "className", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "addClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, currentClass) ->"}
+        ]},
+        {"name": "after", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "after", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index) ->"}
+        ]},
+        {"name": "append", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "append", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, html) ->"}
+        ]},
+        {"name": "attr", "return": "String", "args": [
+          {"name": "name", "insertion": "'attributeName'"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName'"},
+          {"name": "value"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "attributes", "insertion": "attributeMapObject"}
+        ]},
+        {"name": "attr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName'"},
+          {"name": "fn", "insertion": "(index, attr) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType(s) delimited with spaces - namespaces not supported'"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType(s) delimited with spaces - namespaces not supported'"},
+          {"name": "data", "insertion": "eventDataObject"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "preventBubble", "insertion": "true|false:preventDefaultAction"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "data", "insertion": "eventDataObject"},
+          {"name": "preventBubble", "insertion": "true|false:preventDefaultAction"}
+        ]},
+        {"name": "bind", "return": "jqLite", "args": [
+          {"name": "events", "insertion": "eventMapObject" }
+        ]},
+        {"name": "children", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "children", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "clone", "return": "jqLite", "args": []},
+        {"name": "clone", "return": "jqLite", "args": [
+          {"name": "data+Events", "insertion": "withDataAndEvents:true|false"}
+        ]},
+        {"name": "clone", "return": "jqLite", "args": [
+          {"name": "data+Events", "insertion": "withDataAndEvents:true|false"},
+          {"name": "deep", "insertion": "deepWithDataAndEvents:true|false"}
+        ]},
+        {"name": "contents", "return": "jqLite", "args": []},
+        {"name": "css", "return": "String", "args": [
+          {"name": "propName", "insertion": "'propertyName'"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propNames", "insertion": "['propName1','propName2']"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propName", "insertion": "'propertyName'"},
+          {"name": "value", "insertion": "'String'|Number"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "propName", "insertion": "'propertyName'"},
+          {"name": "fn", "insertion": "(index, value) ->"}
+        ]},
+        {"name": "css", "return": "jqLite", "args": [
+          {"name": "props", "insertion": "propertyMapObject"}
+        ]},
+        {"name": "data", "return": "jqLite", "args": [
+          {"name": "key", "insertion": "'key'"},
+          {"name": "value"}
+        ]},
+        {"name": "data", "return": "jqLite", "args": [
+          {"name": "obj", "insertion": "keyValueObject"}
+        ]},
+        {"name": "data", "return": "Object", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]},
+        {"name": "data", "return": "Object", "args": []},
+        {"name": "eq", "return": "jqLite", "args": [
+          {"name": "index"}
+        ]},
+        {"name": "eq", "return": "jqLite", "args": [
+          {"name": "-index"}
+        ]},
+        {"name": "find", "return": "jqLite", "args": [
+          {"name": "criteria", "insertion": "'tag name selector only'|DOMElement|jqLite"}
+        ]},
+        {"name": "hasClass", "return": "Boolean", "args": [
+          {"name": "className", "insertion": "'className'"}
+        ]},
+        {"name": "html", "return": "String", "args": []},
+        {"name": "html", "return": "jqLite", "args": [
+          {"name": "string", "insertion": "'htmlString'"}
+        ]},
+        {"name": "html", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, oldhtml) ->"}
+        ]},
+        {"name": "next", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "next", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "parent", "return": "jqLite", "args": []},
+        // this overload only be supported in unstable
+        {"name": "parent", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "prepend", "return": "jqLite", "args": [
+          {"name": "content…", "insertion": "'htmlString'|Array|DOMElement|jqLite"}
+        ]},
+        {"name": "prepend", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, html) ->"}
+        ]},
+        {"name": "prop", "return": "String", "args": [
+          {"name": "name", "insertion": "'propertyName'"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'propertyName'"},
+          {"name": "value", "insertion": "'String'|Number|Boolean"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "properties", "insertion": "propertyMapObject"}
+        ]},
+        {"name": "prop", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'propertyName'"},
+          {"name": "fn", "insertion": "(index, oldPropertyValue) ->"}
+        ]},
+        {"name": "ready", "return": "jqLite", "args": [
+          {"name": "handler", "insertion": "() ->"}
+        ]},
+        {"name": "remove", "return": "jqLite", "args": []},
+        {"name": "remove", "return": "jqLite", "args": [
+          {"name": "selector", "insertion": "'selector'"}
+        ]},
+        {"name": "removeAttr", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'attributeName(s) delimited with spaces'"}
+        ]},
+        {"name": "removeClass", "return": "jqLite", "args": []},
+        {"name": "removeClass", "return": "jqLite", "args": [
+          {"name": "className", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "removeClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class) ->"}
+        ]},
+        {"name": "removeData", "return": "jqLite", "args": []},
+        {"name": "removeData", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'name'"}
+        ]},
+        {"name": "removeData", "return": "jqLite", "args": [
+          //TODO: Array of String
+          {"name": "list", "insertion": "'name(s) delimited with spaces'|Array"}
+        ]},
+        {"name": "replaceWith", "return": "jqLite", "args": [
+          {"name": "newContent", "insertion": "'htmlString'|DOMElement|jqLite"}
+        ]},
+        {"name": "replaceWith", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "() ->"}
+        ]},
+        {"name": "text", "return": "String", "args": []},
+        {"name": "text", "return": "jqLite", "args": [
+          {"name": "text", "insertion": "'text'"}
+        ]},
+        {"name": "text", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, text) ->"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": []},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'className(s) delimited with spaces'"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "name", "insertion": "'className(s) delimited with spaces'"},
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class, switch) ->"}
+        ]},
+        {"name": "toggleClass", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, class, switch) ->"},
+          {"name": "switch", "insertion": "true|false"}
+        ]},
+        {"name": "triggerHandler", "return": "Object", "args": [
+          {"name": "type", "insertion": "'eventType'"}
+        ]},
+        {"name": "triggerHandler", "return": "Object", "args": [
+          {"name": "type", "insertion": "'eventType'"},
+          {"name": "params", "insertion": "Array[extraParameters]"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": []},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"},
+          {"name": "handler", "insertion": "(eventObject) ->"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "type", "insertion": "'eventType - namespaces not supported'"},
+          {"name": "false"}
+        ]},
+        {"name": "unbind", "return": "jqLite", "args": [
+          {"name": "event" }
+        ]},
+        //TODO: can return String|Number|Array
+        {"name": "val", "return": "Object", "args": []},
+        {"name": "val", "return": "jqLite", "args": [
+          {"name": "value", "insertion": "'value'|Array"}
+        ]},
+        {"name": "val", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index, value) ->"}
+        ]},
+        {"name": "wrap", "return": "jqLite", "args": [
+          {"name": "wrappingElement", "insertion": "'selector'|'htmlString'|DOMElement|jqLite"}
+        ]},
+        {"name": "wrap", "return": "jqLite", "args": [
+          {"name": "fn", "insertion": "(index) ->"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope
+    // $rootScope and $scope should just use Codo docs, until we have
+    // aliases
+    // https://github.com/justinmahar/SublimeCSAutocompletePlus/issues/23
+    //
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$rootScopeProvider
+    {
+      "name": "$rootScopeProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods":[],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "digestTtl", "args": [{"name": "limitNumber"}]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope
+    {
+      "name": "$rootScope",
+      "enabled": true,
+      // TODO: this needs to be a type alias to ngScope
+      // TODO: right now, its a copy and paste job
+      "inherits": "ngScope",
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "$id"}
+      ],
+      // TODO: not sure where the Scope() function belongs??
+      // https://github.com/angular/angular.js/blob/v1.0.x/src/ng/rootScope.js#L131
+      // {"args": []},
+      // {"args": [{"name": "providersMap"}]},
+      // {"args": [{"name": "providersMap", "name": "instanceCache"}]}
+      "instance_methods": [
+        {"name": "$apply", "return": "Object", "args": []},
+        {"name": "$apply", "return": "Object", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> expressionFn"}
+        ]},
+        {"name": "$broadcast", "return": "ngEvent", "args": [
+          {"name": "name"}
+        ]},
+        {"name": "$broadcast", "return": "ngEvent", "args": [
+          {"name": "name"}, {"name": "args…"}
+        ]},
+        {"name": "$destroy", "return": "", "args": []},
+        {"name": "$digest", "return": "", "args": []},
+        {"name": "$emit", "return": "ngEvent", "args": [
+          {"name": "name"}
+        ]},
+        {"name": "$emit", "return": "ngEvent", "args": [
+          {"name": "name"}, {"name": "args…"}
+        ]},
+        {"name": "$eval", "return": "Object", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> expressionFn"}
+        ]},
+        {"name": "$evalAsync", "return": "", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> expressionFn"}
+        ]},
+        {"name": "$new", "return": "ngScope", "args": [
+          {"name": "isolate", "insertion": "true|false"}
+        ]},
+        {"name": "$on", "return": "Function", "args": [
+          // http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngInclude
+          // http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngView
+          // http://code.angularjs.org/1.1.4/docs/api/ng.$route
+          // http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$destroy
+          {"name": "name", "insertion": "'$destroy'|'$locationChangeStart'|'$locationChangeSuccess'|'$includeContentLoaded'|'$viewContentLoaded'|'$routeChangeError'|'$routeChangeStart'|'$routeChangeSuccess'|'$routeUpdate'"},
+          // TODO: would like to specify event is an Event type here
+          {"name": "listener", "insertion": "(event, args) -> listenerFn"}
+        ]},
+        {"name": "$watch", "return": "Function", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> watchFn"}
+        ]},
+        {"name": "$watch", "return": "Function", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> watchFn"},
+          {"name": "listener", "insertion": "'String'|(newValue, oldValue, scope) -> listenFn"}
+        ]},
+        {"name": "$watch", "return": "Function", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> watchFn"},
+          {"name": "listener", "insertion": "'String'|(newValue, oldValue, scope) -> listenFn"},
+          {"name": "eq", "insertion": "true:forEquality|false:forRef"}
+        ]},
+        {"name": "$watchCollection", "return": "Function", "args": [
+          {"name": "expr", "insertion": "'String'|(scope) -> watchFn"},
+          {"name": "listener", "insertion": "(newCollection, oldCollection, scope) -> listenFn"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$route
+    {
+      "name": "$route",
+      "enabled": true,
+      // <![CDATA[route =
+      //   controller: () ->
+      //     #controller function${1:
+      //   template: '${2:string}'}${3:
+      //   templateUrl: '${4:url}'}${5:
+      //   resolve:
+      //     '${6:dependencyName}' : ${7:serviceName|factory-function}}${8:
+      //   redirectTo: ${9:path|function}}${10:
+      //   reloadOnSearch: ${11:true|false}}
+      // \$routeProvider.when '${12:path}', route]]>
+      "constructors": [{"args": []}],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        // TODO: prefer to expose a single property like this:
+        {"name": "current", "return": "ngRoute"},
+        // HACK: do this junk for now
+        {"name": "current.controller"},
+        {"name": "current.locals"},
+        {"name": "current.templateUrl"},
+        {"name": "current.params"},
+        {"name": "current.scope.name"},
+        {"name": "routes", "return": "Array"}
+      ],
+      "instance_methods": [
+        {"name": "reload", "args": []}
+      ]
+    },
+    // HACK: this type doesn't officially exist
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$route
+    {
+      "name": "ngRoute",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [
+        {"name": "controller", "return": "$controller"},
+        {"name": "locals", "return": "Object"},
+        {"name": "templateUrl", "return": "String"},
+        {"name": "params", "return": "Object"},
+        // TODO: figure out if scope is an instance of ngScope ??
+        {"name": "scope.name", "return": "String"}
+      ],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$routeProvider
+    {
+      "name": "$routeProvider",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "otherwise", "return": "$routeProvider", "args": [
+          {"name": "params", "insertion": "{paramsHash}"}
+        ]},
+        //route =
+        //   controller: () ->
+        //     #controller function${1:
+        //   template: '${2:string}'}${3:
+        //   templateUrl: '${4:url}'}${5:
+        //   resolve:
+        //     '${6:dependencyName}' : ${7:serviceName|factory-function}}${8:
+        //   redirectTo: ${9:path|function}}${10:
+        //   reloadOnSearch: ${11:true|false}}
+        // \$routeProvider.when '${12:path}', route
+        {"name": "when", "return": "$routeProvider", "args": [
+          {"name": "path"},
+          {"name": "route", "insertion": "{ controller: 'String'|() -> (constructorFn), template: 'String'|(routeParams) -> ('template'), templateUrl: 'String'|(routeParams) -> ('templateUrl'), resolve: {'key': 'String'|() -> (factoryFn)}, redirectTo: 'String'|(routeParams, path, search) -> (redirectFn), reloadOnSearch: true|false, caseInsensitiveMatch: true|false}"}
+        ]}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$routeParams
+    {
+      "name": "$routeParams",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ngSanitize.$sanitize
+    {
+      "name": "$sanitize",
+      "enabled": true,
+      "constructors": [
+        {"return": "String", "args": [
+          {"name": "html", "insertion": "'html'"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$sniffer
+    {
+      "name": "$sniffer",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$templateCache
+    {
+      "name": "$templateCache",
+      "enabled": true,
+      // TODO: this is really a $cacheFactory instance, but we have to duplicate for now
+      // https://github.com/justinmahar/SublimeCSAutocompletePlus/issues/24
+      "inherits": "$cacheFactory",
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "put", "return": "Object", "args": [
+          {"name": "key", "insertion": "'key'"},
+          {"name": "html", "insertion": "'html'"}
+        ]},
+        {"name": "get", "return": "Object", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]},
+        {"name": "remove", "return": "", "args": [
+          {"name": "key", "insertion": "'key'"}
+        ]},
+        {"name": "removeAll", "return": "", "args": []},
+        {"name": "destroy", "return": "", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$timeout
+    {
+      "name": "$timeout",
+      "enabled": true,
+      "constructors": [
+        {"args": [
+          {"name": "fn", "insertion": "() -> someFn"}
+        ]},
+        {"args": [
+          {"name": "fn", "insertion": "() -> someFn"},
+          {"name": "delay", "insertion": "milliseconds"}
+        ]},
+        {"args": [
+          {"name": "fn", "insertion": "() -> someFn"},
+          {"name": "delay", "insertion": "milliseconds"},
+          {"name": "invokeApply", "insertion": "true|false"}
+        ]}
+      ],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": [
+        {"name": "cancel", "return": "Boolean", "args": []},
+        {"name": "cancel", "return": "Boolean", "args": [
+          {"name": "promise"}
+        ]},
+        // http://code.angularjs.org/1.1.4/docs/api/ngMock.$timeout
+        // TODO: support 'insertion' for property / method names
+        {"name": "[ngMock] flush", "insertion": "flush", "return": "", "args": []},
+        {"name": "[ngMock] verifyNoPendingTasks", "insertion": "verifyNoPendingTasks", "return": "", "args": []}
+      ]
+    },
+    // http://code.angularjs.org/1.1.4/docs/api/ng.$window
+    // TODO: should we list the standard window methods here?
+    // generally speaking, we shouldn't be using them anyhow
+    // https://developer.mozilla.org/en-US/docs/DOM/window
+    {
+      "name": "$window",
+      "enabled": true,
+      "constructors": [],
+      "static_properties": [],
+      "static_methods": [],
+      "instance_properties": [],
+      "instance_methods": []
+    },
+    {
+      "name": "$",
+      "enabled": true,
+      "constructors": [{"args": [{"name":"config"}]}],
+      "static_properties":
+      [
+        {"name":"boxModel"},
+        {"name":"browser"},
+        {"name":"cssHooks"},
+        {"name":"fx.interval"},
+        {"name":"fx.off"},
+        {"name":"support"}
+      ],
+      "static_methods":
+      [
+        {"name":"ajax", "args": [{"name": "url"}]},
+        {"name":"ajax", "args": [{"name": "url"}, {"name": "settings"}]},
+        {"name":"ajax", "args": []},
+        {"name":"ajax", "args": [{"name": "settings"}]},
+        {"name":"ajaxPrefilter", "args": [{"name": "handler(options, originalOptions, jqXHR)"}]},
+        {"name":"ajaxPrefilter", "args": [{"name": "dataTypes"}, {"name": "handler(options, originalOptions, jqXHR)"}]},
+        {"name":"ajaxSetup", "args": [{"name": "options"}]},
+        {"name":"ajaxTransport", "args": [{"name": "handler(options, originalOptions, jqXHR)"}]},
+        {"name":"ajaxTransport", "args": [{"name": "dataType"}, {"name": "handler(options, originalOptions, jqXHR)"}]},
+        {"name":"Callbacks", "args": [{"name": "flags"}]},
+        {"name":"contains", "args": [{"name": "container"}, {"name": "contained"}]},
+        {"name":"data", "args": [{"name": "element"}]},
+        {"name":"data", "args": [{"name": "element"}, {"name": "key"}]},
+        {"name":"data", "args": [{"name": "element"}, {"name": "key"}, {"name": "value"}]},
+        {"name":"Deferred", "args": []},
+        {"name":"Deferred", "args": [{"name": "[beforeStart]"}]},
+        {"name":"dequeue", "args": [{"name": "element"}]},
+        {"name":"dequeue", "args": [{"name": "element"}, {"name": "queueName"}]},
+        {"name":"each", "args": [{"name": "collection"}]},
+        {"name":"each", "args": [{"name": "collection"}, {"name": "callback(indexInArray, valueOfElement)"}]},
+        {"name":"error", "args": [{"name": "message"}]},
+        {"name":"extend", "args": [{"name": "target"}, {"name": "object1"}]},
+        {"name":"extend", "args": [{"name": "target"}, {"name": "object1"}, {"name": "obj2 .. objN"}]},
+        {"name":"extend", "args": [{"name": "deep"}, {"name": "target"}, {"name": "obj1 .. objN"}]},
+        {"name":"get", "args": [{"name": "url"}]},
+        {"name":"get", "args": [{"name": "url"}, {"name": "data"}]},
+        {"name":"get", "args": [{"name": "url"}, {"name": "data"}, {"name": "success(data, textStatus, jqXHR)"}]},
+        {"name":"get", "args": [{"name": "url"}, {"name": "data"}, {"name": "success(data, textStatus, jqXHR)"}, {"name": "dataType"}]},
+        {"name":"getJSON", "args": [{"name": "url"}]},
+        {"name":"getJSON", "args": [{"name": "url"}, {"name": "data"}]},
+        {"name":"getJSON", "args": [{"name": "url"}, {"name": "data"}, {"name": "success(data, textStatus, jqXHR)"}]},
+        {"name":"getScript", "args": [{"name": "url"}]},
+        {"name":"getScript", "args": [{"name": "url"}, {"name": "success(script, textStatus, jqXHR)"}]},
+        {"name":"globalEval", "args": [{"name": "code"}]},
+        {"name":"grep", "args": [{"name": "array"}, {"name": "function(elementOfArray, indexInArray)"}]},
+        {"name":"grep", "args": [{"name": "array"}, {"name": "function(elementOfArray, indexInArray)"}, {"name": "invert"}]},
+        {"name":"hasData", "args": [{"name": "element"}]},
+        {"name":"holdReady", "args": [{"name": "hold"}]},
+        {"name":"inArray", "args": [{"name": "valueE"}, {"name": "array"}]},
+        {"name":"inArray", "args": [{"name": "valueE"}, {"name": "array"}, {"name": "fromIndex"}]},
+        {"name":"isArray", "args": [{"name": "obj"}]},
+        {"name":"isEmptyObject", "args": [{"name": "object"}]},
+        {"name":"isFunction", "args": [{"name": "obj"}]},
+        {"name":"isNumeric", "args": [{"name": "value"}]},
+        {"name":"isPlainObject", "args": [{"name": "object"}]},
+        {"name":"isWindow", "args": [{"name": "obj"}]},
+        {"name":"isXMLDoc", "args": [{"name": "node"}]},
+        {"name":"makeArray", "args": [{"name": "obj"}]},
+        {"name":"map", "args": [{"name": "array"}, {"name": "callback(elementOfArray, indexInArray)"}]},
+        {"name":"map", "args": [{"name": "arrayOrObject"}, {"name": "callback(value, indexOrKey)"}]},
+        {"name":"merge", "args": [{"name": "first"}, {"name": "second"}]},
+        {"name":"noConflict", "args": []},
+        {"name":"noConflict", "args": [{"name": "removeAll"}]},
+        {"name":"noop", "args": []},
+        {"name":"now", "args": []},
+        {"name":"param", "args": [{"name": "obj"}]},
+        {"name":"param", "args": [{"name": "obj"}, {"name": "traditional"}]},
+        {"name":"parseHTML", "args": [{"name": "data"}]},
+        {"name":"parseHTML", "args": [{"name": "data"}, {"name": "context"}]},
+        {"name":"parseHTML", "args": [{"name": "data"}, {"name": "context"}, {"name": "keepScripts"}]},
+        {"name":"parseJSON", "args": [{"name": "json"}]},
+        {"name":"parseXML", "args": [{"name": "data"}]},
+        {"name":"post", "args": [{"name": "url"}]},
+        {"name":"post", "args": [{"name": "url"}, {"name": "data"}]},
+        {"name":"post", "args": [{"name": "url"}, {"name": "data"}, {"name": "success(data, textStatus, jqXHR)"}]},
+        {"name":"post", "args": [{"name": "url"}, {"name": "data"}, {"name": "success(data, textStatus, jqXHR)"}, {"name": "dataType"}]},
+        {"name":"proxy", "args": [{"name": "function"}, {"name": "context"}]},
+        {"name":"proxy", "args": [{"name": "context"}, {"name": "name"}]},
+        {"name":"proxy", "args": [{"name": "function"}, {"name": "context"}]},
+        {"name":"proxy", "args": [{"name": "function"}, {"name": "context"}, {"name": "additionalArguments"}]},
+        {"name":"proxy", "args": [{"name": "context"}, {"name": "name"}]},
+        {"name":"proxy", "args": [{"name": "context"}, {"name": "name"}, {"name": "additionalArguments"}]},
+        {"name":"queue", "args": [{"name": "element"}]},
+        {"name":"queue", "args": [{"name": "element"}, {"name": "queueName"}]},
+        {"name":"queue", "args": [{"name": "element"}, {"name": "queueName"}, {"name": "newQueue"}]},
+        {"name":"queue", "args": [{"name": "element"}, {"name": "queueName"}, {"name": "callback()"}]},
+        {"name":"removeData", "args": [{"name": "element"}]},
+        {"name":"removeData", "args": [{"name": "element"}, {"name": "name"}]},
+        {"name":"sub", "args": []},
+        {"name":"trim", "args": [{"name": "str"}]},
+        {"name":"type", "args": [{"name": "obj"}]},
+        {"name":"unique", "args": [{"name": "array"}]},
+        {"name":"when", "args": [{"name": "deferreds"}]}
+      ],
+      "instance_properties":
+      [
+        {"name":"context"},
+        {"name":"jquery"},
+        {"name":"length"},
+        {"name":"selector"}
+      ],
+      "instance_methods":
+      [
+        {"name":"add", "args": [{"name": "selector"}]},
+        {"name":"add", "args": [{"name": "elements"}]},
+        {"name":"add", "args": [{"name": "html"}]},
+        {"name":"add", "args": [{"name": "jQueryObject"}]},
+        {"name":"add", "args": [{"name": "selector"}, {"name": "context"}]},
+        {"name":"addBack", "args": []},
+        {"name":"addBack", "args": [{"name": "selector"}]},
+        {"name":"addClass", "args": [{"name": "className"}]},
+        {"name":"addClass", "args": [{"name": "function(index, currentClass)"}]},
+        {"name":"after", "args": [{"name": "content"}]},
+        {"name":"after", "args": [{"name": "content"}, {"name": "additionalContent"}]},
+        {"name":"after", "args": [{"name": "function(index)"}]},
+        {"name":"ajaxComplete", "args": [{"name": "handler(event, XMLHttpRequest, ajaxOptions)"}]},
+        {"name":"ajaxError", "args": [{"name": "handler(event, jqXHR, ajaxSettings, thrownError)"}]},
+        {"name":"ajaxSend", "args": [{"name": "handler(event, jqXHR, ajaxOptions)"}]},
+        {"name":"ajaxStart", "args": [{"name": "handler()"}]},
+        {"name":"ajaxStop", "args": [{"name": "handler()", "insertion": "->"}]},
+        {"name":"ajaxSuccess", "args": [{"name": "handler(event, XMLHttpRequest, ajaxOptions)"}]},
+        {"name":"andSelf", "args": []},
+        {"name":"animate", "args": [{"name": "properties"}, {"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"animate", "args": [{"name": "properties"}, {"name": "options"}]},
+        {"name":"append", "args": [{"name": "content"}]},
+        {"name":"append", "args": [{"name": "content"}, {"name": "additionalContent"}]},
+        {"name":"append", "args": [{"name": "function(index, html)"}]},
+        {"name":"appendTo", "args": [{"name": "target"}]},
+        {"name":"attr", "args": [{"name": "attributeName"}]},
+        {"name":"attr", "args": [{"name": "attributeName"}, {"name": "value"}]},
+        {"name":"attr", "args": [{"name": "attributes"}]},
+        {"name":"attr", "args": [{"name": "attributeName"}, {"name": "function(index, attr)"}]},
+        {"name":"before", "args": [{"name": "content"}]},
+        {"name":"before", "args": [{"name": "content"}, {"name": "additionalContent"}]},
+        {"name":"bind", "args": [{"name": "eventType"}, {"name": "[eventData]"}, {"name": "[handler(eventObject)]"}]},
+        {"name":"bind", "args": [{"name": "eventType"}, {"name": "[eventData]"}, {"name": "preventBubble"}]},
+        {"name":"bind", "args": [{"name": "events"}]},
+        {"name":"blur", "args": []},
+        {"name":"blur", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"blur", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"change", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"change", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"change", "args": []},
+        {"name":"children", "args": [{"name": "[selector]"}]},
+        {"name":"clearQueue", "args": [{"name": "[queueName]"}]},
+        {"name":"click", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"click", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"click", "args": []},
+        {"name":"clone", "args": [{"name": "withDataAndEvents"}]},
+        {"name":"clone", "args": [{"name": "withDataAndEvents"}, {"name": "[deepWithDataAndEvents] "}]},
+        {"name":"closest", "args": [{"name": "selector"}, {"name": "[context]"}]},
+        {"name":"closest", "args": [{"name": "jQueryObject"}]},
+        {"name":"closest", "args": [{"name": "element"}]},
+        {"name":"contents", "args": []},
+        {"name":"css", "args": [{"name": "propertyName"}]},
+        {"name":"css", "args": [{"name": "propertyNames"}]},
+        {"name":"css", "args": [{"name": "propertyName"}, {"name": "value"}]},
+        {"name":"css", "args": [{"name": "propertyName"}, {"name": "function(index, value)"}]},
+        {"name":"css", "args": [{"name": "properties"}]},
+        {"name":"data", "args": [{"name": "key"}, {"name": "value"}]},
+        {"name":"data", "args": [{"name": "obj"}]},
+        {"name":"data", "args": [{"name": "key"}]},
+        {"name":"data", "args": []},
+        {"name":"dblclick", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"dblclick", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"dblclick", "args": []},
+        {"name":"delay", "args": [{"name": "duration"}, {"name": "[queueName]"}]},
+        {"name":"delegate", "args": [{"name": "selector"}, {"name": "eventType"}, {"name": "handler(eventObject)"}]},
+        {"name":"delegate", "args": [{"name": "selector"}, {"name": "eventType"}, {"name": "eventData"}, {"name": "handler(eventObject)"}]},
+        {"name":"delegate", "args": [{"name": "selector"}, {"name": "events"}]},
+        {"name":"dequeue", "args": [{"name": "[queueName]"}]},
+        {"name":"detach", "args": [{"name": "[selector]"}]},
+        {"name":"die", "args": []},
+        {"name":"die", "args": [{"name": "eventType"}, {"name": "[handler]"}]},
+        {"name":"die", "args": [{"name": "events"}]},
+        {"name":"each", "args": [{"name": "function(index, Element)"}]},
+        {"name":"empty", "args": []},
+        {"name":"end", "args": []},
+        {"name":"eq", "args": [{"name": "index"}]},
+        {"name":"eq", "args": [{"name": "-index"}]},
+        {"name":"error", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"error", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"fadeIn", "args": [{"name": "[duration_default_400]"}, {"name": "[complete()]"}]},
+        {"name":"fadeIn", "args": [{"name": "options"}]},
+        {"name":"fadeIn", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"fadeOut", "args": [{"name": "[duration_default_400]"}, {"name": "[complete()]"}]},
+        {"name":"fadeOut", "args": [{"name": "options"}]},
+        {"name":"fadeOut", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"fadeTo", "args": [{"name": "duration"}, {"name": "opacity"}, {"name": "[complete]"}]},
+        {"name":"fadeTo", "args": [{"name": "duration"}, {"name": "opacity"}, {"name": "[easing]"}, {"name": "[complete()]"}]},
+        {"name":"fadeToggle", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"fadeToggle", "args": [{"name": "options"}]},
+        {"name":"filter", "args": [{"name": "selector"}]},
+        {"name":"filter", "args": [{"name": "function(index)"}]},
+        {"name":"filter", "args": [{"name": "element"}]},
+        {"name":"filter", "args": [{"name": "jQueryObject"}]},
+        {"name":"find", "args": [{"name": "selector"}]},
+        {"name":"find", "args": [{"name": "jQueryObject"}]},
+        {"name":"find", "args": [{"name": "element"}]},
+        {"name":"finish", "args": [{"name": "[queue]"}]},
+        {"name":"first", "args": []},
+        {"name":"focus", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"focus", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"focus", "args": []},
+        {"name":"focusin", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"focusin", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"focusout", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"focusout", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"get", "args": [{"name": "[index]"}]},
+        {"name":"has", "args": [{"name": "selector"}]},
+        {"name":"has", "args": [{"name": "contained"}]},
+        {"name":"hasClass", "args": [{"name": "className"}]},
+        {"name":"height", "args": []},
+        {"name":"height", "args": [{"name": "value"}]},
+        {"name":"height", "args": [{"name": "function(index, height)"}]},
+        {"name":"hide", "args": []},
+        {"name":"hide", "args": [{"name": "[duration_default_400]"}, {"name": "[complete]"}]},
+        {"name":"hide", "args": [{"name": "options"}]},
+        {"name":"hide", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"hover", "args": [{"name": "handlerIn(eventObject)"}, {"name": "handlerOut(eventObject)"}]},
+        {"name":"html", "args": []},
+        {"name":"html", "args": [{"name": "htmlString"}]},
+        {"name":"html", "args": [{"name": "function(index, oldhtml)"}]},
+        {"name":"index", "args": []},
+        {"name":"index", "args": [{"name": "selector"}]},
+        {"name":"index", "args": [{"name": "element"}]},
+        {"name":"innerHeight", "args": []},
+        {"name":"innerWidth", "args": []},
+        {"name":"insertAfter", "args": [{"name": "target"}]},
+        {"name":"insertBefore", "args": [{"name": "target"}]},
+        {"name":"is", "args": [{"name": "selector"}]},
+        {"name":"is", "args": [{"name": "function(index)"}]},
+        {"name":"is", "args": [{"name": "jQueryObject"}]},
+        {"name":"is", "args": [{"name": "element"}]},
+        {"name":"keydown", "args": []},
+        {"name":"keydown", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"keydown", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"keypress", "args": []},
+        {"name":"keypress", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"keypress", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"keyup", "args": []},
+        {"name":"keyup", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"keyup", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"last", "args": []},
+        {"name":"live", "args": [{"name": "events"}, {"name": "handler(eventObject)"}]},
+        {"name":"live", "args": [{"name": "events"}, {"name": "data"}, {"name": "handler(eventObject)"}]},
+        {"name":"live", "args": [{"name": "events"}]},
+        {"name":"load", "args": [{"name": "url"}, {"name": "[data]"}, {"name": "[complete(responseText, textStatus, XMLHttpRequest)]"}]},
+        {"name":"load", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"load", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"map", "args": [{"name": "callback(index, domElement)"}]},
+        {"name":"mousedown", "args": []},
+        {"name":"mousedown", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"mousedown", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"mouseenter", "args": []},
+        {"name":"mouseenter", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"mouseenter", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"mouseleave", "args": []},
+        {"name":"mouseleave", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"mouseleave", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"mousemove", "args": []},
+        {"name":"mousemove", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"mousemove", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"mouseout", "args": []},
+        {"name":"mouseout", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"mouseout", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"mouseover", "args": []},
+        {"name":"mouseover", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"mouseover", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"mouseup", "args": []},
+        {"name":"mouseup", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"mouseup", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"next", "args": [{"name": "[selector]"}]},
+        {"name":"nextAll", "args": [{"name": "[selector]"}]},
+        {"name":"nextUntil", "args": [{"name": "[selector]"}, {"name": "[filter]"}]},
+        {"name":"nextUntil", "args": [{"name": "[element]"}, {"name": "[filter]"}]},
+        {"name":"not", "args": [{"name": "selector"}]},
+        {"name":"not", "args": [{"name": "elements"}]},
+        {"name":"not", "args": [{"name": "function(index)"}]},
+        {"name":"not", "args": [{"name": "jQueryObject"}]},
+        {"name":"off", "args": [{"name": "events"}, {"name": "[selector]"}, {"name": "handler(eventObject)"}]},
+        {"name":"off", "args": [{"name": "events"}, {"name": "[selector]"}]},
+        {"name":"offset", "args": []},
+        {"name":"offset", "args": [{"name": "coordinates"}]},
+        {"name":"offset", "args": [{"name": "function(index, coords)"}]},
+        {"name":"offsetParent", "args": []},
+        {"name":"on", "args": [{"name": "events"}, {"name": "[selector]"}, {"name": "[data]"}, {"name": "handler(eventObject)"}]},
+        {"name":"on", "args": [{"name": "events"}, {"name": "[selector]"}, {"name": "[data]"}]},
+        {"name":"one", "args": [{"name": "events"}, {"name": "[data]"}, {"name": "handler(eventObject)"}]},
+        {"name":"one", "args": [{"name": "events"}, {"name": "[selector]"}, {"name": "[data]"}, {"name": "handler(eventObject)"}]},
+        {"name":"one", "args": [{"name": "events"}, {"name": "[selector]"}, {"name": "[data]"}]},
+        {"name":"outerHeight", "args": [{"name": "[includeMargin]"}]},
+        {"name":"outerWidth", "args": [{"name": "[includeMargin]"}]},
+        {"name":"parent", "args": [{"name": "[selector]"}]},
+        {"name":"parents", "args": [{"name": "[selector]"}]},
+        {"name":"parentsUntil", "args": [{"name": "[selector]"}, {"name": "[filter]"}]},
+        {"name":"parentsUntil", "args": [{"name": "[element]"}, {"name": "[filter]"}]},
+        {"name":"position", "args": []},
+        {"name":"prepend", "args": [{"name": "content"}, {"name": "[additionalContent]"}]},
+        {"name":"prepend", "args": [{"name": "function(index, html)"}]},
+        {"name":"prependTo", "args": [{"name": "target"}]},
+        {"name":"prev", "args": [{"name": "[selector]"}]},
+        {"name":"prevAll", "args": [{"name": "[selector]"}]},
+        {"name":"prevUntil", "args": [{"name": "[selector]"}, {"name": "[filter]"}]},
+        {"name":"prevUntil", "args": [{"name": "[element]"}, {"name": "[filter]"}]},
+        {"name":"promise", "args": [{"name": "[type_default_fx]"}, {"name": "[target]"}]},
+        {"name":"prop", "args": [{"name": "propertyName"}]},
+        {"name":"prop", "args": [{"name": "propertyName"}, {"name": "value"}]},
+        {"name":"prop", "args": [{"name": "properties"}]},
+        {"name":"prop", "args": [{"name": "propertyName"}, {"name": "function(index, oldPropertyValue)"}]},
+        {"name":"pushStack", "args": [{"name": "elements"}]},
+        {"name":"pushStack", "args": [{"name": "elements"}, {"name": "name"}, {"name": "arguments"}]},
+        {"name":"queue", "args": [{"name": "[queueName]"}]},
+        {"name":"queue", "args": [{"name": "[queueName]"}, {"name": "newQueue"}]},
+        {"name":"queue", "args": [{"name": "[queueName]"}, {"name": "callback(next)"}]},
+        {"name":"ready", "args": [{"name": "handler"}]},
+        {"name":"remove", "args": [{"name": "[selector]"}]},
+        {"name":"removeAttr", "args": [{"name": "attributeName"}]},
+        {"name":"removeClass", "args": [{"name": "[className]"}]},
+        {"name":"removeClass", "args": [{"name": "function(index, class)"}]},
+        {"name":"removeData", "args": [{"name": "[name]"}]},
+        {"name":"removeData", "args": [{"name": "[list]"}]},
+        {"name":"removeProp", "args": [{"name": "propertyName"}]},
+        {"name":"replaceAll", "args": [{"name": "target"}]},
+        {"name":"replaceWith", "args": [{"name": "newContent"}]},
+        {"name":"replaceWith", "args": [{"name": "function"}]},
+        {"name":"resize", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"resize", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"resize", "args": []},
+        {"name":"scroll", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"scroll", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"scroll", "args": []},
+        {"name":"scrollLeft", "args": [{"name": "value"}]},
+        {"name":"scrollLeft", "args": []},
+        {"name":"scrollTop", "args": [{"name": "value"}]},
+        {"name":"scrollTop", "args": []},
+        {"name":"select", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"select", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"select", "args": []},
+        {"name":"serialize", "args": []},
+        {"name":"serializeArray", "args": []},
+        {"name":"show", "args": []},
+        {"name":"show", "args": [{"name": "[duration_default_400]"}, {"name": "[complete()]"}]},
+        {"name":"show", "args": [{"name": "options"}]},
+        {"name":"show", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"siblings", "args": [{"name": "[selector]"}]},
+        {"name":"size", "args": []},
+        {"name":"slice", "args": [{"name": "start"}, {"name": "[end]"}]},
+        {"name":"slideDown", "args": [{"name": "[duration_default_400]"}, {"name": "[complete()]"}]},
+        {"name":"slideDown", "args": [{"name": "options"}]},
+        {"name":"slideDown", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"slideToggle", "args": [{"name": "[duration_default_400]"}, {"name": "[complete()]"}]},
+        {"name":"slideToggle", "args": [{"name": "options"}]},
+        {"name":"slideToggle", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"slideUp", "args": [{"name": "[duration_default_400]"}, {"name": "[complete()]"}]},
+        {"name":"slideUp", "args": [{"name": "options"}]},
+        {"name":"slideUp", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"stop", "args": [{"name": "[clearQueue]"}, {"name": "[jumpToEnd]"}]},
+        {"name":"stop", "args": [{"name": "[queue]"}, {"name": "[clearQueue]"}, {"name": "[jumpToEnd]"}]},
+        {"name":"submit", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"submit", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"submit", "args": []},
+        {"name":"text", "args": []},
+        {"name":"text", "args": [{"name": "textString"}]},
+        {"name":"text", "args": [{"name": "function(index, text)"}]},
+        {"name":"toArray", "args": []},
+        {"name":"toggle", "args": [{"name": "[duration_default_400]"}, {"name": "[complete()]"}]},
+        {"name":"toggle", "args": [{"name": "options"}]},
+        {"name":"toggle", "args": [{"name": "[duration_default_400]"}, {"name": "[easing_default_swing]"}, {"name": "[complete()]"}]},
+        {"name":"toggle", "args": [{"name": "showOrHide"}]},
+        {"name":"toggle", "args": [{"name": "evenHandler(eventObject)"}, {"name": "oddHandler(eventObject)"}, {"name": "handler(eventObject)"}]},
+        {"name":"toggleClass", "args": [{"name": "className"}]},
+        {"name":"toggleClass", "args": [{"name": "className"}, {"name": "switch"}]},
+        {"name":"toggleClass", "args": [{"name": "[switch]"}]},
+        {"name":"toggleClass", "args": [{"name": "function(index, class, switch)"}, {"name": "[switch]"}]},
+        {"name":"trigger", "args": [{"name": "eventType"}, {"name": "[extraParameters]"}]},
+        {"name":"trigger", "args": [{"name": "event"}]},
+        {"name":"triggerHandler", "args": [{"name": "eventType"}, {"name": "[extraParameters]"}]},
+        {"name":"unbind", "args": [{"name": "[eventType]"}, {"name": "[handler(eventObject)]"}]},
+        {"name":"unbind", "args": [{"name": "eventType"}, {"name": "false"}]},
+        {"name":"unbind", "args": [{"name": "event"}]},
+        {"name":"undelegate", "args": []},
+        {"name":"undelegate", "args": [{"name": "selector"}, {"name": "eventType"}]},
+        {"name":"undelegate", "args": [{"name": "selector"}, {"name": "eventType"}, {"name": "handler(eventObject)"}]},
+        {"name":"undelegate", "args": [{"name": "selector"}, {"name": "events"}]},
+        {"name":"undelegate", "args": [{"name": "namespace"}]},
+        {"name":"unload", "args": [{"name": "handler(eventObject)"}]},
+        {"name":"unload", "args": [{"name": "[eventData]"}, {"name": "handler(eventObject)"}]},
+        {"name":"unwrap", "args": []},
+        {"name":"val", "args": []},
+        {"name":"val", "args": [{"name": "value"}]},
+        {"name":"val", "args": [{"name": "function(index, value)"}]},
+        {"name":"width", "args": []},
+        {"name":"width", "args": [{"name": "value"}]},
+        {"name":"width", "args": [{"name": "function(index, width)"}]},
+        {"name":"wrap", "args": [{"name": "wrappingElement"}]},
+        {"name":"wrap", "args": [{"name": "function(index)"}]},
+        {"name":"wrapAll", "args": [{"name": "wrappingElement"}]},
+        {"name":"wrapInner", "args": [{"name": "wrappingElement"}]},
+        {"name":"wrapInner", "args": [{"name": "function(index)"}]}
+      ]
+    }
+  ]
+}

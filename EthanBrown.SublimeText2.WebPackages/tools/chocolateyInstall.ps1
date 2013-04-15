@@ -23,7 +23,9 @@ try {
   $sublimeUserDataPath = Get-SublimeUserPath
 
   #straight file copies
-  'CoffeeScript.sublime-settings' |
+  'CoffeeScript.sublime-settings',
+  'CoffeeComplete Plus Custom Types.sublime-settings',
+  'CoffeeComplete Plus.sublime-settings' |
     % {
       $params = @{
         Path = Join-Path $current $_;
