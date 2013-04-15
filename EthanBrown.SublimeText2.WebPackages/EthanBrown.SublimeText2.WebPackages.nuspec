@@ -105,7 +105,7 @@
     <dependencies>
         <dependency id="PowerShell" version="3.0"/>
         <dependency id="SublimeText2.app" />
-        <dependency id="nodejs.install" />
+        <dependency id="nodejs.install" version="[0.8.22,0.8.22]"/>
     </dependencies>
   </metadata>
   <files>
