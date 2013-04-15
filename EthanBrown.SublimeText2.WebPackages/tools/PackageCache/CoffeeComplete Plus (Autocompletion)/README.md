@@ -33,9 +33,11 @@ Usage
 
 ### Autocomplete
 
-Autocomplete can be triggered in coffee files by typing the dot `.` operator or the `@` symbol (which is shorthand for `this`). You can also press `ctrl+space` to trigger autocompletions manually. The plugin will then try to figure out what you're doing and propose a list of suggestions.
+Autocomplete can be triggered in coffee files by typing the dot `.` operator or the `@` symbol (which is shorthand for `this`) and then by pressing `ctrl+space`. The plugin will then try to figure out what you're doing and propose a list of suggestions.
 
-Example usage: Inside a class, you type `this.`. A list of the available methods and properties is presented.
+It is also possible to configure Sublime Text to trigger autocomplete automatically, without having to press `ctrl+space`. This is not part of the plugin as there may be other triggers from other plugins that might be overwritten, but it's easy to add! See [Customizing Autocomplete Trigger](#customizing-autocomplete-trigger) for how to do this.
+
+Example usage: Inside a class, you type `this.` and press `ctrl+space`. A list of the available methods and properties is presented.
 
 ### Goto Definition
 
@@ -267,7 +269,26 @@ Configuration
 
 CoffeeComplete Plus has the following configurable settings:
 
-### General Settings
+### User Settings 
+
+These settings are accessible via `Preferences -> Settings — User`.
+
+#### Customizing Autocomplete Trigger
+
+* `auto_complete_triggers` &mdash; Characters that trigger the autocomplete menu.
+
+  - Sublime allows for context-specific triggers for the autocompletion menus. This allows the menu to show as soon as `.` or `@` are pressed. To add triggers for CoffeeScript autocompletions, open `Preferences -> Settings — User` and use the following to make the desired changes:
+
+```
+		"auto_complete_triggers":
+		   [
+		      {"characters": ".@", "selector": "source.coffee, source.litcoffee, source.coffee.md"}
+		   ]
+```
+
+  - Note that other `auto_complete_triggers` settings may be present in `Preferences -> Settings — Default`. If this is the case, simply copy the `auto_complete_triggers` from the default file into your user settings, add a comma inside the square brackets, and paste the curly brace section above.
+
+### General CoffeeComplete Settings
 
 In `CoffeeComplete Plus.sublime-settings`:
 
@@ -302,19 +323,6 @@ In `CoffeeComplete Plus.sublime-settings`:
 
 ```
 		"coffee_autocomplete_plus_member_exclusion_regexes": ["^_"] // Excludes members prefixed with underscore
-```
-
-#### Customizing Autocomplete Trigger
-
-* `auto_complete_triggers` &mdash; Characters that trigger the autocomplete menu.
-
-  - Sublime allows for context-specific triggers for the autocompletion menus. This allows the menu to show as soon as `.` or `@` are pressed, which are enabled by default. To customize these, use the following in settings and make the desired changes:
-
-```
-		"auto_complete_triggers":
-		   [
-		      {"characters": ".@", "selector": "source.coffee"}
-		   ]
 ```
 
 #### Aliases For `this`
