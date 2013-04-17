@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>xUnit.vs2012</id>
+    <title>xUnit.net runner for Visual Studio 2012</title>
+    <version>0.9.5</version>
+    <authors>Brad Wilson</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>This extension allows users to run unit tests written with xUnit.net inside of the new Unit Test Explorer in Visual Studio 2012. Requires Chocolatey 0.9.8.20+ to install.</summary>
+    <description>This extension allows users to run unit tests written with xUnit.net inside of the new Unit Test Explorer in Visual Studio 2012.
+
+xUnit.net is a developer testing framework, built to support Test Driven Development, with a design goal of extreme simplicity and alignment with framework features. It is compatible with .NET Framework 2.0 and later. Written by the original inventor of NUnit, xUnit.net is the latest technology for unit testing C#, F#, VB.NET and other .NET languages.
+  </description>
+  <releaseNotes>
+Version 0.9.5
+  * Resolve additional issues with async test methods.
+
+Version 0.9.4
+  * Resolve issues with async test methods and derived test methods not showing source line information.
+
+Version 0.9.3
+  * Add support for traits, when used with VS2012 Update 1
+
+Version 0.9.2
+  * Fix issue with "App domain unloaded" messages printed to output window when running tests
+  * Support for unit test projects written in .NET 2.0 or later
+
+Version 0.9.1
+  * Performance optimizations
+  * Improve test cancellation behavior
+
+Version 0.9
+  * Performance optimizations
+  * Support for Visual Studio 2012 RTM
+    </releaseNotes>
+    <projectUrl>http://xunit.codeplex.com/</projectUrl>
+    <tags>xunit test visualstudio vs vs2012 2012</tags>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/xUnit.vs2012/xUnit.png</iconUrl>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>
