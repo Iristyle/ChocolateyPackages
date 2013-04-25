@@ -1,4 +1,6 @@
 {
   "tab_size": 2,
-  "translate_tabs_to_spaces": true
+  "translate_tabs_to_spaces": true,
+  "watchOnSave": false,
+  "compileOnSave": false
 }
