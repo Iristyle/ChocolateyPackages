@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>Parse.CloudCode</id>
+    <title>Parse Cloud Code Command Line Tools</title>
+    <version>1.0.6.0</version>
+    <authors>Parse</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Parse Cloud Code Command Line Tools, required to run custom app code in the Parse Cloud.</summary>
+    <description>Parse's vision is to let developers build any mobile app without dealing with servers. For complex apps, sometimes you just need a bit of logic that isn't running on a mobile device. Cloud Code makes this possible.
+
+Cloud Code is easy to use because it's built on the same JavaScript SDK that powers thousands of apps. The only difference is that this code runs in the Parse Cloud rather than running on a mobile device. When you update your Cloud Code, it becomes available to all mobile environments instantly. You don't have to wait for a new release of your application. This lets you change app behavior on the fly and add new features faster.
+
+Even if you're only familiar with mobile development, we hope you'll find Cloud Code straightforward and easy to use.
+
+https://www.parse.com/products/cloud_code
+https://www.parse.com/docs/cloud_code_guide
+http://blog.parse.com/2012/10/25/parse-command-line-tools-available-for-windows/
+    </description>
+    <projectUrl>https://parse.com/</projectUrl>
+    <tags>parse cloud mobile API</tags>
+    <licenseUrl>https://parse.com/about/terms</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/Parse.CloudCode/cloud_code_256.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
