@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>Posh-GitHub</id>
+    <title>Posh-GitHub - PowerShell GitHub API helpers</title>
+    <version>0.0.1</version>
+    <authors>Ethan J Brown</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>PowerShell cmdlet helpers for working with GitHub</summary>
+    <description>PowerShell cmdlet helpers for working with the GitHub API.
+
+* New-GitHubOAuthToken - creates an OAuth token for use with GitHub
+* Get-GitHubOAuthTokens - Used to list all the authorizations you have provided
+to applications / tooling
+* Set-GitHubUserName - Adds the username to the current PowerShell session and
+sets a global User environment variable
+* Set-GitHubOrganization - Adds the organization to the current PowerShell
+session and sets a global User environment variable
+* Get-GitHubRepositories - List all your repositories - gives a fork indicator,
+a date for when the last update (push) occurred, how many open issues and size
+* New-GitHubRepository - Creates a new GitHub repository and clones it locally
+by default.
+* New-GitHubFork - Forks a repository, clones it locally, then properly adds a
+remote named upstream to point back to the parent repository.  Aborts if there
+is a directory in the current working directory that shares the name of the
+repository.
+* Get-GitHubIssues - List issues against the repository for the current working
+directory, or can list issues against a specific repo and owner.
+* New-GitHubPullRequest - Initiates a new pull request to the upstream repo.
+* Get-GitHubPullRequests - List pull requests against the repository for the
+current working directory, or can list pull requests against all forks from a user.
+* Get-GitHubTeams - The default parameterless version will use the GITHUB_ORG
+environment variable to get the list of teams, their ids and members.
+* Get-GitHubEvents - Will list, in chronological order, the last 30 events that
+you have generated
+* Clear-GitMergedBranches - Will remove any local branch cruft from branches
+that have been merged into the master branch.
+  </description>
+    <projectUrl>http://github.com/Iristyle/Posh-GitHub/</projectUrl>
+    <tags>powershell shell git github</tags>
+    <!-- Eula is in installer
+    <licenseUrl></licenseUrl>
+    -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/Posh-GitHub/Posh-GitHub.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="..\core\PowerShellHelpers.ps1" target="tools" />
+  </files>
+</package>
