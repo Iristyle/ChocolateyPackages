@@ -9,6 +9,7 @@ function Get-CurrentDirectory
 try {
   $current = Get-CurrentDirectory
   . (Join-Path $current 'PowerShellHelpers.ps1')
+  . (Join-Path $current 'EncodingHelpers.ps1')
 
   $moduleDirectory = Get-ModuleDirectory
   $installDirectory = Join-Path $moduleDirectory $package
@@ -56,7 +57,7 @@ try {
   {
     $loaderFile = 'Posh-VsVars-Profile.ps1'
     "`n`n# Load Posh-VsVars`n. '$installDirectory\$loaderFile'" |
-      Out-File -FilePath $PROFILE -Append -Encoding UTF8
+      Out-File -FilePath $PROFILE -Append -Encoding (Get-FileEncoding $PROFILE)
     Write-Host 'Reloading PowerShell Profile...'
     . $PROFILE
   }

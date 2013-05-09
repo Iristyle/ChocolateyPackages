@@ -48,5 +48,6 @@ that have been merged into the master branch.
   <files>
     <file src="tools\**" target="tools" />
     <file src="..\core\PowerShellHelpers.ps1" target="tools" />
+    <file src="..\core\EncodingHelpers.ps1" target="tools" />
   </files>
 </package>

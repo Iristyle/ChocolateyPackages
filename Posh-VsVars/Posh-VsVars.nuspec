@@ -39,5 +39,6 @@ http://www.hanselman.com/blog/AwesomeVisualStudioCommandPromptAndPowerShellIcons
   <files>
     <file src="tools\**" target="tools" />
     <file src="..\core\PowerShellHelpers.ps1" target="tools" />
+    <file src="..\core\EncodingHelpers.ps1" target="tools" />
   </files>
 </package>

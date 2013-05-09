@@ -10,6 +10,7 @@ function Get-CurrentDirectory
 try {
   $current = Get-CurrentDirectory
   . (Join-Path $current 'PowerShellHelpers.ps1')
+  . (Join-Path $current 'EncodingHelpers.ps1')
 
   # find user specific module directory
   $moduleDirectory = Get-ModuleDirectory
@@ -57,7 +58,7 @@ try {
   {
     $loaderFile = 'Posh-GitHub-Profile.ps1'
     "`n`n# Load Posh-GitHub`n. '$installDirectory\$loaderFile'" |
-      Out-File -FilePath $PROFILE -Append -Encoding UTF8
+      Out-File -FilePath $PROFILE -Append -Encoding (Get-FileEncoding $PROFILE)
     . $PROFILE
   }
 
