@@ -2,8 +2,8 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
     <id>Posh-VsVars</id>
-    <title>Automatically load Visual Studio VsVars32</title>
-    <version>0.0.1</version>
+    <title>Posh-VsVars - Autoload Visual Studio VsVars32</title>
+    <version>0.0.2</version>
     <authors>Ethan J Brown</authors>
     <owners>Ethan J Brown</owners>
     <summary>Load Visual Studio command line tools into current shell environment</summary>
