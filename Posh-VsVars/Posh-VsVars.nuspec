@@ -3,7 +3,7 @@
   <metadata>
     <id>Posh-VsVars</id>
     <title>Posh-VsVars - Autoload Visual Studio VsVars32</title>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <authors>Ethan J Brown</authors>
     <owners>Ethan J Brown</owners>
     <summary>Load Visual Studio command line tools into current shell environment</summary>
