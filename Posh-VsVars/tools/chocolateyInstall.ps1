@@ -58,10 +58,13 @@ try {
     $loaderFile = 'Posh-VsVars-Profile.ps1'
     "`n`n# Load Posh-VsVars`n. '$installDirectory\$loaderFile'" |
       Out-File -FilePath $PROFILE -Append -Encoding (Get-FileEncoding $PROFILE)
-    Write-Host 'Reloading PowerShell Profile...'
     . $PROFILE
   }
 
+  Write-Host @'
+  Reload the current profile to access Posh-VsVars with:
+  . $PROFILE
+'@
   Write-ChocolateySuccess $package
 }
 catch
