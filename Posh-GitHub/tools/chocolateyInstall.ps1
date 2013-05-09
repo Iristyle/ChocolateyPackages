@@ -60,12 +60,13 @@ try {
     "`n`n# Load Posh-GitHub`n. '$installDirectory\$loaderFile'" |
       Out-File -FilePath $PROFILE -Append -Encoding (Get-FileEncoding $PROFILE)
     . $PROFILE
+
+    Write-Host -ForegroundColor DarkMagenta @'
+    Reload the current profile to access Posh-Github with:
+    . $PROFILE
+'@
   }
 
-  Write-Host @'
-Reload the current profile to access Posh-Github with:
-. $PROFILE
-'@
   Write-ChocolateySuccess $package
 }
 catch
