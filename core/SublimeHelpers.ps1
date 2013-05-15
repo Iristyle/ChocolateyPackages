@@ -12,7 +12,10 @@ function Get-SublimeSettingsPath
 function Get-SublimePackagesPath
 {
   $packagesPath = Join-Path (Get-SublimeSettingsPath) 'Packages'
-  if (!(Test-Path $packagesPath)) { New-Item $packagesPath -Type Directory }
+  if (!(Test-Path $packagesPath))
+  {
+    New-Item $packagesPath -Type Directory | Out-Null
+  }
 
   return $packagesPath
 }
@@ -20,7 +23,10 @@ function Get-SublimePackagesPath
 function Get-SublimeUserPath
 {
   $path = Join-Path (Get-SublimePackagesPath) 'User'
-  if (!(Test-Path $path)) { New-Item $path -Type Directory }
+  if (!(Test-Path $path))
+  {
+    New-Item $path -Type Directory  | Out-Null
+  }
   return $path
 }
 
