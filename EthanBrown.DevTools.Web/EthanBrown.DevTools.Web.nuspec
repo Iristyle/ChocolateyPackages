@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>EthanBrown.DevTools.Web</id>
+    <title>EthanBrown.DevTools.Web</title>
+    <version>0.1.0</version>
+    <authors>Ethan Brown</authors>
+    <owners>Ethan Brown</owners>
+    <summary>Batteries included web development tool stack for Windows.</summary>
+    <description>Batteries included web development tool stack for Windows.  Includes Git, Node.js, Ruby, Chrome Canary, PhantomJS, Sublime Text 2 and a number of web-specific Sublime packages amongst a host of other tools.</description>
+    <projectUrl>http://github.com/Iristyle/ChocolateyPackages/</projectUrl>
+    <tags>nodejs conemu git powershell font sublimetext2</tags>
+    <copyright></copyright>
+    <licenseUrl>https://raw.github.com/Iristyle/ChocolateyPackages/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <iconUrl></iconUrl> -->
+    <dependencies>
+      <dependency id="toolsroot"/>
+      <dependency id="7zip.install"/>
+      <dependency id="SourceCodePro" version="1.017.1"/>
+      <dependency id="MesloLG.DZ" version="1.00"/>
+      <dependency id="PowerShell" version="3.0"/>
+      <dependency id="curl" version="7.28.1"/>
+      <dependency id="nodejs.install" version="[0.8.22,0.8.22]"/>
+      <dependency id="gitextensions" version="2.4.4"/>
+      <dependency id="EthanBrown.GitAliases" version="0.0.5"/>
+      <dependency id="EthanBrown.GitExtensionsConfiguration" version="0.0.1"/>
+      <!-- automatically installs latest from git zipball -->
+      <dependency id="poshgit" version="0.4.0.20120717"/>
+      <dependency id="Posh-VsVars" version="0.0.2"/>
+      <dependency id="Posh-GitHub" version="0.0.1"/>
+      <dependency id="diffmerge" version="3.3.2"/>
+      <!-- <dependency id="git.difftool.diffmerge"/>  Error: "External packages cannot depend on packages that target projects." -->
+      <dependency id="EthanBrown.GitConfiguration" version="0.0.3"/>
+      <dependency id="ConEmu" version="12.4.17.1"/> <!-- latest version is alpha -->
+      <dependency id="PhantomJS" version="1.9.0"/>
+      <dependency id="FireFox" version="20.0.1"/>
+      <dependency id="GoogleChrome.Canary" version="28.0.1461.0"/>
+      <dependency id="EthanBrown.ChromeCanaryDevExtensions" version="0.0.2"/>
+      <dependency id="SublimeText2.app" version="2.0.1.22171"/>
+      <dependency id="EthanBrown.SublimeText2.UtilPackages" version="0.1.2"/>
+      <dependency id="EthanBrown.SublimeText2.EditorPackages" version="0.1.1"/>
+      <dependency id="EthanBrown.SublimeText2.GitPackages" version="0.1.1"/>
+      <dependency id="EthanBrown.SublimeText2.WebPackages" version="0.2.3"/>
+      <dependency id="Growl" version="2.0.9.20130406"/>
+      <dependency id="OptiPNG" version="0.7.1.20120913"/>
+      <dependency id="libjpeg-turbo" version="1.2.1.201304081"/>
+      <dependency id="Tunnelier" version="4.60.0"/>
+      <dependency id="Ruby" version="1.9.3.37400"/>
+      <dependency id="ruby.devkit" version="4.5.2.20111230"/>
+    </dependencies>
+    <releaseNotes>
+      For Ruby: Bundler, Capistrano, Twig
+      For Node: coffee-script coffeelint bower grunt-cli http-server jshint codo recess csslint
+
+      Configures a number of Git settings, such as Notepad++ for
+      commit editor, DiffMerge as diff / merge tool, and core.autocrlf
+      to true.
+
+      Additionally includes a number of very useful Git aliases.
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="content\**" target="content" />
+  </files>
+</package>
