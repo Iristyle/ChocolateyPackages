@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>DartEditor</id>
+    <title>Dart Editor</title>
+    <version>0.22879</version>
+    <authors>Google</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Dart Editor is an open-source tool for editing, debugging, and running Dart applications.</summary>
+    <description>Dart Editor is an open-source tool for editing, debugging, and running Dart applications.
+
+Dart is a new web programming language with libraries, a virtual machine, and tools. Dart helps developers build structured modern web apps. Dart compiles to JavaScript to run across the entire modern web.
+
+* The Dart language is familiar and easy to learn. It's class based and object oriented, without being dogmatic.
+* The Pub package manager makes getting and sharing libraries easy.
+* Core libraries provide all the basics, including support for asynchronous programming with Futures.
+* Performance is good and getting better. Dart apps are fastest in the Dart VM, but they can be speedy even after compilation to JavaScript.
+* Web UI lets you use future web APIs today, with support for proposed standards such as web components, MDV, and shadow DOM.
+* All modern browsers (both desktop and mobile) can run Dart web apps, thanks to our Dart-to-JavaScript compiler.
+
+https://code.google.com/p/dart/
+    </description>
+    <projectUrl>http://www.dartlang.org/tools/editor</projectUrl>
+    <tags>google dart browser javascript</tags>
+    <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/DartEditor/dart_logo.jpg</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
