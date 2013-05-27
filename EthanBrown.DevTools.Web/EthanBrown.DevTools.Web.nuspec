@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.DevTools.Web</id>
     <title>EthanBrown.DevTools.Web</title>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <authors>Ethan Brown</authors>
     <owners>Ethan Brown</owners>
     <summary>Batteries included web development tool stack for Windows.</summary>
