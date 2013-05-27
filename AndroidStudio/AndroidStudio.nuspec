@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>AndroidStudio</id>
+    <title>Android Studio</title>
+    <version>0.1.130.677228</version>
+    <authors>Google</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Android Studio is a new Android development environment based on IntelliJ IDEA.</summary>
+    <description>Android Studio is a new Android development environment based on IntelliJ IDEA. Similar to Eclipse with the ADT Plugin, Android Studio provides integrated Android developer tools for development and debugging. On top of the capabilities you expect from IntelliJ, Android Studio offers:
+
+* Gradle-based build support.
+* Android-specific refactoring and quick fixes.
+* Lint tools to catch performance, usability, version compatibility and other problems.
+* ProGuard and app-signing capabilities.
+* Template-based wizards to create common Android designs and components.
+* A rich layout editor that allows you to drag-and-drop UI components, preview layouts on multiple screen configurations, and much more.
+
+Caution: Android Studio is currently available as an early access preview. Several features are either incomplete or not yet implemented and you may encounter bugs. If you are not comfortable using an unfinished product, you may want to instead download (or continue to use) the ADT Bundle (Eclipse with the ADT Plugin).
+
+      http://blogs.jetbrains.com/idea/2013/05/intellij-idea-and-android-studio-faq/
+    </description>
+    <projectUrl>http://developer.android.com/sdk/installing/studio.html</projectUrl>
+    <tags>google android jetbrains IntelliJ IDEA</tags>
+    <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/AndroidStudio/androidstudio_logo.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
