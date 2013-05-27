@@ -48,6 +48,7 @@
       <dependency id="Tunnelier" version="4.60.0"/>
       <dependency id="Ruby" version="1.9.3.37400"/>
       <dependency id="ruby.devkit" version="4.5.2.20111230"/>
+      <dependency id="DartEditor" version="0.22879"/>
     </dependencies>
     <releaseNotes>
       For Ruby: Bundler, Capistrano, Twig
