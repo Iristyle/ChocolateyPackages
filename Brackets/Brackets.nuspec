@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>Brackets</id>
+    <title>Brackets Code Editor</title>
+    <version>0.1.25.7701</version>
+    <authors>Adobe</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Brackets open-source code editor built with the web for the web - Milestone 25.</summary>
+    <description>Brackets is an open-source editor for web design and development built on top of web technologies such as HTML, CSS and JavaScript. The project was created and is maintained by Adobe, and is released under an MIT License.
+
+FOR THE WEB, BY THE WEB
+Brackets is built using HTML, CSS and JavaScript. If you can code in Brackets, you can code on Brackets.
+
+OPEN DEVELOPMENT WORKS
+Brackets, is a fully open-source, community-driven project. Want to influence its direction? Join the developer list and start contributing.
+
+TOOLS SHOULDN'T GET IN YOUR WAY
+Rather than clutter your workspace with floating panels, toolbars and icons, Brackets focuses on providing “Quick Edit” in-line views that provide context-sensitive access to your content, without taking you away from your code.
+
+WORKS WITH YOUR BROWSER
+The browser is your design view. Brackets hooks up directly to the browser, allowing you to design and develop in the same environment that you deploy.
+    </description>
+    <projectUrl>http://brackets.io/</projectUrl>
+    <tags>editor web adobe javascript html css</tags>
+    <licenseUrl>https://github.com/adobe/brackets/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/Brackets/brackets_logo.png</iconUrl>
+    <releaseNotes>New Features In Sprint 25
+
+* Extension Manager: From the toolbar icon or File > Extension Manager… you can view, search and remove installed extensions. To install new extensions, use the Install from URL… button in the Extension Manager.
+* Delete Files/Folders: Files and folders can be deleted from the file tree using the context menu or File > Delete.
+* Show in OS: Right click on a file or folder and choose Show in OS to open the location in Mac Finder or Windows Explorer.
+* Refresh File Tree: Right-click on the file tree and choose Refresh to update the file list from disk.
+* Live Preview Reliability: On all platforms, if Live Preview is disconnected, Brackets will show a notification. On Windows, launching and finding Chrome is now more reliable.
+* JavaScript Code Intelligence Improvements: JavaScript Quick Edit now uses the Tern-based code intelligence engine for finding function definitions. Also, bug fixes and performance optimizations were made in JavaScript code hinting.
+* Typing Performance: A substantial typing performance regression has been fixed.
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
