@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>EthanBrown.ConEmuConfig</id>
+    <title>EthanBrown.ConEmuConfig</title>
+    <version>0.0.1</version>
+    <authors>Ethan Brown</authors>
+    <owners>Ethan Brown</owners>
+    <summary>ConEmu configured with Base16 color scheme and sane defaults.</summary>
+    <description>ConEmu is a beast to configure with reasonable defaults.
+
+It is hands down the best terminal Windows has to offer, but its configuration
+abilities are overwhelming.  It also has a rather peculiar set of defaults, that
+can make keyboard usage quite odd.
+
+This pkg removes the pain.
+
+Includes:
+ - Use of SourceCodePro terminal font
+ - One admin PowerShell tab, one non-admin PowerShell tab, one Git Bash tab
+ - Uses Chris Kempson's base16 color scheme for hackers
+   https://github.com/chriskempson/base16
+ - Uses long console output buffer height to ensure capturing all terminal output
+   from long running scripts
+ - Smaller window chrome to save on screen real estate
+ - Auto-updates enabled
+ - Support for Ruby ANSI escape sequences through ConEmuHk
+ - Block cursor
+ - A simplified status bar
+ - Sane key bindings that are consistent with other applications, for instance
+   - Windows + # are not hijacked, and Alt-1 through Alt-0 can switch tabs
+   - Ctrl-Tab cycles all tabs and current tab is always previewd
+   - Ctrl-W / Ctrl-F4 closes a tab
+   - Alt-Space shows ConEmu System menu
+   - Ctrl-T / Ctrl-N / Ctrl-Shift-N to create new tabs (mimicking Chrome)
+   - Ctrl-Shift-P to show tab context menu (mimicking Sublime)
+   - F11 full screen
+   - Ctrl-V pastes entire clipboard without prompting
+ - Full mouse and keyboard selection support
+ - Dim window on inactive
+
+I'm sure there are a couple of other minor tweaks that were dialed in as well.
+    </description>
+    <projectUrl>http://github.com/Iristyle/ChocolateyPackages/</projectUrl>
+    <tags>conemu powershell git</tags>
+    <copyright></copyright>
+    <licenseUrl>https://raw.github.com/Iristyle/ChocolateyPackages/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/EthanBrown.ConEmuConfig/conemu_logo.png</iconUrl>
+    <dependencies>
+      <dependency id="toolsroot"/>
+      <dependency id="SourceCodePro" version="1.017.1"/>
+      <dependency id="PowerShell" version="3.0"/>
+      <dependency id="gitextensions" version="2.4.4"/>
+      <dependency id="ConEmu" version="12.4.17.1"/> <!-- latest version is alpha -->
+    </dependencies>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
