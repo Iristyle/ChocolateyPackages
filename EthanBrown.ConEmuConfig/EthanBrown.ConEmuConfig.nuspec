@@ -52,7 +52,7 @@ I'm sure there are a couple of other minor tweaks that were dialed in as well.
       <dependency id="SourceCodePro" version="1.017.1"/>
       <dependency id="PowerShell" version="3.0"/>
       <dependency id="gitextensions" version="2.4.4"/>
-      <dependency id="ConEmu" version="12.4.17.1"/> <!-- latest version is alpha -->
+      <dependency id="DevBox-ConEmu" version="0.0.0.20130422"/>
     </dependencies>
     <releaseNotes></releaseNotes>
   </metadata>
