@@ -11,15 +11,15 @@ try {
     #InnoSetup - http://unattended.sourceforge.net/InnoSetup_Switches_ExitCodes.html
     silentArgs = '/silent', '/verysilent', '/sp-', '/suppressmsgboxes',
       "/DIR=`"$installDir`"";
-    url = 'http://slproweb.com/download/Win32OpenSSL_Light-1_0_1c.exe'
-    url64bit = 'http://slproweb.com/download/Win64OpenSSL_Light-1_0_1c.exe'
+    url = 'http://slproweb.com/download/Win32OpenSSL_Light-1_0_1e.exe'
+    url64bit = 'http://slproweb.com/download/Win64OpenSSL_Light-1_0_1e.exe'
   }
 
   Install-ChocolateyPackage @params
 
   if (!$Env:OPENSSL_CONF)
   {
-    $configPath = Join-Path $Env:ProgramFiles 'OpenSSL\bin\openssl.cfg'
+    $configPath = Join-Path $installDir 'bin\openssl.cfg'
 
     if (Test-Path $configPath)
     {

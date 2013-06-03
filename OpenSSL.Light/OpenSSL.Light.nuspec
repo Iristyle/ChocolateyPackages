@@ -3,11 +3,11 @@
   <metadata>
     <id>OpenSSL.Light</id>
     <title>OpenSSL - The Open Source SSL and TLS toolkit</title>
-    <version>1.0.1.20121127</version>
+    <version>1.0.1.20130603</version>
     <authors>Shining Light Productions</authors>
     <owners>Ethan Brown</owners>
     <summary>Open Source SSL v2/v3 and TLS v1 toolkit</summary>
-    <description>This is really 1.0.1c, but the Nuget spec doesn't allow such version identifiers, so the file versions are used.
+    <description>This is really 1.0.1e, but the Nuget spec doesn't allow such version identifiers, so the file versions are used.
 
     The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured, and Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) protocols as well as a full-strength general purpose cryptography library. The project is managed by a worldwide community of volunteers that use the Internet to communicate, plan, and develop the OpenSSL toolkit and its related documentation.
 
@@ -18,7 +18,16 @@
     <licenseUrl>http://www.openssl.org/source/license.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/OpenSSL.Light/OpenSSL.Light.png</iconUrl>
-    <releaseNotes>Changes between 1.0.1b and 1.0.1c [10 May 2012]
+    <releaseNotes>Changes between 1.0.1c and 1.0.1d [xx XXX xxxx]
+
+  *) Fix possible deadlock when decoding public keys.
+     [Steve Henson]
+
+  *) Don't use TLS 1.0 record version number in initial client hello
+     if renegotiating.
+     [Steve Henson]
+
+ Changes between 1.0.1b and 1.0.1c [10 May 2012]
 
   *) Sanity check record length before skipping explicit IV in TLS
      1.2, 1.1 and DTLS to avoid DoS attack.
