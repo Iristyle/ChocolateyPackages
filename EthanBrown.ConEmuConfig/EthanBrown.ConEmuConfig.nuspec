@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.ConEmuConfig</id>
     <title>EthanBrown.ConEmuConfig</title>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <authors>Ethan Brown</authors>
     <owners>Ethan Brown</owners>
     <summary>ConEmu configured with Base16 color scheme and sane defaults.</summary>
