@@ -99,7 +99,7 @@ Windows Registry Editor Version 5.00
 "WindowMode"=dword:0000051f
 "HideCaption"=hex:00
 "HideCaptionAlways"=hex:01
-"HideCaptionAlwaysFrame"=hex:ff
+"HideCaptionAlwaysFrame"=hex:00
 "HideCaptionAlwaysDelay"=dword:000007d0
 "HideCaptionAlwaysDisappear"=dword:000007d0
 "DownShowHiddenMessage"=hex:00
@@ -192,10 +192,10 @@ Windows Registry Editor Version 5.00
 "ShowScrollbar"=hex:02
 "IconID"=dword:00000001
 "ConWnd Width"=dword:00000069
-"ConWnd Height"=dword:0000003f
+"ConWnd Height"=dword:0000003d
 "16bit Height"=dword:00000000
-"ConWnd X"=dword:00000780
-"ConWnd Y"=dword:00000000
+"ConWnd X"=dword:000007e7
+"ConWnd Y"=dword:00000028
 "Cascaded"=hex:01
 "AutoSaveSizePos"=hex:00
 "MainTimerElapse"=dword:0000000a
@@ -498,6 +498,10 @@ Windows Registry Editor Version 5.00
 "ComSpec.EnvAddExePath"=hex:01
 "CmdLineHistory"=hex(7):00,00
 "ShowHelpTooltips"=hex:01
+"IntegralSize"=hex:00
+"CTS.VkCopyAll"=dword:00000000
+"Key.TileToLeft"=dword:00005b25
+"Key.TileToRIght"=dword:00005b27
 
 [HKEY_CURRENT_USER\Software\ConEmu\.Vanilla\Apps]
 "Count"=dword:00000000
