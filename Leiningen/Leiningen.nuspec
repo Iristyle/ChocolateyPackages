@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>Lein</id>
+    <title>Leiningen - Clojure Project Automation</title>
+    <version>2.2.0</version>
+    <authors>Phil Hagelberg, Alex Osborne, Dan Larkin, and contributors</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Leiningen is for automating Clojure projects without setting your hair on fire.</summary>
+    <description>Leiningen is for automating Clojure projects without setting your hair on fire.
+
+It offers various project-related tasks and can:
+
+* create new projects
+* fetch dependencies for your project
+* run tests
+* run a fully-configured REPL
+* compile Java sources (if any)
+* run the project (if the project isn't a library)
+* generate a maven-style "pom" file for the project for interop
+* compile and package projects for deployment
+* publish libraries to repositories such as Clojars
+* run custom automation tasks written in Clojure (leiningen plug-ins)
+
+If you come from the Java world, Leiningen could be thought of as "Maven meets Ant without the pain". For Ruby and Python folks, Leiningen combines RubyGems/Bundler/Rake and pip/Fabric in a single tool.</description>
+    <projectUrl>https://github.com/technomancy/leiningen</projectUrl>
+    <tags>java clojure lein leiningen REPL clojars package manager</tags>
+    <licenseUrl>https://github.com/technomancy/leiningen#license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/Leiningen/clojure_logo.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+      <dependency id="jdk7" />
+      <dependency id="curl" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
