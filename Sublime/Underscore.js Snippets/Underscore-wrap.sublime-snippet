@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Underscore 1.4.2 -->
+<snippet>
+  <content><![CDATA[_(${1:functionName}).wrap( function(${2:fn}) {
+  ${3:}
+})]]></content>
+  <tabTrigger>_wrap</tabTrigger>
+  <scope>source.js</scope>
+  <description>Underscore _.wrap()</description>
+</snippet>

@@ -1,0 +1,4 @@
+{
+	"cmd": ["powershell.exe", "-noprofile", "-file", "$file"],
+	"selector": "source.powershell"
+}

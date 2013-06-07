@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- Underscore 1.4.2 -->
+<snippet>
+  <content><![CDATA[_.random(${1:min}, ${2:max})]]></content>
+  <tabTrigger>_random</tabTrigger>
+  <scope>source.js</scope>
+  <description>Underscore _.random()</description>
+</snippet>

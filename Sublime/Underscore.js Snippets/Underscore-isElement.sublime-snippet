@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- Underscore 1.4.2 -->
+<snippet>
+  <content><![CDATA[_(${1:object}).isElement()]]></content>
+  <tabTrigger>_isElement</tabTrigger>
+  <scope>source.js</scope>
+  <description>Underscore _.isElement()</description>
+</snippet>

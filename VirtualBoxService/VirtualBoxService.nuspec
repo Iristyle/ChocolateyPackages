@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>VirtualBoxService</id>
+    <title>A Windows-Service to control Startup and Shutdown of Virtualbox VMs.</title>
+    <version>0.1-beta</version>
+    <authors>Felix Ruettiger</authors>
+    <owners>Ethan Brown</owners>
+    <summary>A Windows-Service to control Startup and Shutdown of Virtualbox VMs.</summary>
+    <description>
+* Starts and stops virtual machines of Oracle VirtualBox
+* Supports three different shutdown-methods
+* Runs as Windows-Service
+* Uses the Virtualbox-Configuration of the user account under which the Service runs
+* Delays shutdown of Windows until all machines have properly shutdown (only on Vista SP1 and higher)
+* Configurable from within Virtualbox GUI or phpvirtualbox
+* Starts and Stops Virtualbox-Webservice (vboxwebsrv)
+    </description>
+    <projectUrl>https://code.google.com/p/virtualboxservice/</projectUrl>
+    <tags>VirtualBox Service</tags>
+    <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/VirtualBoxService/vbox_logo2_gradient.png</iconUrl>
+    <releaseNotes>
+  </releaseNotes>
+    <dependencies>
+        <dependency id="VirtualBox" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

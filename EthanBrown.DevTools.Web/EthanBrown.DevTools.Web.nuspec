@@ -32,7 +32,8 @@
       <dependency id="diffmerge" version="3.3.2"/>
       <!-- <dependency id="git.difftool.diffmerge"/>  Error: "External packages cannot depend on packages that target projects." -->
       <dependency id="EthanBrown.GitConfiguration" version="0.0.3"/>
-      <dependency id="ConEmu" version="12.4.17.1"/> <!-- latest version is alpha -->
+      <dependency id="DevBox-ConEmu" version="0.0.0.20130422"/>
+      <dependency id="EthanBrown.ConEmuConfig" version="0.0.3"/>
       <dependency id="PhantomJS" version="1.9.0"/>
       <dependency id="FireFox" version="20.0.1"/>
       <dependency id="GoogleChrome.Canary" version="28.0.1461.0"/>

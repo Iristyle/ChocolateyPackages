@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Underscore 1.4.2 -->
+<snippet>
+  <content><![CDATA[_(${1:list}).map( function( ${2:value}, ${3:key}, ${1:list} ) {
+  ${4:// return …}
+})]]></content>
+  <tabTrigger>_map</tabTrigger>
+  <scope>source.js</scope>
+  <description>Underscore _.map()</description>
+</snippet>

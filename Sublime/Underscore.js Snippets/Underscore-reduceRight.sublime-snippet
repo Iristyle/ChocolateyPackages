@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Underscore 1.4.2 -->
+<snippet>
+  <content><![CDATA[_(${1:list}).reduceRight( function( ${2:memo}, ${3:value}, ${4:key}, ${1:list} ) {
+  ${6:// return …}
+}, ${5:memo} )]]></content>
+  <tabTrigger>_reduceRight</tabTrigger>
+  <scope>source.js</scope>
+  <description>Underscore _.reduceRight()</description>
+</snippet>

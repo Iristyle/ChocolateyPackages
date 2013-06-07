@@ -1,0 +1,8 @@
+{ "name": "Antiki",
+  "scopeName": "source.antiki",
+  "fileTypes": ["anti"],
+  "patterns": [{"name" : "keyword", "match": "^[ \t]*[$](.*)$"},
+               {"name" : "markup.quote", "match" : "^[ \t]*  ([^$].*)"},
+               {"name" : "markup.heading", "match" : "^[ \t]*(#.*)$" }],
+  "uuid": "b92bb294-089b-43ea-b5da-45b5dcc9340a"
+}

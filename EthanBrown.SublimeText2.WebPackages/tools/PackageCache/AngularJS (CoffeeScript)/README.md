@@ -37,7 +37,7 @@ Note that packages are auto-updating, so as new modifications are made they will
 
 ### Manual tweaking of Package Control
 
-This is not recommended, but Package control can be pointed directly at this 
+This is not recommended, but Package control can be pointed directly at this
 GitHub repository rather than using the registry.
 Add to `Packages\User\Package Control.sublime-settings`, under the appropriate
 keys in the JSON config file.
@@ -251,59 +251,59 @@ All HTML based directives are keyed off the `ng`,`TAB` binding.
 | [select][select]                       |      `ng`,`TAB`  |   HTML Element |
 | [textarea][textarea]                   |      `ng`,`TAB`  |   HTML Element |
 
-[form]: http://docs.angularjs.org/api/ng.directive:form
-[input]: http://docs.angularjs.org/api/ng.directive:input
-[input-check]: http://docs.angularjs.org/api/ng.directive:input.checkbox
-[input-email]: http://docs.angularjs.org/api/ng.directive:input.email
-[input-number]: http://docs.angularjs.org/api/ng.directive:input.number
-[input-radio]: http://docs.angularjs.org/api/ng.directive:input.radio
-[input-text]: http://docs.angularjs.org/api/ng.directive:input.text
-[input-url]: http://docs.angularjs.org/api/ng.directive:input.url
-[ngApp]: http://docs.angularjs.org/api/ng.directive:ngApp
-[ngBind]: http://docs.angularjs.org/api/ng.directive:ngBind
-[ngBindHtml]: http://docs.angularjs.org/api/ngSanitize.directive:ngBindHtml
-[ngBindHtmlUnsafe]: http://docs.angularjs.org/api/ng.directive:ngBindHtmlUnsafe
-[ngBindTemplate]: http://docs.angularjs.org/api/ng.directive:ngBindTemplate
-[ngChange]: http://docs.angularjs.org/api/ng.directive:ngChange
-[ngChecked]: http://docs.angularjs.org/api/ng.directive:ngChecked
-[ngClass]: http://docs.angularjs.org/api/ng.directive:ngClass
-[ngClassEven]: http://docs.angularjs.org/api/ng.directive:ngClassEven
-[ngClassOdd]: http://docs.angularjs.org/api/ng.directive:ngClassOdd
-[ngClick]: http://docs.angularjs.org/api/ng.directive:ngClick
-[ngCloak]: http://docs.angularjs.org/api/ng.directive:ngCloak
-[ngController]: http://docs.angularjs.org/api/ng.directive:ngController
-[ngCsp]: http://docs.angularjs.org/api/ng.directive:ngCsp
-[ngDblClick]: http://docs.angularjs.org/api/ng.directive:ngDblClick
-[ngDisabled]: http://docs.angularjs.org/api/ng.directive:ngDisabled
-[ngForm]: http://docs.angularjs.org/api/ng.directive:ngForm
-[ngHide]: http://docs.angularjs.org/api/ng.directive:ngHide
-[ngHref]: http://docs.angularjs.org/api/ng.directive:ngHref
-[ngInclude]: http://docs.angularjs.org/api/ng.directive:ngInclude
-[ngInit]: http://docs.angularjs.org/api/ng.directive:ngInit
-[ngList]: http://docs.angularjs.org/api/ng.directive:ngList
-[ngModel]: http://docs.angularjs.org/api/ng.directive:ngModel
-[ngMousedown]: http://docs.angularjs.org/api/ng.directive:ngMousedown
-[ngMouseenter]: http://docs.angularjs.org/api/ng.directive:ngMouseenter
-[ngMouseleave]: http://docs.angularjs.org/api/ng.directive:ngMouseleave
-[ngMousemove]: http://docs.angularjs.org/api/ng.directive:ngMousemove
-[ngMouseover]: http://docs.angularjs.org/api/ng.directive:ngMouseover
-[ngMouseup]: http://docs.angularjs.org/api/ng.directive:ngMouseup
-[ngMultiple]: http://docs.angularjs.org/api/ng.directive:ngMultiple
-[ngNonBindable]: http://docs.angularjs.org/api/ng.directive:ngNonBindable
-[ngPluralize]: http://docs.angularjs.org/api/ng.directive:ngPluralize
-[ngReadonly]: http://docs.angularjs.org/api/ng.directive:ngReadonly
-[ngRepeat]: http://docs.angularjs.org/api/ng.directive:ngRepeat
-[ngSelected]: http://docs.angularjs.org/api/ng.directive:ngSelected
-[ngShow]: http://docs.angularjs.org/api/ng.directive:ngShow
-[ngSrc]: http://docs.angularjs.org/api/ng.directive:ngSrc
-[ngStyle]: http://docs.angularjs.org/api/ng.directive:ngStyle
-[ngSubmit]: http://docs.angularjs.org/api/ng.directive:ngSubmit
-[ngSwitch]: http://docs.angularjs.org/api/ng.directive:ngSwitch
-[ngTransclude]: http://docs.angularjs.org/api/ng.directive:ngTransclude
-[ngView]: http://docs.angularjs.org/api/ng.directive:ngView
-[script]: http://docs.angularjs.org/api/ng.directive:script
-[select]: http://docs.angularjs.org/api/ng.directive:select
-[textarea]: http://docs.angularjs.org/api/ng.directive:textarea
+[form]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:form
+[input]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:input
+[input-check]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:input.checkbox
+[input-email]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:input.email
+[input-number]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:input.number
+[input-radio]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:input.radio
+[input-text]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:input.text
+[input-url]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:input.url
+[ngApp]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngApp
+[ngBind]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngBind
+[ngBindHtml]: http://code.angularjs.org/1.1.4/docs/api/ngSanitize.directive:ngBindHtml
+[ngBindHtmlUnsafe]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngBindHtmlUnsafe
+[ngBindTemplate]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngBindTemplate
+[ngChange]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngChange
+[ngChecked]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngChecked
+[ngClass]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngClass
+[ngClassEven]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngClassEven
+[ngClassOdd]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngClassOdd
+[ngClick]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngClick
+[ngCloak]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngCloak
+[ngController]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngController
+[ngCsp]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngCsp
+[ngDblClick]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngDblClick
+[ngDisabled]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngDisabled
+[ngForm]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngForm
+[ngHide]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngHide
+[ngHref]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngHref
+[ngInclude]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngInclude
+[ngInit]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngInit
+[ngList]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngList
+[ngModel]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel
+[ngMousedown]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngMousedown
+[ngMouseenter]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngMouseenter
+[ngMouseleave]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngMouseleave
+[ngMousemove]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngMousemove
+[ngMouseover]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngMouseover
+[ngMouseup]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngMouseup
+[ngMultiple]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngMultiple
+[ngNonBindable]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngNonBindable
+[ngPluralize]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngPluralize
+[ngReadonly]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngReadonly
+[ngRepeat]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngRepeat
+[ngSelected]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngSelected
+[ngShow]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngShow
+[ngSrc]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngSrc
+[ngStyle]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngStyle
+[ngSubmit]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngSubmit
+[ngSwitch]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngSwitch
+[ngTransclude]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngTransclude
+[ngView]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngView
+[script]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:script
+[select]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:select
+[textarea]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:textarea
 
 ### Module
 
@@ -321,18 +321,18 @@ All HTML based directives are keyed off the `ng`,`TAB` binding.
 | [service][m.service]                 |        `mod`,`TAB` | CoffeeScript |
 | [value][m.value]                     |        `mod`,`TAB` | CoffeeScript |
 
-[module]: http://docs.angularjs.org/api/angular.Module
-[m.config]: http://docs.angularjs.org/api/angular.Module#config
-[m.constant]: http://docs.angularjs.org/api/angular.Module#constant
-[m.controller]: http://docs.angularjs.org/api/angular.Module#controller
-[m.directive]: http://docs.angularjs.org/api/angular.Module#directive
+[module]: http://code.angularjs.org/1.1.4/docs/api/angular.Module
+[m.config]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#config
+[m.constant]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#constant
+[m.controller]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#controller
+[m.directive]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#directive
 [dir-complete]: http://docs.angularjs.org/guide/directive
-[m.factory]: http://docs.angularjs.org/api/angular.Module#factory
-[m.filter]: http://docs.angularjs.org/api/angular.Module#filter
-[m.provider]: http://docs.angularjs.org/api/angular.Module#provider
-[m.run]: http://docs.angularjs.org/api/angular.Module#run
-[m.service]: http://docs.angularjs.org/api/angular.Module#service
-[m.value]: http://docs.angularjs.org/api/angular.Module#value
+[m.factory]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#factory
+[m.filter]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#filter
+[m.provider]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#provider
+[m.run]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#run
+[m.service]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#service
+[m.value]: http://code.angularjs.org/1.1.4/docs/api/angular.Module#value
 
 ### Scope
 
@@ -351,19 +351,19 @@ All HTML based directives are keyed off the `ng`,`TAB` binding.
 | [$on][$s.$on]                        |           `.$`,`TAB`  | CoffeeScript |
 | [$watch][$s.$watch]                  |           `.$`,`TAB`  | CoffeeScript |
 
-[$rootScope]: http://docs.angularjs.org/api/ng.$rootScope
-[Scope]: http://docs.angularjs.org/api/ng.$rootScope.Scope
-[$s.$apply]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$apply
-[$s.$broadcast]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$broadcast
-[$s.$destroy]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$destroy
-[$s.$digest]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$digest
-[$s.$emit]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$emit
-[$s.$eval]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$eval
-[$s.$evalAsync]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$evalAsync
-[$s.$id]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$id
-[$s.$new]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$new
-[$s.$on]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$on
-[$s.$watch]: http://docs.angularjs.org/api/ng.$rootScope.Scope#$watch
+[$rootScope]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope
+[Scope]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope
+[$s.$apply]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$apply
+[$s.$broadcast]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$broadcast
+[$s.$destroy]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$destroy
+[$s.$digest]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$digest
+[$s.$emit]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$emit
+[$s.$eval]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$eval
+[$s.$evalAsync]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$evalAsync
+[$s.$id]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$id
+[$s.$new]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$new
+[$s.$on]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$on
+[$s.$watch]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootScope.Scope#$watch
 
 ### Controller
 
@@ -384,20 +384,20 @@ Covers both [FormController][FormController] and [NgModelController][NgModelCont
 | [$valid][c.$valid]                     |         `.$`,`TAB`  | CoffeeScript |
 | [$invalid][c.$invalid]                 |         `.$`,`TAB`  | CoffeeScript |
 
-[FormController]: http://docs.angularjs.org/api/ng.directive:form.FormController
-[NgModelController]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController
-[c.$render]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$render
-[c.$setValidity]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$setValidity
-[c.$setViewValue]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$setViewValue
-[c.$viewValue]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$viewValue
-[c.$modelValue]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$modelValue
-[c.$parsers]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$parsers
-[c.$formatters]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$formatters
-[c.$error]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$error
-[c.$pristine]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$pristine
-[c.$dirty]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$dirty
-[c.$valid]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$valid
-[c.$invalid]: http://docs.angularjs.org/api/ng.directive:ngModel.NgModelController#$invalid
+[FormController]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:form.FormController
+[NgModelController]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController
+[c.$render]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$render
+[c.$setValidity]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$setValidity
+[c.$setViewValue]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$setViewValue
+[c.$viewValue]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$viewValue
+[c.$modelValue]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$modelValue
+[c.$parsers]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$parsers
+[c.$formatters]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$formatters
+[c.$error]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$error
+[c.$pristine]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$pristine
+[c.$dirty]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$dirty
+[c.$valid]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$valid
+[c.$invalid]: http://code.angularjs.org/1.1.4/docs/api/ng.directive:ngModel.NgModelController#$invalid
 
 ### Resource
 
@@ -410,8 +410,8 @@ Covers both [FormController][FormController] and [NgModelController][NgModelCont
 | [$remove][$r.$methods]                     |     `.$`,`TAB`  | CoffeeScript |
 | [$save][$r.$methods]                       |     `.$`,`TAB`  | CoffeeScript |
 
-[$resource]: http://docs.angularjs.org/api/ngResource.$resource
-[$r.$methods]: http://docs.angularjs.org/api/ngResource.$resource#Returns
+[$resource]: http://code.angularjs.org/1.1.4/docs/api/ngResource.$resource
+[$r.$methods]: http://code.angularjs.org/1.1.4/docs/api/ngResource.$resource#Returns
 
 ### Filter
 
@@ -439,17 +439,17 @@ Covers both [FormController][FormController] and [NgModelController][NgModelCont
 | [uppercase][uppercase]                 |    `$filter`,`TAB`  | CoffeeScript |
 | [uppercase][uppercase]                 |        `fil`,`TAB`  |         HTML |
 
-[$filter]: http://docs.angularjs.org/api/ng.$filter
-[currency]: http://docs.angularjs.org/api/ng.filter:currency
-[date]: http://docs.angularjs.org/api/ng.filter:date
-[filter]: http://docs.angularjs.org/api/ng.filter:filter
-[json]: http://docs.angularjs.org/api/ng.filter:json
-[limitTo]: http://docs.angularjs.org/api/ng.filter:limitTo
-[linky]: http://docs.angularjs.org/api/ngSanitize.filter:linky
-[lowercase]: http://docs.angularjs.org/api/ng.filter:lowercase
-[number]: http://docs.angularjs.org/api/ng.filter:number
-[orderBy]: http://docs.angularjs.org/api/ng.filter:orderBy
-[uppercase]: http://docs.angularjs.org/api/ng.filter:uppercase
+[$filter]: http://code.angularjs.org/1.1.4/docs/api/ng.$filter
+[currency]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:currency
+[date]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:date
+[filter]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:filter
+[json]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:json
+[limitTo]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:limitTo
+[linky]: http://code.angularjs.org/1.1.4/docs/api/ngSanitize.filter:linky
+[lowercase]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:lowercase
+[number]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:number
+[orderBy]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:orderBy
+[uppercase]: http://code.angularjs.org/1.1.4/docs/api/ng.filter:uppercase
 
 ### Global API
 
@@ -481,31 +481,31 @@ Covers both [FormController][FormController] and [NgModelController][NgModelCont
 | [angular.uppercase][angular.uppercase]     |    `ng`,`TAB`   | CoffeeScript |
 | [angular.version][angular.version]         |    `ng`,`TAB`   | CoffeeScript |
 
-[angular.bind]: http://docs.angularjs.org/api/angular.bind
-[angular.bootstrap]: http://docs.angularjs.org/api/angular.bootstrap
-[angular.copy]: http://docs.angularjs.org/api/angular.copy
-[angular.element]: http://docs.angularjs.org/api/angular.element
-[angular.equals]: http://docs.angularjs.org/api/angular.equals
-[angular.extend]: http://docs.angularjs.org/api/angular.extend
-[angular.forEach]: http://docs.angularjs.org/api/angular.forEach
-[angular.fromJson]: http://docs.angularjs.org/api/angular.fromJson
-[angular.identity]: http://docs.angularjs.org/api/angular.identity
-[angular.injector]: http://docs.angularjs.org/api/angular.injector
-[angular.isArray]: http://docs.angularjs.org/api/angular.isArray
-[angular.isDate]: http://docs.angularjs.org/api/angular.isDate
-[angular.isDefined]: http://docs.angularjs.org/api/angular.isDefined
-[angular.isElement]: http://docs.angularjs.org/api/angular.isElement
-[angular.isFunction]: http://docs.angularjs.org/api/angular.isFunction
-[angular.isNumber]: http://docs.angularjs.org/api/angular.isNumber
-[angular.isObject]: http://docs.angularjs.org/api/angular.isObject
-[angular.isString]: http://docs.angularjs.org/api/angular.isString
-[angular.isUndefined]: http://docs.angularjs.org/api/angular.isUndefined
-[angular.lowercase]: http://docs.angularjs.org/api/angular.lowercase
-[angular.module]: http://docs.angularjs.org/api/angular.module
-[angular.noop]: http://docs.angularjs.org/api/angular.noop
-[angular.toJson]: http://docs.angularjs.org/api/angular.toJson
-[angular.uppercase]: http://docs.angularjs.org/api/angular.uppercase
-[angular.version]: http://docs.angularjs.org/api/angular.version
+[angular.bind]: http://code.angularjs.org/1.1.4/docs/api/angular.bind
+[angular.bootstrap]: http://code.angularjs.org/1.1.4/docs/api/angular.bootstrap
+[angular.copy]: http://code.angularjs.org/1.1.4/docs/api/angular.copy
+[angular.element]: http://code.angularjs.org/1.1.4/docs/api/angular.element
+[angular.equals]: http://code.angularjs.org/1.1.4/docs/api/angular.equals
+[angular.extend]: http://code.angularjs.org/1.1.4/docs/api/angular.extend
+[angular.forEach]: http://code.angularjs.org/1.1.4/docs/api/angular.forEach
+[angular.fromJson]: http://code.angularjs.org/1.1.4/docs/api/angular.fromJson
+[angular.identity]: http://code.angularjs.org/1.1.4/docs/api/angular.identity
+[angular.injector]: http://code.angularjs.org/1.1.4/docs/api/angular.injector
+[angular.isArray]: http://code.angularjs.org/1.1.4/docs/api/angular.isArray
+[angular.isDate]: http://code.angularjs.org/1.1.4/docs/api/angular.isDate
+[angular.isDefined]: http://code.angularjs.org/1.1.4/docs/api/angular.isDefined
+[angular.isElement]: http://code.angularjs.org/1.1.4/docs/api/angular.isElement
+[angular.isFunction]: http://code.angularjs.org/1.1.4/docs/api/angular.isFunction
+[angular.isNumber]: http://code.angularjs.org/1.1.4/docs/api/angular.isNumber
+[angular.isObject]: http://code.angularjs.org/1.1.4/docs/api/angular.isObject
+[angular.isString]: http://code.angularjs.org/1.1.4/docs/api/angular.isString
+[angular.isUndefined]: http://code.angularjs.org/1.1.4/docs/api/angular.isUndefined
+[angular.lowercase]: http://code.angularjs.org/1.1.4/docs/api/angular.lowercase
+[angular.module]: http://code.angularjs.org/1.1.4/docs/api/angular.module
+[angular.noop]: http://code.angularjs.org/1.1.4/docs/api/angular.noop
+[angular.toJson]: http://code.angularjs.org/1.1.4/docs/api/angular.toJson
+[angular.uppercase]: http://code.angularjs.org/1.1.4/docs/api/angular.uppercase
+[angular.version]: http://code.angularjs.org/1.1.4/docs/api/angular.version
 
 ### Http
 
@@ -524,17 +524,17 @@ Covers both [FormController][FormController] and [NgModelController][NgModelCont
 | [.error][$http.Returns]                  |   `.error`,`TAB`  | CoffeeScript |
 | [.success][$http.Returns]                | `.success`,`TAB`  | CoffeeScript |
 
-[$http]: http://docs.angularjs.org/api/ng.$http
-[$http.usage]: http://docs.angularjs.org/api/ng.$http#Usage
-[$http.delete]: http://docs.angularjs.org/api/ng.$http#delete
-[$http.get]: http://docs.angularjs.org/api/ng.$http#get
-[$http.head]: http://docs.angularjs.org/api/ng.$http#head
-[$http.jsonp]: http://docs.angularjs.org/api/ng.$http#jsonp
-[$http.post]: http://docs.angularjs.org/api/ng.$http#post
-[$http.put]: http://docs.angularjs.org/api/ng.$http#put
-[$http.defaults]: http://docs.angularjs.org/api/ng.$http#defaults
-[$http.pendingRequests]: http://docs.angularjs.org/api/ng.$http#defaults
-[$http.Returns]: http://docs.angularjs.org/api/ng.$http#Returns
+[$http]: http://code.angularjs.org/1.1.4/docs/api/ng.$http
+[$http.usage]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#Usage
+[$http.delete]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#delete
+[$http.get]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#get
+[$http.head]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#head
+[$http.jsonp]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#jsonp
+[$http.post]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#post
+[$http.put]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#put
+[$http.defaults]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#defaults
+[$http.pendingRequests]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#defaults
+[$http.Returns]: http://code.angularjs.org/1.1.4/docs/api/ng.$http#Returns
 
 ### HttpBackend
 
@@ -565,27 +565,27 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [whenPOST][$h.whenPOST]                      |         `.when`,`TAB` | CoffeeScript |
 | [whenPUT][$h.whenPUT]                        |         `.when`,`TAB` | CoffeeScript |
 
-[$httpBackend]: http://docs.angularjs.org/api/ngMock.$httpBackend
-[$h.expect]: http://docs.angularjs.org/api/ngMock.$httpBackend#expect
-[$h.expectDELETE]: http://docs.angularjs.org/api/ngMock.$httpBackend#expectDELETE
-[$h.expectGET]: http://docs.angularjs.org/api/ngMock.$httpBackend#expectGET
-[$h.expectHEAD]: http://docs.angularjs.org/api/ngMock.$httpBackend#expectHEAD
-[$h.expectJSONP]: http://docs.angularjs.org/api/ngMock.$httpBackend#expectJSONP
-[$h.expectPATCH]: http://docs.angularjs.org/api/ngMock.$httpBackend#expectPATCH
-[$h.expectPOST]: http://docs.angularjs.org/api/ngMock.$httpBackend#expectPOST
-[$h.expectPUT]: http://docs.angularjs.org/api/ngMock.$httpBackend#expectPUT
-[$h.flush]: http://docs.angularjs.org/api/ngMock.$httpBackend#flush
-[$h.reset]: http://docs.angularjs.org/api/ngMock.$httpBackend#resetExpectations
-[$h.verifyEx]: http://docs.angularjs.org/api/ngMock.$httpBackend#verifyNoOutstandingExceptions
-[$h.verifyReqs]: http://docs.angularjs.org/api/ngMock.$httpBackend#verifyNoOutstandingRequests
-[$h.when]: http://docs.angularjs.org/api/ngMock.$httpBackend#when
-[$h.whenDELETE]: http://docs.angularjs.org/api/ngMock.$httpBackend#whenDELETE
-[$h.whenGET]: http://docs.angularjs.org/api/ngMock.$httpBackend#whenGET
-[$h.whenHEAD]: http://docs.angularjs.org/api/ngMock.$httpBackend#whenHEAD
-[$h.whenJSONP]: http://docs.angularjs.org/api/ngMock.$httpBackend#whenJSONP
-[$h.whenPATCH]: http://docs.angularjs.org/api/ngMock.$httpBackend#whenPATCH
-[$h.whenPOST]: http://docs.angularjs.org/api/ngMock.$httpBackend#whenPOST
-[$h.whenPUT]: http://docs.angularjs.org/api/ngMock.$httpBackend#whenPUT
+[$httpBackend]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend
+[$h.expect]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#expect
+[$h.expectDELETE]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#expectDELETE
+[$h.expectGET]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#expectGET
+[$h.expectHEAD]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#expectHEAD
+[$h.expectJSONP]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#expectJSONP
+[$h.expectPATCH]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#expectPATCH
+[$h.expectPOST]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#expectPOST
+[$h.expectPUT]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#expectPUT
+[$h.flush]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#flush
+[$h.reset]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#resetExpectations
+[$h.verifyEx]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#verifyNoOutstandingExceptions
+[$h.verifyReqs]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#verifyNoOutstandingRequests
+[$h.when]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#when
+[$h.whenDELETE]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#whenDELETE
+[$h.whenGET]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#whenGET
+[$h.whenHEAD]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#whenHEAD
+[$h.whenJSONP]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#whenJSONP
+[$h.whenPATCH]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#whenPATCH
+[$h.whenPOST]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#whenPOST
+[$h.whenPUT]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$httpBackend#whenPUT
 
 ### Q
 
@@ -597,11 +597,11 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [reject][$q.reject]                    |        `$q.`,`TAB`  | CoffeeScript |
 | [when][$q.when]                        |        `$q.`,`TAB`  | CoffeeScript |
 
-[$q]: http://docs.angularjs.org/api/ng.$q
-[$q.all]: http://docs.angularjs.org/api/ng.$q#all
-[$q.defer]: http://docs.angularjs.org/api/ng.$q#defer
-[$q.reject]: http://docs.angularjs.org/api/ng.$q#reject
-[$q.when]: http://docs.angularjs.org/api/ng.$q#when
+[$q]: http://code.angularjs.org/1.1.4/docs/api/ng.$q
+[$q.all]: http://code.angularjs.org/1.1.4/docs/api/ng.$q#all
+[$q.defer]: http://code.angularjs.org/1.1.4/docs/api/ng.$q#defer
+[$q.reject]: http://code.angularjs.org/1.1.4/docs/api/ng.$q#reject
+[$q.when]: http://code.angularjs.org/1.1.4/docs/api/ng.$q#when
 
 ### Route
 
@@ -620,18 +620,18 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [when][$rp.when]                   | `$routeprovider.`,`TAB` | CoffeeScript |
 | [otherwise][$rp.other]             |          `.other`,`TAB` | CoffeeScript |
 
-[$route]: http://docs.angularjs.org/api/ng.$route
-[$route.current]: http://docs.angularjs.org/api/ng.$route#current
-[$route.reload]: http://docs.angularjs.org/api/ng.$route#reload
-[$route.routes]: http://docs.angularjs.org/api/ng.$route#routes
-[$route.$rce]: http://docs.angularjs.org/api/ng.$route#$routeChangeError
-[$route.$rcst]: http://docs.angularjs.org/api/ng.$route#$routeChangeStart
-[$route.$rcs]: http://docs.angularjs.org/api/ng.$route#$routeChangeSuccess
-[$route.$ru]: http://docs.angularjs.org/api/ng.$route#$routeUpdate
-[$routeParams]: http://docs.angularjs.org/api/ng.$routeParams
-[$routeProvider]: http://docs.angularjs.org/api/ng.$routeProvider
-[$rp.when]: http://docs.angularjs.org/api/ng.$routeProvider#when
-[$rp.other]: http://docs.angularjs.org/api/ng.$routeProvider#otherwise
+[$route]: http://code.angularjs.org/1.1.4/docs/api/ng.$route
+[$route.current]: http://code.angularjs.org/1.1.4/docs/api/ng.$route#current
+[$route.reload]: http://code.angularjs.org/1.1.4/docs/api/ng.$route#reload
+[$route.routes]: http://code.angularjs.org/1.1.4/docs/api/ng.$route#routes
+[$route.$rce]: http://code.angularjs.org/1.1.4/docs/api/ng.$route#$routeChangeError
+[$route.$rcst]: http://code.angularjs.org/1.1.4/docs/api/ng.$route#$routeChangeStart
+[$route.$rcs]: http://code.angularjs.org/1.1.4/docs/api/ng.$route#$routeChangeSuccess
+[$route.$ru]: http://code.angularjs.org/1.1.4/docs/api/ng.$route#$routeUpdate
+[$routeParams]: http://code.angularjs.org/1.1.4/docs/api/ng.$routeParams
+[$routeProvider]: http://code.angularjs.org/1.1.4/docs/api/ng.$routeProvider
+[$rp.when]: http://code.angularjs.org/1.1.4/docs/api/ng.$routeProvider#when
+[$rp.other]: http://code.angularjs.org/1.1.4/docs/api/ng.$routeProvider#otherwise
 
 ### Cookie
 
@@ -643,11 +643,11 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [put][$c.put]                        | `$cookiestore.`,`TAB` | CoffeeScript |
 | [remove][$c.remove]                  | `$cookiestore.`,`TAB` | CoffeeScript |
 
-[$cookies]: http://docs.angularjs.org/api/ngCookies.$cookies
-[$cookieStore]: http://docs.angularjs.org/api/ngCookies.$cookieStore
-[$c.get]: http://docs.angularjs.org/api/ngCookies.$cookieStore#get
-[$c.put]: http://docs.angularjs.org/api/ngCookies.$cookieStore#put
-[$c.remove]: http://docs.angularjs.org/api/ngCookies.$cookieStore#remove
+[$cookies]: http://code.angularjs.org/1.1.4/docs/api/ngCookies.$cookies
+[$cookieStore]: http://code.angularjs.org/1.1.4/docs/api/ngCookies.$cookieStore
+[$c.get]: http://code.angularjs.org/1.1.4/docs/api/ngCookies.$cookieStore#get
+[$c.put]: http://code.angularjs.org/1.1.4/docs/api/ngCookies.$cookieStore#put
+[$c.remove]: http://code.angularjs.org/1.1.4/docs/api/ngCookies.$cookieStore#remove
 
 ### Location
 
@@ -664,16 +664,16 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [search][$l.search] (get & set)      | `$location.`,`TAB` | CoffeeScript |
 | [url][$l.url] (get & set)            | `$location.`,`TAB` | CoffeeScript |
 
-[$location]: http://docs.angularjs.org/api/ng.$location
-[$l.absUrl]: http://docs.angularjs.org/api/ng.$location#absUrl
-[$l.hash]: http://docs.angularjs.org/api/ng.$location#hash
-[$l.host]: http://docs.angularjs.org/api/ng.$location#host
-[$l.path]: http://docs.angularjs.org/api/ng.$location#path
-[$l.port]: http://docs.angularjs.org/api/ng.$location#port
-[$l.protocol]: http://docs.angularjs.org/api/ng.$location#protocol
-[$l.replace]: http://docs.angularjs.org/api/ng.$location#replace
-[$l.search]: http://docs.angularjs.org/api/ng.$location#search
-[$l.url]: http://docs.angularjs.org/api/ng.$location#url
+[$location]: http://code.angularjs.org/1.1.4/docs/api/ng.$location
+[$l.absUrl]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#absUrl
+[$l.hash]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#hash
+[$l.host]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#host
+[$l.path]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#path
+[$l.port]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#port
+[$l.protocol]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#protocol
+[$l.replace]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#replace
+[$l.search]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#search
+[$l.url]: http://code.angularjs.org/1.1.4/docs/api/ng.$location#url
 
 ### Log
 
@@ -685,11 +685,11 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [log][$log.log]                      |  `$log.`,`TAB`  | CoffeeScript |
 | [warn][$log.warn]                    |  `$log.`,`TAB`  | CoffeeScript |
 
-[$log]: http://docs.angularjs.org/api/ng.$log
-[$log.error]: http://docs.angularjs.org/api/ng.$log#error
-[$log.info]: http://docs.angularjs.org/api/ng.$log#info
-[$log.log]: http://docs.angularjs.org/api/ng.$log#log
-[$log.warn]: http://docs.angularjs.org/api/ng.$log#warn
+[$log]: http://code.angularjs.org/1.1.4/docs/api/ng.$log
+[$log.error]: http://code.angularjs.org/1.1.4/docs/api/ng.$log#error
+[$log.info]: http://code.angularjs.org/1.1.4/docs/api/ng.$log#info
+[$log.log]: http://code.angularjs.org/1.1.4/docs/api/ng.$log#log
+[$log.warn]: http://code.angularjs.org/1.1.4/docs/api/ng.$log#warn
 
 ### Mock
 
@@ -704,14 +704,14 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [$log.logs][$log.logs]                 |      `$log.`,`TAB`  | CoffeeScript |
 | [$timeout.flush][$timeout.flush]       |  `$timeout.`,`TAB`  | CoffeeScript |
 
-[mock.debug]: http://docs.angularjs.org/api/angular.mock.debug
-[mock.inject]: http://docs.angularjs.org/api/angular.mock.inject
-[mock.module]: http://docs.angularjs.org/api/angular.mock.module
-[mock.TzDate]: http://docs.angularjs.org/api/angular.mock.debug
-[$log.assertEmpty]: http://docs.angularjs.org/api/ngMock.$log#assertEmpty
-[$log.reset]: http://docs.angularjs.org/api/ngMock.$log#reset
-[$log.logs]: http://docs.angularjs.org/api/ngMock.$log#logs
-[$timeout.flush]: http://docs.angularjs.org/api/ngMock.$timeout#flush
+[mock.debug]: http://code.angularjs.org/1.1.4/docs/api/angular.mock.debug
+[mock.inject]: http://code.angularjs.org/1.1.4/docs/api/angular.mock.inject
+[mock.module]: http://code.angularjs.org/1.1.4/docs/api/angular.mock.module
+[mock.TzDate]: http://code.angularjs.org/1.1.4/docs/api/angular.mock.debug
+[$log.assertEmpty]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$log#assertEmpty
+[$log.reset]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$log#reset
+[$log.logs]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$log#logs
+[$timeout.flush]: http://code.angularjs.org/1.1.4/docs/api/ngMock.$timeout#flush
 
 ### Injector
 
@@ -723,11 +723,11 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [instantiate][$i.instantiate]        | `$injector.`,`TAB` | CoffeeScript |
 | [invoke][$i.invoke]                  | `$injector.`,`TAB` | CoffeeScript |
 
-[$injector]: http://docs.angularjs.org/api/AUTO.$injector
-[$i.annotate]: http://docs.angularjs.org/api/AUTO.$injector#annotate
-[$i.get]: http://docs.angularjs.org/api/AUTO.$injector#get
-[$i.instantiate]: http://docs.angularjs.org/api/AUTO.$injector#instantiate
-[$i.invoke]: http://docs.angularjs.org/api/AUTO.$injector#invoke
+[$injector]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$injector
+[$i.annotate]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$injector#annotate
+[$i.get]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$injector#get
+[$i.instantiate]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$injector#instantiate
+[$i.invoke]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$injector#invoke
 
 ### Interpolate
 
@@ -737,9 +737,9 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [endSymbol][$in.endSymbol]           | `$interpolate.`,`TAB` | CoffeeScript |
 | [startsymbol][$in.startsymbol]       | `$interpolate.`,`TAB` | CoffeeScript |
 
-[$interpolate]: http://docs.angularjs.org/api/ng.$interpolate
-[$in.endSymbol]: http://docs.angularjs.org/api/ng.$interpolate#endSymbol
-[$in.startSymbol]: http://docs.angularjs.org/api/ng.$interpolate#startSymbol
+[$interpolate]: http://code.angularjs.org/1.1.4/docs/api/ng.$interpolate
+[$in.endSymbol]: http://code.angularjs.org/1.1.4/docs/api/ng.$interpolate#endSymbol
+[$in.startSymbol]: http://code.angularjs.org/1.1.4/docs/api/ng.$interpolate#startSymbol
 
 ### Provide
 
@@ -753,13 +753,13 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [service][$p.service]                  |  `$provide.`,`TAB`  | CoffeeScript |
 | [value][$p.value]                      |  `$provide.`,`TAB`  | CoffeeScript |
 
-[$provide]: http://docs.angularjs.org/api/AUTO.$provide
-[$p.constant]: http://docs.angularjs.org/api/AUTO.$provide#constant
-[$p.decorator]: http://docs.angularjs.org/api/AUTO.$provide#decorator
-[$p.factory]: http://docs.angularjs.org/api/AUTO.$provide#factory
-[$p.provider]: http://docs.angularjs.org/api/AUTO.$provide#provider
-[$p.service]: http://docs.angularjs.org/api/AUTO.$provide#service
-[$p.value]: http://docs.angularjs.org/api/AUTO.$provide#value
+[$provide]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide
+[$p.constant]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#constant
+[$p.decorator]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#decorator
+[$p.factory]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#factory
+[$p.provider]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#provider
+[$p.service]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#service
+[$p.value]: http://code.angularjs.org/1.1.4/docs/api/AUTO.$provide#value
 
 ### Other Services
 
@@ -778,18 +778,18 @@ Note that `.expect` and `.when` are designed to chain, so we don't bind to
 | [$timeout][$timeout]                   |  `$`,`TAB`  | CoffeeScript |
 | [$window][$window]                     |  `$`,`TAB`  | CoffeeScript |
 
-[$anchorScroll]: http://docs.angularjs.org/api/ng.$anchorScroll
-[$cacheFactory]: http://docs.angularjs.org/api/ng.$cacheFactory
-[$compile]: http://docs.angularjs.org/api/ng.$compile
-[$controller]: http://docs.angularjs.org/api/ng.$controller
-[$document]: http://docs.angularjs.org/api/ng.$document
-[$exceptionHandler]: http://docs.angularjs.org/api/ng.$exceptionHandler
-[$locale]: http://docs.angularjs.org/api/ng.$locale
-[$parse]: http://docs.angularjs.org/api/ng.$parse
-[$rootElement]: http://docs.angularjs.org/api/ng.$rootElement
-[$templateCache]: http://docs.angularjs.org/api/ng.$templateCache
-[$timeout]: http://docs.angularjs.org/api/ng.$timeout
-[$window]: http://docs.angularjs.org/api/ng.$window
+[$anchorScroll]: http://code.angularjs.org/1.1.4/docs/api/ng.$anchorScroll
+[$cacheFactory]: http://code.angularjs.org/1.1.4/docs/api/ng.$cacheFactory
+[$compile]: http://code.angularjs.org/1.1.4/docs/api/ng.$compile
+[$controller]: http://code.angularjs.org/1.1.4/docs/api/ng.$controller
+[$document]: http://code.angularjs.org/1.1.4/docs/api/ng.$document
+[$exceptionHandler]: http://code.angularjs.org/1.1.4/docs/api/ng.$exceptionHandler
+[$locale]: http://code.angularjs.org/1.1.4/docs/api/ng.$locale
+[$parse]: http://code.angularjs.org/1.1.4/docs/api/ng.$parse
+[$rootElement]: http://code.angularjs.org/1.1.4/docs/api/ng.$rootElement
+[$templateCache]: http://code.angularjs.org/1.1.4/docs/api/ng.$templateCache
+[$timeout]: http://code.angularjs.org/1.1.4/docs/api/ng.$timeout
+[$window]: http://code.angularjs.org/1.1.4/docs/api/ng.$window
 
 ## Future Improvements
 
