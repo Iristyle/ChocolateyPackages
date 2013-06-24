@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MultiPar</id>
+    <title>MultiPar</title>
+    <version>1.2.2.6</version>
+    <authors>Yutaka Sawada</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>MultiPar is the next-generation of Parchive (PAR3) to protect data.</summary>
+    <description>Mutlipar can do file verification, error detection, correction and recovery to protect your files and folders from deletion, copy errors, download errors, software errors, hardware errors, virus infection, malicious tampering, and all other forms of data corruption.</description>
+    <releaseNotes>
+     This is the last release of v1.2.2 tree. If you want to encourage me by increasing download ranking, download from the official download page please. Click a green button with "Download Now" label. If you cannot donwload, you may try a ftp link on downloading page or another mirror site. Refer the announcement page for details.
+
+ Because default installation path was changed in this version, if you have installed MultiPar by installer package, you should uninstall previous version at first.
+
+
+[ Changes from 1.2.2.5 to 1.2.2.6 ]
+
+* Installer update
+ An option to launch MultiPar after installation was removed.
+ A shortcut in Start Menu to unsintall MultiPar was removed.
+ A user may keep setting (MultiPar.ini) at uninstall for future re-install.
+ It is possible to associate PAR2 file extension while install.
+
+* GUI update
+Change
+ State bar after verification looks 3D on Windows 2000 / XP.
+ When creation is complete, progress on task-bar will disappear always.
+
+Bug fix
+ A fault of creating two desktop icons (by installer and option) was fixed.
+
+Improvement
+ Verification result beyond reuse period will be deleted by GUI.
+ Shell Extension DLL may read .INI file for setting and language text.
+
+[ Changes from 1.2.2.4 to 1.2.2.5 ]
+
+ * Installer update
+  Inno Setup was updated from v5.5.2 to v5.5.3.
+  Installation won't require Administrator privilege.
+  It is possible to select German as installation language.
+
+ * GUI update
+ Change
+  Source files of unknown status are listed with question mark.
+  When creation/verification/repair is complete, progress on task-bar will disappear.
+
+ Improvement
+  State bar after verification looks native on Windows Vista or later.
+
+ * Client update
+ Bug fix
+  A fault of ignoring the last block in a small shortened file was fixed.
+
+ Improvement
+  Table setup for region multiply with SSSE3 becomes slightly faster.
+
+ New
+  PAR2 client may work partially, even when some vital packets are missing.
+
+
+  European Forum Mirror - http://multipar.eu/
+  </releaseNotes>
+    <projectUrl>https://www.livebusinesschat.com/smf/index.php?board=396.0</projectUrl>
+    <tags>file par par2 par3 parchive data</tags>
+    <licenseUrl>http://en.wikipedia.org/wiki/Freeware</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/MultiPar/multipar_logo.png</iconUrl>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>
