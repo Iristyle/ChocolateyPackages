@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>VirtualBox.ExtensionPack</id>
+    <title>VirtualBox Extension Pack</title>
+    <version>4.2.16.86992</version>
+    <authors>Oracle Corporation, Innotek</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>VirtualBox Extension Pack adds Support for USB 2.0 devices, VirtualBox RDP and PXE boot for Intel cards.</summary>
+    <description>Oracle VM VirtualBox is a general-purpose full virtualizer for hardware. Targeted at server, desktop and embedded use, Oracle VM VirtualBox is now the only professional-quality virtualization solution that is also Open Source Software.
+
+      VirtualBox Extension Pack adds Support for USB 2.0 devices, VirtualBox RDP and PXE boot for Intel cards.
+
+      https://www.virtualbox.org/manual/ch01.html#intro-installing
+    </description>
+    <releaseNotes>https://www.virtualbox.org/wiki/Changelog</releaseNotes>
+    <projectUrl>https://www.virtualbox.org/</projectUrl>
+    <tags>virtualbox vmware virtualization vm</tags>
+    <licenseUrl>https://www.virtualbox.org/wiki/VirtualBox_PUEL</licenseUrl>
+    <copyright>Oracle Corporation</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/VirtualBox.ExtensionPack/VirtualBox_logo.png</iconUrl>
+    <dependencies>
+      <dependency id="VirtualBox" version="[4.2.16,4.2.16]" />
+    </dependencies>
+  </metadata>
+</package>
