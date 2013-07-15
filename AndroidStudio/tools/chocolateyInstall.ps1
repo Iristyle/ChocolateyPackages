@@ -6,7 +6,7 @@ try {
     FileType = 'exe';
     #uses NSIS installer - http://nsis.sourceforge.net/Docs/Chapter3.html
     SilentArgs = '/S';
-    Url = 'http://dl.google.com/android/studio/android-studio-bundle-130.687321-windows.exe';
+    Url = 'http://dl.google.com/android/studio/android-studio-bundle-130.737825-windows.exe';
   }
 
   Install-ChocolateyPackage @params
