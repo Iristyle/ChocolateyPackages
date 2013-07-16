@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.DevTools.Web</id>
     <title>EthanBrown.DevTools.Web</title>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <authors>Ethan Brown</authors>
     <owners>Ethan Brown</owners>
     <summary>Batteries included web development tool stack for Windows.</summary>
@@ -20,21 +20,22 @@
       <dependency id="SourceCodePro" version="1.017.1"/>
       <dependency id="MesloLG.DZ" version="1.00"/>
       <dependency id="PowerShell" version="3.0"/>
-      <dependency id="curl" version="7.28.1"/>
-      <dependency id="nodejs.install" version="[0.8.22,0.8.22]"/>
-      <dependency id="gitextensions" version="2.4.4"/>
+      <dependency id="curl" version="7.30.0.2"/>
+      <dependency id="nodejs.install" version="0.10.13"/>
+      <dependency id="gitextensions" version="2.46"/>
       <dependency id="EthanBrown.GitAliases" version="0.0.5"/>
       <dependency id="EthanBrown.GitExtensionsConfiguration" version="0.0.1"/>
       <!-- automatically installs latest from git zipball -->
       <dependency id="poshgit" version="0.4.0.20120717"/>
       <dependency id="Posh-VsVars" version="0.0.2"/>
-      <dependency id="Posh-GitHub" version="0.0.1"/>
+      <dependency id="Posh-GitHub" version="0.0.2"/>
       <dependency id="diffmerge" version="3.3.2"/>
       <!-- <dependency id="git.difftool.diffmerge"/>  Error: "External packages cannot depend on packages that target projects." -->
       <dependency id="EthanBrown.GitConfiguration" version="0.0.3"/>
-      <dependency id="ConEmu" version="12.4.17.1"/> <!-- latest version is alpha -->
+      <dependency id="ConEmu" version="13.7.8.0"/>
+      <dependency id="EthanBrown.ConEmuConfig" version="0.0.5"/>
       <dependency id="PhantomJS" version="1.9.0"/>
-      <dependency id="FireFox" version="20.0.1"/>
+      <dependency id="FireFox" version="22.0"/>
       <dependency id="GoogleChrome.Canary" version="28.0.1461.0"/>
       <dependency id="EthanBrown.ChromeCanaryDevExtensions" version="0.0.2"/>
       <dependency id="SublimeText2.app" version="2.0.1.22171"/>
@@ -48,7 +49,7 @@
       <dependency id="Tunnelier" version="4.60.0"/>
       <dependency id="Ruby" version="1.9.3.37400"/>
       <dependency id="ruby.devkit" version="4.5.2.20111230"/>
-      <dependency id="DartEditor" version="0.22879"/>
+      <dependency id="DartEditor" version="0.024898"/>
     </dependencies>
     <releaseNotes>
       For Ruby: Bundler, Capistrano, Twig
