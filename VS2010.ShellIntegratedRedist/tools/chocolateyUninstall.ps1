@@ -18,8 +18,6 @@ try {
 
   msiexec.exe /x $pkg /qb-!
 
-  Install-ChocolateyPackage @params
-
   Write-ChocolateySuccess $package
 } catch {
   Write-ChocolateyFailure $package "$($_.Exception.Message)"
