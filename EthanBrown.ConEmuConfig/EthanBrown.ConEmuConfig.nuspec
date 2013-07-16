@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.ConEmuConfig</id>
     <title>EthanBrown.ConEmuConfig</title>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <authors>Ethan Brown</authors>
     <owners>Ethan Brown</owners>
     <summary>ConEmu configured with Base16 color scheme and sane defaults.</summary>
@@ -51,7 +51,7 @@ I'm sure there are a couple of other minor tweaks that were dialed in as well.
       <dependency id="toolsroot"/>
       <dependency id="SourceCodePro" version="1.017.1"/>
       <dependency id="PowerShell" version="3.0"/>
-      <dependency id="gitextensions" version="2.4.6"/>
+      <dependency id="gitextensions" version="2.46"/>
       <dependency id="ConEmu" version="13.7.8.0"/>
     </dependencies>
     <releaseNotes></releaseNotes>
