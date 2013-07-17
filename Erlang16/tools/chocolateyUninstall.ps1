@@ -20,7 +20,8 @@ try
 
   Uninstall-ChocolateyPackage @uninstallParams
 
-  $binLocation = Join-Path $installPath 'bin'
+  $binLocation = (Join-Path $installPath 'bin') -replace '\\', '\\'
+
   $userPaths = [Environment]::GetEnvironmentVariable('Path', 'User') -split ';' |
     ? { ($_ -notmatch $binLocation) -and (![String]::IsNullOrEmpty($_)) } |
     Select-Object -Unique
