@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Elixir</id>
+    <title>Elixir</title>
+    <version>0.10.0</version>
+    <authors>Jose Valim</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Elixir is a functional meta-programming aware language built on top of the Erlang VM.</summary>
+    <description>Elixir is a functional meta-programming aware language built on top of the Erlang VM. It is a dynamic language with flexible syntax with macros support that leverages Erlang's abilities to build concurrent, distributed, fault-tolerant applications with hot code upgrades.
+
+Elixir also provides first-class support for pattern matching, polymorphism via protocols (similar to Clojure's), aliases and associative data structures (usually known as dicts or hashes in other programming languages).
+
+Finally, Elixir and Erlang share the same bytecode and data types. This means you can invoke Erlang code from Elixir (and vice-versa) without any conversion or performance hit. This allows a developer to mix the expressiveness of Elixir with the robustness and performance of Erlang.</description>
+    <releaseNotes>https://github.com/elixir-lang/elixir/releases/</releaseNotes>
+    <projectUrl>http://elixir-lang.org/</projectUrl>
+    <tags>erlang concurrent programming language sdk otp elixir ruby</tags>
+    <licenseUrl>https://github.com/elixir-lang/elixir/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://secure.gravatar.com/avatar/4c5c2c297ed9f4664cfbe7733a011fb2?s=400&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png</iconUrl>
+    <dependencies>
+      <dependency id="toolsroot"/>
+      <!-- mingw installer is broken, not silent, only needed to compile anyhow -->
+      <!-- <dependency id="MinGw" version="0.5.20121115" /> -->
+      <dependency id="Erlang16" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
