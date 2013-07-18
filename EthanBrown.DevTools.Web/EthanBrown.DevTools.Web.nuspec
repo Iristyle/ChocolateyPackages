@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.DevTools.Web</id>
     <title>EthanBrown.DevTools.Web</title>
-    <version>0.3.0</version>
+    <version>0.3.1</version>
     <authors>Ethan Brown</authors>
     <owners>Ethan Brown</owners>
     <summary>Batteries included web development tool stack for Windows.</summary>
@@ -42,7 +42,7 @@
       <dependency id="EthanBrown.SublimeText2.UtilPackages" version="0.1.2"/>
       <dependency id="EthanBrown.SublimeText2.EditorPackages" version="0.1.1"/>
       <dependency id="EthanBrown.SublimeText2.GitPackages" version="0.1.1"/>
-      <dependency id="EthanBrown.SublimeText2.WebPackages" version="0.2.3"/>
+      <dependency id="EthanBrown.SublimeText2.WebPackages" version="0.2.4"/>
       <dependency id="Growl" version="2.0.9.20130406"/>
       <dependency id="OptiPNG" version="0.7.1.20120913"/>
       <dependency id="libjpeg-turbo" version="1.2.1.201304081"/>
