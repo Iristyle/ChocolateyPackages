@@ -11,7 +11,7 @@ try {
     Select -First 1
 
   # only way to test for installation of this version is by path on disk
-  if (Test-Path $installedPath)
+  if ($installedPath -and (Test-Path $installedPath))
   {
     Write-Host "$package $version is already installed to $installedPath"
   }
