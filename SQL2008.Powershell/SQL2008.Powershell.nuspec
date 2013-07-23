@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
-    <id>SQL2008.Powershell</id>
+    <id>SQL2008.PowerShell</id>
     <title>Microsoft Windows PowerShell Extensions for SQL Server</title>
-    <version>10.00.2531.00</version>
+    <version>10.00.2531.01</version>
     <authors>Microsoft</authors>
     <owners>Ethan Brown</owners>
     <summary>Microsoft SQL Server 2008 Feature Pack, April 2009
@@ -24,9 +24,6 @@
     <releaseNotes></releaseNotes>
     <dependencies>
         <dependency id="SQL2008.SMO" />
-        <!-- can't run choc without powershell!
-        <dependency id="powershell" />
-        -->
     </dependencies>
   </metadata>
   <files>
