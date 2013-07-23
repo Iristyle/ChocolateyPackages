@@ -1,17 +1,41 @@
 # uses functions in JsonHelpers.ps1
 function Get-SublimeInstallPath
 {
-  Join-Path $Env:ProgramFiles 'Sublime Text 2'
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $false)]
+    [ValidateRange(2,3)]
+    [int]
+    $Version = 2
+  )
+
+  Join-Path $Env:ProgramFiles "Sublime Text $Version"
 }
 
 function Get-SublimeSettingsPath
 {
-  Join-Path ([Environment]::GetFolderPath('ApplicationData')) 'Sublime Text 2'
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $false)]
+    [ValidateRange(2,3)]
+    [int]
+    $Version = 2
+  )
+
+  Join-Path ([Environment]::GetFolderPath('ApplicationData')) "Sublime Text $Version"
 }
 
 function Get-SublimePackagesPath
 {
-  $packagesPath = Join-Path (Get-SublimeSettingsPath) 'Packages'
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $false)]
+    [ValidateRange(2,3)]
+    [int]
+    $Version = 2
+  )
+
+  $packagesPath = Join-Path (Get-SublimeSettingsPath -Version $Version) 'Packages'
   if (!(Test-Path $packagesPath))
   {
     New-Item $packagesPath -Type Directory | Out-Null
@@ -22,7 +46,15 @@ function Get-SublimePackagesPath
 
 function Get-SublimeUserPath
 {
-  $path = Join-Path (Get-SublimePackagesPath) 'User'
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $false)]
+    [ValidateRange(2,3)]
+    [int]
+    $Version = 2
+  )
+
+  $path = Join-Path (Get-SublimePackagesPath -Version $Version) 'User'
   if (!(Test-Path $path))
   {
     New-Item $path -Type Directory  | Out-Null
@@ -39,7 +71,7 @@ function Install-SublimePackagesFromCache
     $Directory
   )
 
-  $packagesPath = Get-SublimePackagesPath
+  $packagesPath = Get-SublimePackagesPath -Version $Version
   Get-ChildItem $Directory |
     ? { $_.PsIsContainer } |
     % { @{Path = $_.FullName; Destination = Join-Path $packagesPath $_.Name }} |
@@ -56,16 +88,38 @@ function Install-SublimePackagesFromCache
 
 function Install-SublimePackageControl
 {
-  # install package control
-  $packagesPath = Join-Path (Get-SublimeSettingsPath) 'Installed Packages'
-  if (!(Test-Path $packagesPath)) { New-Item $packagesPath -Type Directory }
-  $packageControl = Join-Path $packagesPath 'Package Control.sublime-package'
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $false)]
+    [ValidateRange(2,3)]
+    [int]
+    $Version = 2
+  )
 
-  if (!(Test-Path $packageControl))
+  # install package control
+  $packageFolder = if ($Version -eq 2) { 'Installed Packages' } else { 'Packages' }
+  $packagesPath = Join-Path (Get-SublimeSettingsPath -Version $Version) $packageFolder
+
+  if (!(Test-Path $packagesPath)) { New-Item $packagesPath -Type Directory }
+
+  switch ($Version)
   {
-    # http://wbond.net/sublime_packages/package_control/installation
-    $packageUrl = 'http://sublime.wbond.net/Package%20Control.sublime-package'
-    Get-ChocolateyWebFile -url $packageUrl -fileFullPath $packageControl
+    2 {
+      $packageControl = Join-Path $packagesPath 'Package Control.sublime-package'
+
+      if (!(Test-Path $packageControl))
+      {
+        # http://wbond.net/sublime_packages/package_control/installation
+        $packageUrl = 'http://sublime.wbond.net/Package%20Control.sublime-package'
+        Get-ChocolateyWebFile -url $packageUrl -fileFullPath $packageControl
+      }
+    }
+
+    3 {
+      Push-Location $packagesPath
+      git clone -b python3 https://github.com/wbond/sublime_package_control.git "Package Control"
+      Pop-Location
+    }
   }
 }
 
@@ -75,10 +129,15 @@ function Merge-PackageControlSettings
   param(
     [Parameter(Mandatory = $true)]
     [string]
-    $FilePath
+    $FilePath,
+
+    [Parameter(Mandatory = $false)]
+    [ValidateRange(2,3)]
+    [int]
+    $Version = 2
   )
 
-  $root = Get-SublimeUserPath
+  $root = Get-SublimeUserPath -Version $Version
   $existingPath = Join-Path $root 'Package Control.sublime-settings'
   if (!(Test-Path $existingPath))
   {
@@ -113,10 +172,15 @@ function Merge-Preferences
   param(
     [Parameter(Mandatory = $true)]
     [String]
-    $FilePath
+    $FilePath,
+
+    [Parameter(Mandatory = $false)]
+    [ValidateRange(2,3)]
+    [int]
+    $Version = 2
   )
 
-  $root = Get-SublimeUserPath
+  $root = Get-SublimeUserPath -Version $Version
   $existingPath = Join-Path $root 'Preferences.sublime-settings'
   if (!(Test-Path $existingPath))
   {
