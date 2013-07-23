@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>SublimeText3.app</id>
+    <title>Sublime Text 3</title>
+    <version>3.0.0.3047</version>
+    <authors>Jon Skinner</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>Sublime Text 3 is a sophisticated text editor for code, html and prose. You'll love the slick user interface and extraordinary features.  Includes Package Control.</summary>
+    <description>Includes Sublime Text 3 AND
+
+      * Package Control
+      * subl alias for Powershell
+
+    Sublime Text may be downloaded and evaluated for free, however a license must be purchased for continued use.
+    This brings the Sublime Text full installation version to your system, which has a built-in auto-update mechanism.  Furthermore, Sublime Package Control is included.</description>
+    <releaseNotes>http://www.sublimetext.com/3</releaseNotes>
+    <projectUrl>http://www.sublimetext.com/3</projectUrl>
+    <tags>sublime text editor </tags>
+    <licenseUrl>http://www.sublimetext.com/eula</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SublimeText2.app/Sublime_Text.png</iconUrl>
+    <dependencies>
+      <dependency id="sublimetext3" />
+      <dependency id="SublimeText3.PowershellAlias" />
+      <dependency id="SublimeText3.PackageControl" />
+    </dependencies>
+  </metadata>
+</package>
