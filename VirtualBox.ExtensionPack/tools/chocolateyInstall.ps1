@@ -19,7 +19,7 @@ try {
 
     $vboxManage = (Which VBoxManage),
       $vboxManageDefault |
-      ? { Test-Path $_ } |
+      ? { $_ -and { Test-Path $_ } } |
       Select -First 1
 
     if (!$vboxManage)
