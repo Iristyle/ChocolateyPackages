@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>SublimeText3.PackageControl</id>
+    <title>Sublime Text 3 Package Control</title>
+    <version>2.0.0.20130723</version>
+    <authors>Will Bond</authors>
+    <owners>Ethan J Brown</owners>
+    <summary>A full-featured package manager that helps discovering, installing, updating and removing packages for Sublime Text 3. It features an automatic upgrader and supports GitHub, BitBucket and a full channel/repository system.</summary>
+    <description>* Easily find, install, upgrade and remove packages without restarting Sublime Text
+* Keeps installed packages up-to-date with an auto-upgrade feature
+* Downloads packages from GitHub, BitBucket and the custom JSON channel/repository system
+* Handles updating packages cloned from GitHub and BitBucket via Git and Hg
+* Provides commands for enabling and disabling packages
+* Includes a command to bundle any package directory into a .sublime-package file.</description>
+    <releaseNotes>Helper package to install Sublime Package Control.</releaseNotes>
+    <projectUrl>http://wbond.net/sublime_packages/package_control</projectUrl>
+    <tags>sublime text editor package</tags>
+    <licenseUrl>http://www.sublimetext.com/eula</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SublimeText2.app/Sublime_Text.png</iconUrl>
+    <dependencies>
+      <dependency id="git" />
+      <dependency id="sublimetext3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="..\core\SublimeHelpers.ps1" target="tools" />
+  </files>
+</package>
