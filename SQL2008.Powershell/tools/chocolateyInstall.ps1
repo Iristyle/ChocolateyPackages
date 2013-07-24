@@ -1,4 +1,4 @@
-$package = 'SQL2008.Powershell'
+$package = 'SQL2008.PowerShell'
 
 try {
   $params = @{
