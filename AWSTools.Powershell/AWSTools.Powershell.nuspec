@@ -3,7 +3,7 @@
   <metadata>
     <id>AWSTools.Powershell</id>
     <title>AWS Tools for Windows PowerShell</title>
-    <version>1.0.0.20130405</version>
+    <version>1.1.1120.20130916</version>
     <authors>Amazon Web Services</authors>
     <owners>Ethan Brown</owners>
     <summary>The AWS Tools for Windows PowerShell lets developers and administrators manage their AWS services from the Windows PowerShell scripting environment. Now you can manage your AWS resources with the same Windows PowerShell tools you use to manage your Windows environment.</summary>
