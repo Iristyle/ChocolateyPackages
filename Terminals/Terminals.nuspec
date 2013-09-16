@@ -3,7 +3,7 @@
   <metadata>
     <id>Terminals.app</id>
     <title>Terminals</title>
-    <version>2.0.0.030712</version>
+    <version>3.3.0.24477</version>
     <authors>Rob Chartier</authors>
     <owners>Ethan Brown</owners>
     <summary>Terminals open source RDP, SSH and Telnet client</summary>
@@ -16,22 +16,7 @@ The project started from the need of controlling multiple connections simultaneo
     <licenseUrl>http://terminals.codeplex.com/license</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>http://download-codeplex.sec.s-msft.com/Download?ProjectName=terminals&amp;DownloadId=324544&amp;Build=19471</iconUrl>
-    <releaseNotes>Changes since version 1.9a:
-
-New art works
-New usability in Organize favorites window
-Improved usability of imports/exports and scans
-Large number of fixes
-Improvements in single instance mode
-Comparing November beta 4, this corrects:
-
-New application icons
-Doesn't show Logon error codes
-Fixed command line arguments exception for single instance mode
-Fixed detaching of tabs
-improved usability in detached window
-Fixed option settings for Capture manager
-Fixed system tray notifyicon from disappearing
+    <releaseNotes>http://terminals.codeplex.com/releases/view/110720
     </releaseNotes>
   </metadata>
   <files>
