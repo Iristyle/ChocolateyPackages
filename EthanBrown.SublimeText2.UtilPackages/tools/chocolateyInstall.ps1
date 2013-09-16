@@ -43,7 +43,7 @@ try {
 
   $packageCache = Join-Path (Get-CurrentDirectory) 'PackageCache'
   Install-SublimePackagesFromCache -Directory $packageCache
-  Install-SublimePackageControl
+  Install-SublimePackageControl -PreRelease
   $packageControl = (Join-Path (Get-CurrentDirectory) 'Package Control.sublime-settings')
   Merge-PackageControlSettings -FilePath $packageControl
 
