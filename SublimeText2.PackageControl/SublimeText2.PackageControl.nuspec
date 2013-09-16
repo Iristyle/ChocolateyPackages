@@ -3,7 +3,7 @@
   <metadata>
     <id>SublimeText2.PackageControl</id>
     <title>Sublime Text 2 Package Control</title>
-    <version>1.6.3</version>
+    <version>2.0.1-beta1</version>
     <authors>Will Bond</authors>
     <owners>Ethan J Brown</owners>
     <summary>A full-featured package manager that helps discovering, installing, updating and removing packages for Sublime Text 2. It features an automatic upgrader and supports GitHub, BitBucket and a full channel/repository system.</summary>
@@ -25,6 +25,7 @@
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="..\core\JsonHelpers.ps1" target="tools" />
     <file src="..\core\SublimeHelpers.ps1" target="tools" />
   </files>
 </package>

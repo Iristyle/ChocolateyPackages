@@ -93,7 +93,11 @@ function Install-SublimePackageControl
     [Parameter(Mandatory = $false)]
     [ValidateRange(2,3)]
     [int]
-    $Version = 2
+    $Version = 2,
+
+    [Parameter(Mandatory = $false)]
+    [Switch]
+    $PreRelease = $false
   )
 
   # install package control
@@ -107,12 +111,15 @@ function Install-SublimePackageControl
     2 {
       $packageControl = Join-Path $packagesPath 'Package Control.sublime-package'
 
-      if (!(Test-Path $packageControl))
+      if (Test-Path $packageControl) { Remove-item $packageControl }
+
+      # http://wbond.net/sublime_packages/package_control/installation
+      $packageUrl = 'http://sublime.wbond.net/Package%20Control.sublime-package'
+      if ($PreRelease)
       {
-        # http://wbond.net/sublime_packages/package_control/installation
-        $packageUrl = 'http://sublime.wbond.net/Package%20Control.sublime-package'
-        Get-ChocolateyWebFile -url $packageUrl -fileFullPath $packageControl
+        $packageUrl = 'https://sublime.wbond.net/prerelease/Package%20Control.sublime-package'
       }
+      Get-ChocolateyWebFile -url $packageUrl -fileFullPath $packageControl
     }
 
     3 {
@@ -151,15 +158,30 @@ function Merge-PackageControlSettings
 
   $new = ConvertFrom-Json ([IO.File]::ReadAllText($FilePath))
 
-  # simple arrays
-  'installed_packages', 'repositories' |
+  $simpleArrays = @('installed_packages', 'repositories', 'channels',
+    'auto_upgrade_ignore', 'git_update_command', 'hg_update_command',
+    'dirs_to_ignore', 'files_to_ignore', 'files_to_include',
+    'files_to_ignore_binary', 'files_to_include_binary' )
+  $simpleArrays |
     ? { $new.$_ -ne $null } |
     % { Merge-JsonArray -Name $_ -Destination $existing -Array $new.$_ }
 
-  # maps
-  'package_name_map' |
+  $maps = @('package_name_map')
+  $maps |
     ? { $new.$_ -ne $null } |
     % { Merge-JsonSimpleMap -Name $_ -Destination $existing -SimpleMap $new.$_ }
+
+  $arrayOfMaps = @('certs')
+  $arrayOfMaps |
+    ? { $new.$_ -ne $null } |
+    % { Merge-JsonArrayOfSimpleMap -Name $_ -Destination $existing -Array $new.$_ }
+
+  $excluded = $simpleArrays + $maps + $arrayOfMaps
+  $new.PSObject.Properties |
+    ? { $excluded -inotcontains $_.Name } |
+    % {
+      Merge-JsonNamedValue -Name $_.Name -Destination $existing -Value $_.Value
+    }
 
   $json = $existing | ConvertTo-Json -Depth 10 | ConvertFrom-UnicodeEscaped
   Write-Verbose "Updated settings: `n`n$json`n"
