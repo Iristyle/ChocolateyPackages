@@ -3,7 +3,7 @@
   <metadata>
     <id>EthanBrown.SublimeText2.GitPackages</id>
     <title>Sublime Text 2 - Git Integration Packages</title>
-    <version>0.1.1</version>
+    <version>0.2.0</version>
     <authors>Various</authors>
     <owners>Ethan Brown</owners>
     <summary>A number of packages helpful for increased editor productivity when using Git.</summary>
@@ -59,7 +59,7 @@
     <releaseNotes>* Use a local package cache to prevent first-time package restore / load errors</releaseNotes>
     <dependencies>
         <dependency id="PowerShell" version="3.0"/>
-        <dependency id="SublimeText2.app" />
+        <dependency id="SublimeText2" />
         <dependency id="git" />
     </dependencies>
   </metadata>
