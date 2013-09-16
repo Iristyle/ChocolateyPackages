@@ -15,7 +15,7 @@ try {
   $sublimeUserDataPath = Get-SublimeUserPath
 
   #straight file copies
-  'BracketHighlighter.sublime-settings',
+  'bh_core.sublime-settings',
   'EasyMotion.sublime-settings',
   'MarkdownPreview.sublime-settings' |
     % {
