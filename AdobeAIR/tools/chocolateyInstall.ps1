@@ -1,5 +1,5 @@
 $package = 'AdobeAIR'
-$version = '3.7'
+$version = '3.8'
 
 try {
 
@@ -7,7 +7,7 @@ try {
     PackageName = $package;
     FileType = 'exe';
     SilentArgs = '-silent -eulaAccepted';
-    Url = 'http://airdownload.adobe.com/air/win/download/3.7/AdobeAIRInstaller.exe'
+    Url = "http://airdownload.adobe.com/air/win/download/$version/AdobeAIRInstaller.exe"
   }
 
   Install-ChocolateyPackage @params
