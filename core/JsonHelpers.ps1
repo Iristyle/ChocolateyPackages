@@ -61,7 +61,7 @@ function Merge-JsonNamedValue
     $Value
   )
 
-  if (!$Destination.$Name)
+  if (!($Destination | Get-Member -Name $Name))
   {
     $Destination |
       Add-Member -Name $Name -Value $Value -MemberType NoteProperty
