@@ -3,10 +3,10 @@
   <metadata>
     <id>Brackets</id>
     <title>Brackets Code Editor</title>
-    <version>0.1.25.7701</version>
+    <version>0.1.30.9116</version>
     <authors>Adobe</authors>
     <owners>Ethan J Brown</owners>
-    <summary>Brackets open-source code editor built with the web for the web - Milestone 25.</summary>
+    <summary>Brackets open-source code editor built with the web for the web - Milestone 30.</summary>
     <description>Brackets is an open-source editor for web design and development built on top of web technologies such as HTML, CSS and JavaScript. The project was created and is maintained by Adobe, and is released under an MIT License.
 
 FOR THE WEB, BY THE WEB
@@ -26,16 +26,15 @@ The browser is your design view. Brackets hooks up directly to the browser, allo
     <licenseUrl>https://github.com/adobe/brackets/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/Brackets/brackets_logo.png</iconUrl>
-    <releaseNotes>New Features In Sprint 25
+    <releaseNotes>New Features In Sprint 30
 
-* Extension Manager: From the toolbar icon or File > Extension Manager… you can view, search and remove installed extensions. To install new extensions, use the Install from URL… button in the Extension Manager.
-* Delete Files/Folders: Files and folders can be deleted from the file tree using the context menu or File > Delete.
-* Show in OS: Right click on a file or folder and choose Show in OS to open the location in Mac Finder or Windows Explorer.
-* Refresh File Tree: Right-click on the file tree and choose Refresh to update the file list from disk.
-* Live Preview Reliability: On all platforms, if Live Preview is disconnected, Brackets will show a notification. On Windows, launching and finding Chrome is now more reliable.
-* JavaScript Code Intelligence Improvements: JavaScript Quick Edit now uses the Tern-based code intelligence engine for finding function definitions. Also, bug fixes and performance optimizations were made in JavaScript code hinting.
-* Typing Performance: A substantial typing performance regression has been fixed.
-    </releaseNotes>
+* OS X 10.6 Support Restored: Brackets will no longer crash on launch when running on Mac OS X 10.6.x.
+* Linux Preview Improvements &amp; Fixes: File delete, Extension Manager and HTML Highlighting in Live Preview are now enabled. Also, we've fixed several bugs when installing the Debian package.
+* CSS Regions Named Flow Code Hints: Named Flows for CSS regions will now appear in code hints for flow-into and flow-from properties.
+* Function Parameter Hints: Hints appear automatically when you first type inside parentheses, or when invoked manually with Ctrl+Shift+Space.
+* Replace All: Replace All displays a panel showing all occurrences that will be replaced. You can review and uncheck any occurrences you don't want to replace.
+* Note: Theseus Extension Update Required: All users of the Theseus extension must update due to a break in compatibility. Also, Brackets developers can now use the Theseus to debug an instance of Brackets.
+* Updated Translations: The French, Japanese, German, and Turkish translations have been updated.</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

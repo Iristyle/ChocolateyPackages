@@ -1,11 +1,12 @@
 $package = 'Brackets'
+$build = '30'
 
 try {
   $params = @{
     PackageName = $package;
     FileType = 'msi';
     SilentArgs = '/q';
-    Url = 'http://download.brackets.io/file.cfm?platform=WIN&build=25';
+    Url = "http://download.brackets.io/file.cfm?platform=WIN&build=$build";
   }
 
   Install-ChocolateyPackage @params
