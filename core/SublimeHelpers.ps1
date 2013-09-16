@@ -120,6 +120,9 @@ function Install-SublimePackageControl
         $packageUrl = 'https://sublime.wbond.net/prerelease/Package%20Control.sublime-package'
       }
       Get-ChocolateyWebFile -url $packageUrl -fileFullPath $packageControl
+
+      $settings = @{ 'install_prereleases' = $PreRelease }
+      Merge-PackageControlSettings -Settings $settings -Version $Version
     }
 
     3 {
@@ -132,11 +135,15 @@ function Install-SublimePackageControl
 
 function Merge-PackageControlSettings
 {
-  [CmdletBinding()]
+  [CmdletBinding(DefaultParameterSetName = "File")]
   param(
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $false, ParameterSetName = "File")]
     [string]
     $FilePath,
+
+    [Parameter(Mandatory = $false, ParameterSetName = "Hash")]
+    [Hashtable]
+    $Settings,
 
     [Parameter(Mandatory = $false)]
     [ValidateRange(2,3)]
@@ -156,7 +163,14 @@ function Merge-PackageControlSettings
   $existing = ConvertFrom-Json $existingText
   Write-Verbose "Existing settings: `n`n$existingText`n`n"
 
-  $new = ConvertFrom-Json ([IO.File]::ReadAllText($FilePath))
+  if ($PsCmdlet.ParameterSetName -eq 'File')
+  {
+    $new = ConvertFrom-Json ([IO.File]::ReadAllText($FilePath))
+  }
+  else
+  {
+    $new = $Settings
+  }
 
   $simpleArrays = @('installed_packages', 'repositories', 'channels',
     'auto_upgrade_ignore', 'git_update_command', 'hg_update_command',
@@ -177,7 +191,9 @@ function Merge-PackageControlSettings
     % { Merge-JsonArrayOfSimpleMap -Name $_ -Destination $existing -Array $new.$_ }
 
   $excluded = $simpleArrays + $maps + $arrayOfMaps
-  $new.PSObject.Properties |
+  if ($new -is [PSCustomObject]) { $props = $new.PSObject.Properties }
+  else { $props = $new.GetEnumerator() }
+  $props |
     ? { $excluded -inotcontains $_.Name } |
     % {
       Merge-JsonNamedValue -Name $_.Name -Destination $existing -Value $_.Value
