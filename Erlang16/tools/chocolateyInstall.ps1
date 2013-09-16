@@ -29,7 +29,7 @@ try {
     Install-ChocolateyPackage @params
   }
 
-  $binPath = (Join-Path "${Env:\ProgramFiles(x86)}" $installFolder),
+  $binPath = (Join-Path "${Env:\ProgramFiles(x86)}" "$installFolder\bin"),
     (Join-Path $Env:ProgramFiles "$installFolder\bin") |
     ? { Test-Path $_ } |
     Select -First 1
