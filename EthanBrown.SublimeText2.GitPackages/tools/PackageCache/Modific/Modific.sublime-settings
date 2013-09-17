@@ -1,5 +1,8 @@
-    // Modific default settings
+// Modific default settings
 {
+    // Highlight changes
+    "highlight_changes": true,
+
     // Name of a region icon
     // Valid icon names are: modific, dot, circle, bookmark and cross
     // WARNING: if you set value different than 'modific',
@@ -16,6 +19,11 @@
         ["hg" , "hg"]
     ],
 
+    // default list of options for a diff command for a certain VCS
+    "vcs_options": {
+        "git": ["--no-color", "--no-ext-diff"]
+    },
+
     //if you have some weird OS, that has non-unicode console
     //place its console encoding here
     "console_encoding" : "",
@@ -26,7 +34,10 @@
     // set to false to disable automatic saving
     "autosave": true,
 
-    "svn_use_internal_diff": true,
+    // Turn this option on if you're using SVN 1.7 or higher
+    // this instructs Subversion to use its built-in differencing engine
+    // despite any external differencing mechanism that may be specified for use in the user's runtime configuration.
+    "svn_use_internal_diff": false,
 
     // File size limit (in KB) for drawing icons on the gutter
     "max_file_size": 1024

@@ -36,13 +36,13 @@ The "Packages" directory is located at:
 
 Please, make sure your VCS binaries is in the PATH (**especially if you are on Windows**).
 
-To do that on Windows, open `Controll Panel -> System -> Advanced system settings -> Environment variables -> System Variables`, find PATH, click "Edit" and append `;C:\path\to\VCS\binaries` for every VCS you will use (or make sure it's already there).
+To do that on Windows, open `Control Panel -> System -> Advanced system settings -> Environment variables -> System Variables`, find PATH, click "Edit" and append `;C:\path\to\VCS\binaries` for every VCS you will use (or make sure it's already there).
 
 Features / Usage
 ----------------
 
 **Highlight changes** *(automatically: on save or when window gets focus)*
-[![Highlight changes](http://i.imgur.com/FgpyRl.jpg)](http://i.imgur.com/FgpyR.jpg)
+[![Highlight changes](http://i.imgur.com/DX8TeJTl.jpg)](http://i.imgur.com/DX8TeJT.jpg)
 
 **Show diff** `Ctrl+Alt+D` on Linux/Windows and OS X
 [![Show diff](http://i.imgur.com/csCw7l.jpg)](http://i.imgur.com/csCw7.jpg)
@@ -75,6 +75,11 @@ You can configure is a type of icon (dot, circle or bookmark) and path for your 
 If some sacred punishment has been bestowed upon you, and you have no other choice but to use OS, where console has non-UTF8 encoding, you can set console_encoding parameter to the name of your beloved encoding. This parameter is specifically designed for Windows XP users, who have their git repositories in folders with cyrillic path. Since russian XP uses CP1251 as default encoding (including console), VCS diff commands will be encoded appropriately, when using this parameter.
 
 If you use different than the default theme, you can customize colors of bullets on the gutter by adding [this](https://gist.github.com/3692073) chunk of code to your theme.
+
+### SVN users
+If you are using SVN 1.7 you may want to turn on option `svn_use_internal_diff`.   
+This instructs Subversion to use its built-in differencing engine
+despite any external differencing mechanism that may be specified for use in the user's runtime configuration.
 
 Thanks to
 ---------

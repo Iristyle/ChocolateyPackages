@@ -1,6 +1,7 @@
 import os
 import sys
 import os.path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import re
 import sublime
 import sublime_plugin
@@ -15,7 +16,7 @@ except ImportError:
 
 try:
     sys.path.append(os.path.join(sublime.packages_path(), 'Git'))
-    git = __import__("git")
+    import git
     sys.path.remove(os.path.join(sublime.packages_path(), 'Git'))
 except ImportError:
     git = None
@@ -30,6 +31,7 @@ class BaseGitHubCommand(sublime_plugin.TextCommand):
     """
     MSG_USERNAME = "GitHub username:"
     MSG_PASSWORD = "GitHub password:"
+    MSG_ONE_TIME_PASSWORD = "One-time passowrd (for 2FA):"
     MSG_TOKEN_SUCCESS = "Your access token has been saved. We'll now resume your command."
     ERR_NO_USER_TOKEN = "Your GitHub Gist access token needs to be configured.\n\n"\
         "Click OK and then enter your GitHub username and password below (neither will "\
@@ -42,10 +44,12 @@ class BaseGitHubCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         self.settings = sublime.load_settings("GitHub.sublime-settings")
         self.github_user = None
+        self.github_password = None
+        self.github_one_time_password = None
         self.accounts = self.settings.get("accounts")
         self.active_account = self.settings.get("active_account")
         if not self.active_account:
-            self.active_account = self.accounts.keys()[0]
+            self.active_account = list(self.accounts.keys())[0]
         self.github_token = self.accounts[self.active_account]["github_token"]
         if not self.github_token:
             self.github_token = self.settings.get("github_token")
@@ -58,7 +62,11 @@ class BaseGitHubCommand(sublime_plugin.TextCommand):
                 sublime.save_settings("GitHub.sublime-settings")
         self.base_uri = self.accounts[self.active_account]["base_uri"]
         self.debug = self.settings.get('debug')
-        self.gistapi = GitHubApi(self.base_uri, self.github_token, debug=self.debug)
+
+        self.proxies = {'https': self.accounts[self.active_account].get("https_proxy", None)}
+        self.force_curl = self.accounts[self.active_account].get("force_curl", False)
+        self.gistapi = GitHubApi(self.base_uri, self.github_token, debug=self.debug,
+                                 proxies=self.proxies, force_curl=self.force_curl)
 
     def get_token(self):
         sublime.error_message(self.ERR_NO_USER_TOKEN)
@@ -70,16 +78,29 @@ class BaseGitHubCommand(sublime_plugin.TextCommand):
     def get_password(self):
         self.view.window().show_input_panel(self.MSG_PASSWORD, "", self.on_done_password, None, None)
 
+    def get_one_time_password(self):
+        self.view.window().show_input_panel(self.MSG_ONE_TIME_PASSWORD, "", self.on_done_one_time_password, None, None)
+
     def on_done_username(self, value):
         "Callback for the username show_input_panel."
         self.github_user = value
         # need to do this or the input panel doesn't show
         sublime.set_timeout(self.get_password, 50)
 
+    def on_done_one_time_password(self, value):
+        "Callback for the one-time password show_input_panel"
+        self.github_one_time_password = value
+        self.on_done_password(self.github_password)
+
     def on_done_password(self, value):
         "Callback for the password show_input_panel"
+        self.github_password = value
         try:
-            self.github_token = GitHubApi(self.base_uri, debug=self.debug).get_token(self.github_user, value)
+            api = GitHubApi(self.base_uri, debug=self.debug)
+            self.github_token = api.get_token(self.github_user,
+                                              self.github_password,
+                                              self.github_one_time_password)
+            self.github_password = self.github_one_time_password = None  # don't keep these around
             self.accounts[self.active_account]["github_token"] = self.github_token
             self.settings.set("accounts", self.accounts)
             sublime.save_settings("GitHub.sublime-settings")
@@ -92,11 +113,21 @@ class BaseGitHubCommand(sublime_plugin.TextCommand):
                     sublime.set_timeout(callback, 50)
             except AttributeError:
                 pass
+        except GitHubApi.OTPNeededException:
+            sublime.set_timeout(self.get_one_time_password, 50)
         except GitHubApi.UnauthorizedException:
             sublime.error_message(self.ERR_UNAUTHORIZED)
             sublime.set_timeout(self.get_username, 50)
-        except GitHubApi.UnknownException, e:
+        except GitHubApi.UnknownException as e:
             sublime.error_message(e.message)
+
+
+class InsertTextCommand(sublime_plugin.TextCommand):
+    """
+    Internal command to insert text into a view.
+    """
+    def run(self, edit, **args):
+        self.view.insert(edit, 0, args['text'])
 
 
 class OpenGistCommand(BaseGitHubCommand):
@@ -125,12 +156,12 @@ class OpenGistCommand(BaseGitHubCommand):
             packed_gists = []
             for idx, gist in enumerate(self.gists):
                 attribs = {"index": idx + 1,
-                           "filename": gist["files"].keys()[0],
+                           "filename": list(gist["files"].keys())[0],
                            "description": gist["description"] or ''}
-                if isinstance(format, basestring):
-                    item = format % attribs
-                else:
+                if isinstance(format, list):
                     item = [(format_str % attribs) for format_str in format]
+                else:
+                    item = format % attribs
                 packed_gists.append(item)
 
             args = [packed_gists, self.on_done]
@@ -140,14 +171,14 @@ class OpenGistCommand(BaseGitHubCommand):
         except GitHubApi.UnauthorizedException:
             sublime.error_message(self.ERR_UNAUTHORIZED_TOKEN)
             sublime.set_timeout(self.get_username, 50)
-        except GitHubApi.UnknownException, e:
+        except GitHubApi.UnknownException as e:
             sublime.error_message(e.message)
 
     def on_done(self, idx):
         if idx == -1:
             return
         gist = self.gists[idx]
-        filename = gist["files"].keys()[0]
+        filename = list(gist["files"].keys())[0]
         filedata = gist["files"][filename]
         content = self.gistapi.get(filedata["raw_url"])
         if self.open_in_editor:
@@ -164,9 +195,7 @@ class OpenGistCommand(BaseGitHubCommand):
                     logger.warn("no mapping for '%s'" % extension)
                     pass
             # insert the gist
-            edit = new_view.begin_edit('gist')
-            new_view.insert(edit, 0, content)
-            new_view.end_edit(edit)
+            new_view.run_command("insert_text", {'text': content})
             new_view.set_name(filename)
             new_view.settings().set('gist', gist)
         elif self.copy_gist_id:
@@ -290,9 +319,9 @@ class GistFromSelectionCommand(BaseGitHubCommand):
 
         try:
             gist = self.gistapi.create_gist(description=self.description,
-                                           filename=self.filename,
-                                           content=text,
-                                           public=self.public)
+                                            filename=self.filename,
+                                            content=text,
+                                            public=self.public)
             self.view.settings().set('gist', gist)
             sublime.set_clipboard(gist["html_url"])
             sublime.status_message(self.MSG_SUCCESS)
@@ -302,9 +331,10 @@ class GistFromSelectionCommand(BaseGitHubCommand):
             sublime.save_settings("GitHub.sublime-settings")
             sublime.error_message(self.ERR_UNAUTHORIZED_TOKEN)
             sublime.set_timeout(self.get_username, 50)
-        except GitHubApi.UnknownException, e:
+        except GitHubApi.UnknownException as e:
             sublime.error_message(e.message)
-
+        except GitHubApi.ConnectionException as e:
+            sublime.error_message(e.message)
 
 class PrivateGistFromSelectionCommand(GistFromSelectionCommand):
     """
@@ -347,21 +377,21 @@ class UpdateGistCommand(BaseGitHubCommand):
             sublime.save_settings("GitHub.sublime-settings")
             sublime.error_message(self.ERR_UNAUTHORIZED_TOKEN)
             sublime.set_timeout(self.get_username, 50)
-        except GitHubApi.UnknownException, e:
+        except GitHubApi.UnknownException as e:
             sublime.error_message(e.message)
 
 
 class SwitchAccountsCommand(BaseGitHubCommand):
     def run(self, edit):
         super(SwitchAccountsCommand, self).run(edit)
-        accounts = self.accounts.keys()
+        accounts = list(self.accounts.keys())
         self.view.window().show_quick_panel(accounts, self.account_selected)
 
     def account_selected(self, index):
         if index == -1:
             return  # canceled
         else:
-            self.active_account = self.accounts.keys()[index]
+            self.active_account = list(self.accounts.keys())[index]
             self.settings.set("active_account", self.active_account)
             sublime.save_settings("GitHub.sublime-settings")
             self.base_uri = self.accounts[self.active_account]["base_uri"]
@@ -369,14 +399,17 @@ class SwitchAccountsCommand(BaseGitHubCommand):
 
 if git:
     class RemoteUrlCommand(git.GitTextCommand):
+        url_type = 'blob'
+
         def run(self, edit):
-            self.run_command("git remote -v".split(), self.done_remote)
+            self.run_command("git ls-remote --get-url".split(), self.done_remote)
 
         def done_remote(self, result):
-            remote_origin = [r for r in result.split("\n") if "origin" in r][0]
-            remote_loc = re.split('\s+', remote_origin)[1]
-            repo_url = re.sub('^git@', 'https://', remote_loc)
-            repo_url = re.sub('\.com:', '.com/', repo_url)
+            remote_loc = result.split()[0]
+            repo_url = re.sub('^git(@|://)', 'http://', remote_loc)
+            # Replace the "tld:" with "tld/"
+            # https://github.com/bgreenlee/sublime-github/pull/49#commitcomment-3688312
+            repo_url = re.sub(r'^(https?://[^/:]+):', r'\1/', repo_url)
             repo_url = re.sub('\.git$', '', repo_url)
             self.repo_url = repo_url
             self.run_command("git rev-parse --abbrev-ref HEAD".split(), self.done_rev_parse)
@@ -386,8 +419,20 @@ if git:
             current_branch = result.strip()
             # get file path within repo
             repo_name = self.repo_url.split("/").pop()
-            relative_path = self.view.file_name().split(repo_name).pop()
-            self.url = "%s/blob/%s%s" % (self.repo_url, current_branch, relative_path)
+            relative_path = self.view.file_name().split(repo_name, 1).pop()
+            line_nums = ""
+            if self.allows_line_highlights:
+                # if any lines are selected, the first of those
+                non_empty_regions = [region for region in self.view.sel() if not region.empty()]
+                if non_empty_regions:
+                    selection = non_empty_regions[0]
+                    (start_row, _) = self.view.rowcol(selection.begin())
+                    (end_row, _) = self.view.rowcol(selection.end())
+                    line_nums = "#L%s" % (start_row + 1)
+                    if end_row > start_row:
+                        line_nums += "-L%s" % (end_row + 1)
+
+            self.url = "%s/%s/%s%s%s" % (self.repo_url, self.url_type, current_branch, relative_path, line_nums)
             self.on_done()
 else:
     class RemoteUrlCommand(sublime_plugin.TextCommand):
@@ -396,6 +441,8 @@ else:
 
 
 class OpenRemoteUrlCommand(RemoteUrlCommand):
+    allows_line_highlights = True
+
     def run(self, edit):
         super(OpenRemoteUrlCommand, self).run(edit)
 
@@ -410,3 +457,17 @@ class CopyRemoteUrlCommand(RemoteUrlCommand):
     def on_done(self):
         sublime.set_clipboard(self.url)
         sublime.status_message("Remote URL copied to clipboard")
+
+
+class BlameCommand(OpenRemoteUrlCommand):
+    url_type = 'blame'
+
+
+class HistoryCommand(OpenRemoteUrlCommand):
+    url_type = 'commits'
+    allows_line_highlights = False
+
+
+class EditCommand(OpenRemoteUrlCommand):
+    url_type = 'edit'
+    allows_line_highlights = False

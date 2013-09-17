@@ -11,7 +11,14 @@ class GithubinatorCommand(sublime_plugin.TextCommand):
 
     def load_config(self):
         s = sublime.load_settings("Githubinator.sublime-settings")
-        global DEFAULT_GIT_REMOTE; DEFAULT_GIT_REMOTE = s.get("default_remote")
+        global DEFAULT_GIT_REMOTE, DEFAULT_GITHUB_HOST
+        DEFAULT_GIT_REMOTE = s.get("default_remote")
+        if not isinstance(DEFAULT_GIT_REMOTE, list):
+            DEFAULT_GIT_REMOTE = [DEFAULT_GIT_REMOTE]
+        DEFAULT_GITHUB_HOST = s.get("default_host")
+        if DEFAULT_GITHUB_HOST is None:
+            DEFAULT_GITHUB_HOST = "github.com"
+        
 
     def run(self, edit, permalink = False, mode = 'blob'):
         self.load_config()
@@ -41,8 +48,9 @@ class GithubinatorCommand(sublime_plugin.TextCommand):
         else:
             lines = '%s-%s' % (begin_line, end_line)
 
-        for remote in [DEFAULT_GIT_REMOTE]:
-            regex = r'.*\s.*(?:https://github\.com/|github\.com:|git://github\.com/)(.*)/(.*?)(?:\.git)?\r?\n'
+        re_host = re.escape(DEFAULT_GITHUB_HOST)
+        for remote in DEFAULT_GIT_REMOTE:
+            regex = r'.*\s.*(?:https://%s/|%s:|git://%s/)(.*)/(.*?)(?:\.git)?\r?\n' % (re_host, re_host, re_host)
             result = re.search(remote + regex, config)
             if not result:
                 continue
@@ -53,8 +61,8 @@ class GithubinatorCommand(sublime_plugin.TextCommand):
             sha = open(os.path.join(git_path, '.git', ref_path), "r").read()[:-1]
             target = sha if permalink else branch
 
-            full_link = 'https://github.com/%s/%s/%s/%s%s/%s#L%s' % \
-                (matches[0], matches[1], mode, target, new_git_path, file_name, lines)
+            full_link = 'https://%s/%s/%s/%s/%s%s/%s#L%s' % \
+                (DEFAULT_GITHUB_HOST, matches[0], matches[1], mode, target, new_git_path, file_name, lines)
             sublime.set_clipboard(full_link)
             sublime.status_message('Copied %s to clipboard.' % full_link)
             print('Copied %s to clipboard.' % full_link)
@@ -73,4 +81,7 @@ class GithubinatorCommand(sublime_plugin.TextCommand):
 
 
     def is_enabled(self):
-        return self.view.file_name() and len(self.view.file_name()) > 0
+        if self.view.file_name() and len(self.view.file_name()) > 0:
+            return True
+        else:
+            return False
