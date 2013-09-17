@@ -68,7 +68,12 @@ function Install-SublimePackagesFromCache
   param(
     [Parameter(Mandatory = $true)]
     [string]
-    $Directory
+    $Directory,
+
+    [Parameter(Mandatory = $false)]
+    [ValidateRange(2,3)]
+    [int]
+    $Version = 2
   )
 
   $packagesPath = Get-SublimePackagesPath -Version $Version
