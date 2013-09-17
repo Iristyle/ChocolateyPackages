@@ -3,7 +3,7 @@
 """
 Move Tab
 
-Plugin for Sublime Text 2 to move tabs around
+Plugin for Sublime Text to move tabs around
 
 Copyright (c) 2012 Frédéric Massart - FMCorz.net
 

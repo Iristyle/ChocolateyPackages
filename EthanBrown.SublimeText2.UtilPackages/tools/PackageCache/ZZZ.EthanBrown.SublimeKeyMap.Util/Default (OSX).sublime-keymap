@@ -1,0 +1,31 @@
+[
+  //AdvancedNewFile - https://github.com/xobb1t/Sublime-AdvancedNewFile
+  { "keys": ["ctrl+alt+n"], "command": "advanced_new_file"},
+  //{ "keys": ["shift+ctrl+alt+n"], "command": "advanced_new_file", "args": {"is_python": true}},
+  {
+    "keys": ["tab"],
+    "command": "insert_best_completion",
+    "args": {"default": "", "exact": false},
+    "context": [
+      { "key": "advanced_new_file_completion"},
+      { "key": "setting.tab_completion", "operator": "equal", "operand": true },
+      { "key": "last_command", "operator": "not_equal", "operand": "insert_best_completion" },
+      { "key": "auto_complete_visible" , "operator": "equal", "operand": false}
+    ]
+  },
+
+  //Navigation History - https://github.com/timjrobinson/SublimeNavigationHistory
+  { "keys": ["alt+left"], "command": "navigation_history_back"},
+  { "keys": ["alt+right"], "command": "navigation_history_forward"},
+
+  //SideBarEnhancements - https://github.com/titoBouzout/SideBarEnhancements/
+  { "keys": ["super+t"], "command": "side_bar_new_file2" },
+  { "keys": ["f12"], "command": "side_bar_open_in_browser" , "args":{"paths":[], "type":"testing" }},
+  { "keys": ["alt+f12"], "command": "side_bar_open_in_browser", "args":{"paths":[], "type":"production" }},
+  { "keys": ["f2"], "command": "side_bar_rename" },
+  { "keys": ["ctrl+alt+f"], "command": "side_bar_find_files_path_containing" },
+  { "keys": ["ctrl+shift+r"], "command": "side_bar_move" },
+
+  //SublimeFiles - https://github.com/al63/SublimeFiles
+  { "keys": ["shift+ctrl+alt+n"], "command": "sublime_files", "args": {"command":"navigate"}}
+]

@@ -2,18 +2,19 @@
 	// A list of URLs that each contain a JSON file with a list of repositories.
 	// The repositories from these channels are placed in order after the
 	// repositories from the "repositories" setting
-	"repository_channels": [
-		"https://sublime.wbond.net/repositories.json"
+	"channels": [
+		"https://sublime.wbond.net/channel.json"
 	],
-	
+
 	// A list of URLs that contain a packages JSON file. These repositories
-	// are placed in order before repositories from the "repository_channels"
+	// are placed in order before repositories from the "channels"
 	// setting
 	"repositories": [],
 
 	// A list of CA certs needed for domains. The default channel provides a
 	// list of domains and an identifier (the md5 hash) for the CA cert(s)
-	// necessary for each.
+	// necessary for each. Not used on Windows since the system CA cert list
+	// is automatically used via WinINet.
 	//
 	// If a custom cert is required for a proxy or for an alternate channel
 	// or repository domain name, it should be added in one of the two forms:
@@ -24,20 +25,28 @@
 	// In both cases the literal "*" means the cert will be checked to ensure
 	// it is present for accessing any URL. This is necessary for proxy
 	// connections, but also useful if you want to provide you own
-	// ca-bundle.crt file.
+	// Pckage Control.ca-bundle file.
 	//
 	// The "my_identifier" and "my_identifier_2" can be any unique string
 	// that Package Control can use as a filename, and ensures that it has
 	// merged the cert file with the ca-bundle.crt file in the certs/ directory
 	// since that is what is passed to the downloaders.
 	"certs": {
-		"api.bitbucket.org": ["d867a7b2aecc46f9c31afc4f2f50de05", ""],
-		"api.github.com": ["1c5282418e2cb4989cd6beddcdbab0b5", ""],
-		"bitbucket.org": ["897abe0b41fd2f64e9e2e351cbc36d76", ""],
-		"nodeload.github.com": ["1c5282418e2cb4989cd6beddcdbab0b5", ""],
-		"raw.github.com": ["1c5282418e2cb4989cd6beddcdbab0b5", ""],
-		"sublime.wbond.net": ["7f4f8622b4fd001c7f648e09aae7edaa", ""]
+		"api.bitbucket.org": ["7d0986b90061d60c8c02aa3b1cf23850", "https://sublime.wbond.net/certs/7d0986b90061d60c8c02aa3b1cf23850"],
+		"api.github.com": ["7d0986b90061d60c8c02aa3b1cf23850", "https://sublime.wbond.net/certs/7d0986b90061d60c8c02aa3b1cf23850"],
+		"bitbucket.org": ["7d0986b90061d60c8c02aa3b1cf23850", "https://sublime.wbond.net/certs/7d0986b90061d60c8c02aa3b1cf23850"],
+		"codeload.github.com": ["7d0986b90061d60c8c02aa3b1cf23850", "https://sublime.wbond.net/certs/7d0986b90061d60c8c02aa3b1cf23850"],
+		"downloads.sourceforge.net": ["221e907bdfff70d71cea42361ae209d5", "https://sublime.wbond.net/certs/221e907bdfff70d71cea42361ae209d5"],
+		"github.com": ["7d0986b90061d60c8c02aa3b1cf23850", "https://sublime.wbond.net/certs/7d0986b90061d60c8c02aa3b1cf23850"],
+		"nodeload.github.com": ["7d0986b90061d60c8c02aa3b1cf23850", "https://sublime.wbond.net/certs/7d0986b90061d60c8c02aa3b1cf23850"],
+		"raw.github.com": ["7d0986b90061d60c8c02aa3b1cf23850", "https://sublime.wbond.net/certs/7d0986b90061d60c8c02aa3b1cf23850"],
+		"sublime.wbond.net": ["221e907bdfff70d71cea42361ae209d5", "https://sublime.wbond.net/certs/221e907bdfff70d71cea42361ae209d5"]
 	},
+
+	// Install pre-release versions of packages. If this is false, versions
+	// under 1.0.0 will still be installed. Only packages using the SemVer
+	// -prerelease suffixes will be ignored.
+	"install_prereleases": false,
 
 	// If debugging information for HTTP/HTTPS connections should be printed
 	// to the Sublime Text console
@@ -53,7 +62,7 @@
 	// the channel for aggregated statistics
 	"submit_usage": true,
 
-	// The URL to post install, upgrade and removal notices to 
+	// The URL to post install, upgrade and removal notices to
 	"submit_url": "https://sublime.wbond.net/submit",
 
 	// If packages should be automatically upgraded when ST2 starts
@@ -69,25 +78,36 @@
 	// Packages to not auto upgrade
 	"auto_upgrade_ignore": [],
 
-	// Timeout for downloading channels, repositories and packages
+	// Timeout for downloading channels, repositories and packages. Doesn't
+	// have an effect on Windows due to a bug in WinINet.
 	"timeout": 30,
 
 	// The number of seconds to cache repository and package info for
 	"cache_length": 300,
 
-	// An HTTP proxy server to use for requests
+	// An HTTP proxy server to use for requests. Not used on Windows since the
+	// system proxy configuration is utilized via WinINet.
 	"http_proxy": "",
 	// An HTTPS proxy server to use for requests - this will inherit from
 	// http_proxy if it is set to "" or null and http_proxy has a value. You
-	// can set this to false to prevent inheriting from http_proxy.
+	// can set this to false to prevent inheriting from http_proxy. Not used on
+	// Windows since the system proxy configuration is utilized via WinINet.
 	"https_proxy": "",
 
-	// Username and password for both http_proxy and https_proxy
+	// Username and password for both http_proxy and https_proxy. May be used
+	// with WinINet to set credentials for system-level proxy config.
 	"proxy_username": "",
 	"proxy_password": "",
 
-	// User agent for HTTP requests
-	"user_agent": "Sublime Package Control",
+	// If HTTP responses should be cached to disk
+	"http_cache": true,
+
+	// Number of seconds to cache HTTP responses for, defaults to one week
+	"http_cache_length": 604800,
+
+	// User agent for HTTP requests. If "%s" is present, will be replaced
+	// with the current version.
+	"user_agent": "Sublime Package Control v%s",
 
 	// Setting this to true will cause Package Control to ignore all git
 	// and hg repositories - this may help if trying to list packages to install
@@ -97,12 +117,20 @@
 	// Custom paths to VCS binaries for when they can't be automatically
 	// found on the system and a package includes a VCS metadata directory
 	"git_binary": "",
-	"git_update_command": ["pull", "origin", "master", "--ff", "--commit"],
-	
+
+	// This should NOT contain the name of the remote or branch - that will
+	// be automatically determined.
+	"git_update_command": ["pull", "--ff", "--commit"],
+
 	"hg_binary": "",
-	
-	// Be sure to keep the remote name as the last argument
-	"hg_update_command": ["pull", "--update", "default"],
+
+	// For HG repositories, be sure to use "default" as the remote URL.
+	// This is the default behavior when cloning an HG repo.
+	"hg_update_command": ["pull", "--update"],
+
+	// Full path to the openssl binary, if not found on your machine. This is
+	// only used when running the Grab CA Certs command.
+	"openssl_binary": "",
 
 	// Directories to ignore when creating a package
 	"dirs_to_ignore": [
@@ -133,6 +161,6 @@
 		"__init__.py"
 	],
 
-	// When a package is created, copy it to this folder - defaults to Desktop 
+	// When a package is created, copy it to this folder - defaults to Desktop
 	"package_destination": ""
 }

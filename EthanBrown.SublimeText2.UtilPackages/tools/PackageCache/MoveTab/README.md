@@ -1,7 +1,7 @@
 Move Tab
 ========
 
-Plugin for Sublime Text 2 to move tabs around.
+Plugin for Sublime Text to move tabs around.
 
 Usage
 -----
@@ -13,19 +13,28 @@ The following commands are accessible via the command palette:
 - Move Tab: To first position
 - Move Tab: To last position
 
-The shortcuts are:
+The default shortcuts are:
 
-- Linux/Windows: CTRL + Shift + (Page up / Page down / Home / End)
-- MacOS X: Command + Alt + Shift + (Left / Right / Up / Down)
+- Linux/Windows: CTRL + Shift + (Page up / Page down)
+- MacOS X: Command + Alt + Shift + (Left / Right)
+
+*Shortcuts to move to first or last position are disabled by default.*
+
+Requirements
+------------
+
+Sublime Text 2 or 3.
 
 Installation
 ------------
 
-Clone this repository into the Packages directory. If you don't know where it is, enter the following command in the console:
+Use the Package Control.
 
-    print sublime.packages_path()
+	Command palette > Package Control: Install Package
 
-_To access the console press CTRL + `_
+Alternatively, simply clone this repository into the Packages directory.
+
+	Preferences > Browse Packages...
 
 License
 -------

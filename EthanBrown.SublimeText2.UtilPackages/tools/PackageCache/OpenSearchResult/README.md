@@ -24,3 +24,6 @@ openable paths or the icon. See your theme file for examples of colors.
 - 'highlight_search_icon': If you want an icon to show up in the gutter next to
 openable paths, include a valid icon name as a string (e.g., 'circle', 'dot' or
 'bookmark')
+- 'open_search_result_everywhere': Set to true to enable this plugin on all
+files not just Find Results panes. You can use this for saving and reopening
+your find results.

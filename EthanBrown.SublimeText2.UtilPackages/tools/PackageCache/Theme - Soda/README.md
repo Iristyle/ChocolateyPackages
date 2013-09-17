@@ -1,6 +1,6 @@
 # Soda Theme
 
-Dark and light custom UI themes for Sublime Text 2.
+Dark and light custom UI themes for Sublime Text 2 and Sublime Text 3.
 
 Project site: [http://buymeasoda.github.com/soda-theme/](http://buymeasoda.github.com/soda-theme/)
 
@@ -12,7 +12,7 @@ Project site: [http://buymeasoda.github.com/soda-theme/](http://buymeasoda.githu
 
 ## Installation
 
-Soda theme is designed to work with the latest [development build](http://www.sublimetext.com/dev) of Sublime Text 2.
+Soda theme is designed to work with the latest development builds of Sublime Text, including [Sublime Text 2](http://www.sublimetext.com/dev) and [Sublime Text 3](http://www.sublimetext.com/3dev).
 
 ### Using Sublime Package Control
 
@@ -20,9 +20,9 @@ If you are using Will Bond's excellent [Sublime Package Control](http://wbond.ne
 
 ### Using Git
 
-Alternatively, if you are a git user, you can install the theme and keep up to date by cloning the repo directly into your `Packages` directory in the Sublime Text 2 application settings area.
+Alternatively, if you are a git user, you can install the theme and keep up to date by cloning the repo directly into your `Packages` directory in the Sublime Text application settings area.
 
-You can locate your Sublime Text 2 `Packages` directory by using the menu item `Preferences -> Browse Packages...`.
+You can locate your Sublime Text `Packages` directory by using the menu item `Preferences -> Browse Packages...`.
 
 While inside the `Packages` directory, clone the theme repository using the command below:
 
@@ -32,19 +32,33 @@ While inside the `Packages` directory, clone the theme repository using the comm
 
 * Download the files using the GitHub .zip download option
 * Unzip the files and rename the folder to `Theme - Soda`
-* Copy the folder to your Sublime Text 2 `Packages` directory
+* Find your `Packages` directory using the menu item  `Preferences -> Browse Packages...`
+* Copy the folder into your Sublime Text `Packages` directory
 
 ## Activating the theme
 
-To configure Sublime Text 2 to use the theme:
+To configure Sublime Text to use the theme, follow the instructions below for your specific version.
+
+### Sublime Text 2
 
 * Open your User Settings Preferences file `Sublime Text 2 -> Preferences -> Settings - User`
 * Add (or update) your theme entry to be `"theme": "Soda Light.sublime-theme"` or `"theme": "Soda Dark.sublime-theme"`
 
-### Example User Settings
+**Example Sublime Text 2 User Settings**
 
     {
         "theme": "Soda Light.sublime-theme"
+    }
+
+### Sublime Text 3
+
+* Open your User Settings Preferences file `Sublime Text -> Preferences -> Settings - User`
+* Add (or update) your theme entry to be `"theme": "Soda Light 3.sublime-theme"` or `"theme": "Soda Dark 3.sublime-theme"`
+
+**Example Sublime Text 3 User Settings**
+
+    {
+        "theme": "Soda Light 3.sublime-theme"
     }
 
 ## Additional Features
@@ -59,6 +73,16 @@ By default, a square tab style is used. If you'd prefer to use the original curv
 
 ![Soda Tab Styles](http://buymeasoda.github.com/soda-theme/images/features/multiple-tab-styles.png)
 
+### Sidebar Folder Icons
+
+Soda Theme has the ability to use folder icons in the sidebar.
+
+If you'd like to use folder icons in the sidebar instead of the regular arrows, add the following custom setting to your `Settings - User` file:
+
+    "soda_folder_icons": true
+
+![Soda Folder Icons](http://buymeasoda.github.com/soda-theme/images/features/sidebar-folder-icons.png)
+
 ### Retina Resolution UI
 
 Soda Theme has been designed to take advantage of retina resolution (high-dpi) displays. Both Soda Light and Soda Dark support retina displays.
@@ -67,7 +91,7 @@ Soda Theme has been designed to take advantage of retina resolution (high-dpi) d
 
 ### Theme Customisation
 
-Sublime Text 2 provides an elegant way to tweak existing themes without having to duplicate or maintain a separate copy of the original theme. If there are aspects of Soda Theme that you would like to adjust, take a look at the [theme customisation](https://github.com/buymeasoda/soda-theme/wiki/Theme-customisation) wiki page.
+Sublime Text provides an elegant way to tweak existing themes without having to duplicate or maintain a separate copy of the original theme. If there are aspects of Soda Theme that you would like to adjust, take a look at the [theme customisation](https://github.com/buymeasoda/soda-theme/wiki/Theme-customisation) wiki page.
 
 ## Bonus Options
 
@@ -78,7 +102,7 @@ The Soda Light screenshot uses a modified version of Espresso Tutti Colori and t
 If you'd like to use the syntax highlighting schemes shown in the screenshots: 
 
 * Download [colour-schemes.zip](http://buymeasoda.github.com/soda-theme/extras/colour-schemes.zip)
-* Unzip and place the extracted `tmtheme` files in the Sublime Text 2 `Packages/User` folder
+* Unzip and place the extracted `tmtheme` files in the Sublime Text `Packages/User` folder
 * Enable the colour scheme via `Preferences -> Color Scheme -> User`
 
 ### Code Font

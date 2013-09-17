@@ -22,6 +22,12 @@ Clone or copy this repository into the packages directory. By default, they are 
 * Windows: %APPDATA%/Roaming/Sublime Text 2/Packages/
 * Linux: ~/.config/sublime-text-2/Packages/
 
+or
+
+* OS X: ~/Library/Application Support/Sublime Text 3/Packages/
+* Windows: %APPDATA%/Roaming/Sublime Text 3/Packages/
+* Linux: ~/.config/sublime-text-3/Packages/
+
 ## Usage
 Simply bring up the AdvancedNewFile input through the appropriate [key binding](https://github.com/skuroda/Sublime-AdvancedNewFile). Then, enter the path, along with the file name into the input field. Upon pressing enter, the file will be created. In addition, if the directories specified do not yet exists, they will also be created. For more advanced usage of this plugin, be sure to look at [Advanced Path Usage](https://github.com/skuroda/Sublime-AdvancedNewFile#advanced-path-usage). By default, the path to the file being created will be filled shown in the status bar as you enter the path information.
 
@@ -107,13 +113,35 @@ A boolean specifying if case should be ignored when building auto complete list.
 
 A boolean specifying if folders should automatically refresh and update the sidebar. In some builds, the sidebar does not refresh when contents of project folder are updated. This setting is required to refresh the sidebar in these circumstances. False by default.
 
+`show_sidebar_menu`:
+
+A boolean specifying if an AdvancedNewFile option should be shown in the sidebar context menu.
+
+`completion_type`:
+
+A string specifying the type of auto completion to use. Valid values are "windows" or "nix".
+
+`complete_single_entry`
+
+A boolean setting specifying if a separator should be inserted when there is only one completion and completion type is "windows"
+
+`use_folder_name`:
+
+A boolean setting specifying if the folder name should be used or the name specified in the project. This setting only applies to ST3.
+
+`relative_from_current`:
+
+Boolean setting specifying if relative paths should be based on the current working directory.
+
+`default_extension`:
+
+String containing the default file extension. Note the extension is only applied if the specified path does not contain a dot (.) character.
+
 ### Project Specific Settings
 All of the above settings can also be specified as part of the project specific settings. These values override any previous values set by higher level settings, with aliases being an exception. Alias settings will be merged with higher level configurations for alias. In addition, if the same alias exist for both default/user settings and project settings, the project setting will take precedence.
 
-    "settings":
-    {
-        "AdvancedNewFile":
-        {
+    "settings": {
+        "AdvancedNewFile": {
             "default_initial": "/project/specific/path"
         }
     }
@@ -154,7 +182,7 @@ Sample OS Specific Aliases:
 
     {
         "os_specific_alias": {
-            "subl_packages" {
+            "subl_packages": {
                 "windows": "~\\AppData\\Roaming\\Sublime Text 2\\Packages",
                 "linux": "~/.config/sublime-text-2/Packages",
                 "osx": "~/Library/Application Support/Sublime Text 2/Packages"

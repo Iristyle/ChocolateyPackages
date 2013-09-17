@@ -27,7 +27,7 @@ def is_file_path(line_str):
 
     >>> is_file_path('/Users/me/code/OpenSearchResult/open_search_result.py:')
     True
-    >>> is_file_path('C:\Users\me\\test.txt:')
+    >>> is_file_path('C:\\Users\\me\\test.txt:')
     True
     >>> is_file_path('5: def parse_line_number(line_str):')
     False

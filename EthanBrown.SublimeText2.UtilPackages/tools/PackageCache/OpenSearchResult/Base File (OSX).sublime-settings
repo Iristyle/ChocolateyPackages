@@ -1,5 +1,6 @@
 {
     "highlight_search_icon": "bookmark",
     "highlight_search_scope": "entity.name.function",
-    "highlight_search_results": false
+    "highlight_search_results": false,
+    "open_search_result_everywhere": false
 }

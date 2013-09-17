@@ -5,7 +5,7 @@
     },
     {
         "caption": "Package Control: Add Channel",
-        "command": "add_repository_channel"
+        "command": "add_channel"
     },
     {
         "caption": "Package Control: Create Binary Package File",
@@ -26,6 +26,10 @@
     {
         "caption": "Package Control: Enable Package",
         "command": "enable_package"
+    },
+    {
+        "caption": "Package Control: Grab CA Certs",
+        "command": "grab_certs"
     },
     {
         "caption": "Package Control: Install Package",

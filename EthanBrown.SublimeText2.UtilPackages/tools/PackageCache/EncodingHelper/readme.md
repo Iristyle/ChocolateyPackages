@@ -1,3 +1,5 @@
+For Sublime Text 3 See: https://github.com/SublimeText/EncodingHelper/tree/st3
+
 Description
 ------------------
 
