@@ -42,8 +42,8 @@ try {
     Out-File -FilePath (Join-Path $sublimeUserDataPath $sublimeFilesFileName) -Force -Encoding ASCII
 
   $packageCache = Join-Path (Get-CurrentDirectory) 'PackageCache'
-  Install-SublimePackagesFromCache -Directory $packageCache
-  Install-SublimePackageControl -PreRelease
+  Install-SublimePackagesFromCache -Directory $packageCache -Version 2
+  Install-SublimePackageControl -PreRelease -Version 2
   $packageControl = (Join-Path (Get-CurrentDirectory) 'Package Control.sublime-settings')
   Merge-PackageControlSettings -FilePath $packageControl
 
