@@ -6,6 +6,8 @@ It's heavily inspired by [Vim's EasyMotion](http://www.vim.org/scripts/script.ph
 
 After pressing the EasyMotion shortcut (default `cmd-;`/`ctrl-;`), you then press the character that you'd like to jump to.  EasyMotion will then replace all currently visible instances of that character with one of `a-zA-Z0-9`.  Press the key for the one you want and your cursor will be moved right to it. 
 
+Here I'm pressing `cmd-;` followed by `f`.  EasyMotion highlights the 6 visible "f" characters with `a-f`.  I then press `d` to jump to the beginning of the `function`.
+
 ![Animated Gif](https://raw.github.com/tednaleid/sublime-EasyMotion/add_images/images/easymotion.gif)
 
 
@@ -22,7 +24,7 @@ Then type `EasyMotion` and choose the EasyMotion plugin from the dropdown.  Hit 
 
 Manual installation should be as easy as cloning this git repository into your Sublime `Packages` directory.  On OSX:
 
-    cd ~/Application\ Support/Sublime\ Text\ 2/Packages
+    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
     git clone git://github.com/tednaleid/sublime-EasyMotion.git EasyMotion
     
 (The directory name underneath packages __must__ be `EasyMotion` and not `sublime-EasyMotion` for some preferences to get picked up)
@@ -33,6 +35,16 @@ If you're interested in trying the next release of the plugin, you can switch yo
     git checkout development
     
 This branch will have features that are marked as fixed in the issue, but haven't yet been merged to `master`.
+
+### Sublime Text 3 Experimental Support
+
+There is experimental support for Sublime Text 3 on the `st3` branch that requires manual installation and the use of the `st3` branch.
+
+    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+    git clone git://github.com/tednaleid/sublime-EasyMotion.git EasyMotion
+    cd EasyMotion
+    git checkout st3
+    
 
 ## Usage
 

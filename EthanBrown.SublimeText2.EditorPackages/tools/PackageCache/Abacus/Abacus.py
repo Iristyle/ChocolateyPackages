@@ -8,15 +8,16 @@ class AbacusCommand(sublime_plugin.TextCommand):
         perform a series of replacements.
     """
     def run(self, edit):
-        candidates  = []
-        separators  = sublime.load_settings("Abacus.sublime-settings").get("com.khiltd.abacus.separators")
-        indentor    = Template("$indentation$left_col")
-        lg_aligner  = Template("$left_col$separator")
-        rg_aligner  = Template("$left_col$gutter$separator_padding$separator")
+        candidates      = []
+        separators      = sublime.load_settings("Abacus.sublime-settings").get("com.khiltd.abacus.separators")
+        syntax_specific = self.view.settings().get("com.khiltd.abacus.separators", [])
+        indentor        = Template("$indentation$left_col")
+        lg_aligner      = Template("$left_col$separator")
+        rg_aligner      = Template("$left_col$gutter$separator_padding$separator")
 
         #Run through the separators accumulating alignment candidates
         #starting with the longest ones i.e. '==' before '='.
-        longest_first = self.sort_separators(separators)
+        longest_first   = self.sort_separators(syntax_specific + [sep for sep in separators if sep["token"] not in [t["token"] for t in syntax_specific]])
 
         #Favor those that lean right so assignments with slice notation in them
         #get handled sanely
@@ -118,10 +119,10 @@ class AbacusCommand(sublime_plugin.TextCommand):
                 potential_matches   = [m for m in token_matcher.finditer(collapsed)]
                 
                 if debug:
-                    print "Pattern:"
-                    print token_matcher.pattern
-                    print "Matches:"
-                    print potential_matches
+                    print("Pattern:")
+                    print(token_matcher.pattern)
+                    print("Matches:")
+                    print(potential_matches)
                 
                 if len(potential_matches):
                     #Split on the first/last occurrence of the token

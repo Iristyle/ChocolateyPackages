@@ -297,90 +297,6 @@
     },
 
     //BracketHighlighter - https://github.com/facelessuser/BracketHighlighter/
-    {
-        "keys": ["ctrl+shift+b", "ctrl+shift+b"], "command": "bracket_highlighter_key",
-        "args": {"lines": true}
-    },
-    {
-        "keys": ["alt+up"], "command": "bracket_highlighter_key",
-        "args":
-        {
-            "lines" : true,
-            "plugin":
-            {
-                "type": ["quote","bracket","tag"],
-                "command": "bracket_plugins.select_bracket",
-                "args": {"select": "left"}
-            }
-        }
-    },
-    {
-        "keys": ["alt+down"], "command": "bracket_highlighter_key",
-        "args":
-        {
-            "lines" : true,
-            "plugin":
-            {
-                "type": ["quote","bracket","tag"],
-                "command": "bracket_plugins.select_bracket",
-                "args": {"select": "right"}
-            }
-        }
-    },
-    {
-        "keys": ["ctrl+shift+b","ctrl+shift+s"], "command": "bracket_highlighter_key",
-        "args":
-        {
-            "lines" : true,
-            "plugin":
-            {
-                "type": ["quote","bracket","tag"],
-                "command": "bracket_plugins.select_bracket"
-            }
-        }
-    },
-    {
-        "keys": ["ctrl+shift+b","ctrl+shift+t"], "command": "bracket_highlighter_key",
-        "args":
-        {
-            "ignore": ["quote"],
-            "plugin":
-            {
-                "type": ["tag"],
-                "command": "bracket_plugins.select_tag"
-            }
-        }
-    },
-    {
-        "keys": ["ctrl+shift+b","ctrl+shift+n"], "command": "bracket_highlighter_key",
-        "args":
-        {
-            "ignore": ["quote"],
-            "plugin":
-            {
-                "type": ["tag"],
-                "command": "bracket_plugins.select_attr",
-                "args": {"direction": "right"}
-            }
-        }
-    },
-    {
-        "keys": ["ctrl+shift+b","ctrl+shift+q"], "command": "bracket_highlighter_key",
-        "args":
-        {
-            "plugin": {"type": ["quote"],"command" : "bracket_plugins.swap_quotes"}
-        }
-    },
-    {
-        "keys": ["ctrl+shift+b","ctrl+shift+j"], "command": "swap_brackets"
-    },
-    {
-        "keys": ["ctrl+shift+b","ctrl+shift+["], "command": "bracket_highlighter_key",
-        "args":
-        {
-            "plugin": {"type": ["quote", "tag", "bracket"],"command" : "bracket_plugins.fold_bracket"}
-        }
-    },
 
     // ClipboardManager - https://github.com/colinta/SublimeClipboardManager
     { "keys": ["ctrl+x"], "command": "clipboard_manager_cut" },
@@ -417,13 +333,13 @@
     // FileDiffs - https://github.com/colinta/SublimeFileDiffs
     { "keys": ["ctrl+shift+d"], "command": "file_diff_menu" },
 
-    // MarkDown Preview - https://github.com/revolunet/sublimetext-markdown-preview
-    { "keys": ["ctrl+alt+m"], "command": "markdown_preview", "args": {"target": "browser"} },
-
     // Smart Markdown - https://github.com/demon386/SmartMarkdown
     // accept all the defaults for building lists and tables
     { "keys": ["tab"], "command": "smart_folding", "context":
       [{ "key": "selector", "operator": "equal", "operand": "markup.heading.markdown" }]
+    },
+    { "keys": ["shift+tab"], "command": "global_folding", "context":
+      [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" }]
     },
     { "keys": ["enter"], "command": "smart_list", "context": [
       { "key": "selector", "operator": "equal", "operand": "text.html.markdown" },

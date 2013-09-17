@@ -9,9 +9,10 @@
     // this defines if the unmatched bracket should be shown.
     "show_unmatched" : true,
 
-    // High visibilty style and color for high visibility mode
+    // High visibility style and color for high visibility mode
     // (solid|outline|underline)
     "high_visibility_style": "outline",
+
     // (scope|__default__|__bracket__)
     "high_visibility_color": "__bracket__",
 
@@ -20,6 +21,9 @@
 
     // Character threshold to search
     "search_threshold": 5000,
+
+    // Ignore threshold
+    "ignore_threshold": false,
 
     // Set mode for string escapes to ignore (regex|string)
     "bracket_string_escape_mode": "string",
@@ -215,15 +219,26 @@
             "find_in_sub_search": "only",
             "enabled": false
         },
-        // Angle
+        // PHP Angle
         {
-            "name": "angle",
-            "open": "(<)",
-            "close": "(>)",
+            "name": "php_angle",
+            "open": "(<\\?)(?:php)?",
+            "close": "(\\?>)",
             "style": "angle",
             "scope_exclude": ["string", "comment", "keyword.operator"],
             "language_filter": "whitelist",
-            "language_list": ["HTML", "HTML 5", "XML", "PHP", "HTML+CFML", "ColdFusion", "ColdFusionCFC"],
+            "language_list": ["HTML", "HTML 5", "PHP"],
+            "enabled": true
+        },
+        // Angle
+        {
+            "name": "angle",
+            "open": "(<)(?!\\?)",
+            "close": "(?<!\\?)(>)",
+            "style": "angle",
+            "scope_exclude": ["string", "comment", "keyword.operator", "source.ruby.rails.embedded.html", "source.ruby.embedded.html"],
+            "language_filter": "whitelist",
+            "language_list": ["HTML", "HTML 5", "XML", "PHP", "HTML (Rails)", "HTML (Jinja Templates)", "HTML (Twig)", "HTML+CFML", "ColdFusion", "ColdFusionCFC"],
             "plugin_library": "bh_modules.tags",
             "enabled": true
         },
@@ -238,16 +253,29 @@
             "language_list": ["CSS"],
             "enabled": true
         },
+        // Ruby embedded HTML
+        {
+            "name": "ruby_embedded_html",
+            "open": "((?:(?<=<%)|(?<=^))\\s*\\b(?:if|case|until|unless|while|begin|class|module|def\\b[\\p{Ll}\\p{Lu}]*)|\\bdo)\\b",
+            "close": "\\b(end)\\b",
+            "style": "default",
+            "scope_exclude": ["text.html", "source", "comment", "string"],
+            "scope_exclude_exceptions": ["source.ruby.rails.embedded.html", "source.ruby.embedded.html"],
+            "plugin_library": "bh_modules.rubykeywords",
+            "language_filter": "whitelist",
+            "language_list": ["HTML", "HTML 5", "PHP", "HTML (Rails)"],
+            "enabled": true
+        },
         // Ruby conditional statements
         {
             "name": "ruby",
-            "open": "(^\\s*\\b(?:if|case|until|unless|while|begin|class|module|def\\b\\s*[a-zA-Z_\\d]+)|\\bdo)\\b",
+            "open": "(^\\s*\\b(?:if|case|until|unless|while|begin|class|module|def\\b[\\p{Ll}\\p{Lu}]*)|\\bdo)\\b",
             "close": "\\b(end)\\b",
             "style": "default",
             "scope_exclude": ["string", "comment"],
             "plugin_library": "bh_modules.rubykeywords",
             "language_filter": "whitelist",
-            "language_list": ["Ruby", "Ruby on Rails", "HTML (Rails)"],
+            "language_list": ["Ruby", "Ruby on Rails"],
             "enabled": true
         },
         // C/C++ compile switches
@@ -300,6 +328,8 @@
         // use the color from the "default" style.
         "default": {
             "icon": "dot",
+            // BH1's original default color for reference
+            // "color": "entity.name.class",
             "color": "brackethighlighter.default",
             "style": "underline"
         },
@@ -366,7 +396,7 @@
     // Determine which style of tag-matching to use in which syntax
     "tag_mode": {
         "xhtml": ["XML"],
-        "html": ["HTML", "HTML 5", "PHP"],
+        "html": ["HTML", "HTML 5", "PHP", "HTML (Jinja Templates)", "HTML (Rails)", "HTML (Twig)"],
         "cfml": ["HTML+CFML", "ColdFusion", "ColdFusionCFC"]
     }
 }

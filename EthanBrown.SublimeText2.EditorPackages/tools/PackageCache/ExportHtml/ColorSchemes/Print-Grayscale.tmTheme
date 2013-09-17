@@ -44,7 +44,7 @@
 				<key>bracketContentsForeground</key>
 				<string>#000000</string>
 				<key>bracketContentsOptions</key>
-				<string>underline</string> -->
+				<string>underline</string>
 
 				<key>tagsOptions</key>
 				<string>stippled_underline</string>

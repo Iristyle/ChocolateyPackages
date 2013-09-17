@@ -116,7 +116,7 @@ except ImportError:
         opener.wait()
         return opener.poll() == 0
 
-import commands
+import subprocess
 
 # Private functions.
 
@@ -136,7 +136,7 @@ def _is_xfce():
     # XFCE detection involves testing the output of a program.
 
     try:
-        return _readfrom(_get_x11_vars() + "xprop -root _DT_SAVE_MODE", shell=1).strip().endswith(' = "xfce4"')
+        return _readfrom(_get_x11_vars() + "xprop -root _DT_SAVE_MODE", shell=1).decode("utf-8").strip().endswith(' = "xfce4"')
     except OSError:
         return 0
 
@@ -144,7 +144,7 @@ def _is_x11():
 
     "Return whether the X Window System is in use."
 
-    return os.environ.has_key("DISPLAY")
+    return "DISPLAY" in os.environ
 
 # Introspection functions.
 
@@ -155,14 +155,14 @@ def get_desktop():
     environment. If no environment could be detected, None is returned.
     """
 
-    if os.environ.has_key("KDE_FULL_SESSION") or \
-        os.environ.has_key("KDE_MULTIHEAD"):
+    if "KDE_FULL_SESSION" in os.environ or \
+        "KDE_MULTIHEAD" in os.environ:
         return "KDE"
-    elif os.environ.has_key("GNOME_DESKTOP_SESSION_ID") or \
-        os.environ.has_key("GNOME_KEYRING_SOCKET"):
+    elif "GNOME_DESKTOP_SESSION_ID" in os.environ or \
+        "GNOME_KEYRING_SOCKET" in os.environ:
         return "GNOME"
-    elif os.environ.has_key("MATE_DESKTOP_SESSION_ID") or \
-        os.environ.has_key("MATE_KEYRING_SOCKET"):
+    elif "MATE_DESKTOP_SESSION_ID" in os.environ or \
+        "MATE_KEYRING_SOCKET" in os.environ:
         return "MATE"
     elif sys.platform == "darwin":
         return "Mac OS X"
@@ -222,7 +222,7 @@ def is_standard():
     launching.
     """
 
-    return os.environ.has_key("DESKTOP_LAUNCH")
+    return "DESKTOP_LAUNCH" in os.environ
 
 # Activity functions.
 
@@ -255,7 +255,7 @@ def open(url, desktop=None, wait=0):
     desktop_in_use = use_desktop(desktop)
 
     if desktop_in_use == "standard":
-        arg = "".join([os.environ["DESKTOP_LAUNCH"], commands.mkarg(url)])
+        arg = "".join([os.environ["DESKTOP_LAUNCH"], subprocess.mkarg(url)])
         return _run(arg, 1, wait)
 
     elif desktop_in_use == "Windows":
@@ -277,13 +277,16 @@ def open(url, desktop=None, wait=0):
     elif desktop_in_use == "Mac OS X":
         cmd = ["open", url]
 
-    elif desktop_in_use == "X11" and os.environ.has_key("BROWSER"):
+    elif desktop_in_use == "X11" and "BROWSER" in os.environ:
         cmd = [os.environ["BROWSER"], url]
+
+    elif desktop_in_use == "X11":
+        cmd = ["xdg-open", url]
 
     # Finish with an error where no suitable desktop was identified.
 
     else:
-        raise OSError, "Desktop '%s' not supported (neither DESKTOP_LAUNCH nor os.startfile could be used)" % desktop_in_use
+        raise OSError("Desktop '%s' not supported (neither DESKTOP_LAUNCH nor os.startfile could be used)" % desktop_in_use)
 
     return _run(cmd, 0, wait)
 

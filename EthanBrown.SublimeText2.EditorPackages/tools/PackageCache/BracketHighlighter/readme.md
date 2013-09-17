@@ -1,3 +1,22 @@
+# Table of Contents
+- [About](#about)
+    - [Sublime Text 3 Support?](#sublime-text-3-support)
+    - [Overview](#overview)
+- [Feature List](#feature-list)
+- [General Use](#general-use)
+    - [Built-in Supported brackets](#built-in-supported-brackets)
+    - [Additional Features](#additional-features)
+    - [Bracket Plugin](#bracket-plugin)
+    - [Shortcuts](#shortcuts)
+- [Customizing BracketHighligher](#costumizing-brackethighlighter)
+    - [Configuring Brackets](#cnfiguring-brackets)
+    - [Configuring Highlight Style](#configuring-highlight-style)
+- [Bracket Plugin API](#bracket-plugin-api)
+    - ['Defintion' Plugins](#definition-plugins)
+    - [Run Instance Plugins](#run-instance-plugins)
+- [Credits](#credits)
+- [Changelog](#changelog)
+
 # About
 This is a fork of pyparadigm's _SublimeBrackets_ and _SublimeTagmatcher_ (both are no longer available).  I forked this to fix some issues I had and to add some features I wanted.  I also wanted to improve the efficiency of the matching.  This cuts down on the parallel searching that is now streamlined in one search.  Since then, I have rewritten the entire code base to bring more flexibility, speed, and features.
 
@@ -9,7 +28,7 @@ ST3 support is found here (at the present time):  https://github.com/facelessuse
 ## Overview
 Bracket Highlighter matches a variety of brackets such as: ```[]```, ```()```, ```{}```, ```""```, ```''```, ```<tag></tag>```, and even custom brackets.
 
-# FeatureList
+# Feature List
 - Customizable to highlight almost any bracket
 - Customizable bracket highlight style
 - High visibility bracket highlight mode
@@ -23,7 +42,7 @@ Bracket Highlighter matches a variety of brackets such as: ```[]```, ```()```, `
 - Bracket plugins that can jump between bracket ends, select content, remove brackets and/or content, wrap selectios with brackets, swap brackets, swap quotes (handling quote escaping between the main quotes), fold/unfold conent between brackets, toggle through tag attribute selecection, select both the opening and closing tag name to change both simultaneously.
 
 # General Use
-In general BracketHighligher (BH) will automatically highlight brackets (or defined bracket like start and end blocks) its between.  By default, BH will but opening and closing icons in the gutter of the corresponding line containing open or closising bracket. BH, by default, will underline the closing and opening bracket as well.
+In general, BracketHighligher (BH) will highlight brackets (or defined bracket like start and end blocks) surrounding the cursor.  By default, BH will put opening and closing icons in the gutter of the corresponding line containing open or closising bracket. BH, by default, will underline the closing and opening bracket as well.
 
 ## Built-in Supported brackets
 Currently BH supports the following brackets out of the box:
@@ -70,7 +89,7 @@ These are the basic settings you can change:
     // this defines if the unmatched bracket should be shown.
     "show_unmatched" : true,
 
-    // High visibilty style and color for high visibility mode
+    // High visibility style and color for high visibility mode
     // (solid|outline|underline)
     "high_visibility_style": "outline",
     // (scope|__default__|__bracket__)
@@ -93,7 +112,7 @@ These are the basic settings you can change:
 ```
 
 ### Bracket Plugins
-Bh is also extendable via plugins and provides an number of plugins by default.  See ```Bracket Plugins``` to learn more about the included plugins.
+Bh is also extendable via plugins and provides an number of plugins by default.  See [Bracket Plugins](#bracket-plugins) to learn more about the included plugins.
 
 ## Bracket Plugin
 BH provides a number of built in Bracket Plugins that take advantage of BH's matching to provide additional features.  Most plugin features are available via the Tools->Packages->BracketHighlighter menu or the command palette.  To see how to configure shortcuts, see the ```Example.sublime-settings``` file.
@@ -108,10 +127,10 @@ Removes the surrounding brackets.
 Folds the content of the current surrounding brackets.
 
 ### Swap Quotes Plugin
-Swap the quotes style of surrounding quotes from double to single or vice versa.  It also handlings escaping and unescaping of sub quotes.
+Swap the quotes style of surrounding quotes from double to single or vice versa.  It also handles escaping and unescaping of sub quotes.
 
 ### Tag Plugin
-Plugin used to help highlight tags
+Plugin used to help highlight tags.
 
 Additional tag settings found in ```bh_core.sublime-settings```:
 ```javascript
@@ -150,7 +169,7 @@ By default BH provides no shortcuts to avoid shortcut conflicts, but you can vie
 BH is extremely flexible and be customized and extended to fit a User's needs.  The first step is to copy the ```bh_core.sublime-settings``` to your ```User``` folder.
 
 ## Configuring Brackets
-BH has been written to allow users to define any brackets they would like to have highlighted.  There are two kinds of brackets you can define ```scope_brackets``` (search file for scope regions and then use regex to test for opening and closing brackets) and ```brackets``` (use regex to find opening and closing brackets).  ```bracket``` type should usually be the preferred type.  ```scope_brackets``` are usually used for brackets whose opening and closing are the same and not distinguishable form one another by regex; scope brackets must be contained in a continuous scope region like string for quotes etc.
+BH has been written to allow users to define any brackets they would like to have highlighted.  There are two kinds of brackets you can define: ```scope_brackets``` (search file for scope regions and then use regex to test for opening and closing brackets) and ```brackets``` (use regex to find opening and closing brackets).  ```bracket``` should usually be the preferred type.  ```scope_brackets``` are usually used for brackets whose opening and closing are the same and not distinguishable form one another by regex; scope brackets must be contained in a continuous scope region like string for quotes etc.
 
 ### Configuring Brackets
 Brackets are defined under ```brackets``` in ```bh_core.sublime-settings```.
@@ -228,7 +247,7 @@ Python Single Quote bracket will be used as an eample (not all options are shown
 - **plugin_library (optional)**: defines plugin to use for determining matches (see Bracket Plugin API for more info on matching plugins)
 
 ## Configuring Highlight Style
-Each bracket definition (described in ```Configuring Scope Brackets``` and ```Configuring Brackets```) has a ```style``` setting that you give a style definition to.  Style definitions are defined under ```bracket_styles``` in ```bh_core.sublime-settings```.
+Each bracket definition (described in [Configuring Scope Brackets](#configuring-scope-brackets) and [Configuring Brackets](#configuring-brackets)) has a ```style``` setting that you give a style definition to.  Style definitions are defined under ```bracket_styles``` in ```bh_core.sublime-settings```.
 
 There are two special style definitions whose names are reserved: ```default``` and ```unmatched```, but you can configure them.  All other custom style definitions follow the same pattern (see ```curly``` below and compare to the special style defintions; format is the same)  All custom styles follow this pattern.  See description below:
 
@@ -260,7 +279,8 @@ There are two special style definitions whose names are reserved: ```default``` 
         },
 ```
 
-- **icon**: icon to show in gutter. Available options are (angle|round|curly|square|tag|star|dot|bookmark|question|quote|double_quote|single_quote|single_quote_offset|double_quote_offset|none)
+- **icon**: icon to show in gutter. Available options are (angle|round|curly|square|tag|star|dot|bookmark|question|quote|double_quote|single_quote|single_quote_offset|
+double_quote_offset|none)
 - **color**: scope to define color
 - **style**: higlight style.  Available options are (solid|outline|underline|none)
 
@@ -316,7 +336,7 @@ Methods of BracketRegion:
 These are plugins that are attached to the bracket definition and aid in processing the brackets.  These kids of plugins have two methods you can provide ```post_match``` and/or ```compare```.
 
 ### compare
-```compare``` is run when comparing the opening bracket with closing brackets.  This allows you to provide logic to accept or regect a the pairing of an opening bracket with a closing bracket.  You should not change the text in the view during this operation.
+```compare``` is run when comparing the opening bracket with closing brackets.  This allows you to provide logic to accept or reject the pairing of an opening bracket with a closing bracket.  You should not change the text in the view during this operation.
 
 The ```compare``` method receives the following paramters:
 
@@ -463,8 +483,10 @@ def plugin():
 - pyparadigm: for his original efforts with SublimeBrackets and SublimeTagmatcher which originally BracketHighlighter was built off of and the inspiration behind the current implementation.
 - BoundInCode: for his Tag icon
 
-# Version 2.0.0
+# Changelog
+
+#### Version 2.0.0
 - Re-write of BracketHighlighter
 
-# Version Older
+#### Older Versions
 - See [Complete Changelog](https://github.com/facelessuser/BracketHighlighter/blob/BH2/CHANGELOG.md)

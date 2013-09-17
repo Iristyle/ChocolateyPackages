@@ -11,13 +11,49 @@
     "browser": "default",
 
     /*
-        Sets the default parser for converting markdown to html.
+        Sets the parser used for build markdown to html.
+
+        NOTE: The parser setting is not for the preview commands now. 
+        The preivew have sperated commands for each parser markdown.
+
         Warning for github API : if you have a ST2 linux build, Python is not built with SSL o it may not work
 
-        default - Use the builtin python-markdown2 parser
+        default - The current default parser is python-markdown parser.
+        markdown - Use the buildin python-markdown parser
+        markdown2 - (Deprecated) Use the builtin python-markdown2 parser.
         github - User github API to convert markdown, so you can use GitHub flavored Markdown, see http://github.github.com/github-flavored-markdown/
     */
     "parser": "default",
+
+    /*
+       Enable or not mathjax support.
+    */
+    "enable_mathjax": false,
+
+    /*
+        Enable or not highlight.js support for syntax highlighting.
+    */
+    "enable_highlight": false,
+
+    /*
+        List of enabled extensions of the selected markdown parser. 
+
+        You can get the full list of extensions at:
+            * The markdown2 parser, the `default`: https://github.com/trentm/python-markdown2/wiki/Extras
+            * The python markdown parser, the `markdown`: http://pythonhosted.org/Markdown/extensions/index.html
+
+
+        default - use the default set of extensions, see table latter.
+        [ "default", "def_list", ... ] - a list of extensions. Use "default" to include the default extensions.
+        
+         Parser     | "default" Values
+        ------------|---------------------------
+         default    | ["footnotes", "toc", "fenced-code-blocks", "cuddled-lists" ]
+         markdown   | ["extra", "toc"]
+         github     | extensions values are not used.
+
+    */
+    "enabled_extensions": "default",
 
     /*
         Default mode for the github Markdon parser : markdown (documents) or gfm (comments)
@@ -47,9 +83,27 @@
     "allow_css_overrides": true,
 
     /*
+        Sets the JavaScript files to embed in the HTML
+
+        Set an array of URLs or filepaths to JavaScript files. Absolute filepaths will be loaded
+        into the script tag; others will be set as the `src` attribute. The order of files in the
+        array is the order in which they are embedded.
+    */
+    // "js": ["http://example.com/script.js", "/path/to/script.js"],
+
+    /*
         Sets the supported filetypes for auto-reload on save
     */
     "markdown_filetypes": [".md", ".markdown", ".mdown"],
+
+    /*
+        Sets a custom temporary folder for MarkdownPreview-generated html files. Useful if you're
+        using LiveReload and don't want to use the OS default. The directory must already exist.
+
+        Examples: /tmp/custom_folder   (Linux/OSX)
+                  C:/TEMP/MYNOTES      (Windows - note it's forward slash, even on Windows)
+    */
+    // "path_tempfile": "/tmp/my_notes",
 
     /*
         Strips the YAML front matter header and converts title to a heading
