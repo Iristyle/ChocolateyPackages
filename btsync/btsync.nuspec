@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>btsync</id>
+    <title>BitTorrent Sync</title>
+    <version>1.1.82.0</version>
+    <authors>BitTorrent Inc.</authors>
+    <owners>Edmund</owners>
+    <summary>BitTorrent Sync allows you to privately synchronize an unlimited number of files and folders of any size, between almost any number and type of device, using the world's most efficient protocol - BitTorrent.</summary>
+    <description>BitTorrent Sync synchronizes your files using a peer-to-peer (P2P) protocol. This protocol is very effective for transferring large files across multiple devices, and is very similar to the powerful protocol used by applications like µTorrent and BitTorrent. The data is transferred in pieces from each of the syncing devices, and BitTorrent Sync chooses the optimal algorithm to make sure you have a maximum download and upload speed during the process.
+    BitTorrent Sync was designed with privacy and security in mind. The system uses SRP for mutual authentication and for generating session keys that ensure Perfect Forward Secrecy. All traffic between devices is encrypted with AES-128 in counter mode, using a unique session key. Modification requests are all verified using Ed25519 signatures and only systems with full access keys can generate valid modification requests.
+    Only a 32-bit version is available, which installs to %ProgramFiles%\BitTorrent Sync on 32-bit Windows and %ProgramFiles (x86)%\BitTorrent Sync on 64-bit.
+    Note that the installer URL is to the latest stable version rather than a specific one, so a new install will always be up to date, regardless of the version number of this package.
+    </description>
+    <projectUrl>http://labs.bittorrent.com/experiments/sync.html</projectUrl>
+    <tags>bittorrent sync filesharing</tags>
+    <copyright></copyright>
+    <licenseUrl>http://www.bittorrent.com/legal/eula</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://raw.github.com/edmund/ChocolateyPackages/master/btsync/btsync-128x128.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

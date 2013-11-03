@@ -1,0 +1,2 @@
+$uninstallPath = '& ' + (Get-ItemProperty "HKLM:SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\BitTorrent Sync" UninstallString).UninstallString + ' /S'
+Invoke-Expression $uninstallPath
