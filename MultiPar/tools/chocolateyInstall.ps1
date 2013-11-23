@@ -1,6 +1,6 @@
 $package = 'MultiPar'
-$version = '1.2.2.6'
-$downloadVersion = '122'
+$version = '1.2.3.3'
+$downloadVersion = '123'
 
 try {
   $params = @{

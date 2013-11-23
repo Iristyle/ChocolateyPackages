@@ -3,15 +3,68 @@
   <metadata>
     <id>MultiPar</id>
     <title>MultiPar</title>
-    <version>1.2.2.6</version>
+    <version>1.2.3.3</version>
     <authors>Yutaka Sawada</authors>
     <owners>Ethan J Brown</owners>
     <summary>MultiPar is the next-generation of Parchive (PAR3) to protect data.</summary>
     <description>Mutlipar can do file verification, error detection, correction and recovery to protect your files and folders from deletion, copy errors, download errors, software errors, hardware errors, virus infection, malicious tampering, and all other forms of data corruption.</description>
     <releaseNotes>
-     This is the last release of v1.2.2 tree. If you want to encourage me by increasing download ranking, download from the official download page please. Click a green button with "Download Now" label. If you cannot donwload, you may try a ftp link on downloading page or another mirror site. Refer the announcement page for details.
-
+Though there is no noticeable update in this, I plan big update nextly. I must put stable version, before I happen to add many bugs. I plan to improve verification for some special cases in next v1.2.4 tree. The next version's output style won't keep compatibility with older versions. Because I don't update old PAR3 client, you should keep this v1.2.3.3, if you have old PAR3 format files.
  Because default installation path was changed in this version, if you have installed MultiPar by installer package, you should uninstall previous version at first.
+
+[ Changes from 1.2.3.2 to 1.2.3.3 ]
+
+* GUI update
+Change
+ Hidden files are not selected by search of Browse button on Create window.
+
+* Client update
+Change
+ Hidden files are ignored by search for PAR1 creation.
+
+[ Changes from 1.2.3.0 to 1.2.3.1 ]
+
+* GUI update
+Bug fix
+ Keyboard shortcut in label caption is shown properly on Windows 7.
+ Very long command-line (over than 16384) can be saved in log.
+
+Improvement
+ It is possible to add more files in Verification. (total length upto 32768.)
+
+* Client update
+Change
+ Cache optimization will be disabled, when the CPU cache size is unknown.
+
+Bug fix
+ A fault in detecting CPU cache size of very old CPUs was fixed.
+ A failure of stopping PAR2 verification when small files were added was fixed.
+
+New
+ PAR2 client can save partially reconstructed files at failed repair.
+
+[ Changes from 1.2.3.1 to 1.2.3.2 ]
+
+* GUI update
+Change
+ MultiPar GUI's command-line was refined.
+ "Fit to free space" tries to keep current number of recovery files.
+
+Bug fix
+ A failure in setting too large first recovery block number was fixed.
+
+
+[ Changes from 1.2.2.6 to 1.2.3.0 ]
+
+* Installer update
+ File deteting confirmation dialog is always in front of Uninstaller window.
+ Wizard image becomes colorful.
+
+* GUI update
+Change
+ Reset button on Option window won't change disabled item.
+ Max length of some text were increased for language with long words.
+ A line of donation on About window returned to before.
 
 
 [ Changes from 1.2.2.5 to 1.2.2.6 ]
