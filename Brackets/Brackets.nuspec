@@ -1,12 +1,12 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
     <id>Brackets</id>
     <title>Brackets Code Editor</title>
-    <version>0.1.30.9116</version>
+    <version>0.35</version>
     <authors>Adobe</authors>
     <owners>Ethan J Brown</owners>
-    <summary>Brackets open-source code editor built with the web for the web - Milestone 30.</summary>
+    <summary>Brackets open-source code editor built with the web for the web.</summary>
     <description>Brackets is an open-source editor for web design and development built on top of web technologies such as HTML, CSS and JavaScript. The project was created and is maintained by Adobe, and is released under an MIT License.
 
 FOR THE WEB, BY THE WEB
@@ -25,16 +25,8 @@ The browser is your design view. Brackets hooks up directly to the browser, allo
     <tags>editor web adobe javascript html css</tags>
     <licenseUrl>https://github.com/adobe/brackets/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/Brackets/brackets_logo.png</iconUrl>
-    <releaseNotes>New Features In Sprint 30
-
-* OS X 10.6 Support Restored: Brackets will no longer crash on launch when running on Mac OS X 10.6.x.
-* Linux Preview Improvements &amp; Fixes: File delete, Extension Manager and HTML Highlighting in Live Preview are now enabled. Also, we've fixed several bugs when installing the Debian package.
-* CSS Regions Named Flow Code Hints: Named Flows for CSS regions will now appear in code hints for flow-into and flow-from properties.
-* Function Parameter Hints: Hints appear automatically when you first type inside parentheses, or when invoked manually with Ctrl+Shift+Space.
-* Replace All: Replace All displays a panel showing all occurrences that will be replaced. You can review and uncheck any occurrences you don't want to replace.
-* Note: Theseus Extension Update Required: All users of the Theseus extension must update due to a break in compatibility. Also, Brackets developers can now use the Theseus to debug an instance of Brackets.
-* Updated Translations: The French, Japanese, German, and Turkish translations have been updated.</releaseNotes>
+    <iconUrl>https://upload.wikimedia.org/wikipedia/commons/4/4c/Brackets_Icon.svg</iconUrl>
+    <releaseNotes></releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
