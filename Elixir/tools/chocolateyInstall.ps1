@@ -1,5 +1,5 @@
 $package = 'Elixir'
-$version = '0.10.0'
+$version = '0.12.0'
 
 try {
   $params = @{
@@ -27,6 +27,14 @@ try {
   $elixirBin = Join-Path $params.UnzipLocation 'bin'
 
   Install-ChocolateyPath $elixirBin
+
+  Write-Host @'
+Please restart your current shell session to access Elixir commands:
+elixir
+elixirc
+mix
+iex.bat (use batch file within Powershell due to name collision)
+'@
 
   Write-ChocolateySuccess $package
 } catch {
