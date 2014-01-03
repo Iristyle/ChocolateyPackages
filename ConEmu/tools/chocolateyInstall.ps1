@@ -1,5 +1,5 @@
 $package = 'ConEmu'
-$version = '130913'
+$version = '131225'
 
 try {
 
