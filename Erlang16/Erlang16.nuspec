@@ -3,10 +3,10 @@
   <metadata>
     <id>Erlang16</id>
     <title>Erlang OTP</title>
-    <version>16.01.4</version>
+    <version>16.03.4</version>
     <authors>Joe Armstrong, Ericsson, Erlang Contributors</authors>
     <owners>Ethan J Brown</owners>
-    <summary>Erlang R16B01 is a programming language used to build massively scalable soft real-time systems with requirements on high availability. Some of its uses are in telecoms, banking, e-commerce, computer telephony and instant messaging. Erlang's runtime system has built-in support for concurrency, distribution and fault tolerance.</summary>
+    <summary>Erlang R16B03 is a programming language used to build massively scalable soft real-time systems with requirements on high availability. Some of its uses are in telecoms, banking, e-commerce, computer telephony and instant messaging. Erlang's runtime system has built-in support for concurrency, distribution and fault tolerance.</summary>
     <description>What is Erlang?
 
 Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability. Some of its uses are in telecoms, banking, e-commerce, computer telephony and instant messaging. Erlang's runtime system has built-in support for concurrency, distribution and fault tolerance.
@@ -16,7 +16,7 @@ Erlang quickstart
 What is OTP?
 
 OTP is set of Erlang libraries and design principles providing middle-ware to develop these systems. It includes its own distributed database, applications to interface towards other languages, debugging and release handling tools.</description>
-    <releaseNotes>http://www.erlang.org/download/otp_src_R16B01.readme</releaseNotes>
+    <releaseNotes>http://www.erlang.org/download/otp_src_R16B03.readme</releaseNotes>
     <projectUrl>http://www.erlang.org/</projectUrl>
     <tags>erlang concurrent programming language sdk otp</tags>
     <licenseUrl>http://www.erlang.org/EPLICENSE</licenseUrl>
