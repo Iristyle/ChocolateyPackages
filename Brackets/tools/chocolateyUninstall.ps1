@@ -2,9 +2,9 @@ $package = 'Brackets'
 
 try {
 
-  # C:\Program Files (x86)\Brackets Sprint 25
   # http://stackoverflow.com/questions/450027/uninstalling-an-msi-file-from-the-command-line-without-using-msiexec
-  msiexec.exe '/X{37DF8424-BAF6-458B-A3F0-2A89D65628B2}' /qb-! REBOOT=ReallySuppress
+  $msiArgs = "/X{CA6586CA-1C03-488B-B791-2A4533C1B1C6} /qb-! REBOOT=ReallySuppress"
+  Start-ChocolateyProcessAsAdmin "$msiArgs" 'msiexec'
 
   Write-ChocolateySuccess $package
 } catch {
