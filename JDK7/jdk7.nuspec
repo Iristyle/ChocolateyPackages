@@ -3,7 +3,7 @@
   <metadata>
     <id>jdk7</id>
     <title>Java Platform (JDK) 7</title>
-    <version>7.0.21</version>
+    <version>7.0.45</version>
     <authors>Oracle</authors>
     <owners>Ethan J Brown</owners>
     <summary>Java Development Kit.  Includes a complete JRE plus tools for developing, debugging, and monitoring Java applications.</summary>
@@ -16,8 +16,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/index.html
     <licenseUrl>http://www.oracle.com/technetwork/java/javase/terms/license/index.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/JDK7/jdk7_logo.jpg</iconUrl>
-    <releaseNotes>http://www.oracle.com/technetwork/java/javase/7u21-relnotes-1932873.html
-    </releaseNotes>
+    <releaseNotes>http://www.oracle.com/technetwork/java/javase/7u45-relnotes-2016950.html</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
