@@ -6,9 +6,9 @@ try {
 
   # http://www.oracle.com/technetwork/java/javase/downloads/index.html
   $url = if ($IsSytem32Bit)
-    { 'http://download.oracle.com/otn-pub/java/jdk/7u21-b11/jdk-7u21-windows-i586.exe' }
+    { 'http://download.oracle.com/otn-pub/java/jdk/7u25-b17/jdk-7u25-windows-i586.exe' }
   else
-    { 'http://download.oracle.com/otn-pub/java/jdk/7u21-b11/jdk-7u21-windows-x64.exe' }
+    { 'http://download.oracle.com/otn-pub/java/jdk/7u25-b17/jdk-7u25-windows-x64.exe' }
 
   $chocTemp = Join-Path $Env:TEMP 'chocolatey'
   $tempInstall = Join-Path $chocTemp 'jdk7\jdk7installer.exe'
