@@ -1,6 +1,6 @@
 $package = 'VirtualBox.ExtensionPack'
-$version = '4.2.16'
-$build = '86992'
+$version = '4.3.6'
+$build = '91406'
 $packName = "Oracle_VM_VirtualBox_Extension_Pack-$version-$build.vbox-extpack"
 $packUrl = "http://download.virtualbox.org/virtualbox/$version/$packName"
 
@@ -37,26 +37,14 @@ try {
     Get-ChocolateyWebFile -url $url -fileFullPath $packageTemp
 
     Push-Location $appTemp
-    &$vboxManage extpack install --replace $packName
+    # &$vboxManage extpack install --replace $packName
+    Start-ChocolateyProcessAsAdmin "extpack install --replace $packName" $vboxManage -validExitCodes @(0)
     Pop-Location
   }
 
   Install-ExtensionPack $packUrl
 
-  if ($LASTEXITCODE -ne 0)
-  {
-    Write-ChocolateyFailure $package @"
-Due to a VirtualBox bug, VBoxManage appears unresponsive.
-
-Please reboot the machine, and reinstall this packge with the -force switch.
-
-cinst $package -force
-"@
-  }
-  else
-  {
-    Write-ChocolateySuccess $package
-  }
+  Write-ChocolateySuccess $package
 } catch {
   Write-ChocolateyFailure $package "$($_.Exception.Message)"
   throw
