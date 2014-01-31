@@ -15,7 +15,6 @@ try {
   $uninstallString = "$uninstallString" -replace '[}]', '`} /passive /norestart' # to work properly with the Invoke-Expression command, add silent arguments
 
   if ($uninstallString -ne "") {
-      Write-Host $uninstallString
       Invoke-Expression "$uninstallString" # start uninstaller
   }
 
