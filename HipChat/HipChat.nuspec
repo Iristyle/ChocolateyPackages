@@ -3,8 +3,7 @@
   <metadata>
     <id>HipChat</id>
     <title>HipChat Client</title>
-    <!-- really 1.20120926103402 -->
-    <version>1.2.103402</version>
+    <version>2.1.1010</version>
     <authors>Atlassian</authors>
     <owners>Ethan J Brown</owners>
     <summary>HipChat is instant messaging built for business.</summary>
@@ -21,7 +20,6 @@ Get your team off AIM, Google Talk, and Skype — HipChat was built for business
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/HipChat/HipChat.png</iconUrl>
     <releaseNotes></releaseNotes>
     <dependencies>
-      <dependency id="AdobeAIR" />
     </dependencies>
   </metadata>
   <files>
