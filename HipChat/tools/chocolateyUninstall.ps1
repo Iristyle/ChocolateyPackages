@@ -2,17 +2,22 @@ $package = 'HipChat'
 
 try {
 
-  $hipChatGuid = Get-ChildItem HKLM:\SOFTWARE\Classes\Installer\Products |
-    Get-ItemProperty -Name 'ProductName' |
-    ? { $_.ProductName -eq 'HipChat' } |
-    Select -ExpandProperty PSChildName -First 1
+  $processor = Get-WmiObject Win32_Processor
+  $is64bit = $processor.AddressWidth -eq 64
 
-  $properties = Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products\$hipChatGuid\InstallProperties
+  if ($is64bit) {
+      $uninstallString = (Get-ItemProperty HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select DisplayName, UninstallString | Where-Object {$_.DisplayName -like "$package*"}).UninstallString
+  } else {
+      $uninstallString = (Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | Select DisplayName, UninstallString | Where-Object {$_.DisplayName -like "$package*"}).UninstallString
+  } # get the uninstall string of the installed Skype version from the registry
 
-  $pkg = $properties.LocalPackage
+  $uninstallString = "$uninstallString" -replace '[{]', '`{' # adding escape character to the braces
+  $uninstallString = "$uninstallString" -replace '[}]', '`} /passive /norestart' # to work properly with the Invoke-Expression command, add silent arguments
 
-  # http://help.adobe.com/en_US/air/redist/WS485a42d56cd19641-70d979a8124ef20a34b-8000.html#WS485a42d56cd19641-70d979a8124ef20a34b-7ffa
-  msiexec.exe /x $pkg /qb-! REBOOT=ReallySuppress
+  if ($uninstallString -ne "") {
+      Write-Host $uninstallString
+      Invoke-Expression "$uninstallString" # start uninstaller
+  }
 
   Write-ChocolateySuccess $package
 } catch {
