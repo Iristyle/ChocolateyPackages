@@ -1,11 +1,11 @@
 $package = 'Elixir'
-$version = '0.10.0'
+$version = '0.12.5'
 
 try {
   $params = @{
     PackageName = $package;
     FileType = 'zip';
-    Url = "https://github.com/elixir-lang/elixir/releases/download/v$version/v$version.zip";
+    Url = "https://github.com/elixir-lang/elixir/releases/download/v$version/Precompiled.zip";
     UnzipLocation = Join-Path $Env:SystemDrive 'tools';
   }
 
