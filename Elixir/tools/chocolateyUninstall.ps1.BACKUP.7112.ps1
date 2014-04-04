@@ -21,6 +21,17 @@ try {
 
   [Environment]::SetEnvironmentVariable('Path', ($userPaths -join ';'), 'User')
 
+<<<<<<< HEAD
+  Write-Host @"
+  Please restart your current shell session to access Elixir commands:
+  elixir
+  elixirc
+  mix
+  iex.bat (use batch file within Powershell due to name collision)
+"@
+
+=======
+>>>>>>> 6ed7827aa90771cdc39a7c67b5a588f90cff9181
   Write-ChocolateySuccess $package
 } catch {
   Write-ChocolateyFailure $package "$($_.Exception.Message)"
