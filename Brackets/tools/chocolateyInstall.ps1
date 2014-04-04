@@ -1,5 +1,5 @@
 $package = 'Brackets'
-$build = '30'
+$build = '35'
 
 try {
   $params = @{

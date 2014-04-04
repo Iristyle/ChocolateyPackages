@@ -28,6 +28,14 @@ try {
 
   Install-ChocolateyPath $elixirBin
 
+  Write-Host @'
+Please restart your current shell session to access Elixir commands:
+elixir
+elixirc
+mix
+iex.bat (use batch file within Powershell due to name collision)
+'@
+
   Write-ChocolateySuccess $package
 } catch {
   Write-ChocolateyFailure $package "$($_.Exception.Message)"
