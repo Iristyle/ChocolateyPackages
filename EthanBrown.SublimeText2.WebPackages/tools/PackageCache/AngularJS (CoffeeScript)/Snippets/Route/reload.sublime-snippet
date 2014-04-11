@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[\$route.reload()]]></content>
-	<tabTrigger>$route.</tabTrigger>
-	<scope>source.coffee</scope>
-	<description>Angular $route reload</description>
-</snippet>

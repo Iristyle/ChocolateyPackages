@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[\$q.all ${1:array[promise]}]]></content>
-	<tabTrigger>$q.</tabTrigger>
-	<scope>source.coffee</scope>
-	<description>Angular $q all</description>
-</snippet>

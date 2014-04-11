@@ -1,6 +1,0 @@
-<snippet>
-  <content><![CDATA[{{ ${1:string} | uppercase }}]]></content>
-  <tabTrigger>fil</tabTrigger>
-  <scope>text.html</scope>
-  <description>Angular uppercase filter</description>
-</snippet>

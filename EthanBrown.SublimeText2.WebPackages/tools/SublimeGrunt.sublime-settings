@@ -1,5 +1,0 @@
-{
-  "exec_args": {
-    "path": "{{node_path}}"
-  }
-}

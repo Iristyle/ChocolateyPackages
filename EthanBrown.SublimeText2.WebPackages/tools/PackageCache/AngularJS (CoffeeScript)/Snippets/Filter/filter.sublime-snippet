@@ -1,6 +1,0 @@
-<snippet>
-  <content><![CDATA[\$filter('filter') ${1:array}, ${2:'string'|Object|() ->}}}]]></content>
-  <tabTrigger>$filter</tabTrigger>
-  <scope>source.coffee</scope>
-  <description>Angular filter filter</description>
-</snippet>
