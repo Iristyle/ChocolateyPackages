@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[.verifyNoOutstandingExpectation()]]></content>
-	<tabTrigger>$httpBackend.</tabTrigger>
-	<scope>source.coffee</scope>
-	<description>Angular $httpBackend verifyNoOutstandingExpectation</description>
-</snippet>
