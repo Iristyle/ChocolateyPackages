@@ -3,9 +3,9 @@
   <metadata>
     <id>Elixir</id>
     <title>Elixir</title>
-    <version>0.13.1</version>
+    <version>0.13.2</version>
     <authors>Jose Valim</authors>
-    <owners>Ethan J Brown</owners>
+    <owners>Onorio Catenacci</owners>
     <summary>Elixir is a functional meta-programming aware language built on top of the Erlang VM.</summary>
     <description>Elixir is a functional meta-programming aware language built on top of the Erlang VM. It is a dynamic language with flexible syntax with macros support that leverages Erlang's abilities to build concurrent, distributed, fault-tolerant applications with hot code upgrades.
 
