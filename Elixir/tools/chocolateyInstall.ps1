@@ -1,5 +1,5 @@
 $package = 'Elixir'
-$version = '0.13.1'
+$version = '0.13.2'
 
 try {
   $params = @{
@@ -26,7 +26,6 @@ try {
 
   $elixirBin = Join-Path $params.UnzipLocation 'bin'
 
-#  Install-ChocolateyPath $elixirBin
 
   Write-Host @'
 Please restart your current shell session to access Elixir commands:
