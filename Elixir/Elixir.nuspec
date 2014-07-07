@@ -3,7 +3,7 @@
   <metadata>
     <id>Elixir</id>
     <title>Elixir</title>
-    <version>0.14.1</version>
+    <version>0.14.2</version>
     <authors>Jose Valim</authors>
     <owners>Onorio Catenacci</owners>
     <summary>Elixir is a functional meta-programming aware language built on top of the Erlang VM.</summary>
