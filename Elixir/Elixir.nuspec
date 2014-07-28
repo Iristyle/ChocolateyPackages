@@ -3,7 +3,7 @@
   <metadata>
     <id>Elixir</id>
     <title>Elixir</title>
-    <version>0.14.2.20140728</version>
+    <version>0.13.2.20140728</version>
     <authors>Jose Valim</authors>
     <owners>Onorio Catenacci</owners>
     <summary>Elixir is a functional meta-programming aware language built on top of the Erlang VM.</summary>
@@ -20,7 +20,7 @@ Finally, Elixir and Erlang share the same bytecode and data types. This means yo
     <iconUrl>https://secure.gravatar.com/avatar/4c5c2c297ed9f4664cfbe7733a011fb2?s=400&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png</iconUrl>
     <dependencies>
       <dependency id="toolsroot"/>
-      <dependency id="Erlang" version="17.1.0"/>
+      <dependency id="Erlang" version="17.0.0"/>
     </dependencies>
   </metadata>
   <files>
