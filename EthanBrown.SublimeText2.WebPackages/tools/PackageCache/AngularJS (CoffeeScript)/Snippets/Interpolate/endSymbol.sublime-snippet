@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[\$interpolate.endSymbol()]]></content>
-	<tabTrigger>$interpolate.</tabTrigger>
-	<scope>source.coffee</scope>
-	<description>Angular $interpolate endSymbol</description>
-</snippet>

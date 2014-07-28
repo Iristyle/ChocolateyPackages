@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>erlang</id>
+    <title>Erlang</title>
+    <version>17.1.0</version>
+    <authors>Joe Armstrong,Robert Virding,Mike Williams</authors>
+    <owners>Onorio Catenacci</owners>
+    <summary>Erlang/OTP - for building concurrent, distributed, and fault tolerant systems</summary>
+    <description>Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability. Some of its uses are in telecoms, banking, e-commerce, computer telephony and instant messaging. Erlang's runtime system has built-in support for concurrency, distribution and fault tolerance.
+OTP is set of Erlang libraries and design principles providing middle-ware to develop these systems. It includes its own distributed database, applications to interface towards other languages, debugging and release handling tools.
+    </description>
+    <projectUrl>http://www.erlang.org/</projectUrl>
+    <tags>erlang languages admin</tags>
+    <copyright>erlang.org</copyright>
+    <licenseUrl>http://www.erlang.org/EPLICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://github.com/smerchek/nugetpackages/raw/master/Erlang/erlang-logo.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+</package>

@@ -1,6 +1,0 @@
-<snippet>
-  <content><![CDATA[angular.isNumber ${1:value}]]></content>
-  <tabTrigger>is</tabTrigger>
-  <scope>source.coffee</scope>
-  <description>Angular isNumber</description>
-</snippet>

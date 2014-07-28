@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[\$location.host()]]></content>
-	<tabTrigger>$location.</tabTrigger>
-	<scope>source.coffee</scope>
-	<description>Angular $location host</description>
-</snippet>

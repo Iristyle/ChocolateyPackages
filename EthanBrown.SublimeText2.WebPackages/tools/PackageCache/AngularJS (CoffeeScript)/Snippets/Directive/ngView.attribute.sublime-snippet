@@ -1,6 +1,0 @@
-<snippet>
-  <content><![CDATA[ng-view]]></content>
-  <tabTrigger>ng</tabTrigger>
-  <scope>text.html meta.tag</scope>
-  <description>Angular ngView</description>
-</snippet>

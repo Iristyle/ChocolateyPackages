@@ -1,6 +1,0 @@
-*.pyc
-SmartMarkdown.sublime-project
-SmartMarkdown.sublime-workspace
-release.sh
-test/*
-.ropeproject

@@ -1,6 +1,0 @@
-[
-    {
-        "keys": ["super+k", "super+t"],
-        "command": "recent_active_files"
-    }
-]

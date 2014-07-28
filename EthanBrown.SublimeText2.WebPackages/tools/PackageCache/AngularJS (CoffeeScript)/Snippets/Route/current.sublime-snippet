@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[\$route.current]]></content>
-	<tabTrigger>$route.</tabTrigger>
-	<scope>source.coffee</scope>
-	<description>Angular Route current</description>
-</snippet>
