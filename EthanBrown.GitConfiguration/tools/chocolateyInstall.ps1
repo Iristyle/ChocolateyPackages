@@ -43,6 +43,8 @@ try {
   git config --global pack.packSizeLimit 2g
   git config --global help.format html
   git config --global rebase.autosquash true
+  
+  git config --global fetch.prune true
 
   Write-ChocolateySuccess $package
 } catch {
