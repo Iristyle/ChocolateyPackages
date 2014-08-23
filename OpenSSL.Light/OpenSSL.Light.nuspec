@@ -3,11 +3,11 @@
   <metadata>
     <id>OpenSSL.Light</id>
     <title>OpenSSL - The Open Source SSL and TLS toolkit</title>
-    <version>1.0.1.20130603</version>
+    <version>1.0.1.20140806</version>
     <authors>Shining Light Productions</authors>
     <owners>Ethan Brown</owners>
     <summary>Open Source SSL v2/v3 and TLS v1 toolkit</summary>
-    <description>This is really 1.0.1e, but the Nuget spec doesn't allow such version identifiers, so the file versions are used.
+    <description>This is really 1.0.1i, but the Nuget spec doesn't allow such version identifiers, so the file versions are used.
 
     The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured, and Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) protocols as well as a full-strength general purpose cryptography library. The project is managed by a worldwide community of volunteers that use the Internet to communicate, plan, and develop the OpenSSL toolkit and its related documentation.
 
@@ -18,7 +18,226 @@
     <licenseUrl>http://www.openssl.org/source/license.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/OpenSSL.Light/OpenSSL.Light.png</iconUrl>
-    <releaseNotes>Changes between 1.0.1c and 1.0.1d [xx XXX xxxx]
+    <releaseNotes>Changes between 1.0.1h and 1.0.1i [6 Aug 2014]
+
+  *) Fix SRP buffer overrun vulnerability. Invalid parameters passed to the
+     SRP code can be overrun an internal buffer. Add sanity check that
+     g, A, B &lt; N to SRP code.
+
+     Thanks to Sean Devlin and Watson Ladd of Cryptography Services, NCC
+     Group for discovering this issue.
+     (CVE-2014-3512)
+     [Steve Henson]
+
+  *) A flaw in the OpenSSL SSL/TLS server code causes the server to negotiate
+     TLS 1.0 instead of higher protocol versions when the ClientHello message
+     is badly fragmented. This allows a man-in-the-middle attacker to force a
+     downgrade to TLS 1.0 even if both the server and the client support a
+     higher protocol version, by modifying the client's TLS records.
+
+     Thanks to David Benjamin and Adam Langley (Google) for discovering and
+     researching this issue.
+     (CVE-2014-3511)
+     [David Benjamin]
+
+  *) OpenSSL DTLS clients enabling anonymous (EC)DH ciphersuites are subject
+     to a denial of service attack. A malicious server can crash the client
+     with a null pointer dereference (read) by specifying an anonymous (EC)DH
+     ciphersuite and sending carefully crafted handshake messages.
+
+     Thanks to Felix Gröbert (Google) for discovering and researching this
+     issue.
+     (CVE-2014-3510)
+     [Emilia Käsper]
+
+  *) By sending carefully crafted DTLS packets an attacker could cause openssl
+     to leak memory. This can be exploited through a Denial of Service attack.
+     Thanks to Adam Langley for discovering and researching this issue.
+     (CVE-2014-3507)
+     [Adam Langley]
+
+  *) An attacker can force openssl to consume large amounts of memory whilst
+     processing DTLS handshake messages. This can be exploited through a
+     Denial of Service attack.
+     Thanks to Adam Langley for discovering and researching this issue.
+     (CVE-2014-3506)
+     [Adam Langley]
+
+  *) An attacker can force an error condition which causes openssl to crash
+     whilst processing DTLS packets due to memory being freed twice. This
+     can be exploited through a Denial of Service attack.
+     Thanks to Adam Langley and Wan-Teh Chang for discovering and researching
+     this issue.
+     (CVE-2014-3505)
+     [Adam Langley]
+
+  *) If a multithreaded client connects to a malicious server using a resumed
+     session and the server sends an ec point format extension it could write
+     up to 255 bytes to freed memory.
+
+     Thanks to Gabor Tyukasz (LogMeIn Inc) for discovering and researching this
+     issue.
+     (CVE-2014-3509)
+     [Gabor Tyukasz]
+
+  *) A malicious server can crash an OpenSSL client with a null pointer
+     dereference (read) by specifying an SRP ciphersuite even though it was not
+     properly negotiated with the client. This can be exploited through a
+     Denial of Service attack.
+
+     Thanks to Joonas Kuorilehto and Riku Hietamäki (Codenomicon) for
+     discovering and researching this issue.
+     (CVE-2014-5139)
+     [Steve Henson]
+
+  *) A flaw in OBJ_obj2txt may cause pretty printing functions such as
+     X509_name_oneline, X509_name_print_ex et al. to leak some information
+     from the stack. Applications may be affected if they echo pretty printing
+     output to the attacker.
+
+     Thanks to Ivan Fratric (Google) for discovering this issue.
+     (CVE-2014-3508)
+     [Emilia Käsper, and Steve Henson]
+
+  *) Fix ec_GFp_simple_points_make_affine (thus, EC_POINTs_mul etc.)
+     for corner cases. (Certain input points at infinity could lead to
+     bogus results, with non-infinity inputs mapped to infinity too.)
+     [Bodo Moeller]
+
+ Changes between 1.0.1g and 1.0.1h [5 Jun 2014]
+
+  *) Fix for SSL/TLS MITM flaw. An attacker using a carefully crafted
+     handshake can force the use of weak keying material in OpenSSL
+     SSL/TLS clients and servers.
+
+     Thanks to KIKUCHI Masashi (Lepidum Co. Ltd.) for discovering and
+     researching this issue. (CVE-2014-0224)
+     [KIKUCHI Masashi, Steve Henson]
+
+  *) Fix DTLS recursion flaw. By sending an invalid DTLS handshake to an
+     OpenSSL DTLS client the code can be made to recurse eventually crashing
+     in a DoS attack.
+
+     Thanks to Imre Rad (Search-Lab Ltd.) for discovering this issue.
+     (CVE-2014-0221)
+     [Imre Rad, Steve Henson]
+
+  *) Fix DTLS invalid fragment vulnerability. A buffer overrun attack can
+     be triggered by sending invalid DTLS fragments to an OpenSSL DTLS
+     client or server. This is potentially exploitable to run arbitrary
+     code on a vulnerable client or server.
+
+     Thanks to Jüri Aedla for reporting this issue. (CVE-2014-0195)
+     [Jüri Aedla, Steve Henson]
+
+  *) Fix bug in TLS code where clients enable anonymous ECDH ciphersuites
+     are subject to a denial of service attack.
+
+     Thanks to Felix Gröbert and Ivan Fratric at Google for discovering
+     this issue. (CVE-2014-3470)
+     [Felix Gröbert, Ivan Fratric, Steve Henson]
+
+  *) Harmonize version and its documentation. -f flag is used to display
+     compilation flags.
+     [mancha]
+
+  *) Fix eckey_priv_encode so it immediately returns an error upon a failure
+     in i2d_ECPrivateKey.
+     [mancha]
+
+  *) Fix some double frees. These are not thought to be exploitable.
+     [mancha]
+
+ Changes between 1.0.1f and 1.0.1g [7 Apr 2014]
+
+  *) A missing bounds check in the handling of the TLS heartbeat extension
+     can be used to reveal up to 64k of memory to a connected client or
+     server.
+
+     Thanks for Neel Mehta of Google Security for discovering this bug and to
+     Adam Langley and Bodo Moeller for
+     preparing the fix (CVE-2014-0160)
+     [Adam Langley, Bodo Moeller]
+
+  *) Fix for the attack described in the paper "Recovering OpenSSL
+     ECDSA Nonces Using the FLUSH+RELOAD Cache Side-channel Attack"
+     by Yuval Yarom and Naomi Benger. Details can be obtained from:
+     http://eprint.iacr.org/2014/140
+
+     Thanks to Yuval Yarom and Naomi Benger for discovering this
+     flaw and to Yuval Yarom for supplying a fix (CVE-2014-0076)
+     [Yuval Yarom and Naomi Benger]
+
+  *) TLS pad extension: draft-agl-tls-padding-03
+
+     Workaround for the "TLS hang bug" (see FAQ and PR#2771): if the
+     TLS client Hello record length value would otherwise be &gt; 255 and
+     less that 512 pad with a dummy extension containing zeroes so it
+     is at least 512 bytes long.
+
+     [Adam Langley, Steve Henson]
+
+ Changes between 1.0.1e and 1.0.1f [6 Jan 2014]
+
+  *) Fix for TLS record tampering bug. A carefully crafted invalid 
+     handshake could crash OpenSSL with a NULL pointer exception.
+     Thanks to Anton Johansson for reporting this issues.
+     (CVE-2013-4353)
+
+  *) Keep original DTLS digest and encryption contexts in retransmission
+     structures so we can use the previous session parameters if they need
+     to be resent. (CVE-2013-6450)
+     [Steve Henson]
+
+  *) Add option SSL_OP_SAFARI_ECDHE_ECDSA_BUG (part of SSL_OP_ALL) which
+     avoids preferring ECDHE-ECDSA ciphers when the client appears to be
+     Safari on OS X.  Safari on OS X 10.8..10.8.3 advertises support for
+     several ECDHE-ECDSA ciphers, but fails to negotiate them.  The bug
+     is fixed in OS X 10.8.4, but Apple have ruled out both hot fixing
+     10.8..10.8.3 and forcing users to upgrade to 10.8.4 or newer.
+     [Rob Stradling, Adam Langley]
+
+ Changes between 1.0.1d and 1.0.1e [11 Feb 2013]
+
+  *) Correct fix for CVE-2013-0169. The original didn't work on AES-NI
+     supporting platforms or when small records were transferred.
+     [Andy Polyakov, Steve Henson]
+
+ Changes between 1.0.1c and 1.0.1d [5 Feb 2013]
+
+  *) Make the decoding of SSLv3, TLS and DTLS CBC records constant time.
+
+     This addresses the flaw in CBC record processing discovered by 
+     Nadhem Alfardan and Kenny Paterson. Details of this attack can be found
+     at: http://www.isg.rhul.ac.uk/tls/     
+
+     Thanks go to Nadhem Alfardan and Kenny Paterson of the Information
+     Security Group at Royal Holloway, University of London
+     (www.isg.rhul.ac.uk) for discovering this flaw and Adam Langley and
+     Emilia Käsper for the initial patch.
+     (CVE-2013-0169)
+     [Emilia Käsper, Adam Langley, Ben Laurie, Andy Polyakov, Steve Henson]
+
+  *) Fix flaw in AESNI handling of TLS 1.2 and 1.1 records for CBC mode
+     ciphersuites which can be exploited in a denial of service attack.
+     Thanks go to and to Adam Langley for discovering
+     and detecting this bug and to Wolfgang Ettlinger
+     for independently discovering this issue.
+     (CVE-2012-2686)
+     [Adam Langley]
+
+  *) Return an error when checking OCSP signatures when key is NULL.
+     This fixes a DoS attack. (CVE-2013-0166)
+     [Steve Henson]
+
+  *) Make openssl verify return errors.
+     [Chris Palmer and Ben Laurie]
+
+  *) Call OCSP Stapling callback after ciphersuite has been chosen, so
+     the right response is stapled. Also change SSL_get_certificate()
+     so it returns the certificate actually sent.
+     See http://rt.openssl.org/Ticket/Display.html?id=2836.
+     [Rob Stradling]
 
   *) Fix possible deadlock when decoding public keys.
      [Steve Henson]
@@ -75,7 +294,7 @@
      in CRYPTO_realloc_clean.
 
      Thanks to Tavis Ormandy, Google Security Team, for discovering this
-     issue and to Adam Langley &lt;agl@chromium.org&gt; for fixing it.
+     issue and to Adam Langley for fixing it.
      (CVE-2012-2110)
      [Adam Langley (Google), Tavis Ormandy, Google Security Team]
 
@@ -85,7 +304,7 @@
   *) Workarounds for some broken servers that "hang" if a client hello
      record length exceeds 255 bytes:
 
-     1. Do not use record version number > TLS 1.0 in initial client
+     1. Do not use record version number &gt; TLS 1.0 in initial client
         hello: some (but not all) hanging servers will now work.
      2. If we set OPENSSL_MAX_TLS1_2_CIPHER_LENGTH this will truncate
         the number of ciphers sent in the client hello. This should be
