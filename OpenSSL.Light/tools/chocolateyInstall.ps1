@@ -11,8 +11,8 @@ try {
     #InnoSetup - http://unattended.sourceforge.net/InnoSetup_Switches_ExitCodes.html
     silentArgs = '/silent', '/verysilent', '/sp-', '/suppressmsgboxes',
       "/DIR=`"$installDir`"";
-    url = 'http://slproweb.com/download/Win32OpenSSL_Light-1_0_1e.exe'
-    url64bit = 'http://slproweb.com/download/Win64OpenSSL_Light-1_0_1e.exe'
+    url = 'https://slproweb.com/download/Win32OpenSSL_Light-1_0_1i.exe'
+    url64bit = 'https://slproweb.com/download/Win64OpenSSL_Light-1_0_1i.exe'
   }
 
   Install-ChocolateyPackage @params
