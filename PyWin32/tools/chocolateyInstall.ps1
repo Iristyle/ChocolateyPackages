@@ -1,4 +1,5 @@
 $package = 'PyWin32'
+$build = '219'
 
 try {
   # python.exe should be in PATH based on
@@ -55,12 +56,12 @@ try {
 
   # http://www.jordanrinke.com/2011/06/22/pywin32-silent-install/
 
-  $destination = Join-Path $Env:Temp "pywin32-218.$simpleVersion.exe"
+  $destination = Join-Path $Env:Temp "pywin32-$build.$simpleVersion.exe"
   $params = @{
     packageName = $package;
     fileFullPath = $destination;
-    url = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/pywin32-218.win32-py$simpleVersion.exe/download";
-    url64bit = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/pywin32-218.win-amd64-py$simpleVersion.exe/download";
+    url = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20$build/pywin32-$build.win32-py$simpleVersion.exe/download";
+    url64bit = "http://sourceforge.net/projects/pywin32/files/pywin32/Build%20$build/pywin32-$build.win-amd64-py$simpleVersion.exe/download";
   }
 
   # no special 64-bit for these python versions
