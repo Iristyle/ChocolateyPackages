@@ -2,17 +2,9 @@ $package = 'HipChat'
 
 try {
 
-  $hipChatGuid = Get-ChildItem HKLM:\SOFTWARE\Classes\Installer\Products |
-    Get-ItemProperty -Name 'ProductName' |
-    ? { $_.ProductName -eq 'HipChat' } |
-    Select -ExpandProperty PSChildName -First 1
-
-  $properties = Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\S-1-5-18\Products\$hipChatGuid\InstallProperties
-
-  $pkg = $properties.LocalPackage
-
-  # http://help.adobe.com/en_US/air/redist/WS485a42d56cd19641-70d979a8124ef20a34b-8000.html#WS485a42d56cd19641-70d979a8124ef20a34b-7ffa
-  msiexec.exe /x $pkg /qb-! REBOOT=ReallySuppress
+  # http://stackoverflow.com/questions/450027/uninstalling-an-msi-file-from-the-command-line-without-using-msiexec
+  $msiArgs = "/X{56B4BFF9-4967-4A84-A5B0-4B49AB070100} /qb-! REBOOT=ReallySuppress"
+  Start-ChocolateyProcessAsAdmin "$msiArgs" 'msiexec'
 
   Write-ChocolateySuccess $package
 } catch {
