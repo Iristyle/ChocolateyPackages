@@ -4,8 +4,8 @@ try {
   $params = @{
     PackageName = $package;
     FileType = 'zip';
-    Url = 'https://storage.googleapis.com/dart-editor-archive-integration/latest/darteditor-win32-32.zip';
-    Url64bit = 'https://storage.googleapis.com/dart-editor-archive-integration/latest/darteditor-win32-64.zip';
+    Url = 'http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip';
+    Url64bit = 'http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip';
     UnzipLocation = Join-Path $Env:SystemDrive 'tools';
   }
 
