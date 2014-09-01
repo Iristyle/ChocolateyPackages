@@ -1,5 +1,5 @@
 $package = 'SublimeText3'
-$build = '3059'
+$build = '3065'
 $installFolder = 'Sublime Text 3'
 
 try {
