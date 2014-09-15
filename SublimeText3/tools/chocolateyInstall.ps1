@@ -1,5 +1,5 @@
 $package = 'SublimeText3'
-$build = '3059'
+$build = '3065'
 $installFolder = 'Sublime Text 3'
 
 try {
@@ -10,7 +10,15 @@ try {
     Select -First 1
 
   # only way to test for installation of this version is by path on disk
+  $found = $false
   if ($installedPath -and (Test-Path $installedPath))
+  {
+    $exe = Join-Path $installedPath 'sublime_text.exe'
+    $version = (Get-Command $exe).FileVersionInfo.ProductVersion
+    $found = ($version -eq $build)
+  }
+
+  if ($found)
   {
     Write-Host "$package is already installed to $installedPath"
   }
