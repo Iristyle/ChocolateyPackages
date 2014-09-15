@@ -91,6 +91,18 @@ function Install-SublimePackagesFromCache
     }
 }
 
+# clean up any previous installation attempts that were Git clnoe based
+function Remove-GitInstalledSublimePackageControl
+{
+  $installPath = 'Packages\Package Control'
+  $packagesPath = Join-Path (Get-SublimeSettingsPath -Version $Version) $installPath
+  if (Test-Path $packagesPath)
+  {
+    Write-Host "Removing previously Git installed Package Control from $packagesPath"
+    Remove-Item $packagesPath -Recurse -Force -ErrorAction SilentlyContinue
+  }
+}
+
 function Install-SublimePackageControl
 {
   [CmdletBinding()]
@@ -105,37 +117,29 @@ function Install-SublimePackageControl
     $PreRelease = $false
   )
 
+  # remove Git cloned version if it exists
+  if ($Version -eq 3) { Remove-GitInstalledSublimePackageControl }
+
   # install package control
-  $packageFolder = if ($Version -eq 2) { 'Installed Packages' } else { 'Packages' }
+  $packageFolder = 'Installed Packages'
   $packagesPath = Join-Path (Get-SublimeSettingsPath -Version $Version) $packageFolder
 
   if (!(Test-Path $packagesPath)) { New-Item $packagesPath -Type Directory }
 
-  switch ($Version)
+  $packageControl = Join-Path $packagesPath 'Package Control.sublime-package'
+
+  if (Test-Path $packageControl) { Remove-item $packageControl }
+
+  # http://wbond.net/sublime_packages/package_control/installation
+  $packageUrl = 'http://sublime.wbond.net/Package%20Control.sublime-package'
+  if ($PreRelease)
   {
-    2 {
-      $packageControl = Join-Path $packagesPath 'Package Control.sublime-package'
-
-      if (Test-Path $packageControl) { Remove-item $packageControl }
-
-      # http://wbond.net/sublime_packages/package_control/installation
-      $packageUrl = 'http://sublime.wbond.net/Package%20Control.sublime-package'
-      if ($PreRelease)
-      {
-        $packageUrl = 'https://sublime.wbond.net/prerelease/Package%20Control.sublime-package'
-      }
-      Get-ChocolateyWebFile -url $packageUrl -fileFullPath $packageControl
-
-      $settings = @{ 'install_prereleases' = $PreRelease }
-      Merge-PackageControlSettings -Settings $settings -Version $Version
-    }
-
-    3 {
-      Push-Location $packagesPath
-      git clone -b python3 https://github.com/wbond/sublime_package_control.git "Package Control"
-      Pop-Location
-    }
+    $packageUrl = 'https://sublime.wbond.net/prerelease/Package%20Control.sublime-package'
   }
+  Get-ChocolateyWebFile -url $packageUrl -fileFullPath $packageControl
+
+  $settings = @{ 'install_prereleases' = $PreRelease }
+  Merge-PackageControlSettings -Settings $settings -Version $Version
 }
 
 function Merge-PackageControlSettings

@@ -3,7 +3,7 @@
   <metadata>
     <id>SublimeText3.PackageControl</id>
     <title>Sublime Text 3 Package Control</title>
-    <version>2.0.0.20130723</version>
+    <version>2.0.0.20140915</version>
     <authors>Will Bond</authors>
     <owners>Ethan J Brown</owners>
     <summary>A full-featured package manager that helps discovering, installing, updating and removing packages for Sublime Text 3. It features an automatic upgrader and supports GitHub, BitBucket and a full channel/repository system.</summary>
@@ -20,12 +20,12 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/SublimeText2.app/Sublime_Text.png</iconUrl>
     <dependencies>
-      <dependency id="git" />
       <dependency id="sublimetext3" />
     </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="..\core\JsonHelpers.ps1" target="tools" />
     <file src="..\core\SublimeHelpers.ps1" target="tools" />
   </files>
 </package>
