@@ -3,7 +3,7 @@
   <metadata>
     <id>AdobeAIR</id>
     <title>Adobe AIR Runtime</title>
-    <version>3.9.0.1380</version>
+    <version>15.0.0.249</version>
     <authors>Adobe</authors>
     <owners>Ethan J Brown</owners>
     <summary>Adobe AIR runtime is necessary for AIR based applications.</summary>
@@ -16,7 +16,7 @@
     <licenseUrl>http://www.adobe.com/products/eulas</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/AdobeAIR/AdobeAIR.jpg</iconUrl>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>http://helpx.adobe.com/air/air-releasenotes.html</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
