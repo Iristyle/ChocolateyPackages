@@ -1,8 +1,11 @@
 try {
   $package = 'Terminals'
+  $id = '832391'
+  $time = '130430743277870000'
+  $build = '20928'
 
-  $uri = 'http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=terminals&DownloadId=720349&FileTime=130216499768500000&Build=20748'
-  Install-ChocolateyPackage 'TerminalsSetup_V3.3' 'msi' '/quiet' $uri
+  $uri = "http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=terminals&DownloadId=$id&FileTime=$time&Build=$build"
+  Install-ChocolateyPackage 'TerminalsSetup_V3.5' 'msi' '/quiet' $uri
 
   Write-ChocolateySuccess $package
 } catch {
