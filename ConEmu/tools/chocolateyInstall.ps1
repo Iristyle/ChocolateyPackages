@@ -1,5 +1,5 @@
 $package = 'ConEmu'
-$version = '140914'
+$version = '140922'
 
 try {
 
@@ -9,7 +9,8 @@ try {
   $os = if ($isSytem32Bit) { "x86" } else { "x64" }
 
 
-  $url = "http://www.fosshub.com/download/ConEmuSetup.$version.exe"
+  # $url = "http://www.fosshub.com/download/ConEmuSetup.$version.exe"
+  $url = "http://mirror4.fosshub.com/programs/ConEmuSetup.$version.exe"
 
   $chocTemp = Join-Path $Env:TEMP 'chocolatey'
   $tempInstall = Join-Path $chocTemp "ConEmu\ConEmuSetup.$version.exe"
