@@ -1,5 +1,5 @@
 $package = 'ConEmu'
-$version = '140922'
+$version = '14.09.23'
 
 try {
 
@@ -8,9 +8,8 @@ try {
 
   $os = if ($isSytem32Bit) { "x86" } else { "x64" }
 
-
-  # $url = "http://www.fosshub.com/download/ConEmuSetup.$version.exe"
-  $url = "http://mirror4.fosshub.com/programs/ConEmuSetup.$version.exe"
+  # TODO: use github api to grab latest release?
+  $url = "https://github.com/Maximus5/ConEmu/releases/download/v$version/ConEmuSetup.$($version.replace('.','')).exe"
 
   $chocTemp = Join-Path $Env:TEMP 'chocolatey'
   $tempInstall = Join-Path $chocTemp "ConEmu\ConEmuSetup.$version.exe"
@@ -20,13 +19,6 @@ try {
   # need a Referer, User-Agent and Accept to be able to download
   # other headers not required
   $client = New-Object Net.WebClient
-  # Connection: keep-alive
-  # DNT: 1
-  # $client.Headers.Add('Accept-Encoding', 'gzip,deflate,sdch')
-  # $client.Headers.Add('Accept-Language', 'en-US,en;q=0.8')
-  $client.Headers.Add('Referer', 'http://www.fosshub.com/ConEmu.html')
-  $client.Headers.Add('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
-  $client.Headers.Add('User-Agent', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2145.4 Safari/537.36')
   $client.DownloadFile($url, $tempInstall)
 
   Write-Host "Download from $url complete"
