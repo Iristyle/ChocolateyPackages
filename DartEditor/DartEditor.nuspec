@@ -3,7 +3,7 @@
   <metadata>
     <id>DartEditor</id>
     <title>Dart Editor</title>
-    <version>1.5.8</version>
+    <version>1.6.0</version>
     <authors>Google</authors>
     <owners>Ethan J Brown</owners>
     <summary>Dart Editor is an open-source tool for editing, debugging, and running Dart applications.</summary>
