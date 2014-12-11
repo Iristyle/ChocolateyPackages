@@ -3,7 +3,7 @@
   <metadata>
     <id>NuGet.vs</id>
     <title>NuGet runner for Visual Studio 2012</title>
-    <version>2.5.40416.9020</version>
+    <version>2.6.40627.9000</version>
     <authors>NuGet team</authors>
     <owners>Ethan J Brown</owners>
     <summary>NuGet is the package manager for the Microsoft development platform including .NET.</summary>
@@ -11,9 +11,9 @@
 
   Includes a collection of tools to automate the process of downloading, installing, upgrading, configuring, and removing packages from a VS Project.
 
-  Note that this will install both the VS 2012 and VS 2010 plugins if found on the system
+  Note that this will install both the VS 2013, 2012 and VS 2010 plugins if found on the system
   </description>
-  <releaseNotes>http://docs.nuget.org/docs/release-notes/nuget-2.5
+  <releaseNotes>http://docs.nuget.org/docs/release-notes/nuget-2.6
 
 * Allow users to overwrite content files that already exist
 * Automatic import of msbuild targets and props files
@@ -28,7 +28,7 @@
 * Support for Native projects
     </releaseNotes>
     <projectUrl>http://nuget.codeplex.com/</projectUrl>
-    <tags>nuget package manager visualstudio vs vs2012 2012</tags>
+    <tags>nuget package manager visualstudio vs vs2012 2012 vs2013</tags>
     <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/27077b70-9dad-4c64-adcf-c7cf6bc9970c/eula?licenseType=None</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/NuGet.vs/nuget.png</iconUrl>
