@@ -1,38 +1,38 @@
 $package = 'AndroidStudio'
-$majorVersion = '0.3.2'
-$buildVersion = 132.893413
+$majorVersion = '1.0.1'
+$buildVersion = '135.1641136'
+$extractionPath = "C:/Google"
+
 
 try {
-
-  $build = Join-Path $Env:LOCALAPPDATA 'Android\android-studio\build.txt'
-
-  if ((Test-Path $build) -and ((Get-Content $build) -match '.*?(\d+\.\d+)'))
-  {
-    $installedVersion = [decimal]$Matches[1]
-    if ($installedVersion -lt $buildVersion)
-    {
-      Write-Host "Uninstalling existing version $installedVersion"
-      . .\chocolateyUninstall.ps1
+    $params = @{
+        PackageName = $package;
+        Url = "https://dl.google.com/dl/android/studio/ide-zips/$majorVersion/android-studio-ide-$buildVersion-windows.zip";
+        unzipLocation = $extractionPath;    
     }
-    else
+    
+    Install-ChocolateyZipPackage @params    
+    
+    $studioExe = (gci "${extractionPath}/android-studio/bin/studio64.exe").FullName | sort -Descending | Select -first 1
+    
+    . (Join-Path $(Split-Path -parent $MyInvocation.MyCommand.Definition) 'Common.ps1')
+    $customArgs = $env:chocolateyPackageParameters
+    $settings = GetArguments $customArgs
+        
+    if ($settings.addtodesktop -eq "true")
     {
-      Write-Host "$package $installedVersion already installed!"
-      exit
+        Install-ChocolateyDesktopLink $studioExe
     }
-  }
-
-  $params = @{
-    PackageName = $package;
-    FileType = 'exe';
-    #uses NSIS installer - http://nsis.sourceforge.net/Docs/Chapter3.html
-    SilentArgs = '/S';
-    Url = "https://dl.google.com/android/studio/install/$majorVersion/android-studio-bundle-$buildVersion-windows.exe";
-  }
-
-  Install-ChocolateyPackage @params
-
-  Write-ChocolateySuccess $package
-} catch {
+    
+    if ($settings.pinnedtotaskbar -eq "true")
+    {
+        Install-ChocolateyPinnedTaskBarItem $studioExe
+    }
+    
+    Write-ChocolateySuccess $package
+} 
+catch 
+{
   Write-ChocolateyFailure $package "$($_.Exception.Message)"
   throw
 }

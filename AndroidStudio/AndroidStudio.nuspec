@@ -3,7 +3,7 @@
   <metadata>
     <id>AndroidStudio</id>
     <title>Android Studio</title>
-    <version>0.3.2.132893413</version>
+    <version>1.0.1</version>
     <authors>Google</authors>
     <owners>Ethan J Brown</owners>
     <summary>Android Studio is a new Android development environment based on IntelliJ IDEA.</summary>
@@ -16,16 +16,18 @@
 * Template-based wizards to create common Android designs and components.
 * A rich layout editor that allows you to drag-and-drop UI components, preview layouts on multiple screen configurations, and much more.
 
-Caution: Android Studio is currently available as an early access preview. Several features are either incomplete or not yet implemented and you may encounter bugs. If you are not comfortable using an unfinished product, you may want to instead download (or continue to use) the ADT Bundle (Eclipse with the ADT Plugin).
-
       http://blogs.jetbrains.com/idea/2013/05/intellij-idea-and-android-studio-faq/
     </description>
-    <projectUrl>http://developer.android.com/sdk/installing/studio.html</projectUrl>
+    <projectUrl>http://developer.android.com/tools/studio/index.html</projectUrl>
     <tags>google android jetbrains IntelliJ IDEA</tags>
     <licenseUrl>http://opensource.org/licenses/BSD-3-Clause</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/AndroidStudio/androidstudio_logo.png</iconUrl>
     <releaseNotes></releaseNotes>
+	        <dependencies>
+            <dependency id="jdk7" version="7.0.46" />
+            <dependency id="android-sdk" version="23.0.2" />
+        </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
