@@ -1,37 +1,31 @@
+$script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
+$common = $(Join-Path $script_path "common.ps1")
+. $common
+
 $package = 'jdk7'
-$build = '18'
-$version = '45'
+$build = '14'
+$version = '72'
 
 try {
-  $IsSytem32Bit = (($Env:PROCESSOR_ARCHITECTURE -eq 'x86') -and `
-    ($Env:PROCESSOR_ARCHITEW6432 -eq $null))
+    $params = "$env:chocolateyPackageParameters" # -params '"x64=false;path=c:\\java\\jdk"'
+    $params = (ConvertFrom-StringData $params.Replace(";", "`n")) 
+    
+    chocolatey-install  
+} catch {
+    if ($_.Exception.InnerException) {
+        $msg = $_.Exception.InnerException.Message
+    } else {
+        $msg = $_.Exception.Message
+    }
+    
+    Write-ChocolateyFailure $package "$msg"
+    throw 
+}  
 
-  # http://www.oracle.com/technetwork/java/javase/downloads/index.html
-  $url = if ($IsSytem32Bit)
-    { "http://download.oracle.com/otn-pub/java/jdk/7u$version-b$build/jdk-7u$version-windows-i586.exe" }
-  else
-    { "http://download.oracle.com/otn-pub/java/jdk/7u$version-b$build/jdk-7u$version-windows-x64.exe" }
+#          $client.Headers.Add('Cookie', 'gpw_e24=http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html;');
+#          $client.Headers.Add('Cookie', 'oraclelicense=accept-securebackup-cookie');
+#  Install-ChocolateyEnvironmentVariable "JAVA_HOME" "C:\Program Files\Java\jdk1.7.0_72\bin" 'Machine'
 
-  $chocTemp = Join-Path $Env:TEMP 'chocolatey'
-  $tempInstall = Join-Path $chocTemp 'jdk7\jdk7installer.exe'
-
-  Write-Host "Downloading from $url"
-
-  # had issues with Invoke-WebRequest working properly
-  $client = New-Object Net.WebClient
-  $client.Headers.Add('Cookie',
-    'gpw_e24=http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html')
-  $client.DownloadFile($url, $tempInstall)
-
-  Write-Host "Download from $url complete"
-
-  $params = @{
-    PackageName = $package;
-    FileType = 'exe';
-    # http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html#Check
-    SilentArgs = '/s';
-    File = $tempInstall;
-  }
 
   Install-ChocolateyInstallPackage @params
 
