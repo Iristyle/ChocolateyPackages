@@ -10,7 +10,7 @@ try {
   $fontHelpersPath = (Join-Path (Get-CurrentDirectory) 'FontHelpers.ps1')
    . $fontHelpersPath
 
-  $fontUrl = 'http://sourceforge.net/projects/sourcecodepro.adobe/files/SourceCodePro_FontsOnly-1.017.zip/download'
+  $fontUrl = 'https://github.com/adobe-fonts/source-code-pro/archive/1.017R.zip'
   $destination = Join-Path $Env:Temp 'SourceCodePro'
 
   Install-ChocolateyZipPackage -url $fontUrl -unzipLocation $destination
