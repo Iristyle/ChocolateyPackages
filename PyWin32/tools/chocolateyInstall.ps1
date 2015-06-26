@@ -50,9 +50,8 @@ try {
 
   $pythonVersion = &$localPython --version 2>&1
 
-  $simpleVersion = $pythonVersion |
-    Select-String -Pattern '^.*\s+(\d\.\d)(\.\d+){0,1}$' |
-    % { $_.Matches.Groups[1].Value }
+  $pythonVersion -match '^.*\s+(\d\.\d)(\.\d+){0,1}$'
+  $simpleVersion = $matches[1]
 
   # http://www.jordanrinke.com/2011/06/22/pywin32-silent-install/
 
