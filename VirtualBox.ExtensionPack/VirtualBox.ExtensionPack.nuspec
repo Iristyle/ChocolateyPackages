@@ -5,7 +5,7 @@
     <title>VirtualBox Extension Pack</title>
     <version>5.0.0.101573</version>
     <authors>Oracle Corporation, Innotek</authors>
-    <owners>Ethan J Brown</owners>
+    <owners>Ethan J Brown,Michael Ray</owners>
     <summary>VirtualBox Extension Pack adds Support for USB 2.0 devices, VirtualBox RDP and PXE boot for Intel cards.</summary>
     <description>Oracle VM VirtualBox is a general-purpose full virtualizer for hardware. Targeted at server, desktop and embedded use, Oracle VM VirtualBox is now the only professional-quality virtualization solution that is also Open Source Software.
 

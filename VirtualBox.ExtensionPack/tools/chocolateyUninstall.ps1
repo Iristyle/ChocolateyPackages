@@ -24,6 +24,7 @@ if (!$vboxManage)
   throw 'Could not find VirtualBox VBoxManage.exe necessary to uninstall extension pack'
 }
 
+# Uninstall the Extension Pack using VBoxManage
 $vboxout = & $vBoxManage extpack uninstall `"$vboxName`" 2>&1
 if ($LASTEXITCODE -ne 0)
 {

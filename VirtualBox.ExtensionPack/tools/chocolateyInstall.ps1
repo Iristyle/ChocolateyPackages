@@ -27,15 +27,20 @@ if (!$vboxManage)
   throw 'Could not find VirtualBox VBoxManage.exe to install extension pack with'
 }
 
-$fileName = $packUrl -split '/' | Select -Last 1
+# Get the name of the Extension Pack file from the end of the download URL
+$fileName = $packUrl -split '/' | Select-Object -Last 1
+# Find or create the temp directory where the Extension Pack will be downloaded
 $appTemp = Join-Path $Env:Temp $package
 if (!(Test-Path $appTemp))
 {
   New-Item $appTemp -Type Directory
 }
 $packageTemp = Join-Path $appTemp $fileName
+
+# Download the Extension Pack
 Get-ChocolateyWebFile -packageName $package -fileFullPath $packageTemp -url $packUrl
 
+# Install the Extension Pack using VBoxManage
 $vboxout = & $vboxManage extpack install --replace $packageTemp 2>&1
 if ($LASTEXITCODE -ne 0)
 {
