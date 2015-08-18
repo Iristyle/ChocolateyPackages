@@ -1,4 +1,4 @@
-$package = 'VirtualBox.ExtensionPack'
+﻿$package = 'VirtualBox.ExtensionPack'
 $vboxName = 'Oracle VM VirtualBox Extension Pack'
 
 $vboxManageDefault = Join-Path $Env:ProgramFiles 'Oracle\VirtualBox\VBoxManage.exe'

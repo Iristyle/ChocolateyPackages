@@ -1,4 +1,4 @@
-$package = 'VirtualBox.ExtensionPack'
+﻿$package = 'VirtualBox.ExtensionPack'
 $version = '5.0.0'
 $build = '101573'
 $packName = "Oracle_VM_VirtualBox_Extension_Pack-$version-$build.vbox-extpack"
