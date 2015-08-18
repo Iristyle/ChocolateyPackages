@@ -4,15 +4,23 @@ $build = '101573'
 $packName = "Oracle_VM_VirtualBox_Extension_Pack-$version-$build.vbox-extpack"
 $packUrl = "http://download.virtualbox.org/virtualbox/$version/$packName"
 
-$vboxManageDefault = Join-Path $Env:ProgramFiles 'Oracle\VirtualBox\VBoxManage.exe'
+# Find the VirtualBox install directory to find where VBoxManage.exe is located
+# First, we check the VBOX_MSI_INSTALL_PATH ENV variable,
+# Next, we check the PATH ENV variable,
+# Finally, we check the PROGRAMFILES(x86)\Oracle\VirtualBox\ & then the PROGRAMFILES\Oracle\VirtualBox\ directories
+$vboxManageFile = "VBoxManage.exe"
+$vboxSubdir = "\Oracle\VirtualBox\"
+$progFilesLoc = if (${ENV:PROGRAMFILES}) { (Join-Path ${ENV:PROGRAMFILES} $vboxSubdir) } else { "" }
+$progFilesX86Loc = if (${ENV:PROGRAMFILES(x86)}) { (Join-Path ${ENV:PROGRAMFILES(x86)} $vboxSubdir) } else { "" }
+$allPaths = "${ENV:VBOX_MSI_INSTALL_PATH};${ENV:PATH};$progFilesX86Loc;$progFilesLoc"
 
-# simulate the unix command for finding things in path
-# http://stackoverflow.com/questions/63805/equivalent-of-nix-which-command-in-powershell
-$vboxManage = (Get-Command -ErrorAction "SilentlyContinue" VBoxManage |
-  Select -ExpandProperty Definition),
-  $vboxManageDefault |
-  ? { $_ -and { Test-Path $_ } } |
-  Select -First 1
+$vboxManage = $allpaths.Split(";") |
+  Where-Object { $_ } |
+  ForEach-Object {
+    Join-Path ([System.Environment]::ExpandEnvironmentVariables($_)) $vboxManageFile
+  } |
+  Where-Object { Test-Path $_ } |
+  Select-Object -First 1
 
 if (!$vboxManage)
 {
