@@ -28,8 +28,7 @@ if (!(Test-Path $appTemp))
 $packageTemp = Join-Path $appTemp $fileName
 Get-ChocolateyWebFile -packageName $package -fileFullPath $packageTemp -url $packUrl
 
-Push-Location $appTemp
-$vboxout = & $vboxManage extpack install --replace $packName 2>&1
+$vboxout = & $vboxManage extpack install --replace $packageTemp 2>&1
 if ($LASTEXITCODE -ne 0)
 {
   throw "An error occurrred with VirtualBox VBoxManage.exe install command: $vboxout"
@@ -38,4 +37,3 @@ else
 {
   Write-Output "$vboxout"
 }
-Pop-Location
