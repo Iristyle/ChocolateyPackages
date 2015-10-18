@@ -7,14 +7,14 @@ $vboxName = 'Oracle VM VirtualBox Extension Pack'
 # Finally, we check the PROGRAMFILES(x86)\Oracle\VirtualBox\ & then the PROGRAMFILES\Oracle\VirtualBox\ directories
 $vboxManageFile = "VBoxManage.exe"
 $vboxSubdir = "\Oracle\VirtualBox\"
-$progFilesLoc = if (${ENV:PROGRAMFILES}) { (Join-Path ${ENV:PROGRAMFILES} $vboxSubdir) } else { "" }
-$progFilesX86Loc = if (${ENV:PROGRAMFILES(x86)}) { (Join-Path ${ENV:PROGRAMFILES(x86)} $vboxSubdir) } else { "" }
+$progFilesLoc = if (${ENV:PROGRAMFILES}) { [IO.Path]::Combine(${ENV:PROGRAMFILES}, $vboxSubdir) } else { "" }
+$progFilesX86Loc = if (${ENV:PROGRAMFILES(x86)}) { [IO.Path]::Combine(${ENV:PROGRAMFILES(x86)}, $vboxSubdir) } else { "" }
 $allPaths = "${ENV:VBOX_MSI_INSTALL_PATH};${ENV:PATH};$progFilesX86Loc;$progFilesLoc"
 
 $vboxManage = $allpaths.Split(";") |
   Where-Object { $_ } |
   ForEach-Object {
-    Join-Path ([System.Environment]::ExpandEnvironmentVariables($_)) $vboxManageFile
+    [IO.Path]::Combine([System.Environment]::ExpandEnvironmentVariables($_), $vboxManageFile)
   } |
   Where-Object { Test-Path $_ } |
   Select-Object -First 1
