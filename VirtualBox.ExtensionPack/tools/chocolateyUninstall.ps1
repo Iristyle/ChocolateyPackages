@@ -1,6 +1,9 @@
 ﻿$package = 'VirtualBox.ExtensionPack'
 $vboxName = 'Oracle VM VirtualBox Extension Pack'
 
+# Refresh the PS session environment so that if VirtualBox was just installed in this session, it will be found in PATH
+Update-SessionEnvironment
+
 # Find the VirtualBox install directory to find where VBoxManage.exe is located
 # First, we check the VBOX_MSI_INSTALL_PATH ENV variable,
 # Next, we check the PATH ENV variable,
