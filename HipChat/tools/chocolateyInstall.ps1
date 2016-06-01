@@ -5,7 +5,7 @@ try {
     PackageName = $package;
     FileType = 'msi';
     SilentArgs = '/quiet';
-    Url = "https://www.hipchat.com/downloads/latest/qtwindows";
+    Url = "https://www.hipchat.com/downloads/latest/newqtwindows";
   }
 
   Install-ChocolateyPackage @params
