@@ -1,6 +1,6 @@
 ﻿$package = 'VirtualBox.ExtensionPack'
-$version = '5.0.24'
-$build = '108355'
+$version = '5.1.0'
+$build = '108711'
 $packName = "Oracle_VM_VirtualBox_Extension_Pack-$version-$build.vbox-extpack"
 $packUrl = "http://download.virtualbox.org/virtualbox/$version/$packName"
 
