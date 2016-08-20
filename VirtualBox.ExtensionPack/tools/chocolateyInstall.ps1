@@ -3,6 +3,8 @@ $version = '5.1.4'
 $build = '110228'
 $packName = "Oracle_VM_VirtualBox_Extension_Pack-$version-$build.vbox-extpack"
 $packUrl = "http://download.virtualbox.org/virtualbox/$version/$packName"
+$checksumType = "sha256"
+$checksum = "9462FF1B567C37AD9A33C0C7CA1925776615EC89B5A72563F29A8CC8514CF316"
 
 # Refresh the PS session environment so that if VirtualBox was just installed in this session, it will be found in PATH
 Update-SessionEnvironment
@@ -41,7 +43,7 @@ if (!(Test-Path $appTemp))
 $packageTemp = [IO.Path]::Combine($appTemp, $fileName)
 
 # Download the Extension Pack
-Get-ChocolateyWebFile -packageName $package -fileFullPath $packageTemp -url $packUrl
+Get-ChocolateyWebFile -packageName $package -fileFullPath $packageTemp -url $packUrl -checksumType $checksumType -checksum $checksum
 
 # Install the Extension Pack using VBoxManage
 $vboxout = & $vboxManage extpack install --replace $packageTemp 2>&1
