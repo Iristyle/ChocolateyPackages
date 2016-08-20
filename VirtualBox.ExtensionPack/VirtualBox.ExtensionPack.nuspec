@@ -15,11 +15,16 @@
     </description>
     <releaseNotes>https://www.virtualbox.org/wiki/Changelog</releaseNotes>
     <projectUrl>https://www.virtualbox.org/</projectUrl>
+    <docsUrl>https://www.virtualbox.org/manual/UserManual.html</docsUrl>
+    <mailingListUrl>https://www.virtualbox.org/wiki/Mailing_lists</mailingListUrl>
+    <bugTrackerUrl>https://www.virtualbox.org/wiki/Bugtracker</bugTrackerUrl>
+    <projectSourceUrl>https://www.virtualbox.org/browser/vbox/trunk</projectSourceUrl>
     <tags>virtualbox vmware virtualization vm</tags>
     <licenseUrl>https://www.virtualbox.org/wiki/VirtualBox_PUEL</licenseUrl>
     <copyright>Oracle Corporation</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://github.com/Iristyle/ChocolateyPackages/raw/master/VirtualBox.ExtensionPack/VirtualBox_logo.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/michaelray/ChocolateyPackages/e2175ceeefe2c057a30e44e34575ece57f076da6/VirtualBox.ExtensionPack/VirtualBox_logo.png</iconUrl>
+    <packageSourceUrl>https://github.com/michaelray/ChocolateyPackages</packageSourceUrl>
     <dependencies>
       <dependency id="VirtualBox" version="[5,6)" />
     </dependencies>
