@@ -3,7 +3,7 @@
   <metadata>
     <id>VirtualBox.ExtensionPack</id>
     <title>VirtualBox Extension Pack</title>
-    <version>5.1.8.111374</version>
+    <version>5.1.8.20161116</version>
     <authors>Oracle Corporation, Innotek</authors>
     <owners>Ethan J Brown,Michael Ray</owners>
     <summary>VirtualBox Extension Pack adds Support for USB 2.0 devices, VirtualBox RDP and PXE boot for Intel cards.</summary>
