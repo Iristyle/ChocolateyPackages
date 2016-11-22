@@ -3,7 +3,7 @@
   <metadata>
     <id>VirtualBox.ExtensionPack</id>
     <title>VirtualBox Extension Pack</title>
-    <version>5.1.8.20161116</version>
+    <version>5.1.10</version>
     <authors>Oracle Corporation, Innotek</authors>
     <owners>Ethan J Brown,Michael Ray</owners>
     <summary>VirtualBox Extension Pack adds Support for USB 2.0 devices, VirtualBox RDP and PXE boot for Intel cards.</summary>
@@ -26,7 +26,7 @@
     <iconUrl>https://cdn.rawgit.com/michaelray/ChocolateyPackages/e2175ceeefe2c057a30e44e34575ece57f076da6/VirtualBox.ExtensionPack/VirtualBox_logo.png</iconUrl>
     <packageSourceUrl>https://github.com/michaelray/ChocolateyPackages</packageSourceUrl>
     <dependencies>
-      <dependency id="VirtualBox" version="[5.1.8.20161116]" />
+      <dependency id="VirtualBox" version="[5.1.10]" />
     </dependencies>
   </metadata>
 </package>

@@ -1,10 +1,10 @@
 ﻿$package = 'VirtualBox.ExtensionPack'
-$version = '5.1.8'
-$build = '111374'
+$version = '5.1.10'
+$build = '112026'
 $packName = "Oracle_VM_VirtualBox_Extension_Pack-$version-$build.vbox-extpack"
 $packUrl = "http://download.virtualbox.org/virtualbox/$version/$packName"
 $checksumType = "sha256"
-$checksum = "D28BCD01C14EB07EEDD2B964D1ABE4876F0A7E0E89530E7BA285A5D6267BF322"
+$checksum = "82C6AE207BB8CC9D6FD6DB09D99825D0ECF0473A85A5CA98A2F1A0D06E42D6F3"
 
 # Refresh the PS session environment so that if VirtualBox was just installed in this session, it will be found in PATH
 Update-SessionEnvironment
