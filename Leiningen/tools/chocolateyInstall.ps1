@@ -1,8 +1,8 @@
 $package = 'Leiningen'
-$version = '2.2.0'
+$version = '2.7.1'
 
 try {
-  $url = "https://raw.github.com/technomancy/leiningen/$version/bin/lein.bat"
+  $url = "https://github.com/technomancy/leiningen/raw/$version/bin/lein.bat"
 
   $batDir = Join-Path $Env:ChocolateyInstall 'bin'
   $lein = Join-Path $batDir 'lein.bat'
