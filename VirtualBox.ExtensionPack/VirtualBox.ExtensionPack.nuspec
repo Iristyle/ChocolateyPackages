@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>VirtualBox.ExtensionPack</id>
-    <title>VirtualBox Extension Pack</title>
-    <version>5.1.10.112026</version>
+    <title>[Deprecated] VirtualBox Extension Pack</title>
+    <version>5.1.10.20161223</version>
     <authors>Oracle Corporation, Innotek</authors>
     <owners>Ethan J Brown,Michael Ray</owners>
     <summary>VirtualBox Extension Pack adds Support for USB 2.0 devices, VirtualBox RDP and PXE boot for Intel cards.</summary>
@@ -12,6 +12,8 @@
       VirtualBox Extension Pack adds Support for USB 2.0 devices, VirtualBox RDP and PXE boot for Intel cards.
 
       https://www.virtualbox.org/manual/ch01.html#intro-installing
+      
+      [Deprecated]: This VirtualBox.ExtensionPack package has been obsoleted in favor of having both VirtualBox and the extension pack installed via the same package - the "virtualbox" package (which should prevent the version discrepancies going forward).  The virtualbox package now installs the extension pack by default (unless you specify an argument when installing the package to NOT install the extension pack).  Since this is installed in the virtualbox package, this VirtualBox.ExtensionPack package will no longer be maintained/updated.
     </description>
     <releaseNotes>https://www.virtualbox.org/wiki/Changelog</releaseNotes>
     <projectUrl>https://www.virtualbox.org/</projectUrl>
@@ -23,10 +25,9 @@
     <licenseUrl>https://www.virtualbox.org/wiki/VirtualBox_PUEL</licenseUrl>
     <copyright>Oracle Corporation</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/michaelray/ChocolateyPackages/e2175ceeefe2c057a30e44e34575ece57f076da6/VirtualBox.ExtensionPack/VirtualBox_logo.png</iconUrl>
     <packageSourceUrl>https://github.com/michaelray/ChocolateyPackages</packageSourceUrl>
     <dependencies>
-      <dependency id="VirtualBox" version="[5.1.10]" />
+      <dependency id="VirtualBox" version="5.1.10.20161203" />
     </dependencies>
   </metadata>
 </package>
