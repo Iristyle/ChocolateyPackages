@@ -15,7 +15,7 @@ try {
   Get-ChocolateyWebFile @params
 
   Push-Location $tempPath
-  .\rktools.exe /T:$tempPath /C
+  rktools.exe /T:$tempPath /C
 
   #Reference: RKTools is the param for a non default install directory
   $params = @{
