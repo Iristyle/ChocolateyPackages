@@ -3,7 +3,7 @@
   <metadata>
     <id>Lein</id>
     <title>Leiningen - Clojure Project Automation</title>
-    <version>2.2.0</version>
+    <version>2.7.1</version>
     <authors>Phil Hagelberg, Alex Osborne, Dan Larkin, and contributors</authors>
     <owners>Ethan J Brown</owners>
     <summary>Leiningen is for automating Clojure projects without setting your hair on fire.</summary>
@@ -31,7 +31,6 @@ If you come from the Java world, Leiningen could be thought of as "Maven meets A
     <releaseNotes></releaseNotes>
     <dependencies>
       <dependency id="jdk7" />
-      <dependency id="curl" />
     </dependencies>
   </metadata>
   <files>
