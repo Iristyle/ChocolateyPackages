@@ -3,7 +3,13 @@ $installFolder = 'Sublime Text 3'
 
 try {
 
-  $path = ${Env:ProgramFiles(x86)}, $Env:ProgramFiles |
+  $paths = $Env:ProgramFiles
+  
+  if (${Env:ProgramFiles(x86)}) {
+	$paths = $paths, ${Env:ProgramFiles(x86)}
+  }
+
+  $path = $paths |
     % { Join-Path $_ $installFolder } |
     ? { Test-Path $_ } |
     Select -First 1
